@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------- Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------- Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# --------------------------------------------------------------- Generated
+# The database, FAISS indexes and uploads are all reproducible from the ingestion
+# scripts, and the corpus is fetched from official sources at setup rather than
+# vendored. Committing them would add tens of MB of binary churn for no benefit.
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/indexes/
+data/uploads/
+data/raw/
+data/knowledge_sources/*/handle_scan.json
+
+# Keep the directory structure so a fresh clone has somewhere to write.
+!data/.gitkeep
+!data/indexes/.gitkeep
+!data/uploads/.gitkeep
+
+# ----------------------------------------------------------------- Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ------------------------------------------------------------------ Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------------ Scratch
+h.json
+health.json
+q[0-9].json
+*.log

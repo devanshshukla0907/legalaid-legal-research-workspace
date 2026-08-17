@@ -1,0 +1,14 @@
+.venv/
+**/node_modules/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/dist/
+.git/
+.kiro/
+data/
+docs/
+*.db
+*.db-wal
+*.db-shm
+.env

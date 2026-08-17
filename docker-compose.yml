@@ -1,0 +1,225 @@
+# LegalAId — full stack.
+#
+#   docker compose up -d --build
+#   docker compose exec gateway python -m legalaid.db.seed
+#   docker compose exec gateway python scripts/ingest_legislation.py --all
+#   open http://localhost:3000
+#
+# Service boundaries are logical, not decorative: each container owns one capability and one
+# failure domain. The backend services share an image because they share a codebase and the same
+# Pydantic contracts; separate images would duplicate dependencies and let the contracts drift.
+
+name: legalaid
+
+services:
+  # --------------------------------------------------------------------- models
+  ollama:
+    image: ollama/ollama:latest
+    container_name: legalaid-ollama
+    # `bundled` profile: only started when you want Ollama in a container. Omit the profile to run
+    # against a host Ollama instead, which is faster because it can use the GPU.
+    profiles: ["bundled"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      # `ollama list` exits non-zero until the server is actually accepting requests, which is
+      # what dependent services need to wait for.
+      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    restart: unless-stopped
+    # GPU passthrough is commented out because it needs the NVIDIA Container Toolkit, which is
+    # not available in Docker Desktop on Windows by default. On CPU expect ~4-6 tok/s instead of
+    # the ~12 tok/s measured on the host GPU. See docs/docker.md.
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  # Pulls the two required models on first start, then exits. Separated from the ollama service
+  # so a restart does not re-download 4 GB.
+  model-init:
+    image: ollama/ollama:latest
+    container_name: legalaid-model-init
+    profiles: ["bundled"]
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        echo "pulling generation model: ${LLM_MODEL:-codellama:7b-instruct}"
+        ollama pull "${LLM_MODEL:-codellama:7b-instruct}"
+        echo "pulling embedding model: ${EMBEDDING_MODEL:-nomic-embed-text}"
+        ollama pull "${EMBEDDING_MODEL:-nomic-embed-text}"
+        echo "models ready"
+    restart: "no"
+
+  # -------------------------------------------------------------------- gateway
+  gateway:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: legalaid/backend:latest
+    container_name: legalaid-gateway
+    # No hard dependency on the ollama service: it may be running on the host instead of in a
+    # container. The app reports Ollama reachability through /api/system/health either way, so a
+    # missing model surfaces as degraded health rather than a container that refuses to start.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment: &backend-env
+      # Defaults to the host Ollama, which can use the GPU. Override to http://ollama:11434 when
+      # running with `--profile bundled`.
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      LLM_PROVIDER: ollama
+      LLM_MODEL: ${LLM_MODEL:-codellama:7b-instruct}
+      EMBEDDING_PROVIDER: ollama
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-nomic-embed-text}
+      EMBEDDING_DIMENSIONS: "768"
+      # 3072 is a measured compromise: larger contexts stop fitting a 6 GB GPU and throughput
+      # collapses. See docs/architecture.md.
+      LLM_NUM_CTX: "3072"
+      ENVIRONMENT: docker
+      DATABASE_URL: sqlite+pysqlite:////data/legalaid.db
+      DATA_DIR: /data
+      UPLOAD_DIR: /data/uploads
+      INDEX_DIR: /data/indexes
+      KNOWLEDGE_DIR: /data/knowledge_sources
+      PROMPT_DIR: /app/prompts
+      # In-process transport keeps one hop for the demo path; set http to force real network
+      # calls between the split services below.
+      SERVICE_TRANSPORT: ${SERVICE_TRANSPORT:-inprocess}
+      RETRIEVAL_SERVICE_URL: http://retrieval:8003
+      LLM_SERVICE_URL: http://llm:8004
+      EMBEDDING_SERVICE_URL: http://embedding:8006
+      ACTIVE_PHASE: "5"
+    volumes:
+      - legalaid-data:/data
+      - ./prompts:/app/prompts:ro
+      - ./scripts:/app/scripts:ro
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/api/system/health"]
+      interval: 20s
+      timeout: 5s
+      start_period: 25s
+      retries: 5
+    restart: unless-stopped
+
+  # ------------------------------------------------- independently scalable services
+  # These demonstrate the service split required by Exercise 4. With SERVICE_TRANSPORT=http the
+  # gateway calls them over the compose network instead of dispatching in-process.
+  llm:
+    image: legalaid/backend:latest
+    container_name: legalaid-llm
+    depends_on:
+      gateway:
+        condition: service_started
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment: *backend-env
+    volumes:
+      - legalaid-data:/data
+      - ./prompts:/app/prompts:ro
+    command:
+      ["uvicorn", "legalaid.services.llm.app:app", "--host", "0.0.0.0", "--port", "8004"]
+    ports:
+      - "8004:8004"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8004/health"]
+      interval: 20s
+      timeout: 5s
+      start_period: 25s
+      retries: 5
+    restart: unless-stopped
+
+  embedding:
+    image: legalaid/backend:latest
+    container_name: legalaid-embedding
+    depends_on:
+      gateway:
+        condition: service_started
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment: *backend-env
+    volumes:
+      - legalaid-data:/data
+      - ./prompts:/app/prompts:ro
+    command:
+      [
+        "uvicorn",
+        "legalaid.services.embedding.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8006",
+      ]
+    ports:
+      - "8006:8006"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8006/health"]
+      interval: 20s
+      timeout: 5s
+      start_period: 25s
+      retries: 5
+    restart: unless-stopped
+
+  retrieval:
+    image: legalaid/backend:latest
+    container_name: legalaid-retrieval
+    depends_on:
+      gateway:
+        condition: service_started
+    environment: *backend-env
+    volumes:
+      - legalaid-data:/data
+      - ./prompts:/app/prompts:ro
+    command:
+      [
+        "uvicorn",
+        "legalaid.services.retrieval.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8003",
+      ]
+    ports:
+      - "8003:8003"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8003/health"]
+      interval: 20s
+      timeout: 5s
+      start_period: 25s
+      retries: 5
+    restart: unless-stopped
+
+  # ------------------------------------------------------------------- frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: legalaid/frontend:latest
+    container_name: legalaid-frontend
+    depends_on:
+      gateway:
+        condition: service_started
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
+volumes:
+  # The database, uploads and FAISS indexes must survive a rebuild; re-ingesting the corpus
+  # takes several minutes of polite requests to a government server.
+  legalaid-data:
+  ollama-models:
