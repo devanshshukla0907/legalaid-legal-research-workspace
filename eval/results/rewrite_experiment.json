@@ -1,0 +1,213 @@
+{
+  "results": [
+    {
+      "task_id": "D01",
+      "question_raw": "An FIR alleges our client induced delivery of goods worth Rs 18,40,000 and then issued a cheque that bounced. Which provisions are in play and what is the exposure?",
+      "question_rewritten": "Cheating and criminal breach of trust by dishonestly inducing delivery of goods without intention to pay; dishonour of cheque; entrustment and misappropriation of property.",
+      "expected": [
+        "bharatiyanyaya:318",
+        "bharatiyanyaya:316"
+      ],
+      "raw": {
+        "recall": 0.0,
+        "mrr": 0.0,
+        "top_sections": [
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 74 (Indian Contract Act, 1872)",
+          "Section 220 (Indian Contract Act, 1872)",
+          "Section 50 (Indian Contract Act, 1872)",
+          "Section 63 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.7846
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 316 (Bharatiya Nyaya Sanhita, 2023)",
+          "Section 316 (Bharatiya Nyaya Sanhita, 2023)",
+          "Section 318 (Bharatiya Nyaya Sanhita, 2023)",
+          "Section 316 (Bharatiya Nyaya Sanhita, 2023)",
+          "Section 318 (Bharatiya Nyaya Sanhita, 2023)"
+        ],
+        "top_similarity": 0.7656
+      },
+      "verdict": "REWRITE FIXES IT"
+    },
+    {
+      "task_id": "D02",
+      "question_raw": "A legal notice claims we breached a supply agreement and demands damages. What provisions govern the quantum they can claim?",
+      "question_rewritten": "Measure of compensation for breach of contract; remoteness of damage; liquidated damages and penalty stipulated in the contract; reasonable compensation.",
+      "expected": [
+        "indiancontract:73",
+        "indiancontract:74"
+      ],
+      "raw": {
+        "recall": 0.0,
+        "mrr": 0.0,
+        "top_sections": [
+          "Section 222 (Indian Contract Act, 1872)",
+          "reasoning (M/s. Gail (india) Limited v. M/s. Indian ",
+          "judgment_extract (Trust Estate Khimji Keshawji & anr",
+          "judgment_extract (Indian Oil Corporation Ltd. and or",
+          "judgment_extract (Haryana Power Purchase Centre v. S"
+        ],
+        "top_similarity": 0.6927
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 74 (Indian Contract Act, 1872)",
+          "Section 74 (Indian Contract Act, 1872)",
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 74 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.8023
+      },
+      "verdict": "REWRITE FIXES IT"
+    },
+    {
+      "task_id": "D03",
+      "question_raw": "The agreement was signed by someone described as an agent. How do we test whether the principal is bound?",
+      "question_rewritten": "Definition of agent and principal; authority of an agent to bind the principal; contracts entered into through an agent.",
+      "expected": [
+        "indiancontract:182"
+      ],
+      "raw": {
+        "recall": 0.0,
+        "mrr": 0.0,
+        "top_sections": [
+          "Section 228 (Indian Contract Act, 1872)",
+          "Section 231 (Indian Contract Act, 1872)",
+          "Section 232 (Indian Contract Act, 1872)",
+          "Section 227 (Indian Contract Act, 1872)",
+          "Section 230 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.7424
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 182 (Indian Contract Act, 1872)",
+          "Section 192 (Indian Contract Act, 1872)",
+          "Section 194 (Indian Contract Act, 1872)",
+          "Section 211 (Indian Contract Act, 1872)",
+          "Section 226 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.8759
+      },
+      "verdict": "REWRITE FIXES IT"
+    },
+    {
+      "task_id": "R05",
+      "question_raw": "The supplier delivered three months late. Was time of the essence, and what follows?",
+      "question_rewritten": "Effect of failure to perform a contract at the fixed time; whether time is of the essence; voidable contract on delayed performance.",
+      "expected": [
+        "indiancontract:55"
+      ],
+      "raw": {
+        "recall": 1.0,
+        "mrr": 0.25,
+        "top_sections": [
+          "judgment_extract (Indian Oil Corporation Ltd. and or",
+          "judgment_extract (Indian Oil Corporation Ltd. and or",
+          "reasoning (M/s. Gail (india) Limited v. M/s. Indian ",
+          "Section 55 (Indian Contract Act, 1872)",
+          "judgment_extract (M/s Glock Asia-pacific Ltd. v. Uni"
+        ],
+        "top_similarity": 0.5763
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 55 (Indian Contract Act, 1872)",
+          "Section 35 (Indian Contract Act, 1872)",
+          "Section 46 (Indian Contract Act, 1872)",
+          "Section 47 (Indian Contract Act, 1872)",
+          "Section 21 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.8012
+      },
+      "verdict": "better ranking"
+    },
+    {
+      "task_id": "P01",
+      "question_raw": "In which court should we institute a suit for breach of a supply contract?",
+      "question_rewritten": "Court in which a suit is to be instituted; place of institution where the cause of action arises; jurisdiction over defendants.",
+      "expected": [
+        "codeofcivilpro:20",
+        "codeofcivilpro:15"
+      ],
+      "raw": {
+        "recall": 0.0,
+        "mrr": 0.0,
+        "top_sections": [
+          "Section 222 (Indian Contract Act, 1872)",
+          "Section 17 (Code of Civil Procedure, 1908)",
+          "Section 10 (Code of Civil Procedure, 1908)",
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 73 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.677
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 20 (Code of Civil Procedure, 1908)",
+          "Section 18 (Code of Civil Procedure, 1908)",
+          "Section 15 (Code of Civil Procedure, 1908)",
+          "Section 17 (Code of Civil Procedure, 1908)",
+          "Section 10 (Code of Civil Procedure, 1908)"
+        ],
+        "top_similarity": 0.7617
+      },
+      "verdict": "REWRITE FIXES IT"
+    },
+    {
+      "task_id": "X03",
+      "question_raw": "We handed over machinery for repair and it was damaged in the workshop. What duty did they owe and are they liable?",
+      "question_rewritten": "Bailment; duty of care to be taken by a bailee of goods; liability of bailee for loss or damage to the thing bailed.",
+      "expected": [
+        "indiancontract:151",
+        "indiancontract:148"
+      ],
+      "raw": {
+        "recall": 0.0,
+        "mrr": 0.0,
+        "top_sections": [
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 150 (Indian Contract Act, 1872)",
+          "Section 225 (Indian Contract Act, 1872)",
+          "Section 73 (Indian Contract Act, 1872)",
+          "Section 73 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.6595
+      },
+      "rewritten": {
+        "recall": 1.0,
+        "mrr": 1.0,
+        "top_sections": [
+          "Section 148 (Indian Contract Act, 1872)",
+          "Section 152 (Indian Contract Act, 1872)",
+          "Section 164 (Indian Contract Act, 1872)",
+          "Section 151 (Indian Contract Act, 1872)",
+          "Section 180 (Indian Contract Act, 1872)"
+        ],
+        "top_similarity": 0.8244
+      },
+      "verdict": "REWRITE FIXES IT"
+    }
+  ],
+  "summary": {
+    "n": 6,
+    "improved": 5,
+    "mean_recall_raw": 0.1667,
+    "mean_recall_rewritten": 1.0,
+    "absolute_gain": 0.8333
+  }
+}

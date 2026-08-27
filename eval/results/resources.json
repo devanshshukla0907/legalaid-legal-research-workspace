@@ -1,0 +1,58 @@
+[
+  {
+    "model": "gemma2:2b",
+    "cold_load_s": 0.86,
+    "warm_call_s": 3.38,
+    "resident_size": "1.9 GB",
+    "processor_split": "100% GPU",
+    "vram_baseline_mb": 4755,
+    "vram_loaded_mb": 5157,
+    "vram_delta_mb": 402,
+    "ollama_rss_baseline_mb": 102.2,
+    "ollama_rss_loaded_mb": 97.2,
+    "ollama_rss_delta_mb": -5.0,
+    "ps_raw": "gemma2:2b      8ccf136fdd52    1.9 GB    100% GPU     3072       4 minutes from now"
+  },
+  {
+    "model": "qwen2.5:3b-instruct",
+    "cold_load_s": 12.67,
+    "warm_call_s": 0.34,
+    "resident_size": "1.9 GB",
+    "processor_split": "100% GPU",
+    "vram_baseline_mb": 3564,
+    "vram_loaded_mb": 4954,
+    "vram_delta_mb": 1390,
+    "ollama_rss_baseline_mb": 100.3,
+    "ollama_rss_loaded_mb": 100.5,
+    "ollama_rss_delta_mb": 0.2,
+    "ps_raw": "gemma2:2b              8ccf136fdd52    1.9 GB    100% GPU     3072       4 minutes from now"
+  },
+  {
+    "model": "llama3.2:3b",
+    "cold_load_s": 4.93,
+    "warm_call_s": 0.43,
+    "resident_size": "2.4 GB",
+    "processor_split": "100% GPU",
+    "vram_baseline_mb": 2820,
+    "vram_loaded_mb": 5231,
+    "vram_delta_mb": 2411,
+    "ollama_rss_baseline_mb": 107.7,
+    "ollama_rss_loaded_mb": 104.7,
+    "ollama_rss_delta_mb": -3.0,
+    "ps_raw": "llama3.2:3b    a80c4f17acd5    2.4 GB    100% GPU     3072       4 minutes from now"
+  },
+  {
+    "model": "codellama:7b-instruct",
+    "cold_load_s": 9.74,
+    "warm_call_s": 0.58,
+    "resident_size": "5.6 GB",
+    "processor_split": "22%/78% CPU/GPU",
+    "vram_baseline_mb": 2827,
+    "vram_loaded_mb": 4994,
+    "vram_delta_mb": 2167,
+    "ollama_rss_baseline_mb": 95.4,
+    "ollama_rss_loaded_mb": 84.3,
+    "ollama_rss_delta_mb": -11.1,
+    "ps_raw": "codellama:7b-instruct    8fdf8f752f6e    5.6 GB    22%/78% CPU/GPU    3072       4 minutes from now"
+  }
+]
