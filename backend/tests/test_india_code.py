@@ -122,12 +122,28 @@ class TestParseMetadata:
 
 
 class TestCorpusManifest:
-    def test_manifest_sections_are_within_the_brief_target(self) -> None:
+    def test_manifest_covers_the_practitioner_core(self) -> None:
         from legalaid.ingestion.corpus import all_acts, estimated_provisions
 
-        assert 4 <= len(all_acts()) <= 10
-        # The brief targets 100-300 provisions for the MVP.
-        assert 100 <= estimated_provisions() <= 400
+        acts = all_acts()
+        assert len(acts) >= 15
+        # Expanded from the original 5-act MVP. The upper bound is a guard against someone
+        # adding a very large code unfiltered and quietly tripling embedding time.
+        assert 1200 <= estimated_provisions() <= 6000
+
+    def test_every_act_is_resolvable(self) -> None:
+        """Each act needs a pinned id or a search title, or ingestion cannot find it."""
+        from legalaid.ingestion.corpus import all_acts
+
+        for spec in all_acts():
+            assert spec.act_id or spec.search_title, f"{spec.key} has no way to be resolved"
+            assert spec.resolve_title, f"{spec.key} has no resolvable title"
+
+    def test_act_keys_are_unique(self) -> None:
+        from legalaid.ingestion.corpus import all_acts
+
+        keys = [spec.key for spec in all_acts()]
+        assert len(keys) == len(set(keys))
 
     def test_section_filter_gating(self) -> None:
         from legalaid.ingestion.corpus import get_act, wants_section
@@ -135,9 +151,11 @@ class TestCorpusManifest:
         contract = get_act("contract_act_1872")
         assert wants_section(contract, "73")  # no filter -> everything in scope
 
-        it_act = get_act("it_act_2000")
-        assert wants_section(it_act, "10A")
-        assert not wants_section(it_act, "999")
+        # BNSS is the one act deliberately reduced, because 531 sections of criminal
+        # procedure are mostly outside what a commercial matter reaches.
+        bnss = get_act("bnss_2023")
+        assert wants_section(bnss, "173")
+        assert not wants_section(bnss, "999")
 
     def test_unknown_act_key_raises(self) -> None:
         from legalaid.ingestion.corpus import get_act

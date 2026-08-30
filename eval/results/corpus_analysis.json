@@ -1,0 +1,145 @@
+{
+  "provisions": {
+    "total": 1783,
+    "exact_duplicates": 2,
+    "near_duplicates": 1,
+    "structural_duplicates": 0,
+    "duplicate_rate": 0.0017,
+    "exact_groups": [
+      {
+        "kind": "exact",
+        "members": [
+          "Arbitration and Conciliation Act, 1996 s.55",
+          "Arbitration and Conciliation Act, 1996 s.46"
+        ],
+        "size": 2,
+        "detail": "identical text, sha256 2c9f729a24f4"
+      },
+      {
+        "kind": "exact",
+        "members": [
+          "Arbitration and Conciliation Act, 1996 s.51",
+          "Arbitration and Conciliation Act, 1996 s.60"
+        ],
+        "size": 2,
+        "detail": "identical text, sha256 5fd90445ab30"
+      }
+    ],
+    "near_groups": [
+      {
+        "kind": "near",
+        "members": [
+          "Consumer Protection Act, 2019 s.60",
+          "Consumer Protection Act, 2019 s.50"
+        ],
+        "size": 2,
+        "detail": "SimHash distance 1 over 64 bits"
+      }
+    ],
+    "structural_groups": []
+  },
+  "chunks": {
+    "total": 2575,
+    "exact_duplicates": 0,
+    "near_duplicates": 0,
+    "duplicate_rate": 0.0
+  },
+  "citations": {
+    "cases_analysed": 47,
+    "citations_found": 45,
+    "resolved_to_corpus": 0,
+    "unresolved": 45,
+    "section_references_found": 38,
+    "treatment_breakdown": {
+      "cited": 15,
+      "distinguished": 7,
+      "followed": 2,
+      "referred": 14,
+      "relied_on": 5,
+      "reversed": 2
+    },
+    "resolved_edges": [],
+    "sample_unresolved": [
+      {
+        "citation": "(2007) 5 SCC 719",
+        "treatment": "cited"
+      },
+      {
+        "citation": "2021 SCC OnLine SC 730",
+        "treatment": "referred"
+      },
+      {
+        "citation": "(2017) 4 SCC 665",
+        "treatment": "referred"
+      },
+      {
+        "citation": "(2022) 3 SCC 1",
+        "treatment": "referred"
+      },
+      {
+        "citation": "Civil Appeal No. 6609 of 2023",
+        "treatment": "referred"
+      },
+      {
+        "citation": "Civil Appeal No. 7903 of 2023",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2008) 12 SCC 661",
+        "treatment": "relied_on"
+      },
+      {
+        "citation": "(2020) 7 SCC 366",
+        "treatment": "relied_on"
+      },
+      {
+        "citation": "(2015) 16 SCC 46",
+        "treatment": "relied_on"
+      },
+      {
+        "citation": "(2015) 11 SCC 12",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2017) 5 SCC 178",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2020) 14 SCC 110",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2020) 17 SCC 260",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2021) 6 SCC 413",
+        "treatment": "relied_on"
+      },
+      {
+        "citation": "(2002) 2 SCC 642",
+        "treatment": "relied_on"
+      },
+      {
+        "citation": "AIR 1959 SC 24",
+        "treatment": "reversed"
+      },
+      {
+        "citation": "(2022) 4 SCC 116",
+        "treatment": "reversed"
+      },
+      {
+        "citation": "(2020) 5 SCC 164",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2019) 19 SCC 9",
+        "treatment": "cited"
+      },
+      {
+        "citation": "(2011) 15 SCC 101",
+        "treatment": "cited"
+      }
+    ]
+  }
+}

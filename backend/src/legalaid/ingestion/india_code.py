@@ -37,7 +37,11 @@ from legalaid.core.logging import get_logger
 
 logger = get_logger(__name__)
 
-BASE_URL = "https://www.indiacode.nic.in"
+# Migrated August 2026: www.indiacode.nic.in now serves only a redirect notice and returns 404
+# for every /handle/ path. The new host keeps the same URL structure, so only the origin
+# changed. The old host is kept as a fallback in case the migration is rolled back.
+BASE_URL = "https://indiacode.gov.in"
+LEGACY_BASE_URL = "https://www.indiacode.nic.in"
 SOURCE_AUTHORITY = "India Code, Government of India (Legislative Department)"
 
 # India Code sits behind a WAF that rejects User-Agent strings containing parentheses with a
@@ -105,6 +109,14 @@ class FetchedSection:
     order_no: int
     section_id: str
     source_url: str
+    # Publisher-supplied repeal flag. Available only from the DSpace API; the old HTML route
+    # forced repeal status to be inferred from heading text, which is why the inference in
+    # `services.knowledge.ingest.is_repealed` still exists as a second line of defence.
+    # None means "the source did not say", not "not repealed".
+    repealed: bool | None = None
+    # Content hash of the normalised text, for change detection that a length comparison cannot
+    # do: an amendment that preserves length would otherwise be invisible.
+    content_sha256: str = ""
 
     @property
     def is_empty(self) -> bool:

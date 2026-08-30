@@ -13,6 +13,7 @@ section cannot be fetched it is reported as a failure and left absent.
 from __future__ import annotations
 
 import asyncio
+import hashlib
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
@@ -31,7 +32,7 @@ from legalaid.db.models import (
     RetrievalResult,
 )
 from legalaid.domain.enums import Collection
-from legalaid.ingestion import india_code
+from legalaid.ingestion import india_code, india_code_api
 from legalaid.ingestion.chunking import chunk_statute
 from legalaid.ingestion.corpus import ActSpec, all_acts, get_act, wants_section
 from legalaid.services.embedding.service import embed_texts_raw
@@ -51,6 +52,7 @@ class ActIngestReport:
     sections_skipped: int = 0
     sections_repealed: int = 0
     sections_purged: int = 0
+    sections_empty: int = 0
     chunks_created: int = 0
     vectors_indexed: int = 0
     failures: list[dict[str, str]] = field(default_factory=list)
@@ -77,8 +79,8 @@ def _ensure_source(retrieved_at: datetime) -> str:
             source = KnowledgeSource(
                 key=INDIA_CODE_SOURCE_KEY,
                 name="India Code - Central Acts",
-                authority=india_code.SOURCE_AUTHORITY,
-                source_url=india_code.BASE_URL,
+                authority=india_code_api.SOURCE_AUTHORITY,
+                source_url=india_code_api.HOST,
                 licence="Government of India open content; reproduced with attribution",
                 attribution=(
                     "Statutory text reproduced from India Code, the official legislation "
@@ -106,6 +108,11 @@ def is_repealed(section: india_code.FetchedSection) -> bool:
     be essentially nothing but a repeal note - so a live section that merely *discusses* repeals
     is kept.
     """
+    # The DSpace API reports repeal status directly. Where the publisher says so, that is
+    # authoritative and no inference is needed.
+    if section.repealed is True:
+        return True
+
     heading = (section.heading or "").strip().lower()
     if any(heading.startswith(marker) or heading == marker.strip("[") for marker in _REPEALED_MARKERS):
         return True
@@ -121,10 +128,24 @@ def is_repealed(section: india_code.FetchedSection) -> bool:
 def _provision_version(section: india_code.FetchedSection) -> str:
     """Version marker for change detection.
 
-    Amendment footnotes change when a provision is amended, so text length plus footnote
-    length is a cheap, stable signal that a stored provision is stale.
+    A content hash, not a length comparison. The previous marker was
+    ``f"{len(text)}-{len(footnotes)}"``, described in its own docstring as "cheap and stable" -
+    but any amendment that preserved both lengths was invisible to it, and substituting one word
+    for another of the same length is an entirely ordinary amendment. Calling that "versioning"
+    overstated what it did.
+
+    Whitespace is normalised first so a reformatting change upstream does not present as a
+    substantive amendment and force a pointless re-embed.
     """
-    return f"{len(section.text)}-{len(section.footnotes)}"
+    if section.content_sha256:
+        return section.content_sha256
+    return content_hash(section.text, section.footnotes)
+
+
+def content_hash(*parts: str) -> str:
+    """Stable sha256 over whitespace-normalised text."""
+    normalised = "\x1f".join(" ".join((part or "").split()) for part in parts)
+    return hashlib.sha256(normalised.encode("utf-8")).hexdigest()[:32]
 
 
 async def ingest_act(
@@ -139,16 +160,22 @@ async def ingest_act(
     report = ActIngestReport(act_key=spec.key, act_title=spec.title)
 
     started = asyncio.get_running_loop().time()
-    # The fetcher is blocking (urllib + polite sleeps); keep the event loop free.
-    act = await asyncio.to_thread(
-        india_code.fetch_act,
-        spec.handle,
-        delay=delay,
-        max_sections=max_sections,
-        progress=True,
-        # Filter before fetching so out-of-scope sections are never requested at all.
-        only_sections=spec.section_filter or None,
-    )
+    # The fetcher is blocking (urllib + polite pacing); keep the event loop free.
+    #
+    # Resolution prefers the pinned act id and falls back to a title search. The id is exact,
+    # but India Code holds state adoptions of every central act, so a title search must be
+    # constrained to the CENTRAL copy - which `find_act` does.
+    def _fetch():
+        ref = None
+        if spec.act_id:
+            ref = india_code_api.fetch_act_metadata(spec.act_id)
+        if ref is None:
+            ref = india_code_api.find_act(spec.resolve_title)
+        return india_code_api.fetch_act(ref, delay=delay, progress=True)
+
+    act = await asyncio.to_thread(_fetch)
+    if max_sections:
+        act.sections = act.sections[:max_sections]
     report.fetch_seconds = asyncio.get_running_loop().time() - started
     report.sections_fetched = act.section_count
     report.failures.extend(act.failures)
@@ -159,6 +186,23 @@ async def ingest_act(
 
     source_id = _ensure_source(act.retrieved_at)
     in_scope = [s for s in act.sections if wants_section(spec, s.section_number)]
+
+    # Provisions with a heading but no body are dropped. India Code carries several - the
+    # Arbitration Council sections 43F, 43G and 43L among them - with a title and no text at
+    # all. Indexed, they are retrievable and citable while saying nothing, which is worse than
+    # absent: the system would offer a lawyer a provision reference that carries no law.
+    # Found by scripts/analyse_corpus.py, which flagged 13 of them as exact duplicates of each
+    # other because their text was uniformly empty.
+    empty = [s for s in in_scope if s.is_empty]
+    if empty:
+        report.sections_empty = len(empty)
+        logger.info(
+            "india_code_empty_sections_skipped",
+            act=spec.key,
+            count=len(empty),
+            sections=[s.section_number for s in empty][:12],
+        )
+        in_scope = [s for s in in_scope if not s.is_empty]
 
     # Repealed and omitted provisions are excluded so they can never be retrieved as live law.
     live = [s for s in in_scope if not is_repealed(s)]
@@ -236,7 +280,8 @@ async def ingest_act(
                 act_year=spec.year,
                 extra_metadata={
                     "act_key": spec.key,
-                    "act_handle": spec.handle,
+                    "act_id": act.actid,
+                    "act_handle": act.handle,
                     "provision_id": provision.id,
                     "section_number": section.section_number,
                     "section_heading": section.heading,
