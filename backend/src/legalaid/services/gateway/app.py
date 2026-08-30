@@ -51,6 +51,7 @@ from legalaid.domain.enums import (
     DraftType,
     RetrievalMode,
 )
+from legalaid.core.guardrail_suite import run_suite
 from legalaid.core.guardrails import screen_input
 from legalaid.core.security import (
     Principal,
@@ -441,6 +442,81 @@ async def retrieval_only(
         )
     )
     return response.model_dump(mode="json")
+
+
+@app.get("/api/guardrails/config", tags=["guardrails"])
+async def guardrail_config(
+    principal: Principal = Depends(require_principal),
+) -> dict[str, Any]:
+    """What the guardrail stack currently enforces, and on what measured basis."""
+    settings = get_settings()
+    return {
+        "enabled": settings.guardrails_enabled,
+        "layers": [
+            {
+                "layer": "empty",
+                "kind": "deterministic",
+                "checks": "the request has content at all",
+            },
+            {
+                "layer": "too_long",
+                "kind": "deterministic",
+                "checks": f"under half the {settings.llm_num_ctx}-token context window, so a "
+                "long request is refused rather than silently truncated",
+            },
+            {
+                "layer": "injection",
+                "kind": "deterministic",
+                "checks": "instructions aimed at the system rather than questions about law",
+            },
+            {
+                "layer": "denylist",
+                "kind": "deterministic",
+                "checks": "unambiguously non-legal requests; overridden when the text carries a "
+                "legal marker, so 'draft a written statement' is not refused",
+            },
+            {
+                "layer": "corpus_distance",
+                "kind": "embedding",
+                "checks": f"best cosine similarity against the corpus reaches "
+                f"{settings.guardrail_corpus_similarity_floor}; this is the layer that "
+                "generalises beyond a keyword list",
+            },
+            {
+                "layer": "llm_scope",
+                "kind": "model",
+                "checks": "the intake router's is_legal_matter verdict, applied last rather "
+                "than as the only check",
+            },
+        ],
+        "corpus_similarity_floor": settings.guardrail_corpus_similarity_floor,
+        "floor_basis": (
+            "Measured on this corpus: 0.81/0.78 for statutory questions it can answer, 0.62 for "
+            "a legal question with no supporting material, 0.49 for a question about this "
+            "repository's source files, 0.37-0.43 for general knowledge. 0.55 is the widest gap."
+        ),
+        "output_guardrail": (
+            "Scores groundedness as grounded/total citations and refuses to present a "
+            "high-confidence answer that cites nothing while chunks were retrieved."
+        ),
+        "auth_enabled": settings.auth_enabled,
+        "rate_limit": f"{settings.rate_limit_requests} requests / "
+        f"{settings.rate_limit_window_seconds:.0f}s per key",
+        "llm_max_concurrency": settings.llm_max_concurrency,
+    }
+
+
+@app.post("/api/guardrails/probe", tags=["guardrails"])
+async def guardrail_probe(
+    check_corpus: bool = Query(True, description="Include the embedding-distance layer"),
+    principal: Principal = Depends(require_principal),
+) -> dict[str, Any]:
+    """Run the adversarial probe suite and report catch rate and false-positive rate.
+
+    Not rate limited: it embeds one short string per case, and being able to demonstrate the
+    controls repeatedly is the point.
+    """
+    return await run_suite(check_corpus=check_corpus)
 
 
 @app.post("/api/research/compare", tags=["research"])

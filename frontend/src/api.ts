@@ -466,6 +466,77 @@ export interface CompareResult {
   retrieved_context: string;
 }
 
+// --------------------------------------------------------------------------- guardrails
+
+export interface GuardrailLayerResult {
+  layer: string;
+  verdict: "allow" | "block" | "warn";
+  reason: string;
+  evidence: Record<string, any>;
+}
+
+export interface GuardrailDecision {
+  allowed: boolean;
+  blocked_by: string | null;
+  message: string;
+  layers: GuardrailLayerResult[];
+  layers_run: number;
+}
+
+export interface OutputGuardrail {
+  allowed: boolean;
+  groundedness: number;
+  total_citations: number;
+  grounded_citations: number;
+  problems: string[];
+  message: string;
+}
+
+export interface GuardrailConfig {
+  enabled: boolean;
+  layers: { layer: string; kind: string; checks: string }[];
+  corpus_similarity_floor: number;
+  floor_basis: string;
+  output_guardrail: string;
+  auth_enabled: boolean;
+  rate_limit: string;
+  llm_max_concurrency: number;
+}
+
+export interface GuardrailProbeCase {
+  id: string;
+  text: string;
+  category: string;
+  note: string;
+  expected_blocked_by: string | null;
+  allowed: boolean;
+  blocked_by: string | null;
+  message: string;
+  correct: boolean;
+  expected_layer_matched: boolean;
+  latency_ms: number;
+  layers: GuardrailLayerResult[];
+}
+
+export interface GuardrailProbeResult {
+  summary: {
+    total: number;
+    adversarial: number;
+    legitimate: number;
+    caught: number;
+    catch_rate: number;
+    caught_by_expected_layer: number;
+    false_positives: number;
+    false_positive_rate: number;
+    accuracy: number;
+    blocked_by_layer: Record<string, number>;
+    mean_latency_ms: number;
+    max_latency_ms: number;
+    corpus_layer_enabled: boolean;
+  };
+  cases: GuardrailProbeCase[];
+}
+
 // --------------------------------------------------------------------------- endpoints
 
 export const api = {
@@ -496,7 +567,16 @@ export const api = {
     matter_id?: string | null;
     enable_keyword?: boolean | null;
     enable_graph?: boolean | null;
+    enable_dense?: boolean | null;
+    min_similarity?: number | null;
   }) => post<RetrievalResponse>("/api/retrieval/search", body),
+
+  guardrailConfig: () => get<GuardrailConfig>("/api/guardrails/config"),
+  guardrailProbe: (checkCorpus = true) =>
+    post<GuardrailProbeResult>(
+      `/api/guardrails/probe?check_corpus=${checkCorpus}`,
+      {},
+    ),
 
   traces: (limit = 30) => get<{ traces: any[] }>(`/api/traces?limit=${limit}`),
   trace: (id: string) => get<TraceDetail>(`/api/traces/${id}`),

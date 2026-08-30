@@ -13,6 +13,7 @@ import Agents from "./pages/Agents";
 import Knowledge from "./pages/Knowledge";
 import Documents from "./pages/Documents";
 import Compare from "./pages/Compare";
+import Guardrails from "./pages/Guardrails";
 import System from "./pages/System";
 
 interface NavEntry {
@@ -56,6 +57,7 @@ const NAV: { group: string; hint?: string; items: NavEntry[] }[] = [
       { to: "/chunks", label: "Chunk explorer", count: (h) => h?.counts.chunks },
       { to: "/embeddings", label: "Embeddings", count: (h) => h?.counts.embeddings },
       { to: "/compare", label: "RAG on / off" },
+      { to: "/guardrails", label: "Guardrails" },
       { to: "/system", label: "System & models" },
     ],
   },
@@ -149,6 +151,7 @@ export default function App() {
           <Route path="/knowledge" element={<Knowledge />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/compare" element={<Compare model={model} />} />
+          <Route path="/guardrails" element={<Guardrails />} />
           <Route path="/system" element={<System health={health} />} />
         </Routes>
       </main>
