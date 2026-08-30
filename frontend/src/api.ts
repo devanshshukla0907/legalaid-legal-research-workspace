@@ -8,6 +8,27 @@
 
 const BASE = import.meta.env.VITE_API_BASE ?? "";
 
+/**
+ * API key. The gateway authenticates every route except /api/system/health.
+ *
+ * Resolution order: an explicit build-time key, then one saved in localStorage. In local
+ * development the Vite proxy injects the key from data/.dev-api-key, so neither is needed.
+ */
+const API_KEY_STORAGE = "legalaid.apiKey";
+
+export function getApiKey(): string {
+  return (
+    (import.meta.env.VITE_API_KEY as string | undefined) ??
+    localStorage.getItem(API_KEY_STORAGE) ??
+    ""
+  );
+}
+
+export function setApiKey(key: string): void {
+  if (key.trim()) localStorage.setItem(API_KEY_STORAGE, key.trim());
+  else localStorage.removeItem(API_KEY_STORAGE);
+}
+
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -19,12 +40,14 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const key = getApiKey();
   const response = await fetch(`${BASE}${path}`, {
     ...init,
     headers: {
       ...(init?.body && !(init.body instanceof FormData)
         ? { "Content-Type": "application/json" }
         : {}),
+      ...(key ? { "X-API-Key": key } : {}),
       ...init?.headers,
     },
   });
@@ -37,6 +60,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       traceId = payload?.error?.trace_id;
     } catch {
       /* non-JSON error body; keep the status text */
+    }
+    if (response.status === 401) {
+      message = `${message} — set an API key (see data/.dev-api-key for the local key).`;
     }
     throw new ApiError(message, response.status, traceId);
   }

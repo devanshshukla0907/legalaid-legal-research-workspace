@@ -57,6 +57,8 @@ class StageKey(StrEnum):
     SIMILAR_CASE_AGENT = "SIMILAR_CASE_AGENT"
     DRAFTING_AGENT = "DRAFTING_AGENT"
     SYNTHESIS_AGENT = "SYNTHESIS_AGENT"
+    INPUT_GUARDRAIL = "INPUT_GUARDRAIL"
+    OUTPUT_GUARDRAIL = "OUTPUT_GUARDRAIL"
     VERIFICATION_AGENT = "VERIFICATION_AGENT"
     REFINEMENT_LOOP = "REFINEMENT_LOOP"
     CITATION_VALIDATION = "CITATION_VALIDATION"
@@ -88,6 +90,8 @@ STAGE_LABELS: dict[StageKey, str] = {
     StageKey.SIMILAR_CASE_AGENT: "Similar Case Agent",
     StageKey.DRAFTING_AGENT: "Drafting Agent",
     StageKey.SYNTHESIS_AGENT: "Synthesis Agent — writing the answer",
+    StageKey.INPUT_GUARDRAIL: "Input guardrails",
+    StageKey.OUTPUT_GUARDRAIL: "Output guardrails",
     StageKey.VERIFICATION_AGENT: "Verification Agent",
     StageKey.REFINEMENT_LOOP: "Refinement loop",
     StageKey.CITATION_VALIDATION: "Citation validation",

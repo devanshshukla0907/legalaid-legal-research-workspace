@@ -11,6 +11,7 @@ from __future__ import annotations
 from legalaid.config import get_settings
 from legalaid.core.errors import LLMUnavailableError
 from legalaid.core.logging import get_logger
+from legalaid.core.security import GenerationSlot
 from legalaid.core.transport import register_endpoint
 from legalaid.db.base import new_id, session_scope, utcnow
 from legalaid.db.models import ModelRun
@@ -89,16 +90,22 @@ async def generate(request: LLMGenerateRequest) -> LLMGenerateResponse:
     max_tokens = request.max_tokens or settings.llm_max_tokens
 
     try:
-        generation = await client.generate(
-            prompt=request.user_prompt,
-            system=request.system_prompt,
-            model=model_name,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            json_mode=request.json_mode,
-            json_schema=request.json_schema,
-            stop=request.stop,
-        )
+        # One generation on the GPU at a time. Concurrent generations on a 6 GB card do not
+        # run in parallel usefully - the model stops fully offloading and every caller gets
+        # slower - so queueing here is the faster option as well as the safer one. Enforced in
+        # the LLM service rather than at the endpoint so every caller is covered, including
+        # agents, the compare endpoint and the evaluation harness.
+        async with GenerationSlot():
+            generation = await client.generate(
+                prompt=request.user_prompt,
+                system=request.system_prompt,
+                model=model_name,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_mode=request.json_mode,
+                json_schema=request.json_schema,
+                stop=request.stop,
+            )
     except LLMUnavailableError as exc:
         _record_model_run(
             model_run_id=model_run_id,

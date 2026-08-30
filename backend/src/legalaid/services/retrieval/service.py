@@ -352,6 +352,7 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
             rank_ms=rank_ms,
             query_vector=query_vector,
             results=results,
+            min_similarity=min_similarity,
         )
 
     all_hits.sort(key=lambda c: c.similarity, reverse=True)
@@ -393,8 +394,14 @@ def _persist_run(
     rank_ms: float,
     query_vector: list[float],
     results: list[RetrievedChunk],
+    min_similarity: float,
 ) -> None:
-    """Persist the run and its results so the UI reads real recorded data."""
+    """Persist the run and its results so the UI reads real recorded data.
+
+    `min_similarity` is passed in rather than read from settings: it can be overridden per
+    request by the ablation harness, and the recorded run must show the threshold that was
+    actually applied.
+    """
     settings = get_settings()
     with session_scope() as session:
         # trace_id is a foreign key to pipeline_traces. Retrieval can legitimately be called

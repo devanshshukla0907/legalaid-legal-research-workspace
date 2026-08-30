@@ -11,12 +11,13 @@ import hashlib
 from pathlib import Path
 from typing import Any
 
-from fastapi import APIRouter, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 
 from legalaid.config import get_settings
 from legalaid.core.logging import get_logger
+from legalaid.core.security import Principal, assert_matter_access, enforce_rate_limit
 from legalaid.db.base import session_scope
 from legalaid.db.models import Chunk, Document, DocumentPage, Matter, Workspace
 from legalaid.domain.enums import Collection, DocumentClass, DocumentStatus
@@ -270,8 +271,14 @@ async def upload_document(
     file: UploadFile = File(...),
     matter_id: str | None = Form(None),
     doc_class: str | None = Form(None),
+    principal: Principal = Depends(enforce_rate_limit),
 ) -> dict[str, Any]:
-    """Upload a PDF/DOCX/TXT, extract with page provenance, chunk, embed and index it."""
+    """Upload a PDF/DOCX/TXT, extract with page provenance, chunk, embed and index it.
+
+    Rate limited because ingestion embeds every chunk, and authorised against the target
+    matter so a caller cannot attach documents to someone else's matter.
+    """
+    assert_matter_access(matter_id, principal)
     raw = await file.read()
     chosen = None
     if doc_class:
@@ -289,8 +296,11 @@ async def upload_document(
 
 
 @router.post("/api/documents/paste", tags=["documents"])
-async def paste_document(payload: PasteRequest) -> dict[str, Any]:
+async def paste_document(
+    payload: PasteRequest, principal: Principal = Depends(enforce_rate_limit)
+) -> dict[str, Any]:
     """Ingest pasted text (an FIR, a notice) exactly like an uploaded file."""
+    assert_matter_access(payload.matter_id, principal)
     return await _process(
         filename=payload.filename,
         raw=None,

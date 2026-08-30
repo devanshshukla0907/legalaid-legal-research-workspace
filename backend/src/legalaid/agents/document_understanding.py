@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from legalaid.agents.base import Agent, AgentContext, format_chunks
+from legalaid.agents.base import Agent, AgentContext, fence_untrusted, format_chunks
 from legalaid.domain.contracts import RetrievedChunk
 from legalaid.domain.enums import AgentKey, Collection
 
@@ -91,5 +91,8 @@ def prepare(
     )
     by_id = {c.chunk_id: c for c in chunks}
     doc_chunks = [by_id[i.chunk_id] for i in context.included if i.chunk_id in by_id]
-    context.extra["document_context"] = format_chunks(doc_chunks, kind="document")
+    # This agent exists to read untrusted documents, so the fence matters most here.
+    context.extra["document_context"] = fence_untrusted(
+        format_chunks(doc_chunks, kind="document")
+    )
     return context

@@ -10,12 +10,14 @@ from __future__ import annotations
 from collections.abc import Awaitable, Callable
 from typing import Any
 
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from legalaid.config import get_settings
 from legalaid.core.errors import install_exception_handlers
 from legalaid.core.logging import configure_logging, get_logger, set_trace_id
+from legalaid.core.security import authenticate_request, is_public_path, valid_keys
 from legalaid.core.tracing import new_trace_id
 from legalaid.core.transport import registry
 from legalaid.db.base import create_all
@@ -63,6 +65,29 @@ def create_service_app(
         response.headers[TRACE_HEADER] = trace_id
         return response
 
+    @app.middleware("http")
+    async def _auth_middleware(
+        request: Request, call_next: Callable[[Request], Awaitable[Response]]
+    ) -> Response:
+        """Authenticate everything except a small enumerated public allowlist.
+
+        Enforced here rather than per-route so that a route added later is protected by
+        default. `/api/traces/{id}` returns the verbatim prompts sent to the model, including
+        document excerpts, so leaving a new endpoint open by accident is a real risk.
+        """
+        # CORS preflight carries no credentials by design.
+        if request.method == "OPTIONS" or is_public_path(request.url.path):
+            return await call_next(request)
+        try:
+            request.state.principal = authenticate_request(request)
+        except HTTPException as exc:
+            return JSONResponse(
+                {"error": {"code": exc.status_code, "message": exc.detail}},
+                status_code=exc.status_code,
+                headers=exc.headers or {},
+            )
+        return await call_next(request)
+
     install_exception_handlers(app)
 
     if init_db:
@@ -70,6 +95,17 @@ def create_service_app(
         @app.on_event("startup")
         async def _startup() -> None:
             create_all()
+            if settings.auth_enabled:
+                # Touching valid_keys() here makes the generated development key appear in the
+                # startup log, rather than on whichever request happens to arrive first.
+                keys = valid_keys()
+                logger.info(
+                    "auth_enabled",
+                    configured_keys=len([k for k in settings.api_keys if k.strip()]),
+                    using_dev_key=keys[0].startswith("dev-"),
+                )
+            else:
+                logger.warning("auth_disabled", detail="AUTH_ENABLED=false; API is open.")
             logger.info("service_started", service=service_name, transport=settings.service_transport)
 
     app.state.service_name = service_name

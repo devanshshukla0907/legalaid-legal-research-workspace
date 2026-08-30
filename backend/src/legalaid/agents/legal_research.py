@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from legalaid.agents.base import Agent, AgentContext, format_chunks
+from legalaid.agents.base import Agent, AgentContext, fence_untrusted, format_chunks
 from legalaid.domain.contracts import RetrievedChunk
 from legalaid.domain.enums import LAW_COLLECTIONS, AgentKey, Collection
 
@@ -123,5 +123,8 @@ def prepare(
         if i.kind == "user_document" and i.chunk_id in by_id
     ]
     context.extra["law_context"] = format_chunks(law_chunks, kind="law")
-    context.extra["document_context"] = format_chunks(doc_chunks, kind="document")
+    # Statutory text is trusted (it came from the ingested corpus); user documents are not.
+    context.extra["document_context"] = fence_untrusted(
+        format_chunks(doc_chunks, kind="document")
+    )
     return context

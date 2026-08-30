@@ -9,9 +9,15 @@ from __future__ import annotations
 
 from typing import Any
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import desc, func, select
 
+from legalaid.core.security import (
+    Principal,
+    assert_document_access,
+    assert_matter_access,
+    require_principal,
+)
 from legalaid.core.tokens import estimate_tokens
 from legalaid.db.base import session_scope
 from legalaid.db.models import (
@@ -30,7 +36,7 @@ from legalaid.db.models import (
     RetrievalRun,
     TraceStage,
 )
-from legalaid.domain.enums import STAGE_LABELS, Collection, StageKey
+from legalaid.domain.enums import STAGE_LABELS, AgentKey, Collection, StageKey
 from legalaid.services.retrieval.graph import get_graph
 from legalaid.services.vector.store import get_store
 
@@ -69,8 +75,18 @@ async def list_traces(limit: int = Query(30, le=200)) -> dict[str, Any]:
 
 
 @router.get("/api/traces/{trace_id}", tags=["trace"])
-async def get_trace(trace_id: str) -> dict[str, Any]:
-    """Everything recorded for one request, in pipeline order."""
+async def get_trace(
+    trace_id: str, principal: Principal = Depends(require_principal)
+) -> dict[str, Any]:
+    """Everything recorded for one request, in pipeline order.
+
+    Privacy note, stated rather than hidden: this returns the verbatim prompts sent to the
+    model, which include excerpts of any uploaded document and therefore any client names in
+    it. That is a deliberate trade-off - the whole purpose of the application is to make the
+    pipeline inspectable, and a redacted trace could not show what the model actually saw.
+    The mitigation is access control (this endpoint requires a key) plus the
+    `contains_client_data` flag below, so a caller knows when a payload carries matter content.
+    """
     with session_scope() as session:
         trace = session.get(PipelineTrace, trace_id)
         if trace is None:
@@ -196,6 +212,16 @@ async def get_trace(trace_id: str) -> dict[str, Any]:
                 for m in model_runs
             ],
             "retrievals": retrievals,
+            # Tells a caller this payload carries matter content, so it can be handled
+            # accordingly rather than treated as anonymous telemetry.
+            "contains_client_data": any(
+                run.agent_key == AgentKey.DOCUMENT_UNDERSTANDING.value for run in agent_runs
+            )
+            or trace.matter_id is not None,
+            "privacy_note": (
+                "Prompts are stored verbatim so the pipeline is inspectable. Where a matter "
+                "document was involved, its text appears in these prompts."
+            ),
         }
 
 
@@ -562,7 +588,10 @@ async def list_matters() -> dict[str, Any]:
 
 
 @router.get("/api/documents", tags=["documents"])
-async def list_documents(matter_id: str | None = None) -> dict[str, Any]:
+async def list_documents(
+    matter_id: str | None = None, principal: Principal = Depends(require_principal)
+) -> dict[str, Any]:
+    assert_matter_access(matter_id, principal)
     with session_scope() as session:
         stmt = select(Document)
         if matter_id:
@@ -593,8 +622,15 @@ async def list_documents(matter_id: str | None = None) -> dict[str, Any]:
 
 
 @router.get("/api/documents/{document_id}", tags=["documents"])
-async def get_document(document_id: str) -> dict[str, Any]:
-    """A document with its extracted pages and chunks, preserving page provenance."""
+async def get_document(
+    document_id: str, principal: Principal = Depends(require_principal)
+) -> dict[str, Any]:
+    """A document with its extracted pages and chunks, preserving page provenance.
+
+    Returns full extracted page text, so it is authorised through the matter that owns the
+    document rather than being readable by anyone holding the id.
+    """
+    assert_document_access(document_id, principal)
     with session_scope() as session:
         document = session.get(Document, document_id)
         if document is None:

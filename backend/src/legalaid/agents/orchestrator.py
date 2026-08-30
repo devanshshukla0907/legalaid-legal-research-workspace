@@ -54,6 +54,13 @@ from legalaid.agents.similar_cases import SimilarCaseAgent
 from legalaid.agents.synthesis import SynthesisAgent, fallback_answer
 from legalaid.agents.verification import AuditReport, VerificationAgent, audit
 from legalaid.config import get_settings
+from legalaid.core.guardrails import (
+    GuardrailDecision,
+    OutputVerdict,
+    record_llm_scope,
+    screen_input,
+    screen_output,
+)
 from legalaid.core.logging import get_logger
 from legalaid.core.tracing import TraceRecorder, new_trace_id
 from legalaid.domain.contracts import RetrievalRequest, RetrievedChunk
@@ -122,6 +129,10 @@ class OrchestrationResult:
     plan: list[dict[str, Any]] = field(default_factory=list)
     total_ms: float = 0.0
     warnings: list[str] = field(default_factory=list)
+    # Guardrail records, so the UI can show which layer allowed or refused the request and
+    # how well grounded the answer turned out to be.
+    guardrail: GuardrailDecision | None = None
+    output_guardrail: OutputVerdict | None = None
 
 
 class Orchestrator:
@@ -195,6 +206,31 @@ class Orchestrator:
                 model=self.model or get_settings().llm_model,
             )
 
+        # -------------------------------------------------- input guardrails
+        # Deterministic layers run before the router, so an out-of-scope request never costs
+        # an LLM call, and a router failure can no longer wave everything through.
+        settings = get_settings()
+        guard = GuardrailDecision(allowed=True)
+        if settings.guardrails_enabled:
+            with recorder.stage(
+                StageKey.INPUT_GUARDRAIL,
+                service=SERVICE,
+                input={"chars": len(full_input)},
+            ) as handle:
+                guard = await screen_input(full_input)
+                handle.set_output(**guard.to_dict())
+            result.guardrail = guard
+            if not guard.allowed:
+                return self._refuse(
+                    result,
+                    recorder,
+                    started,
+                    reason=guard.message,
+                    blocked_by=guard.blocked_by.value if guard.blocked_by else "guardrail",
+                )
+            for warning in guard.warnings:
+                result.warnings.append(warning.reason)
+
         # ------------------------------------------- agent 0: intake routing
         # This runs BEFORE retrieval on purpose: it decides which agents are needed and
         # rewrites the input into the text that will actually be embedded.
@@ -203,37 +239,32 @@ class Orchestrator:
         )
         result.routing = decision
 
+        # Layer 6: the router's scope verdict, recorded alongside the deterministic layers so
+        # the trace shows which layer actually made the call.
+        if settings.guardrails_enabled:
+            guard = record_llm_scope(
+                guard,
+                is_legal_matter=decision.is_legal_matter,
+                reasoning=decision.reasoning,
+            )
+            result.guardrail = guard
+
         if not decision.is_legal_matter:
             # Refusing to invent a legal question is the correct behaviour here.
-            recorder.skip_stage(
-                StageKey.CONTEXT_CONSTRUCTION,
-                service="retrieval-service",
-                reason="input was not identified as a legal matter",
-            )
-            result.warnings.append(
-                "The input was not recognised as an Indian legal matter, so no research was run."
-            )
-            # Still answer the user rather than returning an empty result.
-            result.answer = {
-                "direct_answer": "This does not appear to be an Indian legal question, so I have "
-                "not run the research pipeline.",
-                "answer_markdown": (
+            return self._refuse(
+                result,
+                recorder,
+                started,
+                reason=(
                     "I could not identify a legal issue in what you sent, so no statutory or "
-                    "case-law research was carried out.\n\n"
-                    f"The router's reading of your input: {decision.reasoning}\n\n"
-                    "If this is a legal matter, try naming the dispute, the relevant conduct and "
-                    "the remedy you are considering, or attach the document."
+                    f"case-law research was carried out.\n\nThe router's reading of your input: "
+                    f"{decision.reasoning}\n\nIf this is a legal matter, try naming the dispute, "
+                    "the relevant conduct and the remedy you are considering, or attach the "
+                    "document."
                 ),
-                "key_points": [],
-                "confidence": "low",
-            }
-            result.total_ms = (time.perf_counter() - started) * 1000
-            recorder.close(
-                status="partial",
-                answer={"synthesis": result.answer, "routing": decision.to_dict()},
-                summary={"routing": decision.to_dict()},
+                blocked_by="llm_scope",
+                routing=decision,
             )
-            return result
 
         # Explicit arguments override the router; otherwise the router decides.
         do_draft = decision.needs_drafting if enable_drafting is None else enable_drafting
@@ -406,6 +437,34 @@ class Orchestrator:
         result.agent_results["synthesis"] = synthesis_result
         if synthesis_result.parse_ok and synthesis_result.output.get("answer_markdown"):
             result.answer = synthesis_result.output
+
+            # ---------------------------------------------- output guardrail
+            # The last thing before the answer reaches the lawyer: score how much of it rests
+            # on retrieved evidence, and refuse to present a confident answer that rests on
+            # nothing at all.
+            if get_settings().guardrails_enabled:
+                last_audit = next(
+                    (
+                        i.audit
+                        for i in reversed(result.loop_iterations)
+                        if i.agent == AGENT_LABELS.get(AgentKey.SYNTHESIS, "synthesis")
+                    ),
+                    None,
+                )
+                with recorder.stage(StageKey.OUTPUT_GUARDRAIL, service=SERVICE) as handle:
+                    verdict = screen_output(
+                        answer=result.answer,
+                        audit_report=last_audit,
+                        allowed_chunk_ids=synthesis_context.allowed_chunk_ids,
+                    )
+                    handle.set_output(**verdict.to_dict())
+                result.output_guardrail = verdict
+                if not verdict.allowed:
+                    # Downgrade rather than discard: the reasoning may still be useful, but it
+                    # must not be presented as confident, sourced advice.
+                    result.answer["confidence"] = "low"
+                    result.answer["groundedness_warning"] = verdict.message
+                    result.warnings.append(verdict.message)
         else:
             # The lawyer must never see an empty result, so assemble a plain summary from the
             # structured findings and mark it clearly as not model-written.
@@ -492,9 +551,16 @@ class Orchestrator:
             ):
                 decision = decision_from(router_result.output, user_input=user_input)
             else:
-                # Never let a router failure stall the pipeline.
+                # Never let a router failure stall the pipeline. Scope is taken from the
+                # deterministic guardrail rather than assumed: those layers already ran and
+                # allowed this request, which is a more trustworthy signal than a generation
+                # that just failed to parse.
                 decision = fallback_decision(
-                    user_input, has_documents=bool(document_summaries)
+                    user_input,
+                    has_documents=bool(document_summaries),
+                    is_legal_matter=(
+                        result.guardrail.allowed if result.guardrail is not None else True
+                    ),
                 )
             handle.set_output(
                 task=decision.task,
@@ -775,6 +841,52 @@ class Orchestrator:
 
         assert agent_result is not None
         return agent_result
+
+    def _refuse(
+        self,
+        result: OrchestrationResult,
+        recorder: TraceRecorder,
+        started: float,
+        *,
+        reason: str,
+        blocked_by: str,
+        routing: RoutingDecision | None = None,
+    ) -> OrchestrationResult:
+        """Decline a request without running the pipeline.
+
+        The user still gets a real reply explaining what happened and which check refused it -
+        an empty result would leave them guessing, and naming the layer makes the guardrail
+        demonstrable rather than mysterious.
+        """
+        recorder.skip_stage(
+            StageKey.CONTEXT_CONSTRUCTION,
+            service="retrieval-service",
+            reason=f"refused by {blocked_by}",
+        )
+        result.warnings.append(f"Request refused by the {blocked_by} guardrail.")
+        result.answer = {
+            "direct_answer": "I cannot answer this with the material available.",
+            "answer_markdown": reason,
+            "key_points": [],
+            "confidence": "low",
+            "refused": True,
+            "refused_by": blocked_by,
+        }
+        result.total_ms = (time.perf_counter() - started) * 1000
+        payload: dict[str, Any] = {"synthesis": result.answer}
+        summary: dict[str, Any] = {
+            "refused_by": blocked_by,
+            "total_ms": result.total_ms,
+        }
+        if routing is not None:
+            payload["routing"] = routing.to_dict()
+            summary["routing"] = routing.to_dict()
+        if result.guardrail is not None:
+            payload["guardrail"] = result.guardrail.to_dict()
+            summary["guardrail"] = result.guardrail.to_dict()
+        recorder.close(status="refused", answer=payload, summary=summary)
+        logger.info("request_refused", blocked_by=blocked_by, trace_id=result.trace_id)
+        return result
 
     async def _llm_review(
         self,

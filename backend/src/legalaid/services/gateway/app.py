@@ -12,7 +12,7 @@ import asyncio
 import json
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query, Request, UploadFile
+from fastapi import Depends, FastAPI, HTTPException, Query, Request, UploadFile
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy import desc, func, select
@@ -50,6 +50,15 @@ from legalaid.domain.enums import (
     DraftTone,
     DraftType,
     RetrievalMode,
+)
+from legalaid.core.guardrails import screen_input
+from legalaid.core.security import (
+    Principal,
+    assert_matter_access,
+    enforce_rate_limit,
+    queue_depth,
+    rate_limit_snapshot,
+    require_principal,
 )
 from legalaid.services.common import create_service_app
 from legalaid.services.llm.ollama_client import OllamaClient
@@ -158,6 +167,17 @@ async def system_health() -> dict[str, Any]:
         },
         "counts": counts,
         "capabilities": capability_matrix(),
+        "guardrails": {
+            "enabled": settings.guardrails_enabled,
+            "corpus_similarity_floor": settings.guardrail_corpus_similarity_floor,
+            "auth_enabled": settings.auth_enabled,
+            "rate_limit": f"{settings.rate_limit_requests}/"
+            f"{settings.rate_limit_window_seconds:.0f}s",
+            "llm_max_concurrency": settings.llm_max_concurrency,
+            "llm_queue_depth": queue_depth(),
+            # Live per-key request counts, so throttling can be observed rather than assumed.
+            "rate_limit_buckets": rate_limit_snapshot(),
+        },
     }
 
 
@@ -314,8 +334,11 @@ async def list_prompts() -> dict[str, Any]:
 
 
 @app.post("/api/research/query", tags=["research"])
-async def research_query(payload: ResearchRequest) -> dict[str, Any]:
+async def research_query(
+    payload: ResearchRequest, principal: Principal = Depends(enforce_rate_limit)
+) -> dict[str, Any]:
     """Run the full multi-agent pipeline. Returns the trace id plus every agent's output."""
+    assert_matter_access(payload.matter_id, principal)
     orchestrator = Orchestrator(model=payload.model)
     document_summaries: list[str] = []
     matter_title = ""
@@ -393,13 +416,18 @@ async def research_stream(trace_id: str = Query(...)) -> StreamingResponse:
 
 
 @app.post("/api/retrieval/search", tags=["retrieval"])
-async def retrieval_only(payload: QuickRetrievalRequest) -> dict[str, Any]:
+async def retrieval_only(
+    payload: QuickRetrievalRequest, principal: Principal = Depends(enforce_rate_limit)
+) -> dict[str, Any]:
     """Retrieval without any agents, for the Retrieval Inspector.
 
     Retriever toggles travel on the request. They used to be applied by mutating the cached
     global Settings and restoring it in a `finally`, which meant two concurrent requests could
     overwrite each other's toggles and restore the wrong values.
+
+    Rate limited: this embeds the query, so it occupies the same GPU as generation.
     """
+    assert_matter_access(payload.matter_id, principal)
     response = await retrieval_search(
         RetrievalRequest(
             question=payload.question,
@@ -416,13 +444,30 @@ async def retrieval_only(payload: QuickRetrievalRequest) -> dict[str, Any]:
 
 
 @app.post("/api/research/compare", tags=["research"])
-async def compare_rag(payload: CompareRequest) -> dict[str, Any]:
+async def compare_rag(
+    payload: CompareRequest, principal: Principal = Depends(enforce_rate_limit)
+) -> dict[str, Any]:
     """Same question with and without retrieval, so the difference is visible."""
     from legalaid.domain.contracts import LLMGenerateRequest
     from legalaid.services.llm import service as llm_service
 
     settings = get_settings()
     model = payload.model or settings.llm_model
+
+    # This endpoint calls the model directly, with no agents and no grounding audit, so it
+    # needs the scope gate more than the pipeline does - not less. It previously had none at
+    # all, which made it the one place "write me a poem" was answered from model weights.
+    if settings.guardrails_enabled:
+        guard = await screen_input(payload.question)
+        if not guard.allowed:
+            raise HTTPException(
+                422,
+                {
+                    "message": guard.message,
+                    "blocked_by": guard.blocked_by.value if guard.blocked_by else None,
+                    "guardrail": guard.to_dict(),
+                },
+            )
 
     no_rag = await llm_service.generate(
         LLMGenerateRequest(
@@ -500,6 +545,10 @@ def _serialise_result(result: Any) -> dict[str, Any]:
         "question": result.question,
         "total_ms": result.total_ms,
         "routing": result.routing.to_dict() if result.routing else None,
+        "guardrail": result.guardrail.to_dict() if result.guardrail else None,
+        "output_guardrail": (
+            result.output_guardrail.to_dict() if result.output_guardrail else None
+        ),
         "plan": result.plan,
         "answer": result.answer,
         "facts": result.facts,

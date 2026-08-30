@@ -52,15 +52,26 @@ class Prompt:
 
         A silently empty context section is the worst failure mode here: the model would
         answer confidently with no evidence and the trace would look normal.
+
+        Substitution is **single-pass**. The previous implementation looped over the values
+        calling `str.replace` for each, so a value substituted early could itself contain
+        another variable's placeholder and be substituted again on a later iteration - an
+        injection route directly from uploaded document text into the prompt structure.
         """
         missing = [v for v in self.variables if v not in values]
         if missing:
             raise PromptNotFoundError(
                 f"Prompt '{self.name}/{self.version}' missing variables: {', '.join(missing)}"
             )
-        rendered_user = self.user_prompt
-        for key, value in values.items():
-            rendered_user = rendered_user.replace(f"{{{key}}}", str(value))
+
+        def substitute(match: re.Match[str]) -> str:
+            key = match.group(1)
+            if key in values:
+                return str(values[key])
+            # Not a declared variable: leave it exactly as written rather than blanking it.
+            return match.group(0)
+
+        rendered_user = _PLACEHOLDER_RE.sub(substitute, self.user_prompt)
 
         leftover = _PLACEHOLDER_RE.findall(rendered_user)
         unresolved = [p for p in leftover if p in self.variables]

@@ -85,6 +85,34 @@ class Settings(BaseSettings):
     # costs 30-60 s, and in practice a second attempt fixes citation errors or nothing will.
     orchestrator_max_loop_iterations: int = 2
 
+    # ------------------------------------------------------------- guardrails
+    guardrails_enabled: bool = True
+    # Best cosine similarity the question must reach against the corpus before the request is
+    # treated as answerable. Measured on this corpus with scripts/check_guardrails.py:
+    #   0.81, 0.78  statutory questions answerable from the corpus
+    #   0.62        a legal question with no supporting material (GST thresholds)
+    #   0.49        a question about this repository's own source files
+    #   0.43, 0.40, 0.37  general knowledge, nonsense, Python
+    # 0.55 is the widest gap in that distribution. It keeps genuine legal questions - including
+    # ones the corpus cannot answer, which should proceed and then report insufficient
+    # evidence - while excluding everything off-domain. An earlier 0.45 admitted the 0.49
+    # code question, which is precisely the confident-but-irrelevant failure Exercise 6 found.
+    guardrail_corpus_similarity_floor: float = 0.55
+    # Requests per window, per API key. One research request is 4-6 LLM calls on a single GPU,
+    # so this is capacity management rather than abuse prevention.
+    rate_limit_requests: int = 12
+    rate_limit_window_seconds: float = 60.0
+    # Only one generation can occupy the GPU at a time; queued callers wait rather than
+    # thrashing VRAM and forcing the model to spill to CPU.
+    llm_max_concurrency: int = 1
+    llm_queue_timeout: float = 240.0
+
+    # ------------------------------------------------------------------- auth
+    auth_enabled: bool = True
+    # Comma-separated keys. Empty means a development key is generated and logged at startup,
+    # so the app is never accidentally deployed wide open with a well-known default.
+    api_keys: list[str] = Field(default_factory=list)
+
     # --------------------------------------------------------------- chunking
     chunk_target_chars: int = 1400
     chunk_max_chars: int = 2600
@@ -135,7 +163,7 @@ class Settings(BaseSettings):
     prompt_version_drafting: str = "v1"
     prompt_version_doc_understanding: str = "v1"
 
-    @field_validator("cors_origins", "allowed_upload_extensions", mode="before")
+    @field_validator("cors_origins", "allowed_upload_extensions", "api_keys", mode="before")
     @classmethod
     def _split_csv(cls, value: object) -> object:
         if isinstance(value, str):

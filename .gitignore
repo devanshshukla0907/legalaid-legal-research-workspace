@@ -50,3 +50,6 @@ h.json
 health.json
 q[0-9].json
 *.log
+
+# Development API key, generated per machine
+data/.dev-api-key

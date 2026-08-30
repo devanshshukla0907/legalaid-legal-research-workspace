@@ -21,7 +21,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from legalaid.agents.base import Agent, AgentContext
+from legalaid.agents.base import Agent, AgentContext, fence_untrusted
 from legalaid.domain.enums import AgentKey, DraftType
 
 AGENT_MENU = """
@@ -114,9 +114,15 @@ class IntakeRouterAgent(Agent):
         return context
 
     def render(self, context: AgentContext) -> dict[str, Any]:
-        docs = context.extra.get("document_summaries") or []
+        docs = [fence_untrusted(str(d), tag="attachment") for d in
+                (context.extra.get("document_summaries") or [])]
         return {
-            "user_input": context.extra["user_input"][:4000],
+            # Fenced: this is the rawest untrusted input in the system, and the router's
+            # decisions gate every downstream agent, so an injected instruction here would
+            # have the widest reach of anywhere in the pipeline.
+            "user_input": fence_untrusted(
+                context.extra["user_input"][:4000], tag="user_request"
+            ),
             "attached_documents": (
                 "\n".join(f"- {d}" for d in docs) if docs else "(no documents attached)"
             ),
