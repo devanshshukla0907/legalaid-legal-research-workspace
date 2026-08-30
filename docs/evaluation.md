@@ -59,7 +59,7 @@ Three different model families were chosen at the light end of what is installed
 | Application | LegalAId Legal Research Agent, unchanged |
 | Prompt | `prompts/legal_research/v1.yaml`, same version and temperature |
 | Questions | the same 27 tasks, in the same order |
-| Knowledge base | 263 provisions, 47 judgments, 651 vectors |
+| Knowledge base | 1,783 provisions, 47 judgments, 2,575 vectors, 15 Acts |
 | Retrieved context | computed **once per question** and replayed byte-identical to every model |
 | Decoding | schema-constrained JSON via Ollama `format`, `num_ctx` 3072 |
 

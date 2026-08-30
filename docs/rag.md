@@ -165,13 +165,55 @@ statutory citation is the strongest lexical evidence available.
 ### Reciprocal Rank Fusion
 
 ```
-RRF(d) = Σ  weight / (k + rank_r(d))       k = 60,  dense 1.0,  keyword 0.6
+RRF(d) = Σ  weight / (k + rank_r(d))       k = 60,  dense 1.0,  keyword 0.15
 ```
 
 Cosine sits in [-1,1]; BM25 is unbounded and corpus-dependent. Normalising them into a weighted sum
 requires a scale that shifts whenever the corpus changes. RRF combines **ranks**, so no calibration
 is needed, it degrades gracefully when one retriever returns nothing useful, and it rewards
 documents both retrievers agree on. Ties break toward agreement, then dense similarity.
+
+### The keyword weight was wrong, and the ablation caught it
+
+`retrieval_keyword_weight` was **0.6**, chosen by reasoning that semantic match should dominate for
+natural-language questions. The reasoning was sound. The number was wrong, and it made hybrid
+retrieval **worse than turning BM25 off entirely**.
+
+The mechanism is RRF's agreement reward. A document both retrievers found accumulates both
+contributions, so one dense-ranked 20th but keyword-ranked 1st beats one dense-ranked 5th:
+
+```
+dense rank 5,  keyword absent   →  1/(60+5)                = 0.01538
+dense rank 20, keyword rank 1   →  1/(60+20) + 0.6/(60+1)  = 0.02234
+```
+
+That is exactly what RRF is designed to do, and it is correct when both retrievers are strong. On a
+2,575-chunk legal corpus BM25 is not: with no section number in the question it matches generic
+legal vocabulary — *contract*, *party*, *compensation* — and those spurious agreements promoted
+noise over good semantic hits.
+
+`eval/weight_sweep.py` replaced the guess with a measurement over the 22 evaluation tasks that have
+known expected sections:
+
+| `keyword_weight` | 0.00 | 0.05 | 0.10 | **0.15** | 0.20 | 0.30 | 0.45 | 0.60+ |
+|---|---|---|---|---|---|---|---|---|
+| Mean recall | 0.614 | 0.659 | 0.636 | **0.682** | 0.659 | 0.614 | 0.568 | 0.568 |
+
+The curve peaks at 0.15 and is flat from 0.45 up. So BM25 does earn its place — worth **+0.068
+recall over dense alone** — but only at roughly a quarter of the configured weight. At 0.6 it was
+costing 0.046 recall and doubling latency.
+
+Full before/after, all three retrievers enabled:
+
+| | Before | After |
+|---|---|---|
+| Recall | 0.568 | **0.682** |
+| vs dense alone | −0.045 | **+0.068** |
+| Zero-recall tasks | 8 | **6** |
+
+The general lesson is not about BM25. It is that a fusion weight is not a matter of taste, and
+"semantic should matter more than lexical" is a hypothesis rather than a setting. See
+`docs/evaluation.md` for the full seven-configuration ablation.
 
 ---
 
@@ -191,11 +233,34 @@ Edges are built from evidence captured during ingestion — statutory cross-refe
 provision text, and the statutes a judgment's headnote says it considered. Nothing is inferred by a
 model.
 
-Current graph: **322 nodes, 315 edges** (263 provisions, 47 cases, 5 acts; relations `contains`
-263, `cross_references` 27, `cites_section` 13, `considers_act` 12).
+Current graph: **1,845 nodes, 2,649 edges** (1,783 provisions, 47 cases, 15 acts; relations
+`contains` 1783, `cross_references` 803, `cites_section` 43, `considers_act` 20).
 
 Traversal is bidirectional bounded BFS — "what does this cite?" and "what cites this?" are both
-legally meaningful. Seeds come from provisions named explicitly in the question.
+legally meaningful.
+
+### Seeding, and an honest measurement
+
+Seeds originally came only from provisions or acts **named explicitly in the question**. The
+retriever ablation (`eval/ablation.py`) showed the consequence: graph retrieval contributed
+**exactly zero** to recall, because conversational questions name neither. `dense+graph` equalled
+`dense` to three decimal places.
+
+Two changes followed. Act-name matching now tries the short title, because node labels carry the
+year (`Indian Contract Act, 1872`) and no question includes it. And `seed_from_chunks` adds
+dense-anchored seeding — take the provisions semantic search already surfaced and traverse out from
+those, which is the graph's actual useful role.
+
+Seeding now fires (graph-alone MRR rose 0.011 → 0.023) but **recall contribution is still 0.000**.
+Reported as measured rather than dressed up: graph expansion reaches provisions that
+cross-reference what dense found, and on the evaluation task set those are not the expected
+sections. It adds candidates without displacing anything, so it is neutral rather than harmful, at
+roughly 190 ms.
+
+The honest reading is that a 2,649-edge graph over one jurisdiction's statutes is not yet dense
+enough for traversal to beat embeddings at finding the right provision. It would matter more with
+the precedent graph populated — `ingestion/citations.py` extracts treatment edges, but all 45
+citations in the current corpus resolve outside it.
 
 ---
 
@@ -218,7 +283,7 @@ justification could sound convincing for a bad match, which would be worse than 
 
 ## 8. Measured quality
 
-`scripts/smoke_retrieval.py`, against 651 vectors:
+`scripts/smoke_retrieval.py`, spot checks:
 
 | Question | Top result |
 |---|---|
@@ -229,6 +294,29 @@ justification could sound convincing for a bad match, which would be worse than 
 
 The last one is worth noting: before repealed provisions were purged, that query returned
 irrelevant Contract Act sections at ~0.56. Corpus hygiene moved the needle more than any tuning.
+
+### Systematic measurement
+
+Spot checks show the system working; they cannot show where it fails. `eval/ablation.py` scores all
+seven retriever configurations against 22 tasks with known expected sections:
+
+| Configuration | Recall | MRR | Latency |
+|---|---|---|---|
+| dense | 0.614 | 0.567 | 1,222 ms |
+| keyword | 0.386 | 0.187 | 2,149 ms |
+| graph | 0.045 | 0.023 | 1,357 ms |
+| dense + keyword | 0.682 | 0.572 | 2,280 ms |
+| dense + graph | 0.614 | 0.567 | 1,411 ms |
+| keyword + graph | 0.386 | 0.187 | 2,555 ms |
+| **all three** | **0.682** | **0.572** | 2,485 ms |
+
+Two things this makes visible that spot checks could not:
+
+- **Dense carries the system.** It uniquely retrieves 7 tasks that neither other retriever finds;
+  BM25 uniquely retrieves 1; the graph uniquely retrieves none.
+- **Recall is 0.682, not 1.0.** Six tasks still retrieve none of their expected sections. Those are
+  the conversationally-phrased ones, and they are why the query rewrite exists — see §1, where
+  rewriting takes recall on the affected subset from 0.500 to 1.000.
 
 ---
 
@@ -243,6 +331,36 @@ official text and cites it.
 
 That failure was not staged — it surfaced during a smoke test of the LLM path, before any RAG
 existed.
+
+### Measured across the whole task set
+
+One anecdote is not a result. `eval/rag_ablation.py` runs all 27 tasks in both conditions with the
+same model and prompt shape, scoring every section the model names by looking it up in the corpus —
+**verified** if that Act contains it, **fabricated** if it does not. That is a lookup rather than a
+judgement about phrasing.
+
+| Metric | No RAG | With RAG |
+|---|---|---|
+| **Accuracy (answerable)** | 16.7% | **54.2%** |
+| Fabrication rate | 4.3% | 6.0% |
+| Fabricated on *unanswerable* tasks | 0 | 2 |
+| Declined on unanswerable | 0/3 | 0/3 |
+| Mean output tokens | 269 | 192 |
+
+**Retrieval triples accuracy. It does not reduce fabrication — it relocates it.**
+
+Without retrieval the model invents Contract Act sections 380, 123 and 111 while answering
+answerable questions. With retrieval it gets those right, then fabricates on the deliberately
+unanswerable ones instead — attributing s.498A to the Indian Contract Act three times when handed
+context that cannot answer the question.
+
+Neither condition declined on a single unanswerable task. So grounding fixes *what a model knows*,
+not *whether it knows when to stop*. Those are separate problems, which is why refusal discipline
+lives in the guardrail layer and in model choice (`qwen2.5:3b` declines 3/3; `gemma2:2b` declines
+0/3) rather than being treated as something RAG delivers for free.
+
+Grounded answers are also **shorter** — 192 tokens against 269 — and correspondingly faster. Having
+evidence to point at removes the need to hedge at length.
 
 ---
 
@@ -259,7 +377,7 @@ RETRIEVAL_CANDIDATE_MULTIPLIER=4      # over-fetch before filtering
 RETRIEVAL_ENABLE_KEYWORD=true
 RETRIEVAL_ENABLE_GRAPH=true
 RETRIEVAL_DENSE_WEIGHT=1.0
-RETRIEVAL_KEYWORD_WEIGHT=0.6
+RETRIEVAL_KEYWORD_WEIGHT=0.15         # measured; see §5. Was 0.6, which hurt recall
 RETRIEVAL_GRAPH_HOPS=2
 CHUNK_TARGET_CHARS=1400
 CHUNK_MAX_CHARS=2600
@@ -267,5 +385,5 @@ CHUNK_OVERLAP_CHARS=180
 ```
 
 Note that agent context budgets are tighter than retrieval top-k (5 law chunks, 4 cases). Retrieval
-casts a wider net; the agents get the best of it, because prompt tokens are the dominant cost at
-~12 tok/s.
+casts a wider net; the agents get the best of it, because prompt tokens are the dominant cost —
+generation is **86.2% of request wall-clock**, measured over 40 recorded runs.

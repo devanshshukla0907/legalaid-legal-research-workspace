@@ -212,7 +212,7 @@ def main() -> None:
     add("| Application | LegalAId Legal Research Agent, unchanged |")
     add("| Prompt | `prompts/legal_research/v1.yaml`, same version and temperature |")
     add("| Questions | the same 27 tasks, in the same order |")
-    add("| Knowledge base | 263 provisions, 47 judgments, 651 vectors |")
+    add("| Knowledge base | 1,783 provisions, 47 judgments, 2,575 vectors, 15 Acts |")
     add(
         "| Retrieved context | computed **once per question** and replayed byte-identical to "
         "every model |"

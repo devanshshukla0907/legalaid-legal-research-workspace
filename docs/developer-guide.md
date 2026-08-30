@@ -114,16 +114,25 @@ full-corpus embedding drops from ~13 minutes to ~20 seconds.
 
 ```python
 retrieval_dense_weight: float = 1.0
-retrieval_keyword_weight: float = 0.6
+retrieval_keyword_weight: float = 0.15
 ```
 Semantic similarity is the primary signal for natural-language questions; BM25 is a precision
-correction for exact identifiers. Weighted below 1.0 so it sharpens rather than dominates.
+correction for exact identifiers, weighted well below 1.0 so it sharpens rather than dominates.
+
+**0.15 is measured, not chosen.** It was 0.6 on the reasoning above, and at 0.6 hybrid retrieval
+scored *worse than disabling BM25 entirely* — Reciprocal Rank Fusion's agreement bonus let spurious
+keyword matches promote noise over good semantic hits. `eval/weight_sweep.py` swept the parameter;
+recall peaks at 0.15 (0.682) and collapses from 0.45 up (0.568). Full analysis in
+[rag.md](rag.md#5-hybrid-search).
+
+The transferable lesson: a fusion weight is a hypothesis, not a preference. This one was wrong for
+eight months and nothing surfaced it until an ablation existed.
 
 ```python
 orchestrator_max_loop_iterations: int = 2
 ```
-Each extra refinement iteration costs 30–60 s at ~12 tok/s. In practice a second attempt fixes a
-citation error or nothing will.
+Each extra refinement iteration costs a full generation — 12–20 s on `llama3.2:3b`, longer on the
+7B models. In practice a second attempt fixes a citation error or nothing will.
 
 ---
 
@@ -214,10 +223,22 @@ Pinned by `tests/test_india_code.py` using real markup fixtures.
 Repealed … Rep. by s. 73"* **third**, purely because the repeal note mentions s.73. Citing dead law
 is the worst failure mode for this tool. `is_repealed()` excludes them, and because 76 had already
 been ingested the filter is **retroactive** — `_purge_provisions()` removes previously stored ones
-(339 → 263 provisions).
+(339 → 263 provisions, on the corpus as it stood at the time).
 
-**Filtering happens before fetching.** BNS has 358 sections but the manifest keeps 14; filtering
-afterwards meant 344 pointless requests to a government server (~3 wasted minutes per run).
+The DSpace API later made this cheaper as well as more reliable: `dc.identifier.repealed` is a
+publisher-supplied flag, so repeal status no longer has to be inferred from heading text. The
+heading inference is kept as a second line of defence.
+
+**Section filters are now the exception, not the rule.** With the corpus at 1,783 provisions only
+BNSS is filtered (61 of 531 sections), because 531 sections of criminal procedure are mostly
+outside the application's scope. Everything else is held in full: filtering a statute means a
+question about an unfiltered section retrieves nothing, and "the corpus does not contain it" is a
+far less useful answer than the provision itself.
+
+**Empty provisions are dropped.** India Code carries the Arbitration Council sections (43A–43M)
+with headings and no body text. Indexed, they were retrievable and citable while saying nothing —
+worse than absent. Found by `scripts/analyse_corpus.py`, which flagged 13 of them as exact
+duplicates of one another.
 
 ### Case law — Supreme Court e-SCR
 
@@ -370,11 +391,15 @@ Act ──contains──> Section ──cited_by──> Judgment ──considers
 ```
 
 Edges come from real evidence captured during ingestion: statutory cross-references parsed out of
-provision text, and the statutes a judgment's headnote says it considered. Current graph: **322
-nodes, 315 edges** (263 provisions, 47 cases, 5 acts).
+provision text, and the statutes a judgment's headnote says it considered. Current graph: **1,845
+nodes, 2,649 edges** (1,783 provisions, 47 cases, 15 acts).
 
-`find_seeds()` locates entry points named in the question; `expand()` does bounded BFS.
-Traversal is bidirectional — "what does this cite?" and "what cites this?" are both meaningful.
+`find_seeds()` locates entry points named in the question; `seed_from_chunks()` seeds from what
+dense search already found; `expand()` does bounded BFS. Traversal is bidirectional — "what does
+this cite?" and "what cites this?" are both meaningful.
+
+Measured contribution to retrieval recall: **0.000**. See [rag.md](rag.md#6-graph-rag) for why, and
+why it is reported rather than quietly dropped.
 
 ---
 
@@ -579,7 +604,10 @@ Measured on the dev machine (Ryzen 5 7235HS, RTX 3050 6 GB, 25 GB RAM).
 | Synthesis | 50–60 s |
 | **Full pipeline** | **170–460 s** |
 
-Generation is the bottleneck at every step: ~12 tok/s. Consequences designed around it: bounded
+Generation is the bottleneck at every step — measured at **39.8 tok/s** on `llama3.2:3b` and
+**86.2% of total request wall-clock** (`eval/latency_breakdown.py`). Code Llama 7B runs closer to
+12 tok/s because it is the only installed model that does not fit entirely in 6 GB of VRAM; it
+offloads at a 22%/78% CPU/GPU split. Consequences designed around it: bounded
 token budgets, trimmed prompt context, concurrent independent agents, capped loop iterations, and
 SSE streaming so a multi-minute run stays legible.
 

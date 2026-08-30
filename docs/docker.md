@@ -117,8 +117,10 @@ rebuilding the image.
 **GPU passthrough is commented out in `docker-compose.yml`.** It requires the NVIDIA Container
 Toolkit, which is not available by default in Docker Desktop on Windows.
 
-The practical consequence is real: on the host GPU, generation runs at ~12 tok/s; in a CPU-only
-container expect **~4–6 tok/s**, so a full multi-agent run may take 8–15 minutes instead of 3–7.
+The practical consequence is real: on the host GPU, generation runs at **~40 tok/s** on
+`llama3.2:3b` (measured, `eval/latency_breakdown.py`); in a CPU-only container expect a small
+fraction of that, so a full multi-agent run may take several times the 60–90 s it takes on the
+host.
 
 Three options:
 

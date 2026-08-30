@@ -33,14 +33,47 @@ Each arrow is a real, traced hop recorded in the database.
 | 8 | Vector similarity | `services/vector` + `retrieval/keyword.py` + `retrieval/graph.py` | `LAW_VECTOR_SEARCH`, `CASE_VECTOR_SEARCH`, `USER_DOC_SEARCH` |
 | 9 | Relevant context | `services/retrieval` (filter → fuse → rank → assemble) | `CONTEXT_CONSTRUCTION` |
 | 10 | Multi-agent orchestration | `agents/orchestrator.py` | `ORCHESTRATION_PLAN` |
-| 11 | Agent-specific context | `agents/base.py` `AgentContext` | `AGENT_CONTEXT` |
-| 12 | Ollama | `services/llm` | `LLM_CALL` |
-| 13 | Code Llama | `codellama:7b-instruct` | recorded on every `model_run` |
-| 14 | Token generation | token counters per call | `TOKEN_GENERATION` |
+| 11 | Ollama | `services/llm` | `LLM_CALL` |
+| 12 | Generation model | per-request; `llama3.2:3b` measured best | recorded on every `model_run` |
+| 13 | Token generation | token counters per call | `TOKEN_GENERATION` |
+| 14 | Grounding audit | `agents/verification.py` `audit()` | `CITATION_VALIDATION` |
 | 15 | Final response | `agents/synthesis.py` | `FINAL_RESPONSE` |
 
-The two stages not in the original brief — intent classification and query rewrite — were added
-because they measurably improve retrieval. See [rag.md](rag.md#1-the-query-rewrite).
+Two stages precede all of this and are not in the original brief:
+
+| Stage | Implemented by | Trace stage |
+|---|---|---|
+| Input guardrails | `core/guardrails.py` | `INPUT_GUARDRAIL` |
+| Output guardrails | `core/guardrails.py` `screen_output()` | `OUTPUT_GUARDRAIL` |
+
+Intent classification and query rewrite were added because they measurably improve retrieval —
+rewriting lifted mean recall from 0.500 to 1.000 on the questions it was tested against. See
+[rag.md](rag.md#1-the-query-rewrite).
+
+Guardrails were added because the application had none, and because a legal tool that cannot
+decline is dangerous rather than merely incomplete. They cost about **1.5% of request wall-clock**
+(measured, `eval/latency_breakdown.py`). See [guardrails.md](guardrails.md).
+
+### Where the time actually goes
+
+Measured over 40 recorded pipeline runs, mean total 70.9 s:
+
+| Stage | Share of total | Mean |
+|---|---|---|
+| Similar Case Agent | 39.7% | 16.4 s |
+| Document Understanding | 17.6% | 12.5 s |
+| Legal Research Agent | 17.4% | 12.4 s |
+| Synthesis Agent | 17.1% | 12.1 s |
+| Intake classification | 6.8% | 4.8 s |
+| Verification Agent | 6.6% | 4.1 s |
+| Context construction | 3.2% | 2.3 s |
+| Input guardrails | 1.5% | 0.9 s |
+| Citation validation | ~0% | <1 ms |
+
+**86.2% of wall-clock time is inside model generation.** Orchestration overhead is therefore not
+the thing to optimise; a faster model or fewer agent calls is. The deterministic citation audit
+costs effectively nothing, which is the argument for doing grounding checks in code rather than
+asking a model to do them.
 
 ---
 
@@ -192,13 +225,39 @@ live matrix, so an evaluator can verify Exercise 1–5 coverage without reading 
 Later phases only ever **add**. There are no `exercise1/`, `exercise2/` directories — one
 application, progressively activated.
 
+### Week 3 exercises, and where to see each one working
+
+| Exercise | Requirement | Where it lives | How to verify |
+|---|---|---|---|
+| 1 | Application + API + Ollama + a code model | `frontend/` → `gateway` → `services/llm` → Ollama | **Ask LegalAId** page; model selectable per request on **System & models** |
+| 2 | Knowledge base + chunking + embeddings | `ingestion/india_code_api.py`, `ingestion/chunking.py`, `services/embedding` | **Law library** (1,783 provisions, 47 judgments); **Chunk explorer** shows strategy per chunk; **Embeddings** page shows vectors |
+| 3 | Vector similarity + retrieval + RAG | `services/vector` (FAISS), `services/retrieval` | **Retrieval inspector** — toggle each retriever and watch results change; **RAG on / off** page |
+| 4 | APIs + services + orchestration | 9 services, `agents/orchestrator.py` | **Pipeline trace** — every hop, its service, its duration; **Agents** page shows context isolation |
+| 5 | Docker + full architecture | `docker-compose.yml`, per-service Dockerfiles | `docker compose up`; **System & models** shows each service's health |
+
+The one deviation from the brief worth stating: the default generation model is no longer
+`codellama:7b-instruct`. It remains installed and selectable, but `llama3.2:3b` measured better on
+accuracy *and* latency (`docs/evaluation.md`), and Code Llama is the only one of the four that does
+not fit entirely in 6 GB of VRAM — it runs at a 22%/78% CPU/GPU split. Choosing the model by
+measurement rather than by the brief's example seemed the more defensible reading of the exercise.
+
 ---
 
 ## Safety posture
 
+Full detail in [guardrails.md](guardrails.md), including an explicit list of what is **not**
+protected.
+
+- Six input guardrail layers, deterministic before the LLM, so an out-of-scope request never costs
+  a generation. Measured: 19/19 adversarial caught, 0/10 false positives on legitimate legal work.
 - No agent may cite a source absent from its retrieved context. A **deterministic audit** checks
   every claimed `chunk_id`, section number and case title against what was actually supplied, and
-  ungrounded citations are stripped rather than presented as authority.
+  ungrounded citations are stripped rather than presented as authority. It also scans the prose of
+  `answer_markdown` and `draft_markdown`, because a fabricated section inside a paragraph is
+  exactly as damaging as one in a citation list.
+- Authentication on every route except health, enforced in middleware so a route added later is
+  protected by default.
+- One generation on the GPU at a time, plus a per-key request budget.
 - **Insufficient evidence is a first-class outcome** (`evidence_sufficient: false`), not a reason to
   guess.
 - Repealed and omitted provisions are excluded at ingestion, so dead law can never be cited as

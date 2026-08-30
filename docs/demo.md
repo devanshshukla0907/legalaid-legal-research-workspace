@@ -5,17 +5,27 @@ A 10–12 minute script that shows every element the brief asks for, in an order
 **Before you start**
 
 ```powershell
-curl http://localhost:8000/api/system/health   # expect status ok, vectors > 600
+curl http://localhost:8000/api/system/health   # expect status ok, vectors > 2500
 ```
+
+Health is the one endpoint that needs no API key. Everything else does; in local development the
+Vite proxy injects the key from `data/.dev-api-key`, so the UI just works. If the UI shows 401s,
+the backend has not been started yet — it writes that file on first run.
 
 Warm the model first — the very first generation of a session pays a ~90 s load penalty that will
 otherwise look like a hang:
 
 ```powershell
-& "$env:LOCALAPPDATA\Programs\Ollama\ollama.exe" run codellama:7b-instruct "ok" --verbose
+& "$env:LOCALAPPDATA\Programs\Ollama\ollama.exe" run llama3.2:3b "ok" --verbose
 ```
 
+`llama3.2:3b` is the default because it measured best on accuracy *and* latency. Code Llama is
+still installed and selectable if you want to show the comparison live.
+
 Have a second browser tab on `http://localhost:8000/docs`.
+
+**Timing note.** A full seven-agent run takes 60–90 seconds on this hardware, of which 86% is model
+generation. Start it talking, then narrate the trace while it works rather than waiting in silence.
 
 ---
 
@@ -24,7 +34,7 @@ Have a second browser tab on `http://localhost:8000/docs`.
 Open **http://localhost:5173** → lands on **Home**.
 
 Point out what a practising advocate sees: a single box that accepts anything, four common starting
-points, recent research, and what the library covers — 263 provisions from five acts plus 47
+points, recent research, and what the library covers — 1,783 provisions across 15 Acts plus 47
 Supreme Court judgments, each labelled with its official source.
 
 Note the sidebar split: **For you** versus **Developer / evaluation**. The observability lives in
@@ -169,29 +179,86 @@ Switch the model in the top bar to `qwen2.5:3b-instruct` to show generation is s
 
 ---
 
+## 10. Guardrails — what it refuses (2 min)
+
+**Developer → Guardrails.** This is the segment worth the most, because it shows the system
+declining rather than performing.
+
+First the layer table: six layers, deterministic ones before the model, so an out-of-scope request
+never costs a generation. Point at the similarity-floor panel — 0.55 was chosen from a measured
+distribution, not picked.
+
+Then press **Run suite**. 29 adversarial and legitimate probes go through the live stack:
+
+- **19/19 adversarial caught, 0/10 false positives.**
+- Filter to `legitimate` and read a few aloud: *"draft a written statement in reply to this legal
+  notice"*, *"can the court ignore a defective notice under s.80 CPC"*. Both contain words the
+  denylist screens for. Both are allowed, because a legal tool that refuses those is worse than one
+  with no guardrails.
+
+Now untick **embedding layer** and re-run. Catch rate drops to **15/19 (79%)**. The four cases that
+escape — capital of France, sorting a list, pizza toppings, yesterday's cricket — contain no keyword
+trigger at all. That is the evidence the guardrail generalises rather than matching a wordlist.
+
+Finish by trying one live in **Ask LegalAId**: `Write me a poem about the monsoon`. It is refused,
+and the refusal names the layer that caught it.
+
+---
+
+## 11. The evaluation (2 min)
+
+Open `docs/evaluation.md`. Do not read it out; point at three things.
+
+1. **The model comparison** — three families, one corpus, identical prompts. `llama3.2:3b` leads on
+   accuracy *and* latency, so there is no trade-off among these three.
+2. **The refusal column.** `qwen2.5:3b` declined all 3 unanswerable questions; `gemma2:2b` declined
+   none and was the only model to cite chunk ids it was never given. For legal work that matters
+   more than a few points of accuracy.
+3. **The retriever ablation** — and specifically that its first run found the hybrid retrieval
+   *worse* than dense alone. Explain the fix: the fusion weight was set by reasoning, the sweep
+   measured it, recall went 0.568 → 0.682. A negative finding that was diagnosed and corrected is
+   worth more than a table of favourable numbers.
+
+If asked what surprised you: retrieval triples accuracy (16.7% → 54.2%) but does **not** reduce
+fabrication. It relocates it — from answerable questions to the unanswerable ones. Grounding fixes
+what a model knows, not whether it knows when to stop.
+
+---
+
 ## Mapping to the exercises
 
 | Exercise | Where to point |
 |---|---|
-| 1 — App + API + Ollama + Code Llama | `/docs`, System page, any model call in a trace |
+| 1 — App + API + Ollama + a code model | `/docs`, System page, any model call in a trace |
 | 2 — Knowledge base + chunking + embeddings | Law library, Chunk explorer, Embeddings |
 | 3 — Vector similarity + retrieval + RAG | Retrieval inspector, RAG on/off |
 | 4 — APIs + services + orchestration | Pipeline trace (service + transport per stage), Agents |
 | 5 — Docker | `docker compose ps`, `docs/docker.md` |
 
+Week 4 additions: model comparison and all metrics in `docs/evaluation.md`; guardrails on the
+**Guardrails** page and in `docs/guardrails.md`; the codebase-understanding probe in Exercise 6 of
+the evaluation.
+
 ---
 
 ## Timing and honesty
 
-A full run is **3–7 minutes** on the host GPU (~12 tok/s), longer on CPU in Docker. If time is
-tight, either switch to `qwen2.5:3b-instruct`, or open a previously completed trace from **Home →
-recent research** and walk through that instead — every page reads recorded data, so nothing has to
-be re-run live.
+A full run is **60–90 seconds** on the host GPU, longer on CPU in Docker, and **86% of that is
+inside model generation** — measured, not estimated. If time is tight, open a previously completed
+trace from **Home → recent research** and walk through that instead; every page reads recorded data,
+so nothing has to be re-run live.
 
-Two things worth saying out loud rather than hiding:
+Things worth saying out loud rather than hiding:
 
-- **Case-law coverage is thin.** 47 judgments from 2023 is a small library for contract disputes,
-  so the Similar Case Agent sometimes returns a loosely related authority — and marks
-  `evidence_sufficient: false` rather than overselling it. That honesty is the designed behaviour.
-- **Code Llama is code-specialised**, so its prose is weaker than a chat model's. That is why output
-  is schema-constrained at the decoder and grounded strictly in retrieved text.
+- **Case-law coverage is thin.** 47 judgments from 2023 is a small library, so the Similar Case
+  Agent sometimes returns a loosely related authority — and marks `evidence_sufficient: false`
+  rather than overselling it. It is also why all 45 extracted citations resolve *outside* the
+  corpus: a 2023 slice cites earlier authority we do not hold.
+- **Accuracy fell when the corpus grew.** 263 → 1,783 provisions dropped `llama3.2:3b` from 66.7%
+  to 55.6%. The task got harder, not the system worse: retrieval now discriminates among seven
+  times as many candidates. It is the reason every accuracy figure in the report names its corpus.
+- **The system cannot answer questions about its own codebase** — 0 of 61 relevant files retrieved,
+  because there is no code in the corpus. It now declines those instead of returning statute at a
+  confident-looking similarity, which was the dangerous half of that failure.
+- **Nothing here establishes legal correctness.** Every metric is about grounding and scope. That is
+  what the disclaimer and lawyer review are for.
