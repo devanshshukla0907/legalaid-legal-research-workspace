@@ -158,7 +158,13 @@ CAPABILITIES: tuple[Capability, ...] = (
         exercise="Exercise 4 - APIs + Services + Orchestration",
         description="Each agent receives only its own context; inclusions and exclusions "
         "are persisted.",
-        pipeline_stages=("AGENT_CONTEXT",),
+        # Isolation is enforced when each agent's context is built, so the evidence lives on
+        # the agent stages themselves plus the citation audit that checks what they cited.
+        pipeline_stages=(
+            "LEGAL_RESEARCH_AGENT",
+            "SIMILAR_CASE_AGENT",
+            "CITATION_VALIDATION",
+        ),
     ),
     Capability(
         key="pipeline_trace",

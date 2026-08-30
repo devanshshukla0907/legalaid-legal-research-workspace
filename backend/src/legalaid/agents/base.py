@@ -46,6 +46,17 @@ class ContextItem:
     similarity: float | None = None
     token_count: int = 0
     included: bool = True
+    # What the underlying evidence actually says, for agents that never see the chunk itself.
+    # Drafting and Synthesis work from upstream findings rather than raw chunks, so their
+    # `label` is a provenance note ("evidence behind the findings (chk_...)"). The grounding
+    # audit needs the real source label to check a citation against, and with only the
+    # provenance note available its section and case checks found nothing to compare and
+    # silently passed everything. Defaults to `label` so chunk-holding agents are unaffected.
+    source_label: str | None = None
+
+    @property
+    def evidence_label(self) -> str:
+        return self.source_label or self.label
 
 
 @dataclass(slots=True)
@@ -230,6 +241,10 @@ class Agent(ABC):
 
     agent_key: AgentKey
     prompt_name: str
+    # Output keys holding free prose that the grounding audit must scan for fabricated
+    # sections and citations. Structured citation fields are checked for every agent; this is
+    # for agents whose real deliverable is text a lawyer reads.
+    prose_fields: tuple[str, ...] = ()
 
     def __init__(
         self, *, prompt_version: str | None = None, model: str | None = None

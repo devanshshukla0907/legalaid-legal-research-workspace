@@ -124,6 +124,25 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
     settings = get_settings()
     started = time.perf_counter()
 
+    # Per-request overrides, resolved once. Reading them here rather than mutating the cached
+    # global Settings keeps concurrent requests independent - the previous approach swapped
+    # values on a process-wide singleton and restored them in a finally block, so two
+    # simultaneous searches could restore each other's toggles.
+    use_keyword = (
+        settings.retrieval_enable_keyword
+        if request.enable_keyword is None
+        else request.enable_keyword
+    )
+    use_graph = (
+        settings.retrieval_enable_graph if request.enable_graph is None else request.enable_graph
+    )
+    use_dense = True if request.enable_dense is None else request.enable_dense
+    min_similarity = (
+        settings.retrieval_min_similarity
+        if request.min_similarity is None
+        else request.min_similarity
+    )
+
     collections = tuple(request.collections) if request.collections else MODE_COLLECTIONS[request.mode]
 
     # ------------------------------------------------------- query embedding
@@ -151,7 +170,7 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
     # which collection is being searched.
     graph_chunk_ids: set[str] = set()
     graph_paths: dict[str, str] = {}
-    if settings.retrieval_enable_graph:
+    if use_graph:
         graph = get_graph()
         seeds = graph.find_seeds(request.question)
         if seeds:
@@ -179,16 +198,20 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
         # Over-fetch from each retriever so fusion has a real pool to work with; the final
         # top_k is applied after fusion, not before.
         fetch_k = top_k * settings.retrieval_candidate_multiplier
-        hits, candidate_count, filtered_count = index.search(
-            query_vector,
-            top_k=fetch_k,
-            filters=filters or None,
-            min_similarity=settings.retrieval_min_similarity,
-        )
+        if use_dense:
+            hits, candidate_count, filtered_count = index.search(
+                query_vector,
+                top_k=fetch_k,
+                filters=filters or None,
+                min_similarity=min_similarity,
+            )
+        else:
+            # Dense disabled: the ablation harness needs a keyword-only or graph-only run.
+            hits, candidate_count, filtered_count = [], 0, 0
 
         keyword_hits: list[tuple[str, float, list[str]]] = []
         keyword_candidates = 0
-        if settings.retrieval_enable_keyword:
+        if use_keyword:
             bm25 = get_index()
             matter_scope = (
                 request.matter_id if collection is Collection.USER_DOCUMENTS else None
@@ -306,7 +329,7 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
                 filtered_count=filtered_count,
                 top_k=top_k,
                 returned=len(results),
-                min_similarity=settings.retrieval_min_similarity,
+                min_similarity=min_similarity,
                 filters=filters,
                 embedding_ms=embed_ms,
                 search_ms=search_ms,
@@ -392,7 +415,7 @@ def _persist_run(
                 embedding_model=embedding_model,
                 dimensions=len(query_vector),
                 top_k=top_k,
-                min_similarity=settings.retrieval_min_similarity,
+                min_similarity=min_similarity,
                 candidate_count=candidate_count,
                 filtered_count=filtered_count,
                 returned_count=len(results),

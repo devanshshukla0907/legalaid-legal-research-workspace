@@ -43,7 +43,10 @@ class RoutingDecision:
     needs_cases: bool = True
     needs_drafting: bool = False
     needs_document_facts: bool = False
-    is_legal_matter: bool = True
+    # Fails closed. A default of True meant any router failure waved every input through the
+    # scope gate, which is the wrong direction for a system that must decline out-of-domain
+    # questions. Callers that know the input is legal set it explicitly.
+    is_legal_matter: bool = False
     search_query: str = ""
     legal_concepts: list[str] = field(default_factory=list)
     suggested_draft_type: str = "none"
@@ -156,7 +159,8 @@ def decision_from(output: dict[str, Any], *, user_input: str) -> RoutingDecision
         needs_cases=bool(output.get("needs_cases", True)),
         needs_drafting=bool(output.get("needs_drafting", False)),
         needs_document_facts=bool(output.get("needs_document_facts", False)),
-        is_legal_matter=bool(output.get("is_legal_matter", True)),
+        # Absent means "the model did not assert this", which is not the same as "yes".
+        is_legal_matter=bool(output.get("is_legal_matter", False)),
         search_query=query,
         legal_concepts=[str(c) for c in (output.get("legal_concepts") or [])][:8],
         suggested_draft_type=str(output.get("suggested_draft_type") or "none"),
@@ -165,12 +169,21 @@ def decision_from(output: dict[str, Any], *, user_input: str) -> RoutingDecision
     )
 
 
-def fallback_decision(user_input: str, *, has_documents: bool = False) -> RoutingDecision:
+def fallback_decision(
+    user_input: str,
+    *,
+    has_documents: bool = False,
+    is_legal_matter: bool = True,
+) -> RoutingDecision:
     """Deterministic routing when the router itself fails.
 
     The pipeline must never stall because the smallest agent had a bad generation, so this
     falls back to the broadest useful plan using the raw input as the search query. It is
     marked `used_fallback` so the UI shows that routing was not model-driven for this run.
+
+    `is_legal_matter` is supplied by the caller rather than assumed, because when the LLM
+    router has failed the only trustworthy scope signal is the deterministic guardrail
+    (`core.guardrails`), not this function's guesswork.
     """
     lowered = user_input.lower()
     wants_draft = any(
@@ -178,6 +191,7 @@ def fallback_decision(user_input: str, *, has_documents: bool = False) -> Routin
         for word in ("draft", "reply to", "prepare a", "write a", "notice reply", "submission")
     )
     return RoutingDecision(
+        is_legal_matter=is_legal_matter,
         input_kind="question_with_document" if has_documents else "question",
         task="full_research",
         needs_law=True,

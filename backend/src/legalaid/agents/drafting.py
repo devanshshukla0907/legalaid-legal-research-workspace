@@ -20,6 +20,9 @@ from legalaid.domain.enums import AgentKey, DraftLength, DraftTone, DraftType
 class DraftingAgent(Agent):
     agent_key = AgentKey.DRAFTING
     prompt_name = "drafting"
+    # A draft goes out over a lawyer's name, so invented authority in its prose is audited
+    # just as strictly as in the structured citation list.
+    prose_fields = ("draft_markdown",)
 
     def build_context(
         self,
@@ -32,7 +35,7 @@ class DraftingAgent(Agent):
         tone: DraftTone = DraftTone.FORMAL,
         length: DraftLength = DraftLength.STANDARD,
         instructions: str = "",
-        upstream_chunk_ids: list[str] | None = None,
+        upstream_items: list[ContextItem] | None = None,
     ) -> AgentContext:
         context = AgentContext(agent_key=self.agent_key, question=question)
         context.extra.update(
@@ -49,11 +52,12 @@ class DraftingAgent(Agent):
             }
         )
 
-        # Record the provenance chain: the chunk ids behind the findings this draft rests on.
+        # Record the provenance chain: the evidence behind the findings this draft rests on.
         # The drafting agent never sees these chunks, but the trace must still show which
-        # evidence ultimately supports the draft.
-        for chunk_id in upstream_chunk_ids or []:
-            context.included.append(_provenance_item(chunk_id))
+        # evidence ultimately supports the draft - and the grounding audit needs each item's
+        # real source label to check a citation against.
+        for item in upstream_items or []:
+            context.included.append(_provenance_item(item))
         return context
 
     def render(self, context: AgentContext) -> dict[str, Any]:
@@ -86,11 +90,18 @@ class DraftingAgent(Agent):
         return problems
 
 
-def _provenance_item(chunk_id: str) -> ContextItem:
+def _provenance_item(item: ContextItem) -> ContextItem:
+    """Provenance stub for an agent that reasons from findings rather than raw chunks.
+
+    `label` stays a provenance note because that is what the trace UI should show. `source_label`
+    carries the upstream evidence's real label so the grounding audit has something concrete to
+    verify a cited section or case against.
+    """
     return ContextItem(
-        chunk_id=chunk_id,
-        kind="upstream_evidence",
-        label=f"evidence behind upstream findings ({chunk_id})",
+        chunk_id=item.chunk_id,
+        kind="upstream_case" if item.kind == "case" else "upstream_evidence",
+        label=f"evidence behind upstream findings ({item.chunk_id})",
+        source_label=item.evidence_label,
         reason="cited by the Legal Research or Similar Case Agent",
         included=True,
     )

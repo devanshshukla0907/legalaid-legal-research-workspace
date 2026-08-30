@@ -294,6 +294,15 @@ class RetrievalRequest(Contract):
     top_k: int | None = None
     filters: dict[str, Any] = Field(default_factory=dict)
     collections: list[Collection] | None = None
+    # Per-request retriever ablation, so the UI and the evaluation harness can measure each
+    # retriever's contribution. These live on the request rather than in settings because the
+    # endpoint used to mutate the process-wide cached Settings object: two concurrent requests
+    # clobbered each other's toggles and restored the wrong values.
+    # None means "use the configured default".
+    enable_keyword: bool | None = None
+    enable_graph: bool | None = None
+    enable_dense: bool | None = None
+    min_similarity: float | None = None
 
 
 class RetrievedChunk(Contract):

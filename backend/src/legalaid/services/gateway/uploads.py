@@ -13,7 +13,7 @@ from typing import Any
 
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field
-from sqlalchemy import select
+from sqlalchemy import func, select
 
 from legalaid.config import get_settings
 from legalaid.core.logging import get_logger
@@ -126,6 +126,49 @@ async def _process(
 
     resolved_class = doc_class or _classify(filename, joined)
 
+    # ------------------------------------------------------------------- dedup
+    # The digest already decided the stored filename, so re-uploading a file silently
+    # overwrote it on disk while still inserting a fresh Document, Pages, Chunks and
+    # embeddings. The duplicate chunks then competed with the originals for top-k, quietly
+    # degrading retrieval - the worst kind of bug, because nothing appears to fail.
+    with session_scope() as session:
+        existing = session.scalar(
+            select(Document)
+            .where(Document.sha256 == digest, Document.matter_id == matter_id)
+            .order_by(Document.uploaded_at)
+        )
+        if existing is not None:
+            existing_chunks = (
+                session.scalar(
+                    select(func.count()).select_from(Chunk).where(Chunk.document_id == existing.id)
+                )
+                or 0
+            )
+            logger.info(
+                "document_duplicate_ignored",
+                document_id=existing.id,
+                sha256=digest[:16],
+                filename=filename,
+            )
+            return {
+                "document_id": existing.id,
+                "filename": existing.filename,
+                "doc_class": existing.doc_class,
+                "pages": existing.page_count,
+                "chunks": existing_chunks,
+                "vectors_indexed": 0,
+                "extraction_method": existing.extraction_method,
+                "chars": len(joined),
+                "status": existing.status,
+                "sha256": digest,
+                "duplicate": True,
+                "detail": (
+                    "This file is byte-identical to a document already ingested "
+                    f"({existing.filename}), so the existing record was reused. Re-indexing it "
+                    "would put duplicate chunks into retrieval."
+                ),
+            }
+
     # ------------------------------------------------------------------ store
     with session_scope() as session:
         document = Document(
@@ -217,6 +260,8 @@ async def _process(
         "extraction_method": method,
         "chars": len(joined),
         "status": DocumentStatus.INDEXED.value if vectors else DocumentStatus.CHUNKED.value,
+        "sha256": digest,
+        "duplicate": False,
     }
 
 

@@ -27,6 +27,16 @@ from legalaid.domain.enums import AgentKey
 
 _SECTION_RE = re.compile(r"\b(?:section|s\.)\s*(\d+[A-Za-z]{0,2})\b", re.I)
 
+# Indian reporter citation formats, e.g. "(2014) 7 SCC 123", "AIR 1973 SC 1461",
+# "2023 SCC OnLine SC 1066". Regular enough that a fabricated citation inside prose can be
+# detected by shape, then checked for membership in what was actually supplied.
+_CITATION_RE = re.compile(
+    r"(?:\(\d{4}\)\s*\d+\s*[A-Z]{2,5}\s*\d+"
+    r"|AIR\s*\d{4}\s*[A-Z]{2,4}\s*\d+"
+    r"|\d{4}\s*SCC\s*OnLine\s*[A-Z]{2,4}\s*\d+)",
+    re.I,
+)
+
 
 @dataclass(slots=True)
 class AuditReport:
@@ -99,17 +109,31 @@ def audit(
     output: dict[str, Any],
     context: AgentContext,
     structural_problems: list[str] | None = None,
+    prose_fields: tuple[str, ...] = (),
 ) -> AuditReport:
-    """Deterministic grounding audit. No model involved, so it cannot hallucinate."""
+    """Deterministic grounding audit. No model involved, so it cannot hallucinate.
+
+    `prose_fields` names output keys whose free text must also be scanned. Structured
+    citation fields are not the whole story: the lawyer reads `answer_markdown`, so a section
+    number invented inside the prose is exactly as damaging as one invented in a citation
+    list, and until this scan existed it was completely unchecked.
+    """
     report = AuditReport(agent=agent_name, structural_problems=list(structural_problems or []))
     allowed_ids = set(context.allowed_chunk_ids)
 
-    # Text of everything the agent was actually shown.
-    supplied_text = " ".join(i.label for i in context.included).lower()
+    # Text of everything the agent was actually shown. `evidence_label` is used rather than
+    # `label` because agents that see no raw chunks (drafting, synthesis) still carry the
+    # upstream label here - without it the checks below have nothing to compare against and
+    # would silently pass anything.
+    supplied_text = " ".join(i.evidence_label for i in context.included).lower()
     supplied_sections = {
         m.group(1).upper() for m in _SECTION_RE.finditer(supplied_text)
     }
-    supplied_titles = [i.label.lower() for i in context.included if i.kind == "case"]
+    supplied_titles = [
+        i.evidence_label.lower()
+        for i in context.included
+        if i.kind in {"case", "upstream_case"}
+    ]
 
     for chunk_id in _collect_chunk_ids(output):
         if chunk_id not in allowed_ids:
@@ -133,6 +157,28 @@ def audit(
             title[:24] in s or s[:24] in title for s in supplied_titles
         ):
             report.unsupported_cases.append(str(case.get("case_title")))
+
+    # ------------------------------------------------------------------ prose scan
+    for field_name in prose_fields:
+        prose = output.get(field_name)
+        if not isinstance(prose, str) or not prose.strip():
+            continue
+        if supplied_sections:
+            for match in _SECTION_RE.finditer(prose):
+                number = match.group(1).upper()
+                if number not in supplied_sections:
+                    label = f"Section {match.group(1)} (in {field_name})"
+                    if label not in report.unsupported_sections:
+                        report.unsupported_sections.append(label)
+        # Indian reporter citations are highly regular, so a fabricated one is detectable
+        # without needing to understand the surrounding sentence.
+        if supplied_text:
+            for match in _CITATION_RE.finditer(prose):
+                citation = match.group(0).strip()
+                if citation.lower() not in supplied_text:
+                    label = f"{citation} (in {field_name})"
+                    if label not in report.unsupported_cases:
+                        report.unsupported_cases.append(label)
 
     return report
 

@@ -84,7 +84,6 @@ class Settings(BaseSettings):
     # corrective guidance. 2 is a deliberate ceiling - at ~12 tok/s every extra iteration
     # costs 30-60 s, and in practice a second attempt fixes citation errors or nothing will.
     orchestrator_max_loop_iterations: int = 2
-    orchestrator_parallel_agents: bool = True
 
     # --------------------------------------------------------------- chunking
     chunk_target_chars: int = 1400

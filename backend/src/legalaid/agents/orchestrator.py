@@ -40,7 +40,7 @@ from typing import Any
 from legalaid.agents import document_understanding as du
 from legalaid.agents import legal_research as lr
 from legalaid.agents import similar_cases as sc
-from legalaid.agents.base import AgentContext, AgentResult
+from legalaid.agents.base import AgentContext, AgentResult, ContextItem
 from legalaid.agents.document_understanding import DocumentUnderstandingAgent
 from legalaid.agents.drafting import DraftingAgent
 from legalaid.agents.intake_router import (
@@ -72,6 +72,25 @@ from legalaid.services.retrieval.service import search
 logger = get_logger(__name__)
 
 SERVICE = "application-service"
+
+
+def _merge_upstream(*contexts: AgentContext | None) -> list[ContextItem]:
+    """Every distinct evidence item the research agents actually used.
+
+    Drafting and Synthesis reason from findings rather than raw chunks, but they still need the
+    provenance chain - and the grounding audit needs each item's real source label to verify a
+    cited section or case against. Passing ids alone loses that, which is what made the audit
+    silently pass anything those two agents wrote.
+    """
+    merged: dict[str, ContextItem] = {}
+    for context in contexts:
+        if context is None:
+            continue
+        for item in context.included:
+            # A case label is the more useful one to keep if the same chunk appears twice.
+            if item.chunk_id not in merged or item.kind == "case":
+                merged[item.chunk_id] = item
+    return [merged[key] for key in sorted(merged)]
 
 
 @dataclass(slots=True)
@@ -347,10 +366,7 @@ class Orchestrator:
 
         # ------------------------------------------------ agent 3: drafting (dependent)
         if do_draft:
-            upstream_ids = sorted(
-                set(legal_context.allowed_chunk_ids if legal_context else [])
-                | set(case_context.allowed_chunk_ids if case_context else [])
-            )
+            upstream_items = _merge_upstream(legal_context, case_context)
             draft_context = self.draft_agent.build_context(
                 question=question,
                 verified_facts=result.facts,
@@ -360,7 +376,7 @@ class Orchestrator:
                 tone=tone,
                 length=length,
                 instructions=instructions,
-                upstream_chunk_ids=upstream_ids,
+                upstream_items=upstream_items,
             )
             draft_result = await self._run_with_loop(
                 self.draft_agent, draft_context, trace_id, recorder,
@@ -375,17 +391,13 @@ class Orchestrator:
 
         # ------------------------------------------ agent 6: synthesis (the actual answer)
         # Always runs. Structured findings are not an answer, and the lawyer asked a question.
-        upstream_ids = sorted(
-            set(legal_context.allowed_chunk_ids if legal_context else [])
-            | set(case_context.allowed_chunk_ids if case_context else [])
-        )
         synthesis_context = self.synthesis_agent.build_context(
             question=question or full_input,
             facts=result.facts,
             legal_findings=result.legal,
             case_findings=result.cases,
             draft=result.draft,
-            upstream_chunk_ids=upstream_ids,
+            upstream_items=_merge_upstream(legal_context, case_context),
         )
         synthesis_result = await self._run_with_loop(
             self.synthesis_agent, synthesis_context, trace_id, recorder,
@@ -513,7 +525,16 @@ class Orchestrator:
 
     @staticmethod
     def _mode_for(decision: RoutingDecision) -> RetrievalMode:
-        """Search only the collections the request actually needs."""
+        """Search only the collections the request actually needs.
+
+        `needs_document_facts` has to widen the mode, not just request an agent: LAW_SEARCH and
+        CASE_SEARCH do not include USER_DOCUMENTS, so a narrow mode used to leave `doc_chunks`
+        empty and the Document Understanding stage was skipped with the misleading reason "no
+        matter documents available" even though the router had explicitly asked for it.
+        COMBINED is the only mode that reaches user documents.
+        """
+        if decision.needs_document_facts:
+            return RetrievalMode.COMBINED_LEGAL_RESEARCH
         if decision.needs_law and decision.needs_cases:
             return RetrievalMode.COMBINED_LEGAL_RESEARCH
         if decision.needs_cases:
@@ -638,9 +659,30 @@ class Orchestrator:
                 output=agent_result.output,
                 context=context,
                 structural_problems=structural,
+                prose_fields=getattr(agent, "prose_fields", ()),
             )
 
-            if report.passed or not enable_verification:
+            # Recorded on every pass, not only on failure. A guardrail that is invisible when
+            # it succeeds cannot be shown to be working, and "no refinement loop appeared"
+            # reads identically to "no audit ran".
+            with recorder.stage(
+                StageKey.CITATION_VALIDATION,
+                service=SERVICE,
+                input={
+                    "agent": agent_name,
+                    "iteration": iteration,
+                    "allowed_chunk_ids": len(context.allowed_chunk_ids),
+                    "prose_fields_scanned": list(getattr(agent, "prose_fields", ())),
+                },
+            ) as audit_handle:
+                audit_handle.set_output(
+                    passed=report.passed,
+                    problem_count=report.problem_count,
+                    audit=report.to_dict(),
+                    enforced=enable_verification,
+                )
+
+            if report.passed:
                 result.loop_iterations.append(
                     LoopIteration(
                         agent=agent_name,
@@ -653,14 +695,47 @@ class Orchestrator:
                 )
                 break
 
+            if not enable_verification:
+                # The audit still ran and still found problems; the caller asked us not to act
+                # on them. Labelling that "accepted" would be a lie, so it is recorded as
+                # explicitly unverified and the problems are kept visible.
+                result.loop_iterations.append(
+                    LoopIteration(
+                        agent=agent_name,
+                        iteration=iteration,
+                        audit=report.to_dict(),
+                        llm_review=None,
+                        action="accepted_unverified",
+                        guidance=report.guidance() or None,
+                    )
+                )
+                result.warnings.append(
+                    f"{agent_name}: verification was disabled for this run, so "
+                    f"{report.problem_count} grounding problem(s) were left uncorrected."
+                )
+                break
+
             last_iteration = iteration >= self.max_loops
             action = "accepted_with_warnings" if last_iteration else "retry"
+
+            # ---- LLM critic: the judgement calls a set operation cannot make.
+            # Runs only when the deterministic layer has already found something, because it
+            # costs a full generation and the deterministic result is authoritative on
+            # citation membership anyway.
+            llm_review = await self._llm_review(
+                reviewed_agent=agent_name,
+                reviewed_output=agent_result.output,
+                reviewed_context=context,
+                trace_id=trace_id,
+                recorder=recorder,
+            )
+
             result.loop_iterations.append(
                 LoopIteration(
                     agent=agent_name,
                     iteration=iteration,
                     audit=report.to_dict(),
-                    llm_review=None,
+                    llm_review=llm_review,
                     action=action,
                     guidance=report.guidance() or None,
                 )
@@ -689,10 +764,62 @@ class Orchestrator:
                 # Unsupported citations are stripped rather than presented as authority.
                 self._strip_unsupported(agent_result.output, report)
                 break
+
+            # The deterministic guidance leads because it is exact. The critic's guidance is
+            # appended for the things it can see and set membership cannot: overclaiming,
+            # conclusions beyond the evidence.
             guidance = report.guidance()
+            critic_note = (llm_review or {}).get("retry_guidance")
+            if critic_note and str(critic_note).strip():
+                guidance = f"{guidance} Reviewer also noted: {str(critic_note).strip()}"
 
         assert agent_result is not None
         return agent_result
+
+    async def _llm_review(
+        self,
+        *,
+        reviewed_agent: str,
+        reviewed_output: dict[str, Any],
+        reviewed_context: AgentContext,
+        trace_id: str,
+        recorder: TraceRecorder,
+    ) -> dict[str, Any] | None:
+        """Second-tier review by the critic agent. Never allowed to break the pipeline."""
+        try:
+            critic_context = self.critic.build_context(
+                question=reviewed_context.question,
+                reviewed_agent=reviewed_agent,
+                reviewed_output=reviewed_output,
+                reviewed_context=reviewed_context,
+            )
+            with recorder.stage(
+                StageKey.VERIFICATION_AGENT,
+                service="agent-service",
+                input={
+                    "reviewed_agent": reviewed_agent,
+                    "allowed_chunk_ids": len(reviewed_context.allowed_chunk_ids),
+                },
+            ) as handle:
+                critic_result = await self.critic.run(
+                    trace_id=trace_id, context=critic_context, max_attempts=1
+                )
+                review = critic_result.output if critic_result.parse_ok else None
+                handle.set_output(
+                    parse_ok=critic_result.parse_ok,
+                    verdict=(review or {}).get("verdict"),
+                    unsupported_claims=len((review or {}).get("unsupported_claims") or []),
+                    overconfident=len((review or {}).get("overconfident_statements") or []),
+                    latency_ms=critic_result.latency_ms,
+                )
+            return review
+        except Exception as exc:  # noqa: BLE001
+            # A critic failure must never cost the user their answer; the deterministic audit
+            # has already done the load-bearing work.
+            logger.warning(
+                "llm_review_failed", agent=reviewed_agent, error=f"{type(exc).__name__}: {exc}"
+            )
+            return None
 
     @staticmethod
     def _strip_unsupported(output: dict[str, Any], report: AuditReport) -> None:

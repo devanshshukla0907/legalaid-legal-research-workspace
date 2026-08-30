@@ -44,7 +44,7 @@ class StageKey(StrEnum):
     API_GATEWAY = "API_GATEWAY"
     INTAKE_CLASSIFICATION = "INTAKE_CLASSIFICATION"
     QUERY_REWRITE = "QUERY_REWRITE"
-    DOCUMENT_RETRIEVAL = "DOCUMENT_RETRIEVAL"
+
     DOCUMENT_UNDERSTANDING = "DOCUMENT_UNDERSTANDING"
     QUERY_EMBEDDING = "QUERY_EMBEDDING"
     LAW_VECTOR_SEARCH = "LAW_VECTOR_SEARCH"
@@ -52,7 +52,7 @@ class StageKey(StrEnum):
     USER_DOC_SEARCH = "USER_DOC_SEARCH"
     CONTEXT_CONSTRUCTION = "CONTEXT_CONSTRUCTION"
     ORCHESTRATION_PLAN = "ORCHESTRATION_PLAN"
-    AGENT_CONTEXT = "AGENT_CONTEXT"
+
     LEGAL_RESEARCH_AGENT = "LEGAL_RESEARCH_AGENT"
     SIMILAR_CASE_AGENT = "SIMILAR_CASE_AGENT"
     DRAFTING_AGENT = "DRAFTING_AGENT"
@@ -75,7 +75,7 @@ STAGE_LABELS: dict[StageKey, str] = {
     StageKey.API_GATEWAY: "API gateway",
     StageKey.INTAKE_CLASSIFICATION: "Intake classification",
     StageKey.QUERY_REWRITE: "Query rewrite for retrieval",
-    StageKey.DOCUMENT_RETRIEVAL: "Matter document retrieval",
+
     StageKey.DOCUMENT_UNDERSTANDING: "Document understanding",
     StageKey.QUERY_EMBEDDING: "Query embedding",
     StageKey.LAW_VECTOR_SEARCH: "Law vector search",
@@ -83,7 +83,7 @@ STAGE_LABELS: dict[StageKey, str] = {
     StageKey.USER_DOC_SEARCH: "User document retrieval",
     StageKey.CONTEXT_CONSTRUCTION: "Context construction",
     StageKey.ORCHESTRATION_PLAN: "Orchestration plan",
-    StageKey.AGENT_CONTEXT: "Agent context assembly",
+
     StageKey.LEGAL_RESEARCH_AGENT: "Legal Research Agent",
     StageKey.SIMILAR_CASE_AGENT: "Similar Case Agent",
     StageKey.DRAFTING_AGENT: "Drafting Agent",

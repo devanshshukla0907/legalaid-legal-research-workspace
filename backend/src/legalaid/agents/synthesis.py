@@ -24,6 +24,9 @@ from legalaid.domain.enums import AgentKey
 class SynthesisAgent(Agent):
     agent_key = AgentKey.SYNTHESIS
     prompt_name = "synthesis"
+    # This is the text the lawyer actually reads, so it is the most important thing in the
+    # system to audit for invented authority.
+    prose_fields = ("answer_markdown",)
 
     def build_context(
         self,
@@ -33,7 +36,7 @@ class SynthesisAgent(Agent):
         legal_findings: dict[str, Any],
         case_findings: dict[str, Any],
         draft: dict[str, Any] | None = None,
-        upstream_chunk_ids: list[str] | None = None,
+        upstream_items: list[ContextItem] | None = None,
     ) -> AgentContext:
         context = AgentContext(agent_key=self.agent_key, question=question)
         context.extra.update(
@@ -46,12 +49,15 @@ class SynthesisAgent(Agent):
             }
         )
         # Record the evidence chain even though the agent never sees the chunks themselves.
-        for chunk_id in upstream_chunk_ids or []:
+        # `source_label` preserves each item's real source label, which is what lets the
+        # grounding audit check sections and case names quoted in `answer_markdown`.
+        for item in upstream_items or []:
             context.included.append(
                 ContextItem(
-                    chunk_id=chunk_id,
-                    kind="upstream_evidence",
-                    label=f"evidence behind the findings ({chunk_id})",
+                    chunk_id=item.chunk_id,
+                    kind="upstream_case" if item.kind == "case" else "upstream_evidence",
+                    label=f"evidence behind the findings ({item.chunk_id})",
+                    source_label=item.evidence_label,
                     reason="cited by an upstream research agent",
                 )
             )

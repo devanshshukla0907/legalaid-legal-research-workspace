@@ -42,7 +42,15 @@ from legalaid.db.models import (
     Workspace,
 )
 from legalaid.domain.contracts import RetrievalRequest
-from legalaid.domain.enums import AGENT_LABELS, AgentKey, Collection, RetrievalMode
+from legalaid.domain.enums import (
+    AGENT_LABELS,
+    AgentKey,
+    Collection,
+    DraftLength,
+    DraftTone,
+    DraftType,
+    RetrievalMode,
+)
 from legalaid.services.common import create_service_app
 from legalaid.services.llm.ollama_client import OllamaClient
 from legalaid.services.retrieval.graph import get_graph, graph_stats
@@ -76,6 +84,11 @@ class ResearchRequest(BaseModel):
     enable_drafting: bool | None = None
     enable_verification: bool = True
     instructions: str = ""
+    # The orchestrator has always accepted these; they were simply not exposed, so a draft
+    # was permanently FORMAL/STANDARD and its type was whatever the router guessed.
+    draft_type: DraftType | None = None
+    tone: DraftTone = DraftTone.FORMAL
+    length: DraftLength = DraftLength.STANDARD
 
 
 class QuickRetrievalRequest(BaseModel):
@@ -83,8 +96,11 @@ class QuickRetrievalRequest(BaseModel):
     mode: RetrievalMode = RetrievalMode.COMBINED_LEGAL_RESEARCH
     top_k: int | None = None
     matter_id: str | None = None
+    # Retriever ablation controls. None means "use the configured default".
     enable_keyword: bool | None = None
     enable_graph: bool | None = None
+    enable_dense: bool | None = None
+    min_similarity: float | None = Field(default=None, ge=0.0, le=1.0)
 
 
 class CompareRequest(BaseModel):
@@ -342,6 +358,9 @@ async def research_query(payload: ResearchRequest) -> dict[str, Any]:
         enable_drafting=payload.enable_drafting,
         enable_verification=payload.enable_verification,
         document_summaries=document_summaries,
+        draft_type=payload.draft_type,
+        tone=payload.tone,
+        length=payload.length,
     )
     return _serialise_result(result)
 
@@ -375,25 +394,24 @@ async def research_stream(trace_id: str = Query(...)) -> StreamingResponse:
 
 @app.post("/api/retrieval/search", tags=["retrieval"])
 async def retrieval_only(payload: QuickRetrievalRequest) -> dict[str, Any]:
-    """Retrieval without any agents, for the Retrieval Inspector."""
-    settings = get_settings()
-    # Per-request retriever toggles make the hybrid contribution demonstrable.
-    original = (settings.retrieval_enable_keyword, settings.retrieval_enable_graph)
-    if payload.enable_keyword is not None:
-        settings.retrieval_enable_keyword = payload.enable_keyword
-    if payload.enable_graph is not None:
-        settings.retrieval_enable_graph = payload.enable_graph
-    try:
-        response = await retrieval_search(
-            RetrievalRequest(
-                question=payload.question,
-                mode=payload.mode,
-                top_k=payload.top_k,
-                matter_id=payload.matter_id,
-            )
+    """Retrieval without any agents, for the Retrieval Inspector.
+
+    Retriever toggles travel on the request. They used to be applied by mutating the cached
+    global Settings and restoring it in a `finally`, which meant two concurrent requests could
+    overwrite each other's toggles and restore the wrong values.
+    """
+    response = await retrieval_search(
+        RetrievalRequest(
+            question=payload.question,
+            mode=payload.mode,
+            top_k=payload.top_k,
+            matter_id=payload.matter_id,
+            enable_keyword=payload.enable_keyword,
+            enable_graph=payload.enable_graph,
+            enable_dense=payload.enable_dense,
+            min_similarity=payload.min_similarity,
         )
-    finally:
-        settings.retrieval_enable_keyword, settings.retrieval_enable_graph = original
+    )
     return response.model_dump(mode="json")
 
 
