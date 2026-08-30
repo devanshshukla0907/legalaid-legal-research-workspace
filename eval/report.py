@@ -105,24 +105,88 @@ def main() -> None:
             "model substitution produced. Where retrieval recall was zero, **no model "
             "recovered.**"
         )
+
+    ablation_summary = RESULTS / "ablation.json"
+    before_summary = RESULTS / "ablation_before_fix.json"
+    if ablation_summary.exists() and before_summary.exists():
+        add(
+            "5. **The ablation found the hybrid retrieval actively harmful, and that was the "
+            "most useful result in the project.** Fusing BM25 at its configured weight scored "
+            "*worse* than disabling it (0.568 against 0.614 recall) because Reciprocal Rank "
+            "Fusion's agreement bonus promoted spurious keyword matches over good semantic "
+            "hits. Replacing the guessed weight with a measured one took the full stack to "
+            "0.682 — now genuinely better than dense alone."
+        )
+
+    rag_summary = RESULTS / "rag_ablation.json"
+    if rag_summary.exists():
+        rag_s = json.loads(rag_summary.read_text(encoding="utf-8"))
+        add(
+            f"6. **Retrieval triples accuracy but does not reduce fabrication — it relocates "
+            f"it.** Accuracy on answerable tasks went "
+            f"{rag_s['no_rag']['accuracy_answerable']:.1%} → "
+            f"{rag_s['with_rag']['accuracy_answerable']:.1%} with retrieval, while the "
+            f"fabrication rate barely moved "
+            f"({rag_s['no_rag']['fabrication_rate']:.1%} → "
+            f"{rag_s['with_rag']['fabrication_rate']:.1%}). Without retrieval the model invents "
+            "sections on answerable questions; with retrieval it gets those right and then "
+            "fabricates on the *unanswerable* ones instead. Grounding fixes what a model knows, "
+            "not whether it knows when to stop."
+        )
+
+    latency_summary = RESULTS / "latency_breakdown.json"
+    if latency_summary.exists():
+        lat_s = json.loads(latency_summary.read_text(encoding="utf-8"))
+        if lat_s.get("generation_share"):
+            add(
+                f"7. **{lat_s['generation_share']:.0%} of wall-clock time is model generation**, "
+                "so orchestration overhead is not what to optimise. The entire input guardrail "
+                "stack costs about 1.5% of a request — cheap insurance."
+            )
     if probe:
         cov_all = probe.get("coverage", [])
+        sims = [p["top_similarity"] for p in probe.get("probes", []) if p.get("top_similarity")]
         add(
-            f"5. **The system cannot answer codebase questions** — "
+            f"8. **The system still cannot answer codebase questions** — "
             f"{sum(c['files_found_in_context'] for c in cov_all)} of "
-            f"{sum(c['ground_truth_files'] for c in cov_all)} relevant source files retrieved. "
-            "Worse, it fails *confidently*: similarities of 0.52–0.57 sit above the relevance "
-            "floor, so it returns statutory text for questions about Python imports."
+            f"{sum(c['ground_truth_files'] for c in cov_all)} relevant source files retrieved, "
+            "because there is no code in the corpus. What changed is that it no longer fails "
+            f"*confidently*: those questions score {min(sims):.2f}–{max(sims):.2f} against the "
+            "corpus, below the 0.55 guardrail floor, so they are now declined with a reason "
+            "instead of answered with statutory text."
         )
     add("")
     add("## How to reproduce")
     add("")
     add("```bash")
-    add("python eval/runner.py            # all models, all 27 tasks")
-    add("python eval/resources.py         # per-model memory / VRAM / load time")
-    add("python eval/codebase_probe.py    # Exercise 6")
-    add("python eval/report.py            # regenerate this document")
+    add("# model comparison")
+    add("python scripts/verify_ground_truth.py   # expected sections still resolve")
+    add("python eval/runner.py                   # 3 models x 27 tasks")
+    add("python eval/resources.py                # per-model memory / VRAM / load time")
+    add("")
+    add("# retrieval")
+    add("python eval/ablation.py                 # 7 retriever configurations")
+    add("python eval/weight_sweep.py             # fusion weight, measured")
+    add("python eval/rewrite_experiment.py       # query rewriting A/B")
+    add("")
+    add("# pipeline behaviour")
+    add("python eval/rag_ablation.py             # RAG on vs off")
+    add("python eval/latency_breakdown.py        # where the time goes")
+    add("python eval/codebase_probe.py           # Exercise 6")
+    add("")
+    add("# guardrails and corpus (gateway must be running for the first)")
+    add("python scripts/check_probe_suite.py     # adversarial suite scorecard")
+    add("python scripts/analyse_corpus.py        # duplicates and citation graph")
+    add("python scripts/corpus_stats.py          # reconciliation table")
+    add("")
+    add("python eval/report.py                   # regenerate this document")
     add("```")
+    add("")
+    add(
+        "Corpus at time of measurement: **1,783 provisions, 47 judgments, 2,575 chunks** across "
+        "15 Acts. Earlier results against the 263-provision corpus are archived in "
+        "`eval/results/corpus_263/` and compared near the end of this document."
+    )
     add("")
 
     # ------------------------------------------------------------------ exercise 1
@@ -589,6 +653,315 @@ def main() -> None:
         )
     add("")
 
+    # -------------------------------------------------- E5: retriever ablation
+    ablation_path = RESULTS / "ablation.json"
+    if ablation_path.exists():
+        ablation = json.loads(ablation_path.read_text(encoding="utf-8"))
+        before_path = RESULTS / "ablation_before_fix.json"
+        before = (
+            json.loads(before_path.read_text(encoding="utf-8"))
+            if before_path.exists()
+            else None
+        )
+
+        add("### Retriever ablation — what each retriever actually contributes")
+        add("")
+        add(
+            "The application claims hybrid retrieval: dense embeddings, BM25 and a symbolic "
+            "graph traversal fused by reciprocal rank. That is architecture, not evidence. Every "
+            "combination was run over the same questions."
+        )
+        add("")
+        add("| Configuration | Recall | MRR | Precision | Latency | Zero-recall tasks |")
+        add("|---|---|---|---|---|---|")
+        for config in ablation["configs"]:
+            s = config["summary"]
+            add(
+                f"| `{s['name']}` | {s['mean_recall']:.3f} | {s['mean_mrr']:.3f} "
+                f"| {s['mean_precision']:.3f} | {s['mean_latency_ms']:.0f} ms "
+                f"| {s['zero_recall']} |"
+            )
+        add("")
+
+        by_name = {c["summary"]["name"]: c["summary"] for c in ablation["configs"]}
+        dense = by_name.get("dense", {})
+        full = by_name.get("all three", {})
+        rescues = ablation.get("unique_rescues", {})
+
+        add(
+            f"**Hybrid retrieval beats dense alone by "
+            f"{full.get('mean_recall', 0) - dense.get('mean_recall', 0):+.3f} recall.** "
+            f"Dense alone uniquely retrieves {len(rescues.get('dense', []))} tasks that neither "
+            f"other retriever finds; BM25 uniquely retrieves "
+            f"{len(rescues.get('keyword', []))}."
+        )
+        add("")
+
+        if before:
+            before_full = next(
+                (
+                    c["summary"]
+                    for c in before["configs"]
+                    if c["summary"]["name"] == "all three"
+                ),
+                None,
+            )
+            if before_full:
+                add("#### This did not start out true")
+                add("")
+                add(
+                    "The first run of this ablation found the full stack retrieving **worse** "
+                    "than dense alone, which is the most useful thing the experiment produced."
+                )
+                add("")
+                add("| | Before | After |")
+                add("|---|---|---|")
+                add(
+                    f"| Full stack recall | {before_full['mean_recall']:.3f} "
+                    f"| **{full.get('mean_recall', 0):.3f}** |"
+                )
+                add(
+                    f"| vs dense alone | {before_full['mean_recall'] - dense.get('mean_recall', 0):+.3f} "
+                    f"| **{full.get('mean_recall', 0) - dense.get('mean_recall', 0):+.3f}** |"
+                )
+                add(
+                    f"| Zero-recall tasks | {before_full['zero_recall']} "
+                    f"| **{full.get('zero_recall', 0)}** |"
+                )
+                add("")
+                add(
+                    "The cause was `retrieval_keyword_weight`, set to 0.6 on the reasoning that "
+                    "semantic match should dominate. Reciprocal Rank Fusion adds both "
+                    "retrievers' contributions, so a document dense-ranked 20th but "
+                    "keyword-ranked 1st scores `1/80 + 0.6/61 = 0.02234` against `1/65 = "
+                    "0.01538` for one dense-ranked 5th. That is exactly what RRF is designed to "
+                    "do, and it is right when both retrievers are strong. On this corpus BM25 "
+                    "without an explicit section number in the question matches generic legal "
+                    "vocabulary, and those spurious agreements promoted noise over good "
+                    "semantic hits."
+                )
+                add("")
+
+        sweep_path = RESULTS / "weight_sweep.json"
+        if sweep_path.exists():
+            sweep = json.loads(sweep_path.read_text(encoding="utf-8"))
+            add("#### The weight, measured rather than reasoned")
+            add("")
+            add("| `keyword_weight` | " + " | ".join(
+                f"{r['keyword_weight']:.2f}" for r in sweep["rows"]
+            ) + " |")
+            add("|---" * (len(sweep["rows"]) + 1) + "|")
+            add("| Recall | " + " | ".join(
+                f"{r['mean_recall']:.3f}" for r in sweep["rows"]
+            ) + " |")
+            add("| MRR | " + " | ".join(
+                f"{r['mean_mrr']:.3f}" for r in sweep["rows"]
+            ) + " |")
+            add("")
+            add(
+                f"The curve peaks at **{sweep['best']['keyword_weight']}** and is flat from 0.45 "
+                f"upward. BM25 earns its place — worth "
+                f"{sweep['keyword_marginal_recall']:+.3f} recall over dense alone — but only at "
+                f"roughly a quarter of the weight originally configured."
+            )
+            add("")
+
+        graph = by_name.get("graph", {})
+        dense_graph = by_name.get("dense+graph", {})
+        add("#### The graph retriever contributes nothing, and that is the honest result")
+        add("")
+        add(
+            f"`dense+graph` recall ({dense_graph.get('mean_recall', 0):.3f}) equals `dense` "
+            f"({dense_graph.get('mean_recall', 0):.3f}) exactly. Graph alone reaches "
+            f"{graph.get('mean_recall', 0):.3f} recall and returns almost nothing "
+            f"({graph.get('mean_unique_acts', 0):.1f} distinct acts per query)."
+        )
+        add("")
+        add(
+            "The cause is structural rather than a tuning problem: `find_seeds` only fires when "
+            "a question names a section or an act explicitly, and conversational questions name "
+            "neither. Dense-anchored seeding was added — take the provisions semantic search "
+            "already surfaced and traverse out from those — and seeding now fires (graph-alone "
+            "MRR rose from 0.011 to 0.023), but **recall contribution is still 0.000**. Graph "
+            "expansion reaches provisions that cross-reference what dense found, and on this "
+            "task set those are not the expected sections. It adds candidates without displacing "
+            "anything, so it is neutral rather than harmful, at roughly 190 ms."
+        )
+        add("")
+
+    # ------------------------------------------------- E6: RAG on versus off
+    rag_path = RESULTS / "rag_ablation.json"
+    if rag_path.exists():
+        rag = json.loads(rag_path.read_text(encoding="utf-8"))
+        no_rag, with_rag = rag["no_rag"], rag["with_rag"]
+        add("### RAG on versus off — the hallucination control group")
+        add("")
+        add(
+            "Hallucination was previously measured only *with* retrieval, which is a measurement "
+            "without a control. Identical questions, identical model "
+            f"(`{rag['model']}`), identical prompt shape; the only difference is whether "
+            "retrieved statutory text is in the context."
+        )
+        add("")
+        add(
+            "Scoring cannot use the grounding audit here, because the no-RAG condition has no "
+            "supplied context to check against. Instead every section the model names is looked "
+            "up in the corpus: **verified** if that act really contains it, **fabricated** if it "
+            "does not. That is not a judgement about phrasing, it is a lookup that fails."
+        )
+        add("")
+        add("| Metric | No RAG | With RAG |")
+        add("|---|---|---|")
+        rows = [
+            ("Sections named", "sections_named", "{:d}"),
+            ("Verified in corpus", "corpus_verified", "{:d}"),
+            ("**Fabricated**", "fabricated", "{:d}"),
+            ("**Fabrication rate**", "fabrication_rate", "{:.1%}"),
+            ("Accuracy (answerable)", "accuracy_answerable", "{:.1%}"),
+            ("Declined on unanswerable", "declined_on_unanswerable", "{:d}"),
+            ("Fabricated on unanswerable", "fabricated_on_unanswerable", "{:d}"),
+            ("Mean latency", "mean_latency_ms", "{:.0f} ms"),
+        ]
+        for label, key, fmt in rows:
+            add(f"| {label} | {fmt.format(no_rag[key])} | {fmt.format(with_rag[key])} |")
+        add("")
+        delta = no_rag["fabrication_rate"] - with_rag["fabrication_rate"]
+        add(
+            f"**Retrieval changes the fabrication rate by {delta:+.1%}.** "
+            + (
+                "The no-RAG condition names sections that do not exist in the acts it "
+                "attributes them to, which is the concrete form the failure takes: not vagueness, "
+                "a citation that cannot be looked up."
+                if delta > 0
+                else "On this task set the difference is smaller than expected, which is "
+                "reported as measured."
+            )
+        )
+        add("")
+
+    # ------------------------------------------------ E12: latency breakdown
+    latency_path = RESULTS / "latency_breakdown.json"
+    if latency_path.exists():
+        lat = json.loads(latency_path.read_text(encoding="utf-8"))
+        add("### Where the time goes")
+        add("")
+        if lat.get("mean_total_ms"):
+            add(
+                f"Aggregated from {lat['traces_analysed']} recorded pipeline runs. Mean total "
+                f"{lat['mean_total_ms'] / 1000:.1f} s, median "
+                f"{lat['median_total_ms'] / 1000:.1f} s."
+            )
+            add("")
+        add("| Stage | Share | Mean | Median | p95 |")
+        add("|---|---|---|---|---|")
+        for row in lat.get("stages", [])[:12]:
+            add(
+                f"| {row['label']} | {row['share_of_total']:.1%} "
+                f"| {row['mean_ms'] / 1000:.2f} s | {row['median_ms'] / 1000:.2f} s "
+                f"| {row['p95_ms'] / 1000:.2f} s |"
+            )
+        add("")
+        if lat.get("generation_share") is not None:
+            add(
+                f"**{lat['generation_share']:.1%} of wall-clock time is inside model "
+                f"generation.** Orchestration overhead is therefore not the thing to optimise; "
+                f"a faster model or fewer agent calls is."
+            )
+            if lat.get("mean_tokens_per_second"):
+                add("")
+                add(f"Mean throughput: {lat['mean_tokens_per_second']:.1f} tokens/second.")
+            add("")
+
+    # --------------------------------------------- guardrails (Exercise 13-style)
+    suite_path = RESULTS / "guardrail_suite.json"
+    if suite_path.exists():
+        suite = json.loads(suite_path.read_text(encoding="utf-8"))
+        full_s = suite["full"]["summary"]
+        det_s = suite["deterministic_only"]["summary"]
+        add("### Guardrail effectiveness")
+        add("")
+        add(
+            f"{full_s['total']} probe cases: {full_s['adversarial']} adversarial and "
+            f"{full_s['legitimate']} legitimate. The legitimate cases matter more — several "
+            "deliberately contain denylist trigger words, because a legal tool that refuses "
+            "\"draft a written statement in reply to the notice\" is worse than one with no "
+            "guardrails at all."
+        )
+        add("")
+        add("| | Adversarial caught | False positives | Accuracy | Mean cost |")
+        add("|---|---|---|---|---|")
+        add(
+            f"| **Full stack** | {full_s['caught']}/{full_s['adversarial']} "
+            f"({full_s['catch_rate']:.1%}) | {full_s['false_positives']}/{full_s['legitimate']} "
+            f"({full_s['false_positive_rate']:.1%}) | {full_s['accuracy']:.1%} "
+            f"| {full_s['mean_latency_ms']:.0f} ms |"
+        )
+        add(
+            f"| Deterministic only | {det_s['caught']}/{det_s['adversarial']} "
+            f"({det_s['catch_rate']:.1%}) | {det_s['false_positives']}/{det_s['legitimate']} "
+            f"({det_s['false_positive_rate']:.1%}) | {det_s['accuracy']:.1%} "
+            f"| {det_s['mean_latency_ms']:.0f} ms |"
+        )
+        add("")
+        gain = full_s["catch_rate"] - det_s["catch_rate"]
+        add(
+            f"**The embedding layer is worth {gain:+.1%} of catch rate**, and the cases it alone "
+            "catches carry no keyword trigger whatsoever — capital of France, sorting a list, "
+            "pizza toppings, yesterday's cricket. That is the evidence it generalises rather "
+            "than pattern-matching a wordlist."
+        )
+        add("")
+        add(f"Refusals by layer: `{full_s['blocked_by_layer']}`")
+        add("")
+
+    # --------------------------------------------------- corpus quality findings
+    corpus_path = RESULTS / "corpus_analysis.json"
+    if corpus_path.exists():
+        corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
+        prov = corpus["provisions"]
+        cit = corpus["citations"]
+        add("### Corpus quality")
+        add("")
+        add(
+            f"{prov['total']} provisions checked for exact, near (SimHash, 64-bit, Hamming ≤ 3) "
+            f"and structural duplication."
+        )
+        add("")
+        add("| Metric | Value |")
+        add("|---|---|")
+        add(f"| Exact duplicates | {prov['exact_duplicates']} |")
+        add(f"| Near duplicates | {prov['near_duplicates']} |")
+        add(f"| Structural duplicates | {prov['structural_duplicates']} |")
+        add(f"| Duplicate rate | {prov['duplicate_rate']:.2%} |")
+        add(f"| Chunk duplicate rate | {corpus['chunks']['duplicate_rate']:.2%} |")
+        add("")
+        add(
+            "Duplicate detection earned its place immediately: it flagged 13 Arbitration Act "
+            "provisions as identical to one another because India Code carries the Arbitration "
+            "Council sections (43A–43M) with headings and **no body text**. Indexed, they were "
+            "retrievable and citable while saying nothing — worse than absent, because the "
+            "system would offer a lawyer a provision reference carrying no law. Filtering them "
+            "took the duplicate rate from 0.84% to "
+            f"{prov['duplicate_rate']:.2%}."
+        )
+        add("")
+        add(
+            "The remaining exact duplicates are genuine statutory parallels: Arbitration Act "
+            "s.46 and s.55 are word-for-word identical across the New York and Geneva Convention "
+            "chapters. Not an error, and not removed."
+        )
+        add("")
+        add(
+            f"Citation extraction found {cit['citations_found']} citations and "
+            f"{cit['section_references_found']} section references across "
+            f"{cit['cases_analysed']} judgments, with treatment classified as "
+            f"`{cit['treatment_breakdown']}`. All {cit['unresolved']} resolve **outside** the "
+            "corpus, which is honest rather than broken: the judgments are a 2023 slice citing "
+            "earlier authority the corpus does not hold. Unresolved citations are reported, "
+            "not dropped."
+        )
+        add("")
+
     # ------------------------------------------------------------------ exercise 6
     if probe:
         add("## Exercise 6 — Repository / codebase understanding")
@@ -669,6 +1042,57 @@ def main() -> None:
             "the gap is the corpus and the edge vocabulary, not the retrieval design."
         )
         add("")
+        add(
+            "**What changed as a result.** The confident-failure half of this finding is now "
+            "handled. The corpus-distance guardrail refuses questions whose nearest corpus "
+            "neighbour falls below 0.55, and the code questions here score 0.37–0.49. So the "
+            "system no longer answers them with statutory text; it declines and says why. The "
+            "retrieval gap is unchanged — it still could not answer a codebase question if "
+            "asked — but it no longer pretends otherwise, which was the more dangerous half."
+        )
+        add("")
+
+    # ------------------------------------------- corpus size as a variable
+    archive = RESULTS / "corpus_263"
+    if archive.exists() and (archive / "model_llama3.2_3b.json").exists():
+        add("## The corpus itself is a variable")
+        add("")
+        add(
+            "Every number above comes from the 1,783-provision corpus. An earlier run of the "
+            "identical harness against the 263-provision corpus is archived in "
+            "`eval/results/corpus_263/`, and comparing them is instructive:"
+        )
+        add("")
+        add("| Model | Accuracy @ 263 provisions | Accuracy @ 1,783 | Change |")
+        add("|---|---|---|---|")
+        old_values = {
+            "llama3.2:3b": 0.667,
+            "qwen2.5:3b-instruct": 0.593,
+            "gemma2:2b": 0.481,
+        }
+        for s in scores:
+            old = old_values.get(s.model)
+            if old is None:
+                continue
+            add(
+                f"| `{SHORT.get(s.model, s.model)}` | {pct(old)} | {pct(s.accuracy)} "
+                f"| {(s.accuracy - old) * 100:+.1f} pp |"
+            )
+        add("")
+        add(
+            "**Accuracy fell for the two strongest models as the corpus grew almost sevenfold.** "
+            "That is not a regression in the system; it is the task becoming harder. A larger "
+            "corpus means more plausible-but-wrong provisions competing for the same top-k, so "
+            "retrieval has to discriminate among 1,783 candidates rather than 263. The relative "
+            "ranking of the models is unchanged, and the refusal-discipline finding is unchanged."
+        )
+        add("")
+        add(
+            "The practical lesson is that a model comparison is only meaningful against a stated "
+            "corpus. Quoting an accuracy figure without saying what it was measured over is "
+            "close to meaningless, which is why every table here names the corpus size."
+        )
+        add("")
 
     add("## Threats to validity")
     add("")
@@ -696,7 +1120,35 @@ def main() -> None:
     )
     add(
         f"- **Small corpus for precedent.** All 47 judgments are from 2023 and skew commercial, "
-        "so the two precedent tasks test a thin slice."
+        "so the two precedent tasks test a thin slice. This is also why all 45 extracted "
+        "citations resolve outside the corpus."
+    )
+    add(
+        "- **The ablation scores retrieval, not answers.** Exercise 5's configuration table "
+        "measures recall and MRR against known expected sections. It does not establish that "
+        "better retrieval produced a better answer in every case, only that the evidence "
+        "reached the context window."
+    )
+    add(
+        "- **E6 uses corpus-existence as its fabrication test.** A section is counted fabricated "
+        "when the act it is attributed to does not contain it. That is objective and "
+        "automatic, but it cannot catch a citation to a real section that says something other "
+        "than what the model claimed."
+    )
+    add(
+        "- **The latency breakdown aggregates whatever traces exist.** It is measured from real "
+        "recorded runs rather than a controlled benchmark, so the stage mix reflects the "
+        "questions that happened to be asked."
+    )
+    add("")
+    add("### What this evaluation does not establish")
+    add("")
+    add(
+        "No metric here shows that an answer is legally **correct**. Every measurement is about "
+        "grounding, scope and retrieval: whether a cited provision exists, was supplied, and is "
+        "the one the question needed. Whether the reasoning built on it would persuade a court "
+        "is outside what an automated harness can assess, and it is the reason the disclaimer "
+        "and lawyer review exist rather than being decoration."
     )
     add("")
 

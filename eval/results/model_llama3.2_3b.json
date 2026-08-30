@@ -4,16 +4,16 @@
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 13862.9,
-    "input_tokens": 1442,
-    "output_tokens": 158,
+    "latency_ms": 11013.5,
+    "input_tokens": 1482,
+    "output_tokens": 157,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indiancontract:73"
     ],
     "cited_chunk_ids": [
-      "chk_11d7daa6950e4ff8b77c59c01764890a"
+      "chk_9e2b29dfbd904146916c6b1fe9ea004e"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -22,34 +22,34 @@
       ],
       "sections": [
         {
-          "section": "73",
+          "section": "Section 73",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_11d7daa6950e4ff8b77c59c01764890a",
+          "chunk_id": "chk_9e2b29dfbd904146916c6b1fe9ea004e",
           "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Section 73 provides for compensation to be paid by one party to another for loss or damage caused by breach of contract"
+          "relevance": "The Act provides for compensation to be paid to a party for loss or damage caused by a breach of contract."
         }
       ],
       "reasoning": [],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 554
+    "raw_text_len": 549
   },
   {
     "task_id": "L02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 5073.3,
-    "input_tokens": 1263,
-    "output_tokens": 232,
+    "latency_ms": 7160.6,
+    "input_tokens": 1311,
+    "output_tokens": 212,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indiancontract:25"
     ],
     "cited_chunk_ids": [
-      "chk_e6841b665ac44aeda047c4760bf1f495"
+      "chk_0583994ba3b3426ca841b7b975154355"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -60,34 +60,34 @@
         {
           "section": "Section 25",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_e6841b665ac44aeda047c4760bf1f495",
+          "chunk_id": "chk_0583994ba3b3426ca841b7b975154355",
           "what_it_provides": "Agreement without consideration is void, unless it is in writing and registered, or is a promise to compensate for something done, or is a promise to pay a debt barred by limitation law",
           "relevance": "Determines when an agreement without consideration is still valid"
         }
       ],
       "reasoning": [
-        "Section 25 of the Indian Contract Act, 1872, states that an agreement without consideration is void, unless it meets certain conditions. These conditions include being in writing and registered, or being a promise to compensate for something done, or being a promise to pay a debt barred by limitation law."
+        "An agreement is valid under Section 25 if it is in writing and registered, or is a promise to compensate for something done, or is a promise to pay a debt barred by limitation law"
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 969
+    "raw_text_len": 842
   },
   {
     "task_id": "L03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4639.1,
-    "input_tokens": 1443,
-    "output_tokens": 208,
+    "latency_ms": 5781.2,
+    "input_tokens": 1505,
+    "output_tokens": 163,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:25"
+      "indiancontract:10"
     ],
     "cited_chunk_ids": [
-      "chk_e6841b665ac44aeda047c4760bf1f495"
+      "chk_3a29b9005dd242cb96045dfc7284cab7"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -96,36 +96,33 @@
       ],
       "sections": [
         {
-          "section": "Section 25",
+          "section": "Section 10",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_e6841b665ac44aeda047c4760bf1f495",
-          "what_it_provides": "Agreement without consideration is void, unless it is in writing and registered, or is a promise to compensate for something done, or is a promise to pay a debt barred by limitation law",
+          "chunk_id": "chk_3a29b9005dd242cb96045dfc7284cab7",
+          "what_it_provides": "All agreements are contracts if they are made by the free consent of parties competent to contract, for a lawful consideration and with a lawful object, and are not hereby expressly declared to be void.",
           "relevance": "Essential requirements for an agreement to be a contract"
         }
       ],
-      "reasoning": [
-        "An agreement must be in writing and registered, or it must be a promise to compensate for something done, or it must be a promise to pay a debt barred by limitation law."
-      ],
-      "evidence_sufficient": true,
-      "uncertainties": []
+      "reasoning": [],
+      "evidence_sufficient": true
     },
-    "raw_text_len": 813
+    "raw_text_len": 628
   },
   {
     "task_id": "L04",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4611.6,
-    "input_tokens": 1370,
-    "output_tokens": 208,
+    "latency_ms": 5910.2,
+    "input_tokens": 1276,
+    "output_tokens": 173,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "informationtec:4"
     ],
     "cited_chunk_ids": [
-      "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7"
+      "chk_437c690f50534b168b4b88ebb41810dc"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -136,26 +133,26 @@
         {
           "section": "Section 4",
           "act": "Information Technology Act, 2000",
-          "chunk_id": "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+          "chunk_id": "chk_437c690f50534b168b4b88ebb41810dc",
           "what_it_provides": "Legal recognition of electronic records",
-          "relevance": "Yes, electronic records are legally recognised in India under Section 4 of the Information Technology Act, 2000."
+          "relevance": "This section provides that information or matter shall be deemed to have been satisfied if it is rendered or made available in an electronic form and accessible for a subsequent reference."
         }
       ],
       "reasoning": [
-        "Section 4 of the Information Technology Act, 2000 provides that any law requiring information or matter to be in writing or in the typewritten or printed form is deemed to be satisfied if the information or matter is rendered or made available in an electronic form and accessible for a subsequent reference."
+        "The Information Technology Act, 2000 provides legal recognition of electronic records, making them admissible in legal proceedings."
       ],
       "evidence_sufficient": true
     },
-    "raw_text_len": 826
+    "raw_text_len": 725
   },
   {
     "task_id": "L05",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 11434.0,
-    "input_tokens": 1240,
-    "output_tokens": 627,
+    "latency_ms": 17530.7,
+    "input_tokens": 1290,
+    "output_tokens": 606,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
@@ -165,10 +162,10 @@
       "bharatiyasaksh:62"
     ],
     "cited_chunk_ids": [
-      "chk_e24979bb141344dea0f105da9da92461",
-      "chk_dde0f411b5764b41b5c2592902a9794e",
-      "chk_784d3e888ee743a594d6b5f36e2388f2",
-      "chk_61c6acc8e7084173bf2cf5ef10930a65"
+      "chk_6c981e5b97d44e7d8f4f6ebd7e9b79fa",
+      "chk_a6ad4875232349b3b5e13c3d63c3ce27",
+      "chk_3533e8477fa74d77a44b1b0daab7d4ee",
+      "chk_343fa1a2cbf24454a05c81270f7627c5"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -179,57 +176,57 @@
         {
           "section": "Section 61",
           "act": "Bharatiya Sakshya Adhiniyam, 2023",
-          "chunk_id": "chk_e24979bb141344dea0f105da9da92461",
+          "chunk_id": "chk_6c981e5b97d44e7d8f4f6ebd7e9b79fa",
           "what_it_provides": "Nothing in this Adhiniyam shall apply to deny the admissibility of an electronic or digital record in the evidence on the ground that it is an electronic or digital record",
-          "relevance": "Establishes the principle that electronic records are admissible as evidence"
+          "relevance": "Establishes the admissibility of electronic records as evidence"
         },
         {
           "section": "Section 63",
           "act": "Bharatiya Sakshya Adhiniyam, 2023",
-          "chunk_id": "chk_dde0f411b5764b41b5c2592902a9794e",
-          "what_it_provides": "...all the computers or communication devices used for that purpose during that period shall be treated for the purposes of this section as constituting a single computer or communication device...",
-          "relevance": "Provides the conditions for the admissibility of electronic records"
+          "chunk_id": "chk_a6ad4875232349b3b5e13c3d63c3ce27",
+          "what_it_provides": "(e) through an intermediary, all the computers or communication devices used for that purpose during that period shall be treated for the purposes of this section as constituting a single computer or communication device",
+          "relevance": "Provides rules for the admissibility of electronic records, including the treatment of multiple devices as a single device"
         },
         {
           "section": "Section 63",
           "act": "Bharatiya Sakshya Adhiniyam, 2023",
-          "chunk_id": "chk_784d3e888ee743a594d6b5f36e2388f2",
-          "what_it_provides": "...any information contained in an electronic record which is printed on paper, stored, recorded or copied in optical or magnetic media or semiconductor memory... shall be deemed to be also a document, if the conditions",
-          "relevance": "Specifies the conditions for the admissibility of electronic records"
+          "chunk_id": "chk_3533e8477fa74d77a44b1b0daab7d4ee",
+          "what_it_provides": "(1) Notwithstanding anything contained in this Adhiniyam, any information contained in an electronic record which is printed on paper, stored, recorded or copied in optical or magnetic media or semiconductor memory which",
+          "relevance": "Provides specific conditions for the admissibility of electronic records, including the treatment of printed records"
         },
         {
           "section": "Section 62",
           "act": "Bharatiya Sakshya Adhiniyam, 2023",
-          "chunk_id": "chk_61c6acc8e7084173bf2cf5ef10930a65",
-          "what_it_provides": "The contents of electronic records may be proved in accordance with the provisions of section 63.",
-          "relevance": "Directs that the contents of electronic records may be proved in accordance with section 63"
+          "chunk_id": "chk_343fa1a2cbf24454a05c81270f7627c5",
+          "what_it_provides": "The contents of electronic records may be proved in accordance with the provisions of section 63",
+          "relevance": "References to section 63 for the admissibility of electronic records"
         }
       ],
       "reasoning": [
-        "The Bharatiya Sakshya Adhiniyam, 2023 establishes the principle that electronic records are admissible as evidence. Section 61 states that nothing in the Act shall apply to deny the admissibility of an electronic or digital record. Section 63 provides the conditions for the admissibility of electronic records, including the treatment of multiple devices as a single device. Section 63 also states, "
+        "The Bharatiya Sakshya Adhiniyam, 2023 establishes the admissibility of electronic records as evidence, subject to certain conditions."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 2386
+    "raw_text_len": 2209
   },
   {
     "task_id": "L06",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4339.4,
-    "input_tokens": 1348,
-    "output_tokens": 166,
+    "latency_ms": 7538.2,
+    "input_tokens": 1456,
+    "output_tokens": 232,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "codeofcivilpro:11"
     ],
     "cited_chunk_ids": [
-      "chk_9783a080af6c4433a73240f5879d9b60"
+      "chk_de09426d1fcb455f976ae314fc0e6caa"
     ],
-    "evidence_sufficient": false,
+    "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
         "Res judicata"
@@ -238,91 +235,104 @@
         {
           "section": "Section 11",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_9783a080af6c4433a73240f5879d9b60",
-          "what_it_provides": "Prohibition on trying a suit in which the matter directly and substantially in issue has been directly and substantially in issue in a former suit between the same parties, or between parties under whom they or any of it",
-          "relevance": "Governs res judicata"
+          "chunk_id": "chk_de09426d1fcb455f976ae314fc0e6caa",
+          "what_it_provides": "Prevents a court from trying a suit in which the matter directly and substantially in issue has been directly and substantially in issue in a former suit between the same parties or between parties under whom they or any",
+          "relevance": "Directly applicable"
         }
       ],
-      "reasoning": [],
-      "evidence_sufficient": false,
+      "reasoning": [
+        "The concept of res judicata is directly addressed in Section 11 of the Code of Civil Procedure, 1908, which states that no court shall try a suit in which the matter directly and substantially in issue has been directly and substantially in issue in a former suit between the same parties or between parties under whom they or any of them claim."
+      ],
+      "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 580
+    "raw_text_len": 933
   },
   {
     "task_id": "R01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 7167.8,
-    "input_tokens": 1399,
-    "output_tokens": 358,
+    "latency_ms": 11985.3,
+    "input_tokens": 1264,
+    "output_tokens": 404,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:73",
-      "indiancontract:73",
-      "indiancontract:54"
+      "saleofgoodsact:44",
+      "saleofgoodsact:43",
+      "saleofgoodsact:56",
+      "saleofgoodsact:57"
     ],
     "cited_chunk_ids": [
-      "chk_ead981d9981b4d54b21cae656a12cb3f",
-      "chk_5a12371028fe49e695bdb93398ce4537",
-      "chk_b5ca83755e2749f1a883fa826e183906"
+      "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+      "chk_4eb205565d89418a99c5c30515a35a13",
+      "chk_6f2daab8264342198f123dea5f81d893",
+      "chk_922601fcce1e4ccd85a56105c15d75da"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Claim for compensation under Indian Contract Act, 1872"
+        "Claim for compensation under the Sale of Goods Act, 1930"
       ],
       "sections": [
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Applicable to the buyer's refusal to pay after delivery"
+          "section": "Section 44",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+          "what_it_provides": "Liability of buyer for neglecting or refusing delivery of goods",
+          "relevance": "Supports a claim for compensation"
         },
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Specific provision for breach of delivery obligation"
+          "section": "Section 43",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_4eb205565d89418a99c5c30515a35a13",
+          "what_it_provides": "Buyer not bound to return rejected goods",
+          "relevance": "Relevant in determining the buyer's liability"
         },
         {
-          "section": "Section 54",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
-          "what_it_provides": "Effect of default as to that promise which should be first performed, in contract consisting of reciprocal promises",
-          "relevance": "Relevant to the buyer's obligation to pay after delivery"
+          "section": "Section 56",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_6f2daab8264342198f123dea5f81d893",
+          "what_it_provides": "Damages for non-acceptance",
+          "relevance": "Supports a claim for compensation"
+        },
+        {
+          "section": "Section 57",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_922601fcce1e4ccd85a56105c15d75da",
+          "what_it_provides": "Damages for non-delivery",
+          "relevance": "Supports a claim for compensation"
         }
       ],
       "reasoning": [
-        "The buyer's refusal to pay after delivery constitutes a breach of contract, and the seller is entitled to compensation under Section 73 of the Indian Contract Act, 1872."
+        "The buyer refused payment after delivery, which may constitute a breach of contract"
       ],
       "evidence_sufficient": true
     },
-    "raw_text_len": 1323
+    "raw_text_len": 1326
   },
   {
     "task_id": "R02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 8712.2,
-    "input_tokens": 1418,
-    "output_tokens": 423,
+    "latency_ms": 15536.4,
+    "input_tokens": 1505,
+    "output_tokens": 527,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:74",
-      "indiancontract:177",
-      "indiancontract:60"
+      "indiancontract:74 | indian contract act, 1872",
+      "indiancontract:177 | indian contract act, 1872",
+      "indiancontract:73 | indian contract act, 1872",
+      "specificrelief:23 | specific relief act, 1963"
     ],
     "cited_chunk_ids": [
-      "chk_e50d96537e7446a9a31cf5d920737c41",
-      "chk_2b8468a44a8642929715b1a75630c25c",
-      "chk_59d99c87e427438181409fffdf4f9a51"
+      "chk_79d1201d51824376af594a9ca96d6c3c",
+      "chk_d8a529a37a644741aa5dc723be0db507",
+      "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+      "chk_2672c922a76b4594a85571f6001b4577"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -332,58 +342,58 @@
       ],
       "sections": [
         {
-          "section": "Section 74",
+          "section": "Section 74 | Indian Contract Act, 1872",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_e50d96537e7446a9a31cf5d920737c41",
+          "chunk_id": "chk_79d1201d51824376af594a9ca96d6c3c",
           "what_it_provides": "Compensation for breach of contract where penalty stipulated for",
-          "relevance": "Determines enforceability and amount of recovery"
+          "relevance": "Relevant to the clause fixing a sum payable on default"
         },
         {
-          "section": "Section 177",
+          "section": "Section 177 | Indian Contract Act, 1872",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_2b8468a44a8642929715b1a75630c25c",
+          "chunk_id": "chk_d8a529a37a644741aa5dc723be0db507",
           "what_it_provides": "Defaulting pawnor's right to redeem",
-          "relevance": "Relevant to recovery of debt"
+          "relevance": "Relevant to the issue of recovery of debt"
         },
         {
-          "section": "Section 60",
+          "section": "Section 73 | Indian Contract Act, 1872",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_59d99c87e427438181409fffdf4f9a51",
-          "what_it_provides": "Application of payment where debt to be discharged is not indicated",
-          "relevance": "Relevant to recovery of debt"
+          "chunk_id": "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
+          "relevance": "Relevant to the issue of compensation for breach"
+        },
+        {
+          "section": "Section 23 | Specific Relief Act, 1963",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_2672c922a76b4594a85571f6001b4577",
+          "what_it_provides": "Liquidation of damages not a bar to specific performance",
+          "relevance": "Relevant to the issue of enforcement of contract"
         }
       ],
       "reasoning": [
-        "Section 74 of the Indian Contract Act, 1872, provides that a party complaining of a breach is entitled to reasonable compensation not exceeding the amount stipulated in the contract or the penalty stipulated for.",
-        "The clause fixing a sum payable on default is not by way of penalty, as it does not exceed the amount stipulated in the contract.",
-        "Therefore, the clause is enforceable, and the amount that can be recovered is the amount stipulated in the contract."
+        "The clause fixing a sum payable on default is not by way of penalty, but rather a stipulation for the repayment of the debt. Therefore, it is enforceable according to its terms.",
+        "The amount that can be recovered is limited to the compensation that the court considers reasonable, as per Section 74 of the Indian Contract Act, 1872."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 1574
+    "raw_text_len": 1882
   },
   {
     "task_id": "R03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 7818.3,
-    "input_tokens": 1179,
-    "output_tokens": 402,
+    "latency_ms": 5836.3,
+    "input_tokens": 1166,
+    "output_tokens": 150,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:56",
-      "indiancontract:33",
-      "indiancontract:38",
-      "indiancontract:46"
+      "indiancontract:56"
     ],
     "cited_chunk_ids": [
-      "chk_f3d1cfa9df6147ff8499b3a553280466",
-      "chk_af320df50a484f14ad6082319ca7075d",
-      "chk_8a6133f38f11420eb3c81d9fe43707c4",
-      "chk_3dea64176cad4dfaaf6c83bd3e7584e8"
+      "chk_144b552c72b8475197e9fca44eeae3e1"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -394,102 +404,102 @@
         {
           "section": "Section 56",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_f3d1cfa9df6147ff8499b3a553280466",
+          "chunk_id": "chk_144b552c72b8475197e9fca44eeae3e1",
           "what_it_provides": "Agreement to do impossible act",
-          "relevance": "Performance impossible after signing"
-        },
-        {
-          "section": "Section 33",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_af320df50a484f14ad6082319ca7075d",
-          "what_it_provides": "Enforcement of contracts contingent on an event not happening",
-          "relevance": "Performance impossible after signing"
-        },
-        {
-          "section": "Section 38",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_8a6133f38f11420eb3c81d9fe43707c4",
-          "what_it_provides": "Effect of refusal to accept offer of performance",
-          "relevance": "Performance impossible after signing"
-        },
-        {
-          "section": "Section 46",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_3dea64176cad4dfaaf6c83bd3e7584e8",
-          "what_it_provides": "Time for performance of promise, when no application is to be made and no time is specified",
           "relevance": "Performance impossible after signing"
         }
       ],
       "reasoning": [
-        "The complainant signed a written supply agreement, but the accused made performance impossible after signing."
+        "The other side made performance impossible after we signed, so we can claim performance impossible after signing"
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 1440
+    "raw_text_len": 547
   },
   {
     "task_id": "R04",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 6277.2,
-    "input_tokens": 1297,
-    "output_tokens": 299,
+    "latency_ms": 13365.6,
+    "input_tokens": 1258,
+    "output_tokens": 449,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indiancontract:75",
-      "indiancontract:73"
+      "indiancontract:73",
+      "indiancontract:53",
+      "specificrelief:27"
     ],
     "cited_chunk_ids": [
-      "chk_ad678b3b5f1746d885f354fcda715419",
-      "chk_5edd71215715454fb11075e749198606"
+      "chk_944ebd4877cf43009b1aa77ed9dde383",
+      "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+      "chk_b44358667e794807963a09f529be815c",
+      "chk_21fc60988bd344a2a90c951a16672621"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Can the complainant claim compensation for breach of contract?"
+        "Can we still claim compensation after rescinding the contract due to breach?"
       ],
       "sections": [
         {
           "section": "Section 75",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ad678b3b5f1746d885f354fcda715419",
-          "what_it_provides": "Party rightfully rescinding contract, entitled to compensation for any damage sustained through the non-fulfilment of the contract.",
-          "relevance": "Applicable to the complainant's situation"
+          "chunk_id": "chk_944ebd4877cf43009b1aa77ed9dde383",
+          "what_it_provides": "Entitlement to compensation for damage sustained through non-fulfilment of contract",
+          "relevance": "Relevant for determining compensation after contract rescission"
         },
         {
           "section": "Section 73",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5edd71215715454fb11075e749198606",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract. Such compensation is not to be given for any remote and indirect loss or damage sustained by reason of the breach.",
-          "relevance": "Applicable to the complainant's situation"
+          "chunk_id": "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
+          "relevance": "Relevant for determining compensation after contract rescission"
+        },
+        {
+          "section": "Section 53",
+          "act": "Indian Contract Act, 1872",
+          "chunk_id": "chk_b44358667e794807963a09f529be815c",
+          "what_it_provides": "Liability of party preventing event on which contract is to take effect",
+          "relevance": "Not directly relevant, but may be considered in context of contract rescission"
+        },
+        {
+          "section": "Section 27",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_21fc60988bd344a2a90c951a16672621",
+          "what_it_provides": "When rescission may be adjudged or refused",
+          "relevance": "Not directly relevant, but may be considered in context of contract rescission"
         }
       ],
       "reasoning": [
-        "The complainant is entitled to compensation for breach of contract under Section 75 of the Indian Contract Act, 1872, as they rightfully rescinded the contract due to the accused's breach."
+        "The complainant is entitled to compensation under Section 75 of the Indian Contract Act, 1872, as they rightfully rescinded the contract due to breach."
       ],
-      "evidence_sufficient": true,
-      "uncertainties": []
+      "evidence_sufficient": true
     },
-    "raw_text_len": 1168
+    "raw_text_len": 1663
   },
   {
     "task_id": "R05",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4912.4,
-    "input_tokens": 1392,
-    "output_tokens": 226,
+    "latency_ms": 15169.1,
+    "input_tokens": 1256,
+    "output_tokens": 505,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:55"
+      "saleofgoodsact:11",
+      "saleofgoodsact:51",
+      "indiancontract:46"
     ],
     "cited_chunk_ids": [
-      "chk_2ec29d20387f4d8f96d0d160885e15ef"
+      "chk_ba872a2ec04e47ca9796e9224f9a461c",
+      "chk_d12664d93d1e477bb9ba94968a13f38b",
+      "chk_4aad62066d814a9689bfa4460e442f46"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -498,282 +508,300 @@
       ],
       "sections": [
         {
-          "section": "Section 55",
+          "section": "Section 11",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_ba872a2ec04e47ca9796e9224f9a461c",
+          "what_it_provides": "Stipulations as to time of payment are not deemed to be of the essence of a contract of sale.",
+          "relevance": "Relevant to the question of whether time was of the essence in the contract"
+        },
+        {
+          "section": "Section 51",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_d12664d93d1e477bb9ba94968a13f38b",
+          "what_it_provides": "Goods are deemed to be in course of transit from the time when they are delivered to a carrier or other bailee for the purpose of transmission to the buyer, until the buyer or his agent in that behalf takes delivery of",
+          "relevance": "Relevant to the question of when the goods were delivered"
+        },
+        {
+          "section": "Section 46",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_2ec29d20387f4d8f96d0d160885e15ef",
-          "what_it_provides": "Effect of failure to perform at fixed time, in contract in which time is essential",
-          "relevance": "Whether the contract became voidable at the option of the promisee due to the supplier's late delivery"
+          "chunk_id": "chk_4aad62066d814a9689bfa4460e442f46",
+          "what_it_provides": "The engagement must be performed within a reasonable time, when no application is to be made and no time is specified.",
+          "relevance": "Relevant to the question of whether the supplier was late"
         }
       ],
       "reasoning": [
-        "The contract promised delivery of goods within a specified time, and the supplier delivered three months late. This suggests that time was of the essence in the contract."
+        "The Sale of Goods Act, 1930, does not explicitly state that time is of the essence in contracts of sale. However, Section 11 states that stipulations as to time of payment are not deemed to be of the essence of a contract of sale. This suggests that the contract may not be considered time-sensitive. On the other hand, Section 51 states that goods are deemed to be in course of transit from the time"
       ],
       "evidence_sufficient": true,
       "uncertainties": [
-        "Whether the supplier's late delivery constitutes a breach of contract"
+        "Whether the goods were delivered on time"
       ]
     },
-    "raw_text_len": 870
+    "raw_text_len": 1893
   },
   {
     "task_id": "R06",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 11054.3,
-    "input_tokens": 1199,
-    "output_tokens": 609,
+    "latency_ms": 13490.6,
+    "input_tokens": 1181,
+    "output_tokens": 471,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:56",
-      "indiancontract:39",
-      "indiancontract:55",
-      "indiancontract:47"
+      "saleofgoodsact:44",
+      "saleofgoodsact:56",
+      "saleofgoodsact:43",
+      "saleofgoodsact:57"
     ],
     "cited_chunk_ids": [
-      "chk_f3d1cfa9df6147ff8499b3a553280466",
-      "chk_9c5f202582b44aefb7449864c7708989",
-      "chk_2ec29d20387f4d8f96d0d160885e15ef",
-      "chk_cd9b8f666a6e418a85ca96810e22d1c7"
+      "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+      "chk_6f2daab8264342198f123dea5f81d893",
+      "chk_4eb205565d89418a99c5c30515a35a13",
+      "chk_922601fcce1e4ccd85a56105c15d75da"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Cancellation of contract",
-        "Refusal to perform contract",
-        "Default in payment"
+        "Can the buyer be held liable for not taking delivery of the goods?"
       ],
       "sections": [
         {
+          "section": "Section 44",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+          "what_it_provides": "Liability of buyer for neglecting or refusing delivery of goods",
+          "relevance": "Applicable if the buyer does not take delivery of the goods within a reasonable time after the seller requests it"
+        },
+        {
           "section": "Section 56",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_f3d1cfa9df6147ff8499b3a553280466",
-          "what_it_provides": "An agreement to do an impossible act is void from the beginning.",
-          "relevance": "The buyer's refusal to perform is an impossible act"
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_6f2daab8264342198f123dea5f81d893",
+          "what_it_provides": "Damages for non-acceptance",
+          "relevance": "Applicable if the buyer wrongfully neglects or refuses to accept and pay for the goods"
         },
         {
-          "section": "Section 39",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_9c5f202582b44aefb7449864c7708989",
-          "what_it_provides": "When a party to a contract has refused to perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end to the contract, unless he has signified, by words or conduct, his acquiesc",
-          "relevance": "The buyer's refusal to perform allows the seller to cancel the contract"
+          "section": "Section 43",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_4eb205565d89418a99c5c30515a35a13",
+          "what_it_provides": "Buyer not bound to return rejected goods",
+          "relevance": "Applicable if the buyer refuses to accept the goods but has the right to do so"
         },
         {
-          "section": "Section 55",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_2ec29d20387f4d8f96d0d160885e15ef",
-          "what_it_provides": "When a party to a contract promises to do a certain thing at or before a specified time, or certain things at or before specified times, and fails to do any such thing at or before the specified time, the contract, or so",
-          "relevance": "The seller's failure to perform on time allows the buyer to cancel the contract"
-        },
-        {
-          "section": "Section 47",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_cd9b8f666a6e418a85ca96810e22d1c7",
-          "what_it_provides": "When a promise is to be performed on a certain day, and the promisor has undertaken to perform it without application by the promisee, the promisor may perform it at any time during the usual hours of business on such",
-          "relevance": "The seller's performance is not restricted to the agreed-upon time"
+          "section": "Section 57",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_922601fcce1e4ccd85a56105c15d75da",
+          "what_it_provides": "Damages for non-delivery",
+          "relevance": "Applicable if the seller wrongfully neglects or refuses to deliver the goods"
         }
       ],
       "reasoning": [
-        "The buyer's refusal to perform is an impossible act, making the contract void from the beginning.",
-        "The buyer's refusal to perform allows the seller to cancel the contract under Section 39.",
-        "The seller's failure to perform on time allows the buyer to cancel the contract under Section 55."
+        "The buyer's failure to take delivery of the goods within a reasonable time after the seller requests it may make them liable for any loss occasioned by their neglect or refusal to take delivery."
       ],
-      "evidence_sufficient": true,
-      "uncertainties": []
+      "evidence_sufficient": true
     },
-    "raw_text_len": 2293
+    "raw_text_len": 1656
   },
   {
     "task_id": "X01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 7544.7,
-    "input_tokens": 1329,
-    "output_tokens": 393,
+    "latency_ms": 15308.6,
+    "input_tokens": 1429,
+    "output_tokens": 522,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "informationtec:10a",
-      "indiancontract:198",
-      "indiancontract:25",
-      "informationtec:4"
+      "bharatiyasaksh:85",
+      "bharatiyasaksh:94",
+      "indiancontract:10"
     ],
     "cited_chunk_ids": [
-      "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
-      "chk_ab20875f41ff4891af8bb47062375915",
-      "chk_ad9a12d835f24de096553a4385954937",
-      "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7"
+      "chk_f0c1cd439f4945b6865a774eaa516b8b",
+      "chk_e85e62b208ef4d93843d8a4ad9cad93f",
+      "chk_70b2d8d3107d453e9e03cb4842e903d0",
+      "chk_3a29b9005dd242cb96045dfc7284cab7"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
         "Validity of the contract",
-        "Proving records in court"
+        "Proving the records in court"
       ],
       "sections": [
         {
           "section": "10A",
           "act": "Information Technology Act, 2000",
-          "chunk_id": "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
-          "what_it_provides": "Valid contracts formed through electronic means",
-          "relevance": "Applicable to this case"
+          "chunk_id": "chk_f0c1cd439f4945b6865a774eaa516b8b",
+          "what_it_provides": "Validity of contracts formed through electronic means",
+          "relevance": "The contract was formed through electronic means, so it is valid"
         },
         {
-          "section": "198",
+          "section": "85",
+          "act": "Bharatiya Sakshya Adhiniyam, 2023",
+          "chunk_id": "chk_e85e62b208ef4d93843d8a4ad9cad93f",
+          "what_it_provides": "Presumption as to electronic agreements",
+          "relevance": "The court will presume that the electronic agreement is valid"
+        },
+        {
+          "section": "94",
+          "act": "Bharatiya Sakshya Adhiniyam, 2023",
+          "chunk_id": "chk_70b2d8d3107d453e9e03cb4842e903d0",
+          "what_it_provides": "Evidence of terms of contracts, grants and other dispositions of property",
+          "relevance": "The electronic records can be used as evidence"
+        },
+        {
+          "section": "10",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ab20875f41ff4891af8bb47062375915",
-          "what_it_provides": "Knowledge requisite for valid ratification",
-          "relevance": "Uncertain"
-        },
-        {
-          "section": "25",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ad9a12d835f24de096553a4385954937",
-          "what_it_provides": "Agreement without consideration, void, unless in writing and registered",
-          "relevance": "Uncertain"
-        },
-        {
-          "section": "4",
-          "act": "Information Technology Act, 2000",
-          "chunk_id": "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
-          "what_it_provides": "Legal recognition of electronic records",
-          "relevance": "Applicable to this case"
+          "chunk_id": "chk_3a29b9005dd242cb96045dfc7284cab7",
+          "what_it_provides": "What agreements are contracts",
+          "relevance": "The contract is valid because it was made by the free consent of parties"
         }
       ],
       "reasoning": [
-        "The contract is valid as it was formed through electronic means",
-        "The records can be proven in court using electronic records"
+        "The contract was formed through electronic means, so it is valid according to Section 10A of the Information Technology Act, 2000.",
+        "The court will presume that the electronic agreement is valid according to Section 85 of the Bharatiya Sakshya Adhiniyam, 2023.",
+        "The electronic records can be used as evidence according to Section 94 of the Bharatiya Sakshya Adhiniyam, 2023."
       ],
-      "evidence_sufficient": true
+      "evidence_sufficient": true,
+      "uncertainties": []
     },
-    "raw_text_len": 1330
+    "raw_text_len": 1795
   },
   {
     "task_id": "X02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 8356.0,
-    "input_tokens": 1223,
-    "output_tokens": 435,
+    "latency_ms": 17303.0,
+    "input_tokens": 1347,
+    "output_tokens": 572,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:166",
-      "indiancontract:224",
-      "indiancontract:149",
-      "indiancontract:73"
+      "saleofgoodsact:38",
+      "saleofgoodsact:44",
+      "saleofgoodsact:55",
+      "saleofgoodsact:60"
     ],
     "cited_chunk_ids": [
-      "chk_560a4915242e436d8b1d15dc92391f75",
-      "chk_cd02e91c28534b1bbfa8347004f59c4e",
-      "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
-      "chk_ead981d9981b4d54b21cae656a12cb3f"
+      "chk_838afb8c8dc643e0a52c098e69eea82f",
+      "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+      "chk_b392ff6515b74623a40b66f7d0ef8cdf",
+      "chk_86d7893ae8394a13b452b7055090399d"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Is the buyer's action a contract breach or a criminal offence?"
+        "Is the buyer's intention to never pay a contract breach or a criminal offence?"
       ],
       "sections": [
         {
-          "section": "Section 166",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_560a4915242e436d8b1d15dc92391f75",
-          "what_it_provides": "Bailee not responsible on re-delivery to bailor without title",
-          "relevance": "Relevance to the matter"
+          "section": "Section 38",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_838afb8c8dc643e0a52c098e69eea82f",
+          "what_it_provides": "Unless otherwise agreed, the buyer of goods is not bound to accept delivery thereof by instalments.",
+          "relevance": "Relevant to the buyer's intention to never pay"
         },
         {
-          "section": "Section 224",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_cd02e91c28534b1bbfa8347004f59c4e",
-          "what_it_provides": "Non-liability of employer of agent to do a criminal act",
-          "relevance": "Relevance to the matter"
+          "section": "Section 44",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_b924c776dbc94af0a7dc22ee6bc13a81",
+          "what_it_provides": "When the seller is ready and willing to deliver the goods and requests the buyer to take delivery, and the buyer does not within a reasonable time after such request take delivery of the goods, he is liable to the seller",
+          "relevance": "Relevant to the buyer's liability for neglecting or refusing delivery"
         },
         {
-          "section": "Section 149",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
-          "what_it_provides": "Delivery to bailee how made",
-          "relevance": "Relevance to the matter"
+          "section": "Section 55",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_b392ff6515b74623a40b66f7d0ef8cdf",
+          "what_it_provides": "Where under a contract of sale the property in the goods has passed to the buyer and the buyer wrongfully neglects or refuses to pay for the goods according to the terms of the contract, the seller may sue him for the",
+          "relevance": "Relevant to the seller's right to sue for damages"
         },
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Relevance to the matter"
+          "section": "Section 60",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_86d7893ae8394a13b452b7055090399d",
+          "what_it_provides": "Where either party to a contract of sale repudiates the contract before the date of delivery, the other may either treat the contract as subsisting and wait till the date of delivery, or he may treat the contract as resc",
+          "relevance": "Relevant to the buyer's repudiation of the contract"
         }
       ],
       "reasoning": [
-        "The buyer's action may be considered a contract breach, as they took delivery of goods without intending to pay."
+        "The buyer's intention to never pay may be considered a repudiation of the contract, as stated in Section 60 of the Sale of Goods Act, 1930."
       ],
       "evidence_sufficient": true,
-      "uncertainties": [
-        "Is the buyer's action a criminal offence?"
-      ]
+      "uncertainties": []
     },
-    "raw_text_len": 1444
+    "raw_text_len": 2101
   },
   {
     "task_id": "X03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 6381.9,
-    "input_tokens": 1340,
-    "output_tokens": 314,
+    "latency_ms": 13765.7,
+    "input_tokens": 1282,
+    "output_tokens": 444,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indiancontract:73",
-      "indiancontract:150"
+      "indiancontract:161",
+      "indiancontract:70"
     ],
     "cited_chunk_ids": [
-      "chk_5edd71215715454fb11075e749198606",
-      "chk_d6752f40bfae464daedcbca2fc7a898c"
+      "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+      "chk_448b2a01b3b3424a821e36f9d844e45b",
+      "chk_9119ad2091dd499c8ad919151a6daba9"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Duty owed by the accused and liability for damage to machinery"
+        "Duty owed by the party responsible for the damage",
+        "Liability for the damage"
       ],
       "sections": [
         {
           "section": "Section 73",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5edd71215715454fb11075e749198606",
+          "chunk_id": "chk_519ba1fc40b04da8b479e6eb6e99f03e",
           "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Relevant for determining the duty owed by the accused and liability for damage to machinery"
+          "relevance": "Whether the party responsible for the damage owes a duty to compensate the other party"
         },
         {
-          "section": "Section 150",
+          "section": "Section 161",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_d6752f40bfae464daedcbca2fc7a898c",
-          "what_it_provides": "Bailor's duty to disclose faults in goods bailed",
-          "relevance": "Relevant for determining the accused's duty to disclose any known faults with the machinery"
+          "chunk_id": "chk_448b2a01b3b3424a821e36f9d844e45b",
+          "what_it_provides": "Bailee's responsibility when goods are not duly returned",
+          "relevance": "Whether the party responsible for the damage is liable for the damage caused by the breach of contract"
+        },
+        {
+          "section": "Section 70",
+          "act": "Indian Contract Act, 1872",
+          "chunk_id": "chk_9119ad2091dd499c8ad919151a6daba9",
+          "what_it_provides": "Obligation of person enjoying benefit of non-gratuitous act",
+          "relevance": "Whether the party responsible for the damage owes a duty to compensate the other party"
         }
       ],
       "reasoning": [
-        "The accused had a duty to disclose any known faults with the machinery, as per Section 150 of the Indian Contract Act, 1872. However, the FIR report does not mention any disclosure of faults by the accused."
+        "The party responsible for the damage may owe a duty to compensate the other party under Section 73 of the Indian Contract Act, 1872",
+        "The party responsible for the damage is liable for the damage caused by the breach of contract under Section 161 of the Indian Contract Act, 1872",
+        "The party responsible for the damage owes a duty to compensate the other party under Section 70 of the Indian Contract Act, 1872"
       ],
-      "evidence_sufficient": true,
-      "uncertainties": [
-        "Whether the accused's failure to disclose known faults with the machinery constitutes a breach of contract"
-      ]
+      "evidence_sufficient": true
     },
-    "raw_text_len": 1204
+    "raw_text_len": 1653
   },
   {
     "task_id": "X04",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 11095.7,
-    "input_tokens": 1139,
-    "output_tokens": 602,
+    "latency_ms": 18865.5,
+    "input_tokens": 1182,
+    "output_tokens": 580,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
@@ -783,138 +811,141 @@
       "indiancontract:135"
     ],
     "cited_chunk_ids": [
-      "chk_5e0b166f391849438dc9c0b8e7a280a5",
-      "chk_bbfea2d14d88430d96815eb6b93ffaaa",
-      "chk_adaaa6249e914b9c9c97b13d842d53ac",
-      "chk_3d0ad1af50b84f998e4739c03101908e"
+      "chk_96b4add66dc1464b94dcfe7a668ab994",
+      "chk_20c04ddd4c2c40e1b3e4656b91e7df1a",
+      "chk_8bbe1ac57cd740ddb34aa402a7e774ea",
+      "chk_b042ea25ded44295bfd6f88121c73de2"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Nature of surety obligation and how it differs from indemnity"
+        "Nature of surety obligation and its difference from indemnity"
       ],
       "sections": [
         {
           "section": "Section 128",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5e0b166f391849438dc9c0b8e7a280a5",
+          "chunk_id": "chk_96b4add66dc1464b94dcfe7a668ab994",
           "what_it_provides": "The liability of the surety is co-extensive with that of the principal debtor, unless it is otherwise provided by the contract.",
-          "relevance": "Surety's liability"
+          "relevance": "Determines the extent of surety's liability"
         },
         {
           "section": "Section 140",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_bbfea2d14d88430d96815eb6b93ffaaa",
-          "what_it_provides": "Where a guaranteed debt has become due, or default of the principal debtor to perform a guaranteed duty has taken place, the surety upon payment or performance of all that he is liable for, is invested with all the right",
-          "relevance": "Rights of surety on payment or performance"
+          "chunk_id": "chk_20c04ddd4c2c40e1b3e4656b91e7df1a",
+          "what_it_provides": "The surety upon payment or performance of all that he is liable for, is invested with all the rights which the creditor had against the principal debtor.",
+          "relevance": "Describes the rights of surety on payment or performance"
         },
         {
           "section": "Section 126",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_adaaa6249e914b9c9c97b13d842d53ac",
+          "chunk_id": "chk_8bbe1ac57cd740ddb34aa402a7e774ea",
           "what_it_provides": "A contract of guarantee is a contract to perform the promise, or discharge the liability, of a third person in case of his default.",
-          "relevance": "Definition of surety, principal debtor, and creditor"
+          "relevance": "Defines key terms: contract of guarantee, surety, principal debtor, and creditor"
         },
         {
           "section": "Section 135",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_3d0ad1af50b84f998e4739c03101908e",
+          "chunk_id": "chk_b042ea25ded44295bfd6f88121c73de2",
           "what_it_provides": "A contract between the creditor and the principal debtor, by which the creditor makes a composition with, or promises to give time to, or not to sue, the principal debtor, discharges the surety, unless the surety assents",
-          "relevance": "Discharge of surety"
+          "relevance": "Describes the conditions under which surety is discharged"
         }
       ],
       "reasoning": [
-        "The surety's liability is co-extensive with that of the principal debtor, but may be otherwise provided for in the contract.",
-        "The surety is invested with all the rights of the creditor against the principal debtor upon payment or performance of all that he is liable for.",
-        "The nature of the surety obligation differs from indemnity in that the surety is liable for the principal debtor's debt or default, rather than being liable for the creditor's loss."
+        "The surety's liability is co-extensive with that of the principal debtor, unless otherwise provided by the contract.",
+        "The surety has all the rights which the creditor had against the principal debtor upon payment or performance.",
+        "A contract of guarantee is a contract to perform the promise, or discharge the liability, of a third person in case of his default."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 2281
+    "raw_text_len": 2226
   },
   {
     "task_id": "P01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 11282.9,
-    "input_tokens": 1334,
-    "output_tokens": 605,
+    "latency_ms": 12249.3,
+    "input_tokens": 1279,
+    "output_tokens": 425,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "codeofcivilpro:17",
-      "codeofcivilpro:10",
-      "indiancontract:73",
-      "indiancontract:73"
+      "codeofcivilpro:19",
+      "saleofgoodsact:58",
+      "saleofgoodsact:60",
+      "codeofcivilpro:17"
     ],
     "cited_chunk_ids": [
-      "chk_141f8e4458114fb0ad6b23ca5149d206",
-      "chk_b420ed60946a4004bba79e9f5d8ee072",
-      "chk_5edd71215715454fb11075e749198606",
-      "chk_bbb7c0764fdc4b83a584a2b0dc490a87"
+      "chk_c7e4567b61b24c7fa4a2274168a6b1e9",
+      "chk_28e2e66e963e445498fb279d6dcf0d4f",
+      "chk_86d7893ae8394a13b452b7055090399d",
+      "chk_fb36a9f678484759b92b19cbf4851445"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "In which court should we institute a suit for breach of a supply contract?"
+        "Court for breach of supply contract"
       ],
       "sections": [
         {
-          "section": "17",
+          "section": "Section 19",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_141f8e4458114fb0ad6b23ca5149d206",
+          "chunk_id": "chk_c7e4567b61b24c7fa4a2274168a6b1e9",
+          "what_it_provides": "Suits for compensation for wrongs to person or movables",
+          "relevance": "Relevant for instituting a suit for breach of supply contract"
+        },
+        {
+          "section": "Section 58",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_28e2e66e963e445498fb279d6dcf0d4f",
+          "what_it_provides": "Specific performance",
+          "relevance": "Relevant for breach of supply contract"
+        },
+        {
+          "section": "Section 60",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_86d7893ae8394a13b452b7055090399d",
+          "what_it_provides": "Repudiation of contract before due date",
+          "relevance": "Relevant for breach of supply contract"
+        },
+        {
+          "section": "Section 17",
+          "act": "Code of Civil Procedure, 1908",
+          "chunk_id": "chk_fb36a9f678484759b92b19cbf4851445",
           "what_it_provides": "Suits for immovable property situate within jurisdiction of different Courts",
-          "relevance": "The suit may be instituted in any Court within the local limits of whose jurisdiction any portion of the property is situate: Provided that, in respect of the value of the subject-matter of the suit, the entire claim is"
-        },
-        {
-          "section": "10",
-          "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_b420ed60946a4004bba79e9f5d8ee072",
-          "what_it_provides": "No Court shall proceed with the trial of any suit in which the matter in issue is also directly and substantially in issue in a previously instituted suit between the same parties, or between parties under whom they or",
-          "relevance": "or in any Court beyond the limits of India established or continued by the Central Government and having like jurisdiction, or before the Supreme Court."
-        },
-        {
-          "section": "73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5edd71215715454fb11075e749198606",
-          "what_it_provides": "When a contract has been broken, the party who suffers by such breach is entitled to receive, from the party who has broken the contract, compensation for any loss or damage caused to him thereby, which naturally arose",
-          "relevance": "Such compensation is not to be given for any remote and indirect loss or damage sustained by reason of the breach."
-        },
-        {
-          "section": "73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
-          "what_it_provides": "(g) A contracts to let his ship to B for a year, from the first of January, for a certain price. Freights rise, and, on the first of January, the hire obtainable for the ship is higher than the contract price. A breaks",
-          "relevance": "He must pay to B, by way of compensation, a sum equal to the difference between the contract price and the price for which B could hire a similar ship for a year on and from the first of January."
+          "relevance": "Not directly relevant, but relevant for jurisdiction"
         }
       ],
-      "reasoning": [],
-      "evidence_sufficient": true,
-      "uncertainties": []
+      "reasoning": [
+        "Section 19 of the Code of Civil Procedure, 1908, is relevant for instituting a suit for breach of supply contract."
+      ],
+      "evidence_sufficient": true
     },
-    "raw_text_len": 2371
+    "raw_text_len": 1430
   },
   {
     "task_id": "P02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 6315.5,
-    "input_tokens": 1257,
-    "output_tokens": 322,
+    "latency_ms": 16084.3,
+    "input_tokens": 1328,
+    "output_tokens": 527,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
+      "negotiableinst:80",
       "codeofcivilpro:34",
-      "codeofcivilpro:35",
-      "codeofcivilpro:34"
+      "saleofgoodsact:61",
+      "codeofcivilpro:128"
     ],
     "cited_chunk_ids": [
-      "chk_3da2e089a1874d63a1b8233907bb0987",
-      "chk_6a0adaf35d7148bd91db69a8541fd4d3",
-      "chk_d70edc66f96e47739b167d4a2fef5394"
+      "chk_71d6041493ac433d96ff8b5962125b06",
+      "chk_19fd637c1f674242bfd6e0d12ed69c1d",
+      "chk_619df793d3c44cb99ea8b8543c3adbf9",
+      "chk_6964ce1a428944c782b59195ce248136"
     ],
     "evidence_sufficient": true,
     "raw_output": {
@@ -923,56 +954,65 @@
       ],
       "sections": [
         {
+          "section": "Section 80",
+          "act": "Negotiable Instruments Act, 1881",
+          "chunk_id": "chk_71d6041493ac433d96ff8b5962125b06",
+          "what_it_provides": "Interest on the amount due thereon shall be calculated at the rate of 18 per centum per annum from the date at which the same ought to have been paid by the party charged",
+          "relevance": "Applicable to unpaid contract amount in a civil suit"
+        },
+        {
           "section": "Section 34",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_3da2e089a1874d63a1b8233907bb0987",
-          "what_it_provides": "Interest",
+          "chunk_id": "chk_19fd637c1f674242bfd6e0d12ed69c1d",
+          "what_it_provides": "Interest on the principal sum from the date of the decree to the date of payment or other earlier date is not explicitly mentioned",
           "relevance": "Interest on unpaid contract amount in a civil suit"
         },
         {
-          "section": "Section 35",
-          "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_6a0adaf35d7148bd91db69a8541fd4d3",
-          "what_it_provides": "Costs",
-          "relevance": "None"
+          "section": "Section 61",
+          "act": "Sale of Goods Act, 1930",
+          "chunk_id": "chk_619df793d3c44cb99ea8b8543c3adbf9",
+          "what_it_provides": "Interest by way of damages and special damages is not explicitly mentioned",
+          "relevance": "Interest on unpaid contract amount in a civil suit"
         },
         {
-          "section": "Section 34",
+          "section": "Section 128",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_d70edc66f96e47739b167d4a2fef5394",
-          "what_it_provides": "Interest on unpaid contract amount in a civil suit",
-          "relevance": "Applicable"
+          "chunk_id": "chk_6964ce1a428944c782b59195ce248136",
+          "what_it_provides": "Rules for suits involving debt or liquidated demand in money",
+          "relevance": "Interest on unpaid contract amount in a civil suit"
         }
       ],
       "reasoning": [
-        "Section 34 of the Code of Civil Procedure, 1908 provides for interest on unpaid contract amount in a civil suit."
+        "Section 80 of the Negotiable Instruments Act, 1881, provides that interest on the amount due thereon shall be calculated at the rate of 18 per centum per annum from the date at which the same ought to have been paid by the party charged. This provision is applicable to unpaid contract amount in a civil suit."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 1044
+    "raw_text_len": 1948
   },
   {
     "task_id": "P03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 8070.0,
-    "input_tokens": 1469,
-    "output_tokens": 400,
+    "latency_ms": 10929.7,
+    "input_tokens": 1445,
+    "output_tokens": 385,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "codeofcivilpro:80",
       "codeofcivilpro:80",
+      "codeofcivilpro:80",
       "codeofcivilpro:80"
     ],
     "cited_chunk_ids": [
-      "chk_6a7484501a0b42a3810a7cd6f157252d",
-      "chk_ba81f276b6694a6e8038c492bd7231a9",
-      "chk_e23cbd043ae94f658059ef19d2dc9ca8"
+      "chk_0a22da4d41e348d08f81cb5bc698c2d1",
+      "chk_eba083db9f4b4615b32fe36551347161",
+      "chk_14ff66b102af41fa82560d840978f537",
+      "chk_14ff66b102af41fa82560d840978f537"
     ],
-    "evidence_sufficient": false,
+    "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
         "Is a notice required before suing a government department?"
@@ -981,318 +1021,335 @@
         {
           "section": "Section 80",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_6a7484501a0b42a3810a7cd6f157252d",
-          "what_it_provides": "No suit instituted against the Government or against a public officer in respect of any act purporting to be done by such public officer in his official capacity shall be dismissed merely by reason of any error or defect",
-          "relevance": "Notice requirement"
+          "chunk_id": "chk_0a22da4d41e348d08f81cb5bc698c2d1",
+          "what_it_provides": "Notice",
+          "relevance": "Notice required before suing a government department"
         },
         {
           "section": "Section 80",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_ba81f276b6694a6e8038c492bd7231a9",
-          "what_it_provides": "in the case of a suit against 8 [any other State Government], a Secretary to that Government or the Collector of the district;",
-          "relevance": "Notice requirement"
+          "chunk_id": "chk_eba083db9f4b4615b32fe36551347161",
+          "what_it_provides": "Notice",
+          "relevance": "Notice required before suing a government department"
         },
         {
           "section": "Section 80",
           "act": "Code of Civil Procedure, 1908",
-          "chunk_id": "chk_e23cbd043ae94f658059ef19d2dc9ca8",
-          "what_it_provides": "1 [(1)] 2 [Save as otherwise provided in sub-section (2), no suits 3 [shall be instituted] against the Government (including the Government of the State of Jammu and Kashmir)] or against a public officer in respect of",
-          "relevance": "Notice requirement"
+          "chunk_id": "chk_14ff66b102af41fa82560d840978f537",
+          "what_it_provides": "Notice",
+          "relevance": "Notice required before suing a government department"
+        },
+        {
+          "section": "Section 80",
+          "act": "Code of Civil Procedure, 1908",
+          "chunk_id": "chk_14ff66b102af41fa82560d840978f537",
+          "what_it_provides": "Notice required before suing a government department",
+          "relevance": "Specific provisions for suits against government departments"
         }
       ],
-      "reasoning": [],
-      "evidence_sufficient": false,
-      "uncertainties": [
-        "Is the notice requirement applicable to all government departments?"
-      ]
+      "reasoning": [
+        "Section 80 of the Code of Civil Procedure, 1908, requires a notice before suing a government department."
+      ],
+      "evidence_sufficient": true
     },
-    "raw_text_len": 1480
+    "raw_text_len": 1362
   },
   {
     "task_id": "D01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 8863.6,
-    "input_tokens": 1301,
-    "output_tokens": 469,
+    "latency_ms": 14683.2,
+    "input_tokens": 1269,
+    "output_tokens": 520,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
+      "indiancontract:72",
       "indiancontract:73",
-      "indiancontract:74",
-      "indiancontract:220",
-      "indiancontract:50"
+      "bharatiyasaksh:13",
+      "indiancontract:222"
     ],
     "cited_chunk_ids": [
-      "chk_ead981d9981b4d54b21cae656a12cb3f",
-      "chk_dadb98ac8e014114a31657207c83c51f",
-      "chk_12c901395d41422d806f77cad64c9c92",
-      "chk_999b32a0d263454dad5282c0e4f2ff03"
+      "chk_79fdbe3acf4a41e1a1f5f24c6de3b626",
+      "chk_af901b6417864a51aa7ade52295403fa",
+      "chk_c6f8bd641dcb4ace9dab48c22e3c6de1",
+      "chk_a989b2c07bd447dfa593e3fd97721e23"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Exposure under Indian Contract Act, 1872"
+        "Exposure under cheque bounce",
+        "Exposure under delivery of goods"
       ],
       "sections": [
         {
+          "section": "Section 72",
+          "act": "Indian Contract Act, 1872",
+          "chunk_id": "chk_79fdbe3acf4a41e1a1f5f24c6de3b626",
+          "what_it_provides": "Liability of person to whom money is paid, or thing delivered, by mistake or under coercion",
+          "relevance": "Accused issued a cheque that bounced, and the complainant alleges induced delivery of goods"
+        },
+        {
           "section": "Section 73",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
+          "chunk_id": "chk_af901b6417864a51aa7ade52295403fa",
           "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Applicable as the accused issued a cheque that bounced, causing loss to the complainant"
+          "relevance": "Complainant alleges induced delivery of goods worth Rs 18,40,000"
         },
         {
-          "section": "Section 74",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_dadb98ac8e014114a31657207c83c51f",
-          "what_it_provides": "Compensation for breach of contract where penalty stipulated for",
-          "relevance": "Not directly applicable as there is no penalty stipulated in the agreement"
+          "section": "Section 13",
+          "act": "Bharatiya Sakshya Adhiniyam, 2023",
+          "chunk_id": "chk_c6f8bd641dcb4ace9dab48c22e3c6de1",
+          "what_it_provides": "Facts bearing on question whether act was accidental or intentional",
+          "relevance": "Accused issued a cheque that bounced, and the complainant alleges induced delivery of goods"
         },
         {
-          "section": "Section 220",
+          "section": "Section 222",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_12c901395d41422d806f77cad64c9c92",
-          "what_it_provides": "Agent not entitled to remuneration for business misconducted",
-          "relevance": "Not directly applicable as the accused is not an agent"
-        },
-        {
-          "section": "Section 50",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_999b32a0d263454dad5282c0e4f2ff03",
-          "what_it_provides": "Performance in manner or at time prescribed or sanctioned by promise",
-          "relevance": "Not directly applicable as the performance of the promise is not in question"
+          "chunk_id": "chk_a989b2c07bd447dfa593e3fd97721e23",
+          "what_it_provides": "Agent to be indemnified against consequences of lawful acts",
+          "relevance": "Complainant alleges induced delivery of goods worth Rs 18,40,000"
         }
       ],
       "reasoning": [
-        "The complainant is entitled to receive compensation from the accused under Section 73 of the Indian Contract Act, 1872, as the accused issued a cheque that bounced, causing loss to the complainant."
+        "Accused issued a cheque that bounced, and the complainant alleges induced delivery of goods worth Rs 18,40,000. The accused's cheque bounced, which may indicate induced delivery of goods. However, the complainant's allegations of induced delivery of goods are also relevant."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 1702
+    "raw_text_len": 1859
   },
   {
     "task_id": "D02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4306.1,
-    "input_tokens": 1091,
-    "output_tokens": 200,
+    "latency_ms": 6117.1,
+    "input_tokens": 1308,
+    "output_tokens": 185,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:229"
+      "indiancontract:73"
     ],
     "cited_chunk_ids": [
-      "chk_30b801edfadc4075af98860863a97a12"
+      "chk_519ba1fc40b04da8b479e6eb6e99f03e"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Quantum of damages in supply agreement dispute"
+        "Quantum of damages in breach of supply agreement"
       ],
       "sections": [
         {
-          "section": "Section 229",
+          "section": "Section 73",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_30b801edfadc4075af98860863a97a12",
-          "what_it_provides": "Notice given to or information obtained by the agent has the same legal consequences as if it had been given to or obtained by the principal.",
-          "relevance": "Governs the quantum of damages in supply agreement dispute"
+          "chunk_id": "chk_519ba1fc40b04da8b479e6eb6e99f03e",
+          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
+          "relevance": "Governs the quantum of damages in breach of supply agreement"
         }
       ],
       "reasoning": [
-        "Since the notice was given to the agent in the course of the business transacted by him for the principal, it has the same legal consequences as if it had been given to or obtained by the principal."
+        "Section 73 of the Indian Contract Act, 1872 provides that the party suffering breach of contract is entitled to receive compensation for any loss or damage caused by the breach."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 777
+    "raw_text_len": 678
   },
   {
     "task_id": "D03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 7594.2,
-    "input_tokens": 1216,
-    "output_tokens": 401,
+    "latency_ms": 12867.4,
+    "input_tokens": 1257,
+    "output_tokens": 461,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indiancontract:227",
       "indiancontract:228",
-      "indiancontract:230"
+      "indiancontract:237"
     ],
     "cited_chunk_ids": [
-      "chk_f245dc63b2d94ee387a49a5f07800d49",
-      "chk_a629e68126a54f31a09e8654e0d88b55",
-      "chk_4953a4d7057e41e4be57d0d07850b252"
+      "chk_788caa7ed9cc42a2a9ccd62c0607db5c",
+      "chk_6471f535e0c44ecb8087861b68f1a2e9",
+      "chk_1723755b56e94842b5ac042704120524"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Testing whether the principal is bound in an agreement signed by an agent"
+        "Testing whether the principal is bound in a contract where the agent has exceeded their authority"
       ],
       "sections": [
         {
           "section": "Section 227",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_f245dc63b2d94ee387a49a5f07800d49",
+          "chunk_id": "chk_788caa7ed9cc42a2a9ccd62c0607db5c",
           "what_it_provides": "When an agent does more than he is authorized to do, and when the part of what he does, which is within his authority, can be separated from the part which is beyond his authority, so much only of what he does as is with",
-          "relevance": "relevant to determining whether the principal is bound"
+          "relevance": "relevant to determining the principal's liability"
         },
         {
           "section": "Section 228",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_a629e68126a54f31a09e8654e0d88b55",
+          "chunk_id": "chk_6471f535e0c44ecb8087861b68f1a2e9",
           "what_it_provides": "Principal not bound when excess of agent's authority is not separable",
-          "relevance": "relevant to determining whether the principal is bound"
+          "relevance": "relevant to determining the principal's liability when the agent's authority is exceeded"
         },
         {
-          "section": "Section 230",
+          "section": "Section 237",
           "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_4953a4d7057e41e4be57d0d07850b252",
-          "what_it_provides": "Agent cannot personally enforce, nor be bound by, contracts on behalf of principal",
-          "relevance": "relevant to determining whether the principal is bound"
+          "chunk_id": "chk_1723755b56e94842b5ac042704120524",
+          "what_it_provides": "When an agent has, without authority, done acts or incurred obligations to third persons on behalf of his principal, the principal is bound by such acts or obligations, if he has by his words or conduct induced such thir",
+          "relevance": "relevant to determining the principal's liability when the agent's actions are induced by the principal"
         }
       ],
       "reasoning": [
-        "An agent's actions beyond their authority cannot be separated from their actions within authority. If the excess actions are inseparable, the principal is not bound."
+        "Analyze the facts of the case to determine whether the principal is bound"
       ],
       "evidence_sufficient": true,
-      "uncertainties": []
+      "uncertainties": [
+        "The FIR report does not provide clear information on whether the principal induced the accused to believe that the agent's actions were within their authority"
+      ]
     },
-    "raw_text_len": 1499
+    "raw_text_len": 1815
   },
   {
     "task_id": "C01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 6459.1,
-    "input_tokens": 1270,
-    "output_tokens": 330,
+    "latency_ms": 9175.1,
+    "input_tokens": 1399,
+    "output_tokens": 294,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:28",
-      "indiancontract:10",
-      "indiancontract:36"
+      "arbitrationand:45",
+      "arbitrationand:54",
+      "arbitrationand:42"
     ],
     "cited_chunk_ids": [
-      "chk_923b17e765e14cb2b1380df2d1409869",
-      "chk_d9601d6b85744733bc47c0416d1fa21f",
-      "chk_10024a9c6fd04e6c903dd780bbc859b8"
+      "chk_429316f99d644f9fa42342ce95cc0067",
+      "chk_bf4bb787518845138027fb3e315a2aa9",
+      "chk_4a0037ad528b4fab9a464cc82def89ff"
     ],
     "evidence_sufficient": false,
     "raw_output": {
       "legal_issues": [
-        "Are there Supreme Court judgments on arbitration agreements in unstamped contracts?"
+        "Supreme Court judgments on arbitration agreements in unstamped contracts"
       ],
       "sections": [
         {
-          "section": "Section 28",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_923b17e765e14cb2b1380df2d1409869",
-          "what_it_provides": "Agreements in restraint of legal proceeding void",
-          "relevance": "Does this section apply to arbitration agreements in unstamped contracts?"
+          "section": "Section 45",
+          "act": "Arbitration and Conciliation Act, 1996",
+          "chunk_id": "chk_429316f99d644f9fa42342ce95cc0067",
+          "what_it_provides": "Power of judicial authority to refer parties to arbitration",
+          "relevance": ""
         },
         {
-          "section": "Section 10",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_d9601d6b85744733bc47c0416d1fa21f",
-          "what_it_provides": "What agreements are contracts",
-          "relevance": "Is the agreement in unstamped contract a valid contract?"
+          "section": "Section 54",
+          "act": "Arbitration and Conciliation Act, 1996",
+          "chunk_id": "chk_bf4bb787518845138027fb3e315a2aa9",
+          "what_it_provides": "Power of judicial authority to refer parties to arbitration",
+          "relevance": ""
         },
         {
-          "section": "Section 36",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_10024a9c6fd04e6c903dd780bbc859b8",
-          "what_it_provides": "Agreement contingent on impossible events void",
-          "relevance": "Does this section apply to arbitration agreements in unstamped contracts?"
+          "section": "Section 42",
+          "act": "Arbitration and Conciliation Act, 1996",
+          "chunk_id": "chk_4a0037ad528b4fab9a464cc82def89ff",
+          "what_it_provides": "Jurisdiction",
+          "relevance": ""
         }
       ],
       "reasoning": [],
       "evidence_sufficient": false,
       "uncertainties": [
-        "Are there Supreme Court judgments on arbitration agreements in unstamped contracts?"
+        "Whether Supreme Court judgments exist on arbitration agreements in unstamped contracts"
       ]
     },
-    "raw_text_len": 1217
+    "raw_text_len": 1037
   },
   {
     "task_id": "C02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 6710.7,
-    "input_tokens": 1330,
-    "output_tokens": 338,
+    "latency_ms": 12172.9,
+    "input_tokens": 1390,
+    "output_tokens": 368,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "indiancontract:73",
-      "indiancontract:73",
-      "indiancontract:73"
+      "specificrelief:20a",
+      "codeofcivilpro:35b",
+      "specificrelief:27",
+      "specificrelief:21"
     ],
     "cited_chunk_ids": [
-      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
-      "chk_5a12371028fe49e695bdb93398ce4537",
-      "chk_bbb7c0764fdc4b83a584a2b0dc490a87"
+      "chk_6791eaccb96945689f046ee9b863869b",
+      "chk_a73682ee30424d2691d9d268edb9bb63",
+      "chk_21fc60988bd344a2a90c951a16672621",
+      "chk_38bbc68f593d4f0897259039b923997e"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Delay and damages in construction contracts"
+        "Delay and damages in construction contracts",
+        "Supreme Court authority"
       ],
       "sections": [
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Relevant for delay and damages in construction contracts"
+          "section": "Section 20A",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_6791eaccb96945689f046ee9b863869b",
+          "what_it_provides": "Special provisions for contract relating to infrastructure project",
+          "relevance": "Delay in infrastructure projects"
         },
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Relevant for delay and damages in construction contracts"
+          "section": "Section 35B",
+          "act": "Code of Civil Procedure, 1908",
+          "chunk_id": "chk_a73682ee30424d2691d9d268edb9bb63",
+          "what_it_provides": "Costs for causing delay",
+          "relevance": "Damages for delay"
         },
         {
-          "section": "Section 73",
-          "act": "Indian Contract Act, 1872",
-          "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
-          "what_it_provides": "Compensation for loss or damage caused by breach of contract",
-          "relevance": "Relevant for delay and damages in construction contracts"
+          "section": "Section 27",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_21fc60988bd344a2a90c951a16672621",
+          "what_it_provides": "When rescission may be adjudged or refused",
+          "relevance": "Rescission of contracts"
+        },
+        {
+          "section": "Section 21",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_38bbc68f593d4f0897259039b923997e",
+          "what_it_provides": "Power to award compensation in certain cases",
+          "relevance": "Compensation for breach of contract"
         }
       ],
-      "reasoning": [
-        "The Supreme Court has established that delay and damages in construction contracts can be recovered under Section 73 of the Indian Contract Act, 1872."
-      ],
+      "reasoning": [],
       "evidence_sufficient": true
     },
-    "raw_text_len": 1243
+    "raw_text_len": 1250
   },
   {
     "task_id": "N01",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 3768.8,
-    "input_tokens": 1400,
-    "output_tokens": 153,
+    "latency_ms": 6334.8,
+    "input_tokens": 1447,
+    "output_tokens": 191,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
       "indianpenalcod:498a"
     ],
     "cited_chunk_ids": [
-      "chk_31f02ec8a87e4754bd8777909265f262"
+      "chk_dcfbcfde23a44844937eff08577e42a7"
     ],
     "evidence_sufficient": false,
     "raw_output": {
@@ -1303,34 +1360,37 @@
         {
           "section": "498A",
           "act": "Indian Penal Code",
-          "chunk_id": "chk_31f02ec8a87e4754bd8777909265f262",
-          "what_it_provides": "Cruelty by a husband or his relative",
-          "relevance": "Section 498A of the Indian Penal Code provides for punishment for cruelty by a husband or his relative"
+          "chunk_id": "chk_dcfbcfde23a44844937eff08577e42a7",
+          "what_it_provides": "Punishment with imprisonment for a term which may extend to three years and fine for whoever, being the husband or the relative of the husband of a woman, subjects such woman to cruelty",
+          "relevance": "Cruelty defined as any wilful conduct which is of such a nature as is likely to drive the woman to commit suicide or to cause grave injury or danger to life, limb or health"
         }
       ],
       "reasoning": [],
-      "evidence_sufficient": false,
-      "uncertainties": []
+      "evidence_sufficient": false
     },
-    "raw_text_len": 531
+    "raw_text_len": 727
   },
   {
     "task_id": "N02",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 5446.3,
-    "input_tokens": 1340,
-    "output_tokens": 240,
+    "latency_ms": 10961.9,
+    "input_tokens": 1324,
+    "output_tokens": 374,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "informationtec:13",
-      "informationtec:10a"
+      "informationtec:6a",
+      "consumerprotec:94",
+      "indianpartners:58",
+      "informationtec:35"
     ],
     "cited_chunk_ids": [
-      "chk_da6456e727ef4209bf37bfdbdacde227",
-      "chk_7edc8c05f6a1436e9fdc824a9e4e2d12"
+      "chk_be31c27a4980422ab951040b46085cf1",
+      "chk_b6097fbcee8247ab836d87a100af1c1d",
+      "chk_a9fba62488594ce39a792ba43a5852d8",
+      "chk_9e0b3f0a0a844b5d97140ba679e1c23a"
     ],
     "evidence_sufficient": false,
     "raw_output": {
@@ -1339,64 +1399,75 @@
       ],
       "sections": [
         {
-          "section": "Section 13",
+          "section": "Section 6A",
           "act": "Information Technology Act, 2000",
-          "chunk_id": "chk_da6456e727ef4209bf37bfdbdacde227",
-          "what_it_provides": "Provisions for the despatch and receipt of electronic records",
-          "relevance": "Relevant for understanding the definition of e-commerce operators"
+          "chunk_id": "chk_be31c27a4980422ab951040b46085cf1",
+          "what_it_provides": "Delivery of services by service provider",
+          "relevance": "Not directly relevant to GST registration thresholds"
         },
         {
-          "section": "Section 10A",
+          "section": "Section 94",
+          "act": "Consumer Protection Act, 2019",
+          "chunk_id": "chk_b6097fbcee8247ab836d87a100af1c1d",
+          "what_it_provides": "Measures to prevent unfair trade practices in e-commerce",
+          "relevance": "Not directly relevant to GST registration thresholds"
+        },
+        {
+          "section": "Section 58",
+          "act": "Indian Partnership Act, 1932",
+          "chunk_id": "chk_a9fba62488594ce39a792ba43a5852d8",
+          "what_it_provides": "Application for registration",
+          "relevance": "Partnership registration threshold mentioned"
+        },
+        {
+          "section": "Section 35",
           "act": "Information Technology Act, 2000",
-          "chunk_id": "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
-          "what_it_provides": "Validity of contracts formed through electronic means",
-          "relevance": "Relevant for understanding the applicability of GST"
+          "chunk_id": "chk_9e0b3f0a0a844b5d97140ba679e1c23a",
+          "what_it_provides": "Certifying authority to issue electronic signature certificate",
+          "relevance": "Not directly relevant to GST registration thresholds"
         }
       ],
       "reasoning": [],
-      "evidence_sufficient": false,
-      "uncertainties": [
-        "No specific provision mentioned for GST registration thresholds"
-      ]
+      "evidence_sufficient": false
     },
-    "raw_text_len": 890
+    "raw_text_len": 1348
   },
   {
     "task_id": "N03",
     "model": "llama3.2:3b",
     "ok": true,
     "error": null,
-    "latency_ms": 4538.9,
-    "input_tokens": 1185,
-    "output_tokens": 202,
+    "latency_ms": 5900.2,
+    "input_tokens": 1302,
+    "output_tokens": 169,
     "parse_ok": true,
     "attempts": 1,
     "cited_sections": [
-      "motorvehiclesa:183"
+      "specificrelief:21"
     ],
     "cited_chunk_ids": [
-      "chk_42e53113940d491ab8408c503dd48fd8"
+      "chk_53a6ff216e8a450d9095d80fd176c947"
     ],
     "evidence_sufficient": true,
     "raw_output": {
       "legal_issues": [
-        "Compensation for hit-and-run case under Motor Vehicles Act"
+        "Compensation in hit-and-run case under Motor Vehicles Act"
       ],
       "sections": [
         {
-          "section": "Section 183",
-          "act": "Motor Vehicles Act, 1988",
-          "chunk_id": "chk_42e53113940d491ab8408c503dd48fd8",
-          "what_it_provides": "Penalty for causing death by negligence or rash and negligent act or omission to prevent death or grievous hurt, or for doing any other act which may be considered as a rash or negligent act or omission to prevent death,",
-          "relevance": "Compensation for hit-and-run case"
+          "section": "Section 21",
+          "act": "Specific Relief Act, 1963",
+          "chunk_id": "chk_53a6ff216e8a450d9095d80fd176c947",
+          "what_it_provides": "Power to award compensation in certain cases",
+          "relevance": "Applicable in hit-and-run cases"
         }
       ],
       "reasoning": [
-        "Section 183 of the Motor Vehicles Act, 1988, provides for compensation in case of a hit-and-run case."
+        "Section 21 of the Specific Relief Act, 1963, provides power to award compensation in certain cases, including hit-and-run cases."
       ],
       "evidence_sufficient": true,
       "uncertainties": []
     },
-    "raw_text_len": 745
+    "raw_text_len": 593
   }
 ]

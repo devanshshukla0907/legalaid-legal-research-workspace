@@ -1,0 +1,6425 @@
+{
+  "L01": {
+    "task_id": "L01",
+    "query_used": "What does Section 73 of the Indian Contract Act provide for?",
+    "chunk_ids": [
+      "chk_11d7daa6950e4ff8b77c59c01764890a",
+      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+      "chk_e9a19436c1dc41c597b996e7eab9c7ba",
+      "chk_ead981d9981b4d54b21cae656a12cb3f",
+      "chk_d3ae1befb7a64d7cafa43264d93d3a42",
+      "chk_43a235e735c14054a9d1e44c8efb6b5d",
+      "chk_5a12371028fe49e695bdb93398ce4537",
+      "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+      "chk_b2e27c75c36e4246b459ce4dbc7e41d3",
+      "chk_c10a199749d74a2a911d57f6cf98b457",
+      "chk_fedd273ac1d14297913105ff57d7ca7b",
+      "chk_331cbcfb310845c2afb5b66496c676b4",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_9a14091060ca4402a2067a899f79c106",
+      "chk_79dac48932fa48cc9a62b701c6aa8dca",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_11d7daa6950e4ff8b77c59c01764890a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.8087,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7951,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_e9a19436c1dc41c597b996e7eab9c7ba",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7915,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7913,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_d3ae1befb7a64d7cafa43264d93d3a42",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 1",
+        "similarity": 0.7905,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_43a235e735c14054a9d1e44c8efb6b5d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 11",
+        "similarity": 0.7883,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7882,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7873,
+        "retrievers": [
+          "dense",
+          "keyword",
+          "graph"
+        ]
+      },
+      {
+        "chunk_id": "chk_b2e27c75c36e4246b459ce4dbc7e41d3",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "metadata",
+        "similarity": 0.6543,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c10a199749d74a2a911d57f6cf98b457",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6379,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fedd273ac1d14297913105ff57d7ca7b",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "issues",
+        "similarity": 0.629,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_331cbcfb310845c2afb5b66496c676b4",
+        "collection": "CASE_LAW",
+        "act": "Kotak Mahindra Bank Limited v. Girnar Corrugators Pvt. Ltd. & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6255,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6247,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.6247,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9a14091060ca4402a2067a899f79c106",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.6221,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_79dac48932fa48cc9a62b701c6aa8dca",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.6219,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5335,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.8087,
+      0.7951,
+      0.7915,
+      0.7913,
+      0.7905,
+      0.7883,
+      0.7882,
+      0.7873,
+      0.6543,
+      0.6379,
+      0.629,
+      0.6255,
+      0.6247,
+      0.6247,
+      0.6221,
+      0.6219,
+      0.5335
+    ],
+    "context_tokens": 6496,
+    "retrieval_ms": 2708.3,
+    "expected_found": [
+      "indiancontract:73"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.375,
+    "mrr": 1.0
+  },
+  "L02": {
+    "task_id": "L02",
+    "query_used": "Under the Indian Contract Act, when is an agreement without consideration still valid?",
+    "chunk_ids": [
+      "chk_e6841b665ac44aeda047c4760bf1f495",
+      "chk_d9601d6b85744733bc47c0416d1fa21f",
+      "chk_de65fd70f5a440acb63d4d40eff8f6f0",
+      "chk_ad9a12d835f24de096553a4385954937",
+      "chk_5aa2625fe04548d8afb2afc4cde855cd",
+      "chk_6c3cd69bedae4f9b8e98fd23da4ecb3d",
+      "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+      "chk_716eb80ea9e9418ea03fca295bb88315",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_c10a199749d74a2a911d57f6cf98b457",
+      "chk_78291855e63b4669a66eacce2fec7c55",
+      "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+      "chk_76b0185e850147de9433eb40b254b18d",
+      "chk_99be77357c9d441f8462310865aa6c0c",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_147939c40f3944269a1a985ce78ec530",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_e6841b665ac44aeda047c4760bf1f495",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 25",
+        "similarity": 0.8515,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d9601d6b85744733bc47c0416d1fa21f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 10",
+        "similarity": 0.8344,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_de65fd70f5a440acb63d4d40eff8f6f0",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 185",
+        "similarity": 0.8337,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ad9a12d835f24de096553a4385954937",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 25",
+        "similarity": 0.8299,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5aa2625fe04548d8afb2afc4cde855cd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 24",
+        "similarity": 0.8172,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6c3cd69bedae4f9b8e98fd23da4ecb3d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 2",
+        "similarity": 0.8166,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.8117,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_716eb80ea9e9418ea03fca295bb88315",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.7933,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.716,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c10a199749d74a2a911d57f6cf98b457",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.7021,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_78291855e63b4669a66eacce2fec7c55",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.6664,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6623,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_76b0185e850147de9433eb40b254b18d",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6555,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_99be77357c9d441f8462310865aa6c0c",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6533,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.6523,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_147939c40f3944269a1a985ce78ec530",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6521,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5078,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.8515,
+      0.8344,
+      0.8337,
+      0.8299,
+      0.8172,
+      0.8166,
+      0.8117,
+      0.7933,
+      0.716,
+      0.7021,
+      0.6664,
+      0.6623,
+      0.6555,
+      0.6533,
+      0.6523,
+      0.6521,
+      0.5078
+    ],
+    "context_tokens": 5676,
+    "retrieval_ms": 1531.1,
+    "expected_found": [
+      "indiancontract:25"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.125,
+    "mrr": 1.0
+  },
+  "L03": {
+    "task_id": "L03",
+    "query_used": "What are the essential requirements for an agreement to be a contract?",
+    "chunk_ids": [
+      "chk_e6841b665ac44aeda047c4760bf1f495",
+      "chk_ad9a12d835f24de096553a4385954937",
+      "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+      "chk_716eb80ea9e9418ea03fca295bb88315",
+      "chk_6c3cd69bedae4f9b8e98fd23da4ecb3d",
+      "chk_5aa2625fe04548d8afb2afc4cde855cd",
+      "chk_868fce364c984b65945e4db6f290d5ab",
+      "chk_011292864dcb4672b431b289d4fac6d7",
+      "chk_99be77357c9d441f8462310865aa6c0c",
+      "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_76b0185e850147de9433eb40b254b18d",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_1a97b6ab9d884a75a196e649d1ea0573",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_e79fe99c9e7343258fbcef58822c2560",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_e6841b665ac44aeda047c4760bf1f495",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 25",
+        "similarity": 0.6922,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ad9a12d835f24de096553a4385954937",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 25",
+        "similarity": 0.6888,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.6848,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_716eb80ea9e9418ea03fca295bb88315",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.6839,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6c3cd69bedae4f9b8e98fd23da4ecb3d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 2",
+        "similarity": 0.6796,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5aa2625fe04548d8afb2afc4cde855cd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 24",
+        "similarity": 0.6748,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_868fce364c984b65945e4db6f290d5ab",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 29",
+        "similarity": 0.6709,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_011292864dcb4672b431b289d4fac6d7",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 27",
+        "similarity": 0.6662,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_99be77357c9d441f8462310865aa6c0c",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6067,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6005,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.5926,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_76b0185e850147de9433eb40b254b18d",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.5908,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.5744,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1a97b6ab9d884a75a196e649d1ea0573",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.574,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5712,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e79fe99c9e7343258fbcef58822c2560",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5612,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4273,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6922,
+      0.6888,
+      0.6848,
+      0.6839,
+      0.6796,
+      0.6748,
+      0.6709,
+      0.6662,
+      0.6067,
+      0.6005,
+      0.5926,
+      0.5908,
+      0.5744,
+      0.574,
+      0.5712,
+      0.5612,
+      0.4273
+    ],
+    "context_tokens": 6390,
+    "retrieval_ms": 1729.9,
+    "expected_found": [],
+    "expected_missed": [
+      "indiancontract:10"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "L04": {
+    "task_id": "L04",
+    "query_used": "Are electronic records legally recognised in India, and under which provision?",
+    "chunk_ids": [
+      "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+      "chk_3e334edc68834e129c00ade2e7ef1e56",
+      "chk_784d3e888ee743a594d6b5f36e2388f2",
+      "chk_9fa6523c17294853bf4d529083be0d7a",
+      "chk_dde0f411b5764b41b5c2592902a9794e",
+      "chk_61c6acc8e7084173bf2cf5ef10930a65",
+      "chk_1703f06777964bafbc766e1c82891e3d",
+      "chk_f2b5535843df4795b7563e2628d8862f",
+      "chk_9c29970ff8644e53aeb30ec435b10026",
+      "chk_da74f65fd81242ef95e210aa870246f5",
+      "chk_38fda56c130b4c74a6471687ba461d7b",
+      "chk_2388656592ef4c608bcc6a866b186be2",
+      "chk_047e87079d6c471cb3a0579a033b0aea",
+      "chk_839d3cce2cd545edad0e0889877d8d41",
+      "chk_3b1068d35bc04387863fe3eeaa34587b",
+      "chk_b990d78beadc41bd9687963c61a39bbd",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 4",
+        "similarity": 0.7785,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3e334edc68834e129c00ade2e7ef1e56",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 2",
+        "similarity": 0.7647,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_784d3e888ee743a594d6b5f36e2388f2",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7639,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9fa6523c17294853bf4d529083be0d7a",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7623,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dde0f411b5764b41b5c2592902a9794e",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7612,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_61c6acc8e7084173bf2cf5ef10930a65",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 62",
+        "similarity": 0.7549,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1703f06777964bafbc766e1c82891e3d",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 3",
+        "similarity": 0.726,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f2b5535843df4795b7563e2628d8862f",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 11",
+        "similarity": 0.7195,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9c29970ff8644e53aeb30ec435b10026",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "metadata",
+        "similarity": 0.7012,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_da74f65fd81242ef95e210aa870246f5",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "metadata",
+        "similarity": 0.6989,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_38fda56c130b4c74a6471687ba461d7b",
+        "collection": "CASE_LAW",
+        "act": "Securities and Exchange Board of India v. V Shankar",
+        "section": "metadata",
+        "similarity": 0.6929,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_2388656592ef4c608bcc6a866b186be2",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "metadata",
+        "similarity": 0.6907,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_047e87079d6c471cb3a0579a033b0aea",
+        "collection": "CASE_LAW",
+        "act": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+        "section": "metadata",
+        "similarity": 0.6864,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_839d3cce2cd545edad0e0889877d8d41",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "metadata",
+        "similarity": 0.6823,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3b1068d35bc04387863fe3eeaa34587b",
+        "collection": "CASE_LAW",
+        "act": "Dr Narendra Gupta v. Union of India & Ors.",
+        "section": "metadata",
+        "similarity": 0.6681,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b990d78beadc41bd9687963c61a39bbd",
+        "collection": "CASE_LAW",
+        "act": "Eldeco Housing and Industries Limited v. Ashok Vidyarthi and Others",
+        "section": "metadata",
+        "similarity": 0.6624,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.522,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7785,
+      0.7647,
+      0.7639,
+      0.7623,
+      0.7612,
+      0.7549,
+      0.726,
+      0.7195,
+      0.7012,
+      0.6989,
+      0.6929,
+      0.6907,
+      0.6864,
+      0.6823,
+      0.6681,
+      0.6624,
+      0.522
+    ],
+    "context_tokens": 3024,
+    "retrieval_ms": 1866.0,
+    "expected_found": [
+      "informationtec:4"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0625,
+    "mrr": 1.0
+  },
+  "L05": {
+    "task_id": "L05",
+    "query_used": "What does the law say about admissibility of electronic records as evidence?",
+    "chunk_ids": [
+      "chk_e24979bb141344dea0f105da9da92461",
+      "chk_dde0f411b5764b41b5c2592902a9794e",
+      "chk_784d3e888ee743a594d6b5f36e2388f2",
+      "chk_61c6acc8e7084173bf2cf5ef10930a65",
+      "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+      "chk_9fa6523c17294853bf4d529083be0d7a",
+      "chk_98b546cb0730487481c062dd53baeabe",
+      "chk_1703f06777964bafbc766e1c82891e3d",
+      "chk_379a1caecf4b497a9689bff2f90a3c43",
+      "chk_9c29970ff8644e53aeb30ec435b10026",
+      "chk_76b0185e850147de9433eb40b254b18d",
+      "chk_9ec216bdaf154bcdb248d5d5960eb202",
+      "chk_780cc629890e48db8247b8e48aa005f6",
+      "chk_147939c40f3944269a1a985ce78ec530",
+      "chk_b2e1ce95ce4c44bfafb8350ab143042b",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_e24979bb141344dea0f105da9da92461",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 61",
+        "similarity": 0.805,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dde0f411b5764b41b5c2592902a9794e",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7916,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_784d3e888ee743a594d6b5f36e2388f2",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7826,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_61c6acc8e7084173bf2cf5ef10930a65",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 62",
+        "similarity": 0.7703,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 4",
+        "similarity": 0.7603,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9fa6523c17294853bf4d529083be0d7a",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7584,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_98b546cb0730487481c062dd53baeabe",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 63",
+        "similarity": 0.7546,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1703f06777964bafbc766e1c82891e3d",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 3",
+        "similarity": 0.719,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_379a1caecf4b497a9689bff2f90a3c43",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "issues",
+        "similarity": 0.6936,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9c29970ff8644e53aeb30ec435b10026",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "metadata",
+        "similarity": 0.6823,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_76b0185e850147de9433eb40b254b18d",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6652,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9ec216bdaf154bcdb248d5d5960eb202",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6567,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_780cc629890e48db8247b8e48aa005f6",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6549,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_147939c40f3944269a1a985ce78ec530",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6512,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b2e1ce95ce4c44bfafb8350ab143042b",
+        "collection": "CASE_LAW",
+        "act": "Y. P. Lele v. Maharashtra State Electricity Distribution Company Ltd. & Ors.",
+        "section": "headnote",
+        "similarity": 0.6178,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6081,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4902,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.805,
+      0.7916,
+      0.7826,
+      0.7703,
+      0.7603,
+      0.7584,
+      0.7546,
+      0.719,
+      0.6936,
+      0.6823,
+      0.6652,
+      0.6567,
+      0.6549,
+      0.6512,
+      0.6178,
+      0.6081,
+      0.4902
+    ],
+    "context_tokens": 5270,
+    "retrieval_ms": 1525.2,
+    "expected_found": [
+      "bharatiyasaksh:63",
+      "bharatiyasaksh:61"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.3125,
+    "mrr": 1.0
+  },
+  "L06": {
+    "task_id": "L06",
+    "query_used": "What is res judicata and which provision governs it?",
+    "chunk_ids": [
+      "chk_9783a080af6c4433a73240f5879d9b60",
+      "chk_d46fc1fdfb9b4823a786a80244b5b283",
+      "chk_f72136cf3e8a45b8bd2615e5c13a4edb",
+      "chk_9d68dfe71d9f4fd7927028794fa94d78",
+      "chk_99be77357c9d441f8462310865aa6c0c",
+      "chk_7b693b4f3ff342e383c8137d2c7c052d",
+      "chk_2f3716edace041a8a87ddb0252900a41",
+      "chk_141f8e4458114fb0ad6b23ca5149d206",
+      "chk_ca6da6eca43746b98a82da747c82ca9a",
+      "chk_c2a0c76cf4e243409eac05c1adcbb5d5",
+      "chk_81cbbc4c31b3436e87666b68eef3cf97",
+      "chk_fddc4e0d581d4a55a85eb10fc13b6a0c",
+      "chk_0e721f46b109450e82fdf8a8d88da390",
+      "chk_331cbcfb310845c2afb5b66496c676b4",
+      "chk_df971a166b2445ca9c480b257ec8c108",
+      "chk_da2d79e56c4d4d9fb28cb54c53286f17",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_9783a080af6c4433a73240f5879d9b60",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 11",
+        "similarity": 0.7167,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d46fc1fdfb9b4823a786a80244b5b283",
+        "collection": "CASE_LAW",
+        "act": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+        "section": "judgment_extract",
+        "similarity": 0.6619,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_f72136cf3e8a45b8bd2615e5c13a4edb",
+        "collection": "CASE_LAW",
+        "act": "Jini Dhanrajgir & anr v. Shibu Mathew & Anr. Etc.",
+        "section": "judgment_extract",
+        "similarity": 0.6534,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_9d68dfe71d9f4fd7927028794fa94d78",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6433,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_99be77357c9d441f8462310865aa6c0c",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6429,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_7b693b4f3ff342e383c8137d2c7c052d",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 18",
+        "similarity": 0.6427,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_2f3716edace041a8a87ddb0252900a41",
+        "collection": "CASE_LAW",
+        "act": "Konkan Railway Corporation Limited v. Chenab Bridge Project Undertaking",
+        "section": "headnote",
+        "similarity": 0.6416,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_141f8e4458114fb0ad6b23ca5149d206",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 17",
+        "similarity": 0.6377,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_ca6da6eca43746b98a82da747c82ca9a",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 20",
+        "similarity": 0.6307,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_c2a0c76cf4e243409eac05c1adcbb5d5",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 151",
+        "similarity": 0.63,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_81cbbc4c31b3436e87666b68eef3cf97",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 89",
+        "similarity": 0.6283,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_fddc4e0d581d4a55a85eb10fc13b6a0c",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 89",
+        "similarity": 0.6278,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_0e721f46b109450e82fdf8a8d88da390",
+        "collection": "CASE_LAW",
+        "act": "Amandeep Singh Saran v. State of Chhattisgarh",
+        "section": "headnote",
+        "similarity": 0.6162,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_331cbcfb310845c2afb5b66496c676b4",
+        "collection": "CASE_LAW",
+        "act": "Kotak Mahindra Bank Limited v. Girnar Corrugators Pvt. Ltd. & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6112,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_df971a166b2445ca9c480b257ec8c108",
+        "collection": "CASE_LAW",
+        "act": "S. Narahari and ors v. S.r. Kumar and Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6092,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_da2d79e56c4d4d9fb28cb54c53286f17",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 28",
+        "similarity": 0.6043,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4359,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7167,
+      0.6619,
+      0.6534,
+      0.6433,
+      0.6429,
+      0.6427,
+      0.6416,
+      0.6377,
+      0.6307,
+      0.63,
+      0.6283,
+      0.6278,
+      0.6162,
+      0.6112,
+      0.6092,
+      0.6043,
+      0.4359
+    ],
+    "context_tokens": 6758,
+    "retrieval_ms": 1537.9,
+    "expected_found": [
+      "codeofcivilpro:11"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0625,
+    "mrr": 1.0
+  },
+  "R01": {
+    "task_id": "R01",
+    "query_used": "My client supplied goods under a written agreement and the buyer refused payment after delivery. Which provisions support a claim for compensation?",
+    "chunk_ids": [
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_ead981d9981b4d54b21cae656a12cb3f",
+      "chk_a42256cb2d22448284cefc937ab03233",
+      "chk_5a12371028fe49e695bdb93398ce4537",
+      "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+      "chk_b76e7e337ae54be08cb1711667f33bf5",
+      "chk_ee38d869c3374e52b09753fa5c06e863",
+      "chk_48b9e9b89d4948b09da597e9154861f6",
+      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+      "chk_b9198138e7754044814eaef7f9df4ccd",
+      "chk_060282402a8d430083c45928dd4da3a0",
+      "chk_59f17f39b07a4b9da34695b07637b5d0",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_bcae6bdeaae94ab38c002fc131e104ad",
+      "chk_b5ca83755e2749f1a883fa826e183906",
+      "chk_21e64c07be974696a55c0fc868c7952a",
+      "chk_0e9e94fc51ac424497a6759115e23a66"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.7051,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6961,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_a42256cb2d22448284cefc937ab03233",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 127",
+        "similarity": 0.6943,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6884,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6846,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b76e7e337ae54be08cb1711667f33bf5",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 54",
+        "similarity": 0.6797,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ee38d869c3374e52b09753fa5c06e863",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.6767,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_48b9e9b89d4948b09da597e9154861f6",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 68",
+        "similarity": 0.6729,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6713,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b9198138e7754044814eaef7f9df4ccd",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.6664,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_060282402a8d430083c45928dd4da3a0",
+        "collection": "CASE_LAW",
+        "act": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd.",
+        "section": "headnote",
+        "similarity": 0.6661,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_59f17f39b07a4b9da34695b07637b5d0",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 51",
+        "similarity": 0.6627,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.6575,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bcae6bdeaae94ab38c002fc131e104ad",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6478,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.6281,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_21e64c07be974696a55c0fc868c7952a",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6176,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_0e9e94fc51ac424497a6759115e23a66",
+        "collection": "CASE_LAW",
+        "act": "Jini Dhanrajgir & anr v. Shibu Mathew & Anr. Etc.",
+        "section": "judgment_extract",
+        "similarity": 0.615,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7051,
+      0.6961,
+      0.6943,
+      0.6884,
+      0.6846,
+      0.6797,
+      0.6767,
+      0.6729,
+      0.6713,
+      0.6664,
+      0.6661,
+      0.6627,
+      0.6575,
+      0.6478,
+      0.6281,
+      0.6176,
+      0.615
+    ],
+    "context_tokens": 6990,
+    "retrieval_ms": 2004.7,
+    "expected_found": [
+      "indiancontract:73"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.25,
+    "mrr": 0.5
+  },
+  "R02": {
+    "task_id": "R02",
+    "query_used": "Our contract fixes a sum payable on default. Is that clause enforceable and how much can actually be recovered?",
+    "chunk_ids": [
+      "chk_e50d96537e7446a9a31cf5d920737c41",
+      "chk_2b8468a44a8642929715b1a75630c25c",
+      "chk_dadb98ac8e014114a31657207c83c51f",
+      "chk_59d99c87e427438181409fffdf4f9a51",
+      "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+      "chk_e35fea25fd694bf49d57e3bd12fbbe17",
+      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+      "chk_5c6f837c59354fbcb8b3ae5db996e111",
+      "chk_c37722dbe2a24465915d6af4917d462e",
+      "chk_64bff3a7926f48a69e23240faa7a9676",
+      "chk_331cbcfb310845c2afb5b66496c676b4",
+      "chk_c7807193938c4b0ba3ddc17f66a534a0",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_ee38d869c3374e52b09753fa5c06e863",
+      "chk_bea5d3fa36574d958bfccfa16f39a2d8",
+      "chk_621996f087d04a1ea6a23f81d7bc774a",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_e50d96537e7446a9a31cf5d920737c41",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6995,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2b8468a44a8642929715b1a75630c25c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 177",
+        "similarity": 0.6885,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dadb98ac8e014114a31657207c83c51f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6722,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_59d99c87e427438181409fffdf4f9a51",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 60",
+        "similarity": 0.6579,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6576,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e35fea25fd694bf49d57e3bd12fbbe17",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 176",
+        "similarity": 0.6475,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6419,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5c6f837c59354fbcb8b3ae5db996e111",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 137",
+        "similarity": 0.6405,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c37722dbe2a24465915d6af4917d462e",
+        "collection": "CASE_LAW",
+        "act": "K. Hymavathi v. The State of Andhra Pradesh & Anr.",
+        "section": "headnote",
+        "similarity": 0.5835,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_64bff3a7926f48a69e23240faa7a9676",
+        "collection": "CASE_LAW",
+        "act": "K. Hymavathi v. The State of Andhra Pradesh & Anr.",
+        "section": "headnote",
+        "similarity": 0.583,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_331cbcfb310845c2afb5b66496c676b4",
+        "collection": "CASE_LAW",
+        "act": "Kotak Mahindra Bank Limited v. Girnar Corrugators Pvt. Ltd. & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.5815,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c7807193938c4b0ba3ddc17f66a534a0",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. Vedic Resorts and Hotels Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.5763,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5653,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ee38d869c3374e52b09753fa5c06e863",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.5546,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bea5d3fa36574d958bfccfa16f39a2d8",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.5388,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_621996f087d04a1ea6a23f81d7bc774a",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.5383,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5057,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6995,
+      0.6885,
+      0.6722,
+      0.6579,
+      0.6576,
+      0.6475,
+      0.6419,
+      0.6405,
+      0.5835,
+      0.583,
+      0.5815,
+      0.5763,
+      0.5653,
+      0.5546,
+      0.5388,
+      0.5383,
+      0.5057
+    ],
+    "context_tokens": 6252,
+    "retrieval_ms": 1456.9,
+    "expected_found": [
+      "indiancontract:74"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.1875,
+    "mrr": 1.0
+  },
+  "R03": {
+    "task_id": "R03",
+    "query_used": "The other side made performance impossible after we signed. What is our position?",
+    "chunk_ids": [
+      "chk_f3d1cfa9df6147ff8499b3a553280466",
+      "chk_2662db2c6b82473fa098d8a1debd9851",
+      "chk_8a6133f38f11420eb3c81d9fe43707c4",
+      "chk_1777682e0ed94392af9deec27b932ebb",
+      "chk_3dea64176cad4dfaaf6c83bd3e7584e8",
+      "chk_e4c0462bbfea4ef9911df5514dbd1567",
+      "chk_af320df50a484f14ad6082319ca7075d",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_ac4d83575c414907ac4cc1465727f32b",
+      "chk_fe8aee2bb90542659335cf33a022312c",
+      "chk_c2a936f916a049e5b6ffdedc3969cd00",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_10024a9c6fd04e6c903dd780bbc859b8",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_2a7fe627e1b74259a2bea7700942f8d1",
+      "chk_57c56c75b1364994accab6bceb590352",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_f3d1cfa9df6147ff8499b3a553280466",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 56",
+        "similarity": 0.5853,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2662db2c6b82473fa098d8a1debd9851",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 236",
+        "similarity": 0.5795,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_8a6133f38f11420eb3c81d9fe43707c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 38",
+        "similarity": 0.5706,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1777682e0ed94392af9deec27b932ebb",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5627,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dea64176cad4dfaaf6c83bd3e7584e8",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 46",
+        "similarity": 0.5606,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e4c0462bbfea4ef9911df5514dbd1567",
+        "collection": "CASE_LAW",
+        "act": "Union of India & Ors. v. M/s. Union Carbide Corporation & ors",
+        "section": "decision",
+        "similarity": 0.5596,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_af320df50a484f14ad6082319ca7075d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 33",
+        "similarity": 0.5595,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5573,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ac4d83575c414907ac4cc1465727f32b",
+        "collection": "CASE_LAW",
+        "act": "M/s B and T Ag v. Ministry of Defence",
+        "section": "judgment_extract",
+        "similarity": 0.5519,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fe8aee2bb90542659335cf33a022312c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 49",
+        "similarity": 0.5494,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c2a936f916a049e5b6ffdedc3969cd00",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 56",
+        "similarity": 0.5483,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5478,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_10024a9c6fd04e6c903dd780bbc859b8",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 36",
+        "similarity": 0.5443,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5297,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2a7fe627e1b74259a2bea7700942f8d1",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.529,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_57c56c75b1364994accab6bceb590352",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "decision",
+        "similarity": 0.5171,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4701,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.5853,
+      0.5795,
+      0.5706,
+      0.5627,
+      0.5606,
+      0.5596,
+      0.5595,
+      0.5573,
+      0.5519,
+      0.5494,
+      0.5483,
+      0.5478,
+      0.5443,
+      0.5297,
+      0.529,
+      0.5171,
+      0.4701
+    ],
+    "context_tokens": 5147,
+    "retrieval_ms": 1573.2,
+    "expected_found": [
+      "indiancontract:56"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.125,
+    "mrr": 1.0
+  },
+  "R04": {
+    "task_id": "R04",
+    "query_used": "We rescinded the contract because the other party breached first. Can we still claim compensation?",
+    "chunk_ids": [
+      "chk_ad678b3b5f1746d885f354fcda715419",
+      "chk_5edd71215715454fb11075e749198606",
+      "chk_f290867cae7047089b35611b2dd48021",
+      "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+      "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+      "chk_e9a19436c1dc41c597b996e7eab9c7ba",
+      "chk_98993eae003d471099871d8367726df4",
+      "chk_b76e7e337ae54be08cb1711667f33bf5",
+      "chk_1777682e0ed94392af9deec27b932ebb",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_bcae6bdeaae94ab38c002fc131e104ad",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_21e64c07be974696a55c0fc868c7952a",
+      "chk_2a7fe627e1b74259a2bea7700942f8d1",
+      "chk_9bc099496c294a38a7f52edbf27f7b0e",
+      "chk_d3c47da2b94a4159a649b04591a09a8c",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_ad678b3b5f1746d885f354fcda715419",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 75",
+        "similarity": 0.7439,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5edd71215715454fb11075e749198606",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7293,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f290867cae7047089b35611b2dd48021",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 53",
+        "similarity": 0.6953,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6822,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6551,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e9a19436c1dc41c597b996e7eab9c7ba",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6527,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_98993eae003d471099871d8367726df4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 22",
+        "similarity": 0.6491,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b76e7e337ae54be08cb1711667f33bf5",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 54",
+        "similarity": 0.6487,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1777682e0ed94392af9deec27b932ebb",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.6148,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.612,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bcae6bdeaae94ab38c002fc131e104ad",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6022,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.594,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_21e64c07be974696a55c0fc868c7952a",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5807,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2a7fe627e1b74259a2bea7700942f8d1",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.576,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9bc099496c294a38a7f52edbf27f7b0e",
+        "collection": "CASE_LAW",
+        "act": "M/s B and T Ag v. Ministry of Defence",
+        "section": "judgment_extract",
+        "similarity": 0.5601,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d3c47da2b94a4159a649b04591a09a8c",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.559,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5394,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7439,
+      0.7293,
+      0.6953,
+      0.6822,
+      0.6551,
+      0.6527,
+      0.6491,
+      0.6487,
+      0.6148,
+      0.612,
+      0.6022,
+      0.594,
+      0.5807,
+      0.576,
+      0.5601,
+      0.559,
+      0.5394
+    ],
+    "context_tokens": 6511,
+    "retrieval_ms": 1637.3,
+    "expected_found": [
+      "indiancontract:75"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0625,
+    "mrr": 1.0
+  },
+  "R05": {
+    "task_id": "R05",
+    "query_used": "The supplier delivered three months late. Was time of the essence, and what follows?",
+    "chunk_ids": [
+      "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_1777682e0ed94392af9deec27b932ebb",
+      "chk_2ec29d20387f4d8f96d0d160885e15ef",
+      "chk_ee38d869c3374e52b09753fa5c06e863",
+      "chk_f126fe178d10410dae9e31b8bef2d237",
+      "chk_5ed12d959ee4451088da4588dae8377b",
+      "chk_e19d664c018b42d0a6a7fe4b2b6be60a",
+      "chk_b5ca83755e2749f1a883fa826e183906",
+      "chk_776f98938ae0483e86a758592d14ab8f",
+      "chk_0c26651e1ba9418f9e50938633dea8e3",
+      "chk_f47972a412894176affb3b7d1a32b1b5",
+      "chk_5a12371028fe49e695bdb93398ce4537",
+      "chk_f3d1cfa9df6147ff8499b3a553280466",
+      "chk_61b8ca1857944a06880f56e49da13991",
+      "chk_d2f7b08b05334fab9748162c1711660b",
+      "chk_6632a3c452114f9991990b3b0fba7235"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5763,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5673,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1777682e0ed94392af9deec27b932ebb",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5533,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2ec29d20387f4d8f96d0d160885e15ef",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 55",
+        "similarity": 0.545,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ee38d869c3374e52b09753fa5c06e863",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.5412,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f126fe178d10410dae9e31b8bef2d237",
+        "collection": "CASE_LAW",
+        "act": "Tata Sons Pvt Ltd (formerly Tata Sons Ltd) v. Siva Industries and Holdings Ltd & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5352,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5ed12d959ee4451088da4588dae8377b",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 161",
+        "similarity": 0.5334,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e19d664c018b42d0a6a7fe4b2b6be60a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 54",
+        "similarity": 0.5223,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5182,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_776f98938ae0483e86a758592d14ab8f",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 13",
+        "similarity": 0.5178,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_0c26651e1ba9418f9e50938633dea8e3",
+        "collection": "CASE_LAW",
+        "act": "Tata Sons Pvt Ltd (formerly Tata Sons Ltd) v. Siva Industries and Holdings Ltd & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5065,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f47972a412894176affb3b7d1a32b1b5",
+        "collection": "CASE_LAW",
+        "act": "Tata Sons Pvt Ltd (formerly Tata Sons Ltd) v. Siva Industries and Holdings Ltd & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5047,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.4929,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f3d1cfa9df6147ff8499b3a553280466",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 56",
+        "similarity": 0.4905,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_61b8ca1857944a06880f56e49da13991",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 148",
+        "similarity": 0.4867,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d2f7b08b05334fab9748162c1711660b",
+        "collection": "CASE_LAW",
+        "act": "The Madras Aluminium Co. Ltd. v. The Tamil Nadu Electricity Board and Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.4866,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6632a3c452114f9991990b3b0fba7235",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.4814,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      }
+    ],
+    "similarities": [
+      0.5763,
+      0.5673,
+      0.5533,
+      0.545,
+      0.5412,
+      0.5352,
+      0.5334,
+      0.5223,
+      0.5182,
+      0.5178,
+      0.5065,
+      0.5047,
+      0.4929,
+      0.4905,
+      0.4867,
+      0.4866,
+      0.4814
+    ],
+    "context_tokens": 6090,
+    "retrieval_ms": 1922.1,
+    "expected_found": [
+      "indiancontract:55"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0625,
+    "mrr": 0.25
+  },
+  "R06": {
+    "task_id": "R06",
+    "query_used": "The buyer told us in advance they would not perform. What are our options?",
+    "chunk_ids": [
+      "chk_9826826567174748a20fcbe773fa179d",
+      "chk_f3d1cfa9df6147ff8499b3a553280466",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_9c5f202582b44aefb7449864c7708989",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_2ec29d20387f4d8f96d0d160885e15ef",
+      "chk_cd9b8f666a6e418a85ca96810e22d1c7",
+      "chk_57916b10211a4a7f9c9f21e6129371b2",
+      "chk_b76e7e337ae54be08cb1711667f33bf5",
+      "chk_011292864dcb4672b431b289d4fac6d7",
+      "chk_b4793fa1c3a14afeba06b9d50ee81713",
+      "chk_3dea64176cad4dfaaf6c83bd3e7584e8",
+      "chk_4009d3e0e3e44b8db868a6752fcfba4d",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_e7f0141b10c1449893f00c30aec47dc9",
+      "chk_8274c7284b50440fbad6fa6e8794a715",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_9826826567174748a20fcbe773fa179d",
+        "collection": "CASE_LAW",
+        "act": "Official Liquidator v. Ujjain Nagar Palika Nigam & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5852,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_f3d1cfa9df6147ff8499b3a553280466",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 56",
+        "similarity": 0.5593,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5504,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9c5f202582b44aefb7449864c7708989",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 39",
+        "similarity": 0.5462,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5426,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2ec29d20387f4d8f96d0d160885e15ef",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 55",
+        "similarity": 0.5425,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cd9b8f666a6e418a85ca96810e22d1c7",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 47",
+        "similarity": 0.5424,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_57916b10211a4a7f9c9f21e6129371b2",
+        "collection": "CASE_LAW",
+        "act": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.5362,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b76e7e337ae54be08cb1711667f33bf5",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 54",
+        "similarity": 0.5312,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_011292864dcb4672b431b289d4fac6d7",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 27",
+        "similarity": 0.5285,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b4793fa1c3a14afeba06b9d50ee81713",
+        "collection": "CASE_LAW",
+        "act": "Securities and Exchange Board of India v. V Shankar",
+        "section": "judgment_extract",
+        "similarity": 0.5262,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dea64176cad4dfaaf6c83bd3e7584e8",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 46",
+        "similarity": 0.525,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4009d3e0e3e44b8db868a6752fcfba4d",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.5237,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5228,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e7f0141b10c1449893f00c30aec47dc9",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 37",
+        "similarity": 0.5184,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_8274c7284b50440fbad6fa6e8794a715",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.499,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4674,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.5852,
+      0.5593,
+      0.5504,
+      0.5462,
+      0.5426,
+      0.5425,
+      0.5424,
+      0.5362,
+      0.5312,
+      0.5285,
+      0.5262,
+      0.525,
+      0.5237,
+      0.5228,
+      0.5184,
+      0.499,
+      0.4674
+    ],
+    "context_tokens": 6200,
+    "retrieval_ms": 1510.7,
+    "expected_found": [
+      "indiancontract:39"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0625,
+    "mrr": 0.25
+  },
+  "X01": {
+    "task_id": "X01",
+    "query_used": "Our entire agreement and all correspondence exist only as email and PDF. Is the contract valid, and how do we prove these records in court?",
+    "chunk_ids": [
+      "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_76b0185e850147de9433eb40b254b18d",
+      "chk_ab20875f41ff4891af8bb47062375915",
+      "chk_ad9a12d835f24de096553a4385954937",
+      "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_4953a4d7057e41e4be57d0d07850b252",
+      "chk_491f54bbbab147f58977dd9103f21993",
+      "chk_fa3ebd2d0ae247899fa3a21b990149e3",
+      "chk_868fce364c984b65945e4db6f290d5ab",
+      "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_1777682e0ed94392af9deec27b932ebb",
+      "chk_bd8e065a3aab4559b73facdef85665a1",
+      "chk_78291855e63b4669a66eacce2fec7c55",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 10A",
+        "similarity": 0.6885,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6668,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_76b0185e850147de9433eb40b254b18d",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.6504,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ab20875f41ff4891af8bb47062375915",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 198",
+        "similarity": 0.6296,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ad9a12d835f24de096553a4385954937",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 25",
+        "similarity": 0.6182,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_8b8e2d38d5e9463db5bd37bb3a3cb9a7",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 4",
+        "similarity": 0.6074,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.6061,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4953a4d7057e41e4be57d0d07850b252",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 230",
+        "similarity": 0.5989,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_491f54bbbab147f58977dd9103f21993",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 20",
+        "similarity": 0.5981,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fa3ebd2d0ae247899fa3a21b990149e3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 58",
+        "similarity": 0.5977,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_868fce364c984b65945e4db6f290d5ab",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 29",
+        "similarity": 0.5935,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "headnote",
+        "similarity": 0.5873,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5805,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1777682e0ed94392af9deec27b932ebb",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5794,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bd8e065a3aab4559b73facdef85665a1",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5698,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_78291855e63b4669a66eacce2fec7c55",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.5683,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5252,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6885,
+      0.6668,
+      0.6504,
+      0.6296,
+      0.6182,
+      0.6074,
+      0.6061,
+      0.5989,
+      0.5981,
+      0.5977,
+      0.5935,
+      0.5873,
+      0.5805,
+      0.5794,
+      0.5698,
+      0.5683,
+      0.5252
+    ],
+    "context_tokens": 4859,
+    "retrieval_ms": 1668.4,
+    "expected_found": [
+      "informationtec:10a"
+    ],
+    "expected_missed": [
+      "bharatiyasaksh:63"
+    ],
+    "recall": 0.5,
+    "precision_at_k": 0.0625,
+    "mrr": 1.0
+  },
+  "X02": {
+    "task_id": "X02",
+    "query_used": "A buyer took delivery of goods intending never to pay. Is that only a contract breach or also a criminal offence?",
+    "chunk_ids": [
+      "chk_560a4915242e436d8b1d15dc92391f75",
+      "chk_cd02e91c28534b1bbfa8347004f59c4e",
+      "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
+      "chk_ead981d9981b4d54b21cae656a12cb3f",
+      "chk_7cc1c41d5c1349c79976fa9e0e0b4946",
+      "chk_61b8ca1857944a06880f56e49da13991",
+      "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+      "chk_59f17f39b07a4b9da34695b07637b5d0",
+      "chk_b5ca83755e2749f1a883fa826e183906",
+      "chk_060282402a8d430083c45928dd4da3a0",
+      "chk_d03a479efaae4808a9b4f03419647c73",
+      "chk_ee38d869c3374e52b09753fa5c06e863",
+      "chk_d46fc1fdfb9b4823a786a80244b5b283",
+      "chk_c76a27e702a5410fae729df09ef188aa",
+      "chk_cba78bcd17664d61993c6123d6080824",
+      "chk_93055d10f83949c4848b049418fc28a8",
+      "chk_b9198138e7754044814eaef7f9df4ccd"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_560a4915242e436d8b1d15dc92391f75",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 166",
+        "similarity": 0.7015,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cd02e91c28534b1bbfa8347004f59c4e",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 224",
+        "similarity": 0.6867,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 149",
+        "similarity": 0.6861,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6861,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7cc1c41d5c1349c79976fa9e0e0b4946",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 70",
+        "similarity": 0.686,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_61b8ca1857944a06880f56e49da13991",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 148",
+        "similarity": 0.6844,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6802,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_59f17f39b07a4b9da34695b07637b5d0",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 51",
+        "similarity": 0.6693,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.6551,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_060282402a8d430083c45928dd4da3a0",
+        "collection": "CASE_LAW",
+        "act": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd.",
+        "section": "headnote",
+        "similarity": 0.6193,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d03a479efaae4808a9b4f03419647c73",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.6048,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ee38d869c3374e52b09753fa5c06e863",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.5898,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d46fc1fdfb9b4823a786a80244b5b283",
+        "collection": "CASE_LAW",
+        "act": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+        "section": "judgment_extract",
+        "similarity": 0.5873,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c76a27e702a5410fae729df09ef188aa",
+        "collection": "CASE_LAW",
+        "act": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+        "section": "judgment_extract",
+        "similarity": 0.5864,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cba78bcd17664d61993c6123d6080824",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. Vedic Resorts and Hotels Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.5862,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_93055d10f83949c4848b049418fc28a8",
+        "collection": "CASE_LAW",
+        "act": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+        "section": "judgment_extract",
+        "similarity": 0.5728,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b9198138e7754044814eaef7f9df4ccd",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5716,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7015,
+      0.6867,
+      0.6861,
+      0.6861,
+      0.686,
+      0.6844,
+      0.6802,
+      0.6693,
+      0.6551,
+      0.6193,
+      0.6048,
+      0.5898,
+      0.5873,
+      0.5864,
+      0.5862,
+      0.5728,
+      0.5716
+    ],
+    "context_tokens": 5971,
+    "retrieval_ms": 2429.7,
+    "expected_found": [
+      "indiancontract:73"
+    ],
+    "expected_missed": [
+      "bharatiyanyaya:318"
+    ],
+    "recall": 0.5,
+    "precision_at_k": 0.0625,
+    "mrr": 0.25
+  },
+  "X03": {
+    "task_id": "X03",
+    "query_used": "We handed over machinery for repair and it was damaged in the workshop. What duty did they owe and are they liable?",
+    "chunk_ids": [
+      "chk_5edd71215715454fb11075e749198606",
+      "chk_d6752f40bfae464daedcbca2fc7a898c",
+      "chk_d8b684cc46b94c05a4ca369474965c29",
+      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+      "chk_11d7daa6950e4ff8b77c59c01764890a",
+      "chk_956fbc1086f34b05b568ffc5e15e4aaf",
+      "chk_eccd1ea05b2f4944b1c20eda19514e33",
+      "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+      "chk_bcae6bdeaae94ab38c002fc131e104ad",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_ee38d869c3374e52b09753fa5c06e863",
+      "chk_74ef9316a24f4939a04b3596ea12169a",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_2a7fe627e1b74259a2bea7700942f8d1",
+      "chk_4dbf8580c2ed493ba874333b5c35d262",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_5edd71215715454fb11075e749198606",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6595,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_d6752f40bfae464daedcbca2fc7a898c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 150",
+        "similarity": 0.65,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_d8b684cc46b94c05a4ca369474965c29",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 225",
+        "similarity": 0.6479,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6315,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11d7daa6950e4ff8b77c59c01764890a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.628,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_956fbc1086f34b05b568ffc5e15e4aaf",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 72",
+        "similarity": 0.6226,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_eccd1ea05b2f4944b1c20eda19514e33",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 67",
+        "similarity": 0.6126,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.5891,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bcae6bdeaae94ab38c002fc131e104ad",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5614,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5613,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ee38d869c3374e52b09753fa5c06e863",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.5607,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_74ef9316a24f4939a04b3596ea12169a",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.5517,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5392,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5319,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2a7fe627e1b74259a2bea7700942f8d1",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5295,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4dbf8580c2ed493ba874333b5c35d262",
+        "collection": "CASE_LAW",
+        "act": "Trust Estate Khimji Keshawji & anr v. The Kolkata Municipal Corporation & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.5288,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5019,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6595,
+      0.65,
+      0.6479,
+      0.6315,
+      0.628,
+      0.6226,
+      0.6126,
+      0.5891,
+      0.5614,
+      0.5613,
+      0.5607,
+      0.5517,
+      0.5392,
+      0.5319,
+      0.5295,
+      0.5288,
+      0.5019
+    ],
+    "context_tokens": 6759,
+    "retrieval_ms": 1149.9,
+    "expected_found": [],
+    "expected_missed": [
+      "indiancontract:151",
+      "indiancontract:148"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "X04": {
+    "task_id": "X04",
+    "query_used": "Someone signed as a surety for our debtor. What is the nature of that obligation and how does it differ from indemnity?",
+    "chunk_ids": [
+      "chk_bbfea2d14d88430d96815eb6b93ffaaa",
+      "chk_5e0b166f391849438dc9c0b8e7a280a5",
+      "chk_adaaa6249e914b9c9c97b13d842d53ac",
+      "chk_e019ac0042df489fa5623571e05ebaf2",
+      "chk_3d0ad1af50b84f998e4739c03101908e",
+      "chk_5c6f837c59354fbcb8b3ae5db996e111",
+      "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+      "chk_fbede82925364e52869f60947d42f259",
+      "chk_331cbcfb310845c2afb5b66496c676b4",
+      "chk_f324a7a55b954223b8927ffc6e31b757",
+      "chk_9bad20b941404c22b1ef963dae7564bc",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_147939c40f3944269a1a985ce78ec530",
+      "chk_1bb9d5b7e4934154be7163116ad78416",
+      "chk_9a14091060ca4402a2067a899f79c106",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_bbfea2d14d88430d96815eb6b93ffaaa",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 140",
+        "similarity": 0.7402,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5e0b166f391849438dc9c0b8e7a280a5",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 128",
+        "similarity": 0.7366,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_adaaa6249e914b9c9c97b13d842d53ac",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 126",
+        "similarity": 0.7356,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e019ac0042df489fa5623571e05ebaf2",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 136",
+        "similarity": 0.7256,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3d0ad1af50b84f998e4739c03101908e",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 135",
+        "similarity": 0.7232,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5c6f837c59354fbcb8b3ae5db996e111",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 137",
+        "similarity": 0.7208,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 145",
+        "similarity": 0.7126,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fbede82925364e52869f60947d42f259",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 134",
+        "similarity": 0.7083,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_331cbcfb310845c2afb5b66496c676b4",
+        "collection": "CASE_LAW",
+        "act": "Kotak Mahindra Bank Limited v. Girnar Corrugators Pvt. Ltd. & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6236,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_f324a7a55b954223b8927ffc6e31b757",
+        "collection": "CASE_LAW",
+        "act": "Arti Dixit & anr v. Sushil Kumar Mishra & ors",
+        "section": "judgment_extract",
+        "similarity": 0.596,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9bad20b941404c22b1ef963dae7564bc",
+        "collection": "CASE_LAW",
+        "act": "Arti Dixit & anr v. Sushil Kumar Mishra & ors",
+        "section": "judgment_extract",
+        "similarity": 0.5612,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5597,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5541,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_147939c40f3944269a1a985ce78ec530",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.553,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1bb9d5b7e4934154be7163116ad78416",
+        "collection": "CASE_LAW",
+        "act": "M/s Tata Motors Ltd. v. The Deputy Commissioner of Commercial Taxes (spl) & Anr.",
+        "section": "facts",
+        "similarity": 0.5451,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9a14091060ca4402a2067a899f79c106",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.5432,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4641,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7402,
+      0.7366,
+      0.7356,
+      0.7256,
+      0.7232,
+      0.7208,
+      0.7126,
+      0.7083,
+      0.6236,
+      0.596,
+      0.5612,
+      0.5597,
+      0.5541,
+      0.553,
+      0.5451,
+      0.5432,
+      0.4641
+    ],
+    "context_tokens": 5579,
+    "retrieval_ms": 1134.5,
+    "expected_found": [
+      "indiancontract:126"
+    ],
+    "expected_missed": [
+      "indiancontract:124"
+    ],
+    "recall": 0.5,
+    "precision_at_k": 0.0625,
+    "mrr": 0.3333
+  },
+  "P01": {
+    "task_id": "P01",
+    "query_used": "In which court should we institute a suit for breach of a supply contract?",
+    "chunk_ids": [
+      "chk_308bf3ee15ad4149a4294497d00a28a3",
+      "chk_141f8e4458114fb0ad6b23ca5149d206",
+      "chk_b420ed60946a4004bba79e9f5d8ee072",
+      "chk_5edd71215715454fb11075e749198606",
+      "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+      "chk_dadb98ac8e014114a31657207c83c51f",
+      "chk_11d7daa6950e4ff8b77c59c01764890a",
+      "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_bd43546a7fbe4e9ba68ff3698ef1bda6",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_c0b530675d2049399e40e5aa7ae93782",
+      "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+      "chk_2a7fe627e1b74259a2bea7700942f8d1",
+      "chk_01d5a6830d104aab982394f97219fc49",
+      "chk_f72136cf3e8a45b8bd2615e5c13a4edb",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_308bf3ee15ad4149a4294497d00a28a3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 222",
+        "similarity": 0.677,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_141f8e4458114fb0ad6b23ca5149d206",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 17",
+        "similarity": 0.6688,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b420ed60946a4004bba79e9f5d8ee072",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 10",
+        "similarity": 0.6678,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5edd71215715454fb11075e749198606",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6542,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6521,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dadb98ac8e014114a31657207c83c51f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6513,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11d7daa6950e4ff8b77c59c01764890a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6509,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c05f28ce9e5a42f9aacd96a6411c46c4",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6471,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.6457,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bd43546a7fbe4e9ba68ff3698ef1bda6",
+        "collection": "CASE_LAW",
+        "act": "Eldeco Housing and Industries Limited v. Ashok Vidyarthi and Others",
+        "section": "headnote",
+        "similarity": 0.6415,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.6372,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c0b530675d2049399e40e5aa7ae93782",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "metadata",
+        "similarity": 0.6353,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+        "collection": "CASE_LAW",
+        "act": "M/s Bharat Petroleum Corporation Ltd. and Another v. Atm Constructions Pvt. Ltd.",
+        "section": "headnote",
+        "similarity": 0.6264,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2a7fe627e1b74259a2bea7700942f8d1",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.6252,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_01d5a6830d104aab982394f97219fc49",
+        "collection": "CASE_LAW",
+        "act": "Y. P. Lele v. Maharashtra State Electricity Distribution Company Ltd. & Ors.",
+        "section": "headnote",
+        "similarity": 0.6245,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f72136cf3e8a45b8bd2615e5c13a4edb",
+        "collection": "CASE_LAW",
+        "act": "Jini Dhanrajgir & anr v. Shibu Mathew & Anr. Etc.",
+        "section": "judgment_extract",
+        "similarity": 0.6141,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5811,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.677,
+      0.6688,
+      0.6678,
+      0.6542,
+      0.6521,
+      0.6513,
+      0.6509,
+      0.6471,
+      0.6457,
+      0.6415,
+      0.6372,
+      0.6353,
+      0.6264,
+      0.6252,
+      0.6245,
+      0.6141,
+      0.5811
+    ],
+    "context_tokens": 6004,
+    "retrieval_ms": 1306.9,
+    "expected_found": [],
+    "expected_missed": [
+      "codeofcivilpro:20",
+      "codeofcivilpro:15"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "P02": {
+    "task_id": "P02",
+    "query_used": "Can we claim interest on the unpaid contract amount in a civil suit?",
+    "chunk_ids": [
+      "chk_3da2e089a1874d63a1b8233907bb0987",
+      "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+      "chk_d70edc66f96e47739b167d4a2fef5394",
+      "chk_b420ed60946a4004bba79e9f5d8ee072",
+      "chk_42e53113940d491ab8408c503dd48fd8",
+      "chk_141f8e4458114fb0ad6b23ca5149d206",
+      "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+      "chk_74505611901a4eb3a4438bd9b95b9e9c",
+      "chk_ce923413e52348db8427dd1fb72b0884",
+      "chk_1777682e0ed94392af9deec27b932ebb",
+      "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+      "chk_b9198138e7754044814eaef7f9df4ccd",
+      "chk_2ce01c17a13d4d9ea074705a121bad09",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_2a9c2f1e049940e4b7db04a52bc481d5",
+      "chk_4ee16f2653f3449e81eb141f1b14d479",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_3da2e089a1874d63a1b8233907bb0987",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 34",
+        "similarity": 0.681,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 35",
+        "similarity": 0.644,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d70edc66f96e47739b167d4a2fef5394",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 34",
+        "similarity": 0.6396,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b420ed60946a4004bba79e9f5d8ee072",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 10",
+        "similarity": 0.6285,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_42e53113940d491ab8408c503dd48fd8",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 19",
+        "similarity": 0.6278,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_141f8e4458114fb0ad6b23ca5149d206",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 17",
+        "similarity": 0.6229,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 145",
+        "similarity": 0.6116,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_74505611901a4eb3a4438bd9b95b9e9c",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 96",
+        "similarity": 0.6057,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ce923413e52348db8427dd1fb72b0884",
+        "collection": "CASE_LAW",
+        "act": "M/s Bharat Petroleum Corporation Ltd. and Another v. Atm Constructions Pvt. Ltd.",
+        "section": "issues",
+        "similarity": 0.5955,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1777682e0ed94392af9deec27b932ebb",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5787,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+        "collection": "CASE_LAW",
+        "act": "M/s Bharat Petroleum Corporation Ltd. and Another v. Atm Constructions Pvt. Ltd.",
+        "section": "headnote",
+        "similarity": 0.5786,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b9198138e7754044814eaef7f9df4ccd",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.5737,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2ce01c17a13d4d9ea074705a121bad09",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5711,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.5587,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2a9c2f1e049940e4b7db04a52bc481d5",
+        "collection": "CASE_LAW",
+        "act": "Sri. K.m. Krishna Reddy v. Sri. Vinod Reddy & Anr.",
+        "section": "issues",
+        "similarity": 0.5472,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4ee16f2653f3449e81eb141f1b14d479",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.5431,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5095,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.681,
+      0.644,
+      0.6396,
+      0.6285,
+      0.6278,
+      0.6229,
+      0.6116,
+      0.6057,
+      0.5955,
+      0.5787,
+      0.5786,
+      0.5737,
+      0.5711,
+      0.5587,
+      0.5472,
+      0.5431,
+      0.5095
+    ],
+    "context_tokens": 4964,
+    "retrieval_ms": 6120.0,
+    "expected_found": [
+      "codeofcivilpro:34"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.125,
+    "mrr": 1.0
+  },
+  "P03": {
+    "task_id": "P03",
+    "query_used": "Is a notice required before suing a government department?",
+    "chunk_ids": [
+      "chk_6a7484501a0b42a3810a7cd6f157252d",
+      "chk_ba81f276b6694a6e8038c492bd7231a9",
+      "chk_e23cbd043ae94f658059ef19d2dc9ca8",
+      "chk_07955c6c3fbd4e6c874823fd749ff3c0",
+      "chk_bd43546a7fbe4e9ba68ff3698ef1bda6",
+      "chk_4dbf8580c2ed493ba874333b5c35d262",
+      "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+      "chk_b420ed60946a4004bba79e9f5d8ee072",
+      "chk_0c6bcdeee5ce4d99912ad6e21ab42b73",
+      "chk_15c63aa9ad6249ad9fbdc276b610a6c1",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_a38978b6fd9140718435254001b15aa6",
+      "chk_f32b6c46880145588ecff6ad444455be",
+      "chk_74f5e407fbb2484ca4caf8c11eef97f9",
+      "chk_16df8f6cdd46430da523742fac92b81c",
+      "chk_b36dfa841cd840ffbbb18a813b63099c",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_6a7484501a0b42a3810a7cd6f157252d",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 80",
+        "similarity": 0.7159,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ba81f276b6694a6e8038c492bd7231a9",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 80",
+        "similarity": 0.7149,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e23cbd043ae94f658059ef19d2dc9ca8",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 80",
+        "similarity": 0.6606,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_07955c6c3fbd4e6c874823fd749ff3c0",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 64",
+        "similarity": 0.6565,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bd43546a7fbe4e9ba68ff3698ef1bda6",
+        "collection": "CASE_LAW",
+        "act": "Eldeco Housing and Industries Limited v. Ashok Vidyarthi and Others",
+        "section": "headnote",
+        "similarity": 0.6078,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_4dbf8580c2ed493ba874333b5c35d262",
+        "collection": "CASE_LAW",
+        "act": "Trust Estate Khimji Keshawji & anr v. The Kolkata Municipal Corporation & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6005,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5968,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b420ed60946a4004bba79e9f5d8ee072",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 10",
+        "similarity": 0.5947,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_0c6bcdeee5ce4d99912ad6e21ab42b73",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 206",
+        "similarity": 0.5909,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_15c63aa9ad6249ad9fbdc276b610a6c1",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 12",
+        "similarity": 0.5853,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5827,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_a38978b6fd9140718435254001b15aa6",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Sakshya Adhiniyam, 2023",
+        "section": "Section 94",
+        "similarity": 0.58,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f32b6c46880145588ecff6ad444455be",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.5735,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_74f5e407fbb2484ca4caf8c11eef97f9",
+        "collection": "CASE_LAW",
+        "act": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.5733,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_16df8f6cdd46430da523742fac92b81c",
+        "collection": "CASE_LAW",
+        "act": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.5668,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b36dfa841cd840ffbbb18a813b63099c",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.5626,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5322,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7159,
+      0.7149,
+      0.6606,
+      0.6565,
+      0.6078,
+      0.6005,
+      0.5968,
+      0.5947,
+      0.5909,
+      0.5853,
+      0.5827,
+      0.58,
+      0.5735,
+      0.5733,
+      0.5668,
+      0.5626,
+      0.5322
+    ],
+    "context_tokens": 6678,
+    "retrieval_ms": 1380.3,
+    "expected_found": [
+      "codeofcivilpro:80"
+    ],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.1875,
+    "mrr": 1.0
+  },
+  "D01": {
+    "task_id": "D01",
+    "query_used": "An FIR alleges our client induced delivery of goods worth Rs 18,40,000 and then issued a cheque that bounced. Which provisions are in play and what is the exposure?",
+    "chunk_ids": [
+      "chk_b5ca83755e2749f1a883fa826e183906",
+      "chk_ead981d9981b4d54b21cae656a12cb3f",
+      "chk_dadb98ac8e014114a31657207c83c51f",
+      "chk_12c901395d41422d806f77cad64c9c92",
+      "chk_999b32a0d263454dad5282c0e4f2ff03",
+      "chk_81687cccf42e45a885827a21a2ed7e5a",
+      "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+      "chk_448b4b45f3754cbbbcb9b8c6dc8666f3",
+      "chk_621996f087d04a1ea6a23f81d7bc774a",
+      "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
+      "chk_a2b7fab2b3fa47469fd4b220b1e77c6e",
+      "chk_d03a479efaae4808a9b4f03419647c73",
+      "chk_476063284cd64c52a01fd09ea4b2c30d",
+      "chk_57916b10211a4a7f9c9f21e6129371b2",
+      "chk_21e64c07be974696a55c0fc868c7952a",
+      "chk_bea5d3fa36574d958bfccfa16f39a2d8",
+      "chk_d3c47da2b94a4159a649b04591a09a8c"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.7846,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_ead981d9981b4d54b21cae656a12cb3f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.7179,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dadb98ac8e014114a31657207c83c51f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.7175,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_12c901395d41422d806f77cad64c9c92",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 220",
+        "similarity": 0.7131,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_999b32a0d263454dad5282c0e4f2ff03",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 50",
+        "similarity": 0.713,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_81687cccf42e45a885827a21a2ed7e5a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 63",
+        "similarity": 0.7111,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_213ff8c2cbf945eea7a3c46a2e8db790",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.7102,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_448b4b45f3754cbbbcb9b8c6dc8666f3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 237",
+        "similarity": 0.7052,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_621996f087d04a1ea6a23f81d7bc774a",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.6997,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1fef0f2c5ef24bc3bd02207ae5a13f0c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 149",
+        "similarity": 0.6989,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_a2b7fab2b3fa47469fd4b220b1e77c6e",
+        "collection": "CASE_LAW",
+        "act": "Securities and Exchange Board of India v. V Shankar",
+        "section": "judgment_extract",
+        "similarity": 0.6972,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d03a479efaae4808a9b4f03419647c73",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.6938,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_476063284cd64c52a01fd09ea4b2c30d",
+        "collection": "CASE_LAW",
+        "act": "Official Liquidator v. Ujjain Nagar Palika Nigam & ors",
+        "section": "judgment_extract",
+        "similarity": 0.693,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_57916b10211a4a7f9c9f21e6129371b2",
+        "collection": "CASE_LAW",
+        "act": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+        "section": "judgment_extract",
+        "similarity": 0.6875,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_21e64c07be974696a55c0fc868c7952a",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6742,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bea5d3fa36574d958bfccfa16f39a2d8",
+        "collection": "CASE_LAW",
+        "act": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+        "section": "judgment_extract",
+        "similarity": 0.6722,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d3c47da2b94a4159a649b04591a09a8c",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6647,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7846,
+      0.7179,
+      0.7175,
+      0.7131,
+      0.713,
+      0.7111,
+      0.7102,
+      0.7052,
+      0.6997,
+      0.6989,
+      0.6972,
+      0.6938,
+      0.693,
+      0.6875,
+      0.6742,
+      0.6722,
+      0.6647
+    ],
+    "context_tokens": 6645,
+    "retrieval_ms": 1203.9,
+    "expected_found": [],
+    "expected_missed": [
+      "bharatiyanyaya:318",
+      "bharatiyanyaya:316"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "D02": {
+    "task_id": "D02",
+    "query_used": "A legal notice claims we breached a supply agreement and demands damages. What provisions govern the quantum they can claim?",
+    "chunk_ids": [
+      "chk_308bf3ee15ad4149a4294497d00a28a3",
+      "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+      "chk_4dbf8580c2ed493ba874333b5c35d262",
+      "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_5aa2625fe04548d8afb2afc4cde855cd",
+      "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+      "chk_30b801edfadc4075af98860863a97a12",
+      "chk_cd02e91c28534b1bbfa8347004f59c4e",
+      "chk_fa3ebd2d0ae247899fa3a21b990149e3",
+      "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+      "chk_f99c443f6a4d4200bb67a60b6d478078",
+      "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+      "chk_9bc099496c294a38a7f52edbf27f7b0e",
+      "chk_f55d735b4adc4c748fe5e0be15839a3a",
+      "chk_39fc41c67b84413e8a9e6f99ced9c015",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_308bf3ee15ad4149a4294497d00a28a3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 222",
+        "similarity": 0.6927,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_11f142d6e2304a9ebfba85e0fcc79e4d",
+        "collection": "CASE_LAW",
+        "act": "M/s. Gail (india) Limited v. M/s. Indian Petrochemicals Corp. Ltd. & Ors.",
+        "section": "reasoning",
+        "similarity": 0.6697,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4dbf8580c2ed493ba874333b5c35d262",
+        "collection": "CASE_LAW",
+        "act": "Trust Estate Khimji Keshawji & anr v. The Kolkata Municipal Corporation & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.6645,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_15bfa75b62ab4ec09cfba9a980a94a23",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.662,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.6559,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5aa2625fe04548d8afb2afc4cde855cd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 24",
+        "similarity": 0.6556,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d9de2e82fdfb4ec7aa86a5b7a40017fd",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 145",
+        "similarity": 0.6526,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_30b801edfadc4075af98860863a97a12",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 229",
+        "similarity": 0.6512,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cd02e91c28534b1bbfa8347004f59c4e",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 224",
+        "similarity": 0.6503,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fa3ebd2d0ae247899fa3a21b990149e3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 58",
+        "similarity": 0.6502,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e4cf17968d654ee7bdd312a2cfb0e986",
+        "collection": "CASE_LAW",
+        "act": "M/s Bharat Petroleum Corporation Ltd. and Another v. Atm Constructions Pvt. Ltd.",
+        "section": "headnote",
+        "similarity": 0.6501,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f99c443f6a4d4200bb67a60b6d478078",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 200",
+        "similarity": 0.6498,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 35",
+        "similarity": 0.6491,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9bc099496c294a38a7f52edbf27f7b0e",
+        "collection": "CASE_LAW",
+        "act": "M/s B and T Ag v. Ministry of Defence",
+        "section": "judgment_extract",
+        "similarity": 0.6398,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f55d735b4adc4c748fe5e0be15839a3a",
+        "collection": "CASE_LAW",
+        "act": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6384,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_39fc41c67b84413e8a9e6f99ced9c015",
+        "collection": "CASE_LAW",
+        "act": "M/s B and T Ag v. Ministry of Defence",
+        "section": "judgment_extract",
+        "similarity": 0.6346,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.6063,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6927,
+      0.6697,
+      0.6645,
+      0.662,
+      0.6559,
+      0.6556,
+      0.6526,
+      0.6512,
+      0.6503,
+      0.6502,
+      0.6501,
+      0.6498,
+      0.6491,
+      0.6398,
+      0.6384,
+      0.6346,
+      0.6063
+    ],
+    "context_tokens": 6512,
+    "retrieval_ms": 1174.6,
+    "expected_found": [],
+    "expected_missed": [
+      "indiancontract:73",
+      "indiancontract:74"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "D03": {
+    "task_id": "D03",
+    "query_used": "The agreement was signed by someone described as an agent. How do we test whether the principal is bound?",
+    "chunk_ids": [
+      "chk_a629e68126a54f31a09e8654e0d88b55",
+      "chk_b3995edfbb1a44a1a9d074636b06e589",
+      "chk_6d4de0700a714827bbdd6b8eb3639bc2",
+      "chk_f245dc63b2d94ee387a49a5f07800d49",
+      "chk_4953a4d7057e41e4be57d0d07850b252",
+      "chk_448b4b45f3754cbbbcb9b8c6dc8666f3",
+      "chk_56b1f5fc9c8e41639cf60459e88b9a7a",
+      "chk_63d798887b7647e7b2ea249623df9296",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_78291855e63b4669a66eacce2fec7c55",
+      "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+      "chk_b54839d4be5f41f1bf6efa5086b698f0",
+      "chk_c7ef5e07efc9434f82168880f14494fb",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_147939c40f3944269a1a985ce78ec530",
+      "chk_379a1caecf4b497a9689bff2f90a3c43",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_a629e68126a54f31a09e8654e0d88b55",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 228",
+        "similarity": 0.7424,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b3995edfbb1a44a1a9d074636b06e589",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 231",
+        "similarity": 0.7391,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6d4de0700a714827bbdd6b8eb3639bc2",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 232",
+        "similarity": 0.7282,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f245dc63b2d94ee387a49a5f07800d49",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 227",
+        "similarity": 0.7271,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4953a4d7057e41e4be57d0d07850b252",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 230",
+        "similarity": 0.7267,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_448b4b45f3754cbbbcb9b8c6dc8666f3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 237",
+        "similarity": 0.7227,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_56b1f5fc9c8e41639cf60459e88b9a7a",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 213",
+        "similarity": 0.7118,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_63d798887b7647e7b2ea249623df9296",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 192",
+        "similarity": 0.7026,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6144,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_78291855e63b4669a66eacce2fec7c55",
+        "collection": "CASE_LAW",
+        "act": "M/s Glock Asia-pacific Ltd. v. Union of India",
+        "section": "judgment_extract",
+        "similarity": 0.6134,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "headnote",
+        "similarity": 0.6124,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b54839d4be5f41f1bf6efa5086b698f0",
+        "collection": "CASE_LAW",
+        "act": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+        "section": "judgment_extract",
+        "similarity": 0.6117,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c7ef5e07efc9434f82168880f14494fb",
+        "collection": "CASE_LAW",
+        "act": "M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India",
+        "section": "headnote",
+        "similarity": 0.6078,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.6048,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_147939c40f3944269a1a985ce78ec530",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "headnote",
+        "similarity": 0.5965,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_379a1caecf4b497a9689bff2f90a3c43",
+        "collection": "CASE_LAW",
+        "act": "Vijay v. Union of India & Ors.",
+        "section": "issues",
+        "similarity": 0.5764,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4881,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7424,
+      0.7391,
+      0.7282,
+      0.7271,
+      0.7267,
+      0.7227,
+      0.7118,
+      0.7026,
+      0.6144,
+      0.6134,
+      0.6124,
+      0.6117,
+      0.6078,
+      0.6048,
+      0.5965,
+      0.5764,
+      0.4881
+    ],
+    "context_tokens": 4458,
+    "retrieval_ms": 1493.7,
+    "expected_found": [],
+    "expected_missed": [
+      "indiancontract:182"
+    ],
+    "recall": 0.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "C01": {
+    "task_id": "C01",
+    "query_used": "Are there Supreme Court judgments on arbitration agreements in unstamped contracts?",
+    "chunk_ids": [
+      "chk_fedd273ac1d14297913105ff57d7ca7b",
+      "chk_c10a199749d74a2a911d57f6cf98b457",
+      "chk_b2e27c75c36e4246b459ce4dbc7e41d3",
+      "chk_99be77357c9d441f8462310865aa6c0c",
+      "chk_7076a4b66e0141888513b95822ee93f4",
+      "chk_9087f51b5f024f4083268e6eefd317a0",
+      "chk_9d68dfe71d9f4fd7927028794fa94d78",
+      "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+      "chk_da2d79e56c4d4d9fb28cb54c53286f17",
+      "chk_d9601d6b85744733bc47c0416d1fa21f",
+      "chk_923b17e765e14cb2b1380df2d1409869",
+      "chk_fddc4e0d581d4a55a85eb10fc13b6a0c",
+      "chk_10024a9c6fd04e6c903dd780bbc859b8",
+      "chk_a90b24f0c1904c1e9fef2e6ceebfecc3",
+      "chk_af320df50a484f14ad6082319ca7075d",
+      "chk_868fce364c984b65945e4db6f290d5ab",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_fedd273ac1d14297913105ff57d7ca7b",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "issues",
+        "similarity": 0.7535,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c10a199749d74a2a911d57f6cf98b457",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.73,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b2e27c75c36e4246b459ce4dbc7e41d3",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "metadata",
+        "similarity": 0.7241,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_99be77357c9d441f8462310865aa6c0c",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.7236,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7076a4b66e0141888513b95822ee93f4",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.7004,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9087f51b5f024f4083268e6eefd317a0",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "issues",
+        "similarity": 0.6807,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_9d68dfe71d9f4fd7927028794fa94d78",
+        "collection": "CASE_LAW",
+        "act": "In Re: Interplay Between Arbitration Agreements Under the Arbitration and Conciliation Act 1996 and the Indian Stamp Act 1899 v. .",
+        "section": "headnote",
+        "similarity": 0.6741,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_df90ffa5beb64227b88ad4f01d58fbbd",
+        "collection": "CASE_LAW",
+        "act": "Solaris Chem Tech Industries Ltd v. Assistant Executive Engineer Karnataka Urban Water Supply and Drainage Board & Anr.",
+        "section": "headnote",
+        "similarity": 0.6612,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_da2d79e56c4d4d9fb28cb54c53286f17",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 28",
+        "similarity": 0.6598,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d9601d6b85744733bc47c0416d1fa21f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 10",
+        "similarity": 0.6471,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_923b17e765e14cb2b1380df2d1409869",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 28",
+        "similarity": 0.6394,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_fddc4e0d581d4a55a85eb10fc13b6a0c",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 89",
+        "similarity": 0.6336,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_10024a9c6fd04e6c903dd780bbc859b8",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 36",
+        "similarity": 0.6245,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_a90b24f0c1904c1e9fef2e6ceebfecc3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 32",
+        "similarity": 0.6223,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_af320df50a484f14ad6082319ca7075d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 33",
+        "similarity": 0.6204,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_868fce364c984b65945e4db6f290d5ab",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 29",
+        "similarity": 0.6194,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4495,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7535,
+      0.73,
+      0.7241,
+      0.7236,
+      0.7004,
+      0.6807,
+      0.6741,
+      0.6612,
+      0.6598,
+      0.6471,
+      0.6394,
+      0.6336,
+      0.6245,
+      0.6223,
+      0.6204,
+      0.6194,
+      0.4495
+    ],
+    "context_tokens": 5295,
+    "retrieval_ms": 1252.2,
+    "expected_found": [],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "C02": {
+    "task_id": "C02",
+    "query_used": "Find Supreme Court authority on delay and damages in construction contracts.",
+    "chunk_ids": [
+      "chk_9617353746dc4cf1bf51fa7b5f982204",
+      "chk_2f3716edace041a8a87ddb0252900a41",
+      "chk_c7ef5e07efc9434f82168880f14494fb",
+      "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+      "chk_8ebba57d2a104939a99e7744e10f429d",
+      "chk_af320df50a484f14ad6082319ca7075d",
+      "chk_1e224661d63b46089ad3651bcb414cfb",
+      "chk_baab9030f195455298bbe7692117eee8",
+      "chk_c0b0cec7568a4c0a901c550bf7b7a8b4",
+      "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+      "chk_5a12371028fe49e695bdb93398ce4537",
+      "chk_328fafba051b49eea0fe21e9335f01a3",
+      "chk_00a9e6b13c1143108506f9d75af88b4a",
+      "chk_a90b24f0c1904c1e9fef2e6ceebfecc3",
+      "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+      "chk_69f2962a7d9941a5850fbcc6c4c88972",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_9617353746dc4cf1bf51fa7b5f982204",
+        "collection": "CASE_LAW",
+        "act": "M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India",
+        "section": "issues",
+        "similarity": 0.6943,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2f3716edace041a8a87ddb0252900a41",
+        "collection": "CASE_LAW",
+        "act": "Konkan Railway Corporation Limited v. Chenab Bridge Project Undertaking",
+        "section": "headnote",
+        "similarity": 0.6873,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c7ef5e07efc9434f82168880f14494fb",
+        "collection": "CASE_LAW",
+        "act": "M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India",
+        "section": "headnote",
+        "similarity": 0.6867,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_cb56a4ebb8084ab9890c0ff307ddca25",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.668,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_8ebba57d2a104939a99e7744e10f429d",
+        "collection": "CASE_LAW",
+        "act": "M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India",
+        "section": "metadata",
+        "similarity": 0.6674,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_af320df50a484f14ad6082319ca7075d",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 33",
+        "similarity": 0.6602,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1e224661d63b46089ad3651bcb414cfb",
+        "collection": "CASE_LAW",
+        "act": "Tata Motors Limited v. The Brihan Mumbai Electric Supply & Transport Undertaking (best) and Others",
+        "section": "judgment_extract",
+        "similarity": 0.659,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_baab9030f195455298bbe7692117eee8",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 35",
+        "similarity": 0.6575,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_c0b0cec7568a4c0a901c550bf7b7a8b4",
+        "collection": "CASE_LAW",
+        "act": "M/s B and T Ag v. Ministry of Defence",
+        "section": "judgment_extract",
+        "similarity": 0.6563,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bbb7c0764fdc4b83a584a2b0dc490a87",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6532,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5a12371028fe49e695bdb93398ce4537",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6507,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_328fafba051b49eea0fe21e9335f01a3",
+        "collection": "CASE_LAW",
+        "act": "M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India",
+        "section": "headnote",
+        "similarity": 0.6501,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_00a9e6b13c1143108506f9d75af88b4a",
+        "collection": "CASE_LAW",
+        "act": "The Koushik Mutually Aided Cooperative Housing Society v. Ameena Begum & Another",
+        "section": "issues",
+        "similarity": 0.6497,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_a90b24f0c1904c1e9fef2e6ceebfecc3",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 32",
+        "similarity": 0.6452,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_6a0adaf35d7148bd91db69a8541fd4d3",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 35",
+        "similarity": 0.6415,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_69f2962a7d9941a5850fbcc6c4c88972",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 125",
+        "similarity": 0.638,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4804,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6943,
+      0.6873,
+      0.6867,
+      0.668,
+      0.6674,
+      0.6602,
+      0.659,
+      0.6575,
+      0.6563,
+      0.6532,
+      0.6507,
+      0.6501,
+      0.6497,
+      0.6452,
+      0.6415,
+      0.638,
+      0.4804
+    ],
+    "context_tokens": 5429,
+    "retrieval_ms": 1130.5,
+    "expected_found": [],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "N01": {
+    "task_id": "N01",
+    "query_used": "What does Section 498A of the Indian Penal Code provide about cruelty by a husband?",
+    "chunk_ids": [
+      "chk_5095b1a5af7b44c79f70023d6badb244",
+      "chk_e35ad1c92840446e94929890246033e0",
+      "chk_d6752f40bfae464daedcbca2fc7a898c",
+      "chk_0f70bad309b34c07894235ffaddbbb09",
+      "chk_31f02ec8a87e4754bd8777909265f262",
+      "chk_fdd6ea8b3c754c6f961cb8691d5e6527",
+      "chk_f5931f4b6e2745489a3c7daabaeb6eed",
+      "chk_67aa90da03a34aa0a224ed1584b509e6",
+      "chk_b0dcd9c3c8754b2e8e3af90ee372db93",
+      "chk_daad60f4416e4ae4bb164025daf0aade",
+      "chk_b7131fd4e2e141b5a31d525bf73899f8",
+      "chk_1e47614d81d0421eaa234fa397f8f8ce",
+      "chk_0e721f46b109450e82fdf8a8d88da390",
+      "chk_74ef9316a24f4939a04b3596ea12169a",
+      "chk_2568e89cf5bd48368728d184224e102f",
+      "chk_4f2ea05fc3af4e37b8a00f091f6a11eb",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_5095b1a5af7b44c79f70023d6badb244",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 15",
+        "similarity": 0.7159,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_e35ad1c92840446e94929890246033e0",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Nyaya Sanhita, 2023",
+        "section": "Section 351",
+        "similarity": 0.6878,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_d6752f40bfae464daedcbca2fc7a898c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 150",
+        "similarity": 0.6794,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_0f70bad309b34c07894235ffaddbbb09",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 23",
+        "similarity": 0.6773,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_31f02ec8a87e4754bd8777909265f262",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Nyaya Sanhita, 2023",
+        "section": "Section 351",
+        "similarity": 0.672,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_fdd6ea8b3c754c6f961cb8691d5e6527",
+        "collection": "LEGAL_ACTS",
+        "act": "Bharatiya Nyaya Sanhita, 2023",
+        "section": "Section 3",
+        "similarity": 0.663,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f5931f4b6e2745489a3c7daabaeb6eed",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 30",
+        "similarity": 0.6627,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_67aa90da03a34aa0a224ed1584b509e6",
+        "collection": "CASE_LAW",
+        "act": "Amandeep Singh Saran v. State of Chhattisgarh",
+        "section": "issues",
+        "similarity": 0.6599,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b0dcd9c3c8754b2e8e3af90ee372db93",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 35A",
+        "similarity": 0.6552,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_daad60f4416e4ae4bb164025daf0aade",
+        "collection": "CASE_LAW",
+        "act": "Amandeep Singh Saran v. State of Chhattisgarh",
+        "section": "headnote",
+        "similarity": 0.65,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b7131fd4e2e141b5a31d525bf73899f8",
+        "collection": "CASE_LAW",
+        "act": "Pratibha Manchanda & anr v. State of Haryana & anr",
+        "section": "metadata",
+        "similarity": 0.6245,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1e47614d81d0421eaa234fa397f8f8ce",
+        "collection": "CASE_LAW",
+        "act": "Amandeep Singh Saran v. State of Chhattisgarh",
+        "section": "metadata",
+        "similarity": 0.6227,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_0e721f46b109450e82fdf8a8d88da390",
+        "collection": "CASE_LAW",
+        "act": "Amandeep Singh Saran v. State of Chhattisgarh",
+        "section": "headnote",
+        "similarity": 0.6198,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_74ef9316a24f4939a04b3596ea12169a",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.5984,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_2568e89cf5bd48368728d184224e102f",
+        "collection": "CASE_LAW",
+        "act": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+        "section": "judgment_extract",
+        "similarity": 0.5954,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4f2ea05fc3af4e37b8a00f091f6a11eb",
+        "collection": "CASE_LAW",
+        "act": "Pratibha Manchanda & anr v. State of Haryana & anr",
+        "section": "judgment_extract",
+        "similarity": 0.5933,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5275,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.7159,
+      0.6878,
+      0.6794,
+      0.6773,
+      0.672,
+      0.663,
+      0.6627,
+      0.6599,
+      0.6552,
+      0.65,
+      0.6245,
+      0.6227,
+      0.6198,
+      0.5984,
+      0.5954,
+      0.5933,
+      0.5275
+    ],
+    "context_tokens": 4881,
+    "retrieval_ms": 1193.6,
+    "expected_found": [],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "N02": {
+    "task_id": "N02",
+    "query_used": "What are the GST registration thresholds for an e-commerce operator?",
+    "chunk_ids": [
+      "chk_ef67c97eaeac44b2bc399e4b38cf5c07",
+      "chk_da6456e727ef4209bf37bfdbdacde227",
+      "chk_f7a609f21671459aaf0a2dfc8f14ade4",
+      "chk_fa03f4a09859481eb526dcfba5ff721c",
+      "chk_0c22a5f1de604a9e9bac24a017dd3170",
+      "chk_4ae0850bf2314dbfb56a16c2c6bde3b5",
+      "chk_73cebadc5a8e490eadfc26aa5d4cca46",
+      "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
+      "chk_776f98938ae0483e86a758592d14ab8f",
+      "chk_1703f06777964bafbc766e1c82891e3d",
+      "chk_15c63aa9ad6249ad9fbdc276b610a6c1",
+      "chk_3f9aa7f42710484c9fdadc9c21dbc694",
+      "chk_93e4a01ffdb44cfba92edd606e598a72",
+      "chk_047e87079d6c471cb3a0579a033b0aea",
+      "chk_28fc1f6b242445a78a32054165b8550b",
+      "chk_efe49b9dd010461288092770a7ce482b",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_ef67c97eaeac44b2bc399e4b38cf5c07",
+        "collection": "CASE_LAW",
+        "act": "Securities and Exchange Board of India v. V Shankar",
+        "section": "judgment_extract",
+        "similarity": 0.6205,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_da6456e727ef4209bf37bfdbdacde227",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 13",
+        "similarity": 0.6055,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_f7a609f21671459aaf0a2dfc8f14ade4",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 72",
+        "similarity": 0.6011,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_fa03f4a09859481eb526dcfba5ff721c",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 5",
+        "similarity": 0.598,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_0c22a5f1de604a9e9bac24a017dd3170",
+        "collection": "CASE_LAW",
+        "act": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+        "section": "metadata",
+        "similarity": 0.5978,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_4ae0850bf2314dbfb56a16c2c6bde3b5",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 66C",
+        "similarity": 0.5959,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_73cebadc5a8e490eadfc26aa5d4cca46",
+        "collection": "CASE_LAW",
+        "act": "M/s. K.b. Tea Product Pvt. Ltd. & Anr. v. Commercial Tax Officer, Siliguri & Ors.",
+        "section": "judgment_extract",
+        "similarity": 0.5948,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_7edc8c05f6a1436e9fdc824a9e4e2d12",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 10A",
+        "similarity": 0.5934,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_776f98938ae0483e86a758592d14ab8f",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 13",
+        "similarity": 0.5934,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_1703f06777964bafbc766e1c82891e3d",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 3",
+        "similarity": 0.5929,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_15c63aa9ad6249ad9fbdc276b610a6c1",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 12",
+        "similarity": 0.5929,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_3f9aa7f42710484c9fdadc9c21dbc694",
+        "collection": "CASE_LAW",
+        "act": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+        "section": "issues",
+        "similarity": 0.5924,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_93e4a01ffdb44cfba92edd606e598a72",
+        "collection": "CASE_LAW",
+        "act": "Shakeel Ahmed v. Syed Akhlaq Hussain",
+        "section": "headnote",
+        "similarity": 0.5812,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_047e87079d6c471cb3a0579a033b0aea",
+        "collection": "CASE_LAW",
+        "act": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+        "section": "metadata",
+        "similarity": 0.5785,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_28fc1f6b242445a78a32054165b8550b",
+        "collection": "CASE_LAW",
+        "act": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+        "section": "headnote",
+        "similarity": 0.578,
+        "retrievers": [
+          "dense"
+        ]
+      },
+      {
+        "chunk_id": "chk_efe49b9dd010461288092770a7ce482b",
+        "collection": "CASE_LAW",
+        "act": "Mansarovar Commercial Pvt. Ltd. v. Commissioner of Income Tax, Delhi",
+        "section": "facts",
+        "similarity": 0.558,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.5167,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6205,
+      0.6055,
+      0.6011,
+      0.598,
+      0.5978,
+      0.5959,
+      0.5948,
+      0.5934,
+      0.5934,
+      0.5929,
+      0.5929,
+      0.5924,
+      0.5812,
+      0.5785,
+      0.578,
+      0.558,
+      0.5167
+    ],
+    "context_tokens": 4833,
+    "retrieval_ms": 1321.6,
+    "expected_found": [],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  },
+  "N03": {
+    "task_id": "N03",
+    "query_used": "Under the Motor Vehicles Act, what compensation applies in a hit-and-run case?",
+    "chunk_ids": [
+      "chk_e4eb1e7ef79447b2874e3b254b447dc5",
+      "chk_74ef9316a24f4939a04b3596ea12169a",
+      "chk_5edd71215715454fb11075e749198606",
+      "chk_bcae6bdeaae94ab38c002fc131e104ad",
+      "chk_ad678b3b5f1746d885f354fcda715419",
+      "chk_d8b684cc46b94c05a4ca369474965c29",
+      "chk_42e53113940d491ab8408c503dd48fd8",
+      "chk_21e64c07be974696a55c0fc868c7952a",
+      "chk_d3c47da2b94a4159a649b04591a09a8c",
+      "chk_7724b45cb5954ce7ac538f7adb5d0736",
+      "chk_dadb98ac8e014114a31657207c83c51f",
+      "chk_367bd928fc5940f69fbf6f3ebee8d79c",
+      "chk_1b1b6e72abd246679d1df1c8d9c4dcc0",
+      "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+      "chk_f3aaf1a35e3e4846a1b6fb50c3eab5a4",
+      "chk_4c7d8ab8f49e4a9a802eabbb654f1ee2",
+      "chk_b5ca83755e2749f1a883fa826e183906"
+    ],
+    "sections": [
+      {
+        "chunk_id": "chk_e4eb1e7ef79447b2874e3b254b447dc5",
+        "collection": "LEGAL_ACTS",
+        "act": "Information Technology Act, 2000",
+        "section": "Section 43A",
+        "similarity": 0.6535,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_74ef9316a24f4939a04b3596ea12169a",
+        "collection": "CASE_LAW",
+        "act": "National Insurance Company Ltd. v. The Chief Electoral Officer & Ors.",
+        "section": "facts",
+        "similarity": 0.6504,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_5edd71215715454fb11075e749198606",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 73",
+        "similarity": 0.6476,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_bcae6bdeaae94ab38c002fc131e104ad",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6447,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_ad678b3b5f1746d885f354fcda715419",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 75",
+        "similarity": 0.6366,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d8b684cc46b94c05a4ca369474965c29",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 225",
+        "similarity": 0.6364,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_42e53113940d491ab8408c503dd48fd8",
+        "collection": "LEGAL_ACTS",
+        "act": "Code of Civil Procedure, 1908",
+        "section": "Section 19",
+        "similarity": 0.6298,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_21e64c07be974696a55c0fc868c7952a",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6203,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_d3c47da2b94a4159a649b04591a09a8c",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.6193,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_7724b45cb5954ce7ac538f7adb5d0736",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 154",
+        "similarity": 0.6188,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_dadb98ac8e014114a31657207c83c51f",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 74",
+        "similarity": 0.6183,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_367bd928fc5940f69fbf6f3ebee8d79c",
+        "collection": "LEGAL_ACTS",
+        "act": "Indian Contract Act, 1872",
+        "section": "Section 205",
+        "similarity": 0.6182,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_1b1b6e72abd246679d1df1c8d9c4dcc0",
+        "collection": "CASE_LAW",
+        "act": "M/s Tata Motors Ltd. v. The Deputy Commissioner of Commercial Taxes (spl) & Anr.",
+        "section": "facts",
+        "similarity": 0.6125,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_3dd172f3586c42b7bf59ab3d2c7d58f0",
+        "collection": "CASE_LAW",
+        "act": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+        "section": "judgment_extract",
+        "similarity": 0.6122,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_f3aaf1a35e3e4846a1b6fb50c3eab5a4",
+        "collection": "CASE_LAW",
+        "act": "M/s Tata Motors Ltd. v. The Deputy Commissioner of Commercial Taxes (spl) & Anr.",
+        "section": "facts",
+        "similarity": 0.61,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_4c7d8ab8f49e4a9a802eabbb654f1ee2",
+        "collection": "CASE_LAW",
+        "act": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+        "section": "judgment_extract",
+        "similarity": 0.598,
+        "retrievers": [
+          "dense",
+          "keyword"
+        ]
+      },
+      {
+        "chunk_id": "chk_b5ca83755e2749f1a883fa826e183906",
+        "collection": "USER_DOCUMENTS",
+        "act": "FIR-0412-2024.txt",
+        "section": "",
+        "similarity": 0.4922,
+        "retrievers": [
+          "dense"
+        ]
+      }
+    ],
+    "similarities": [
+      0.6535,
+      0.6504,
+      0.6476,
+      0.6447,
+      0.6366,
+      0.6364,
+      0.6298,
+      0.6203,
+      0.6193,
+      0.6188,
+      0.6183,
+      0.6182,
+      0.6125,
+      0.6122,
+      0.61,
+      0.598,
+      0.4922
+    ],
+    "context_tokens": 6491,
+    "retrieval_ms": 1503.4,
+    "expected_found": [],
+    "expected_missed": [],
+    "recall": 1.0,
+    "precision_at_k": 0.0,
+    "mrr": 0.0
+  }
+}

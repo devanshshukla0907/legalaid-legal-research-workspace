@@ -21,24 +21,38 @@
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 79",
-          "similarity": 0.5187,
-          "text_head": "Information Technology Act, 2000 - Section 79: Exemption from liability of intermediary in certain cases\n\n(b) "
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 61",
+          "similarity": 0.5256,
+          "text_head": "Consumer Protection Act, 2019 - Section 61: Power to set aside ex parte orders\n\nWhere an order is passed by th"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Indian Contract Act, 1872",
-          "section": "Section 191",
-          "similarity": 0.5159,
-          "text_head": "Indian Contract Act, 1872 - Section 191: \"Sub-agent\" defined\n\nA \"sub-agent\" is a person employed by, and actin"
+          "source_title": "Arbitration and Conciliation Act, 1996",
+          "section": "Section 75",
+          "similarity": 0.5242,
+          "text_head": "Arbitration and Conciliation Act, 1996 - Section 75: Confidentiality\n\nNotwithstanding anything contained in an"
         },
         {
           "collection": "LEGAL_ACTS",
           "source_title": "Information Technology Act, 2000",
-          "section": "Section 43A",
-          "similarity": 0.5147,
-          "text_head": "Information Technology Act, 2000 - Section 43A: Compensation for failure to protect data\n\n(iii) \"sensitive per"
+          "section": "Section 69",
+          "similarity": 0.5238,
+          "text_head": "Information Technology Act, 2000 - Section 69: Power to issue directions for interception or monitoring or dec"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 67C",
+          "similarity": 0.5234,
+          "text_head": "Information Technology Act, 2000 - Section 67C: Preservation and retention of information by intermediaries"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 76",
+          "similarity": 0.5164,
+          "text_head": "Consumer Protection Act, 2019 - Section 76: Nomination of mediators from panel\n\nThe District Commission, the S"
         },
         {
           "collection": "CASE_LAW",
@@ -48,25 +62,11 @@
           "text_head": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director - Judgment Extract\n\n[2023] 3 S.C.R. 89"
         },
         {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Indian Contract Act, 1872",
-          "section": "Section 231",
-          "similarity": 0.5038,
-          "text_head": "Indian Contract Act, 1872 - Section 231: Rights of parties to a contract made by agent not disclosed\n\nIf an ag"
-        },
-        {
           "collection": "CASE_LAW",
           "source_title": "M/s Glock Asia-pacific Ltd. v. Union of India",
           "section": "metadata",
           "similarity": 0.5015,
           "text_head": "M/s Glock Asia-pacific Ltd. v. Union of India - Metadata\n\nCase: M/s Glock Asia-pacific Ltd. v. Union of India\n"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Indian Contract Act, 1872",
-          "section": "Section 230",
-          "similarity": 0.5015,
-          "text_head": "Indian Contract Act, 1872 - Section 230: Agent cannot personally enforce, nor be bound by, contracts on behalf"
         },
         {
           "collection": "CASE_LAW",
@@ -109,7 +109,7 @@
       "id": "Q2",
       "question": "Which modules import the retrieval service?",
       "kind": "dependency_graph",
-      "top_similarity": 0.5156,
+      "top_similarity": 0.5296,
       "collections_returned": [
         "CASE_LAW",
         "LEGAL_ACTS",
@@ -117,6 +117,20 @@
       ],
       "any_code_returned": false,
       "chunks": [
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 6A",
+          "similarity": 0.5296,
+          "text_head": "Information Technology Act, 2000 - Section 6A: Delivery of services by service provider\n\n(3) Subject to the pr"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 67C",
+          "similarity": 0.5175,
+          "text_head": "Information Technology Act, 2000 - Section 67C: Preservation and retention of information by intermediaries"
+        },
         {
           "collection": "CASE_LAW",
           "source_title": "M/s B and T Ag v. Ministry of Defence",
@@ -146,11 +160,32 @@
           "text_head": "M/s Glock Asia-pacific Ltd. v. Union of India - Metadata\n\nCase: M/s Glock Asia-pacific Ltd. v. Union of India\n"
         },
         {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Code of Civil Procedure, 1908",
+          "section": "Section 28",
+          "similarity": 0.5096,
+          "text_head": "Code of Civil Procedure, 1908 - Section 28: Service of summons where defendant resides in another State\n\n(1) A"
+        },
+        {
           "collection": "CASE_LAW",
           "source_title": "Pratibha Manchanda & anr v. State of Haryana & anr",
           "section": "metadata",
           "similarity": 0.5093,
           "text_head": "Pratibha Manchanda & anr v. State of Haryana & anr - Metadata\n\nCase: Pratibha Manchanda & anr v. State of Hary"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 26",
+          "similarity": 0.5062,
+          "text_head": "Information Technology Act, 2000 - Section 26: Notice of suspension or revocation of licence\n\n(1) Where the li"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Code of Civil Procedure, 1908",
+          "section": "Section 29",
+          "similarity": 0.5041,
+          "text_head": "Code of Civil Procedure, 1908 - Section 29: Service of foreign summonses\n\n1 [29. Service of foreign summonses."
         },
         {
           "collection": "CASE_LAW",
@@ -162,44 +197,9 @@
         {
           "collection": "LEGAL_ACTS",
           "source_title": "Information Technology Act, 2000",
-          "section": "Section 13",
-          "similarity": 0.4948,
-          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(1"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 3",
-          "similarity": 0.4875,
-          "text_head": "Information Technology Act, 2000 - Section 3: Authentication of electronic records\n\n1 [3. Authentication of el"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 65",
-          "similarity": 0.4854,
-          "text_head": "Information Technology Act, 2000 - Section 65: Tampering with computer source documents\n\nWhoever knowingly or "
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 13",
-          "similarity": 0.4832,
-          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(4"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 11",
-          "similarity": 0.4811,
-          "text_head": "Information Technology Act, 2000 - Section 11: Attribution of electronic records\n\nAn electronic record shall b"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 2",
-          "similarity": 0.4452,
-          "text_head": "Information Technology Act, 2000 - Section 2: Definitions\n\n(k) \"computer resource\" means computer, computer sy"
+          "section": "Section 6A",
+          "similarity": 0.4895,
+          "text_head": "Information Technology Act, 2000 - Section 6A: Delivery of services by service provider\n\n1 [6A. Delivery of se"
         },
         {
           "collection": "USER_DOCUMENTS",
@@ -214,7 +214,7 @@
       "id": "Q3",
       "question": "What happens after a user submits a research request?",
       "kind": "control_flow",
-      "top_similarity": 0.5677,
+      "top_similarity": 0.5899,
       "collections_returned": [
         "CASE_LAW",
         "LEGAL_ACTS",
@@ -224,45 +224,45 @@
       "chunks": [
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 12",
-          "similarity": 0.5677,
-          "text_head": "Information Technology Act, 2000 - Section 12: Acknowledgment of receipt\n\n(1) Where the originator has not 1 ["
+          "source_title": "Right to Information Act, 2005",
+          "section": "Section 7",
+          "similarity": 0.5899,
+          "text_head": "Right to Information Act, 2005 - Section 7: Disposal of request\n\n(1) Subject to the proviso to sub-section (2)"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 13",
-          "similarity": 0.5634,
-          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(1"
+          "source_title": "Right to Information Act, 2005",
+          "section": "Section 18",
+          "similarity": 0.5832,
+          "text_head": "Right to Information Act, 2005 - Section 18: Powers and functions of Information Commissions\n\n(1) Subject to t"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 66D",
-          "similarity": 0.5444,
-          "text_head": "Information Technology Act, 2000 - Section 66D: Punishment for cheating by personation by using computer resou"
+          "source_title": "Right to Information Act, 2005",
+          "section": "Section 9",
+          "similarity": 0.5823,
+          "text_head": "Right to Information Act, 2005 - Section 9: Grounds for rejection to access in certain cases\n\nWithout prejudic"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 72",
-          "similarity": 0.5433,
-          "text_head": "Information Technology Act, 2000 - Section 72: Penalty for Breach of confidentiality and privacy\n\nSave as othe"
+          "source_title": "Right to Information Act, 2005",
+          "section": "Section 7",
+          "similarity": 0.5822,
+          "text_head": "Right to Information Act, 2005 - Section 7: Disposal of request\n\n(5) Where access to information is to be prov"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
-          "section": "Section 63",
-          "similarity": 0.5429,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 63: Admissibility of electronic records\n\n(b) during the said perio"
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 38",
+          "similarity": 0.5803,
+          "text_head": "Consumer Protection Act, 2019 - Section 38: Procedure on admission of complaint\n\n(f) if any of the parties dis"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 11",
-          "similarity": 0.5393,
-          "text_head": "Information Technology Act, 2000 - Section 11: Attribution of electronic records\n\nAn electronic record shall b"
+          "source_title": "Right to Information Act, 2005",
+          "section": "Section 6",
+          "similarity": 0.572,
+          "text_head": "Right to Information Act, 2005 - Section 6: Request for obtaining information\n\n(1) A person, who desires to ob"
         },
         {
           "collection": "CASE_LAW",
@@ -319,7 +319,7 @@
       "id": "Q4",
       "question": "Which components would be affected if the chunking strategy changed?",
       "kind": "impact_analysis",
-      "top_similarity": 0.5197,
+      "top_similarity": 0.5231,
       "collections_returned": [
         "CASE_LAW",
         "LEGAL_ACTS",
@@ -329,10 +329,24 @@
       "chunks": [
         {
           "collection": "LEGAL_ACTS",
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 61",
+          "similarity": 0.5231,
+          "text_head": "Consumer Protection Act, 2019 - Section 61: Power to set aside ex parte orders\n\nWhere an order is passed by th"
+        },
+        {
+          "collection": "LEGAL_ACTS",
           "source_title": "Indian Contract Act, 1872",
           "section": "Section 156",
           "similarity": 0.5197,
           "text_head": "Indian Contract Act, 1872 - Section 156: Effect of mixture, without bailor's consent, when the good can be sep"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 97",
+          "similarity": 0.5148,
+          "text_head": "Consumer Protection Act, 2019 - Section 97: Manner of crediting penalty\n\nThe penalty collected under section 2"
         },
         {
           "collection": "LEGAL_ACTS",
@@ -349,6 +363,13 @@
           "text_head": "Indian Contract Act, 1872 - Section 157: Effect of mixture, without bailor's consent, when the goods cannot be"
         },
         {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Code of Civil Procedure, 1908",
+          "section": "Section 99A",
+          "similarity": 0.5125,
+          "text_head": "Code of Civil Procedure, 1908 - Section 99A: No order under section 47 to be reversed or modified unless decis"
+        },
+        {
           "collection": "CASE_LAW",
           "source_title": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
           "section": "headnote",
@@ -361,20 +382,6 @@
           "section": "judgment_extract",
           "similarity": 0.5069,
           "text_head": "829 demonstrate the reasons for such a shift - However, no such appropriate justification was provided - A mer"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Indian Contract Act, 1872",
-          "section": "Section 21",
-          "similarity": 0.5036,
-          "text_head": "Indian Contract Act, 1872 - Section 21: Effect of mistakes as to law\n\nA contract is not voidable because it wa"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 43",
-          "similarity": 0.4984,
-          "text_head": "Information Technology Act, 2000 - Section 43: Penalty and compensation for damage to computer, computer syste"
         },
         {
           "collection": "CASE_LAW",
@@ -398,13 +405,6 @@
           "text_head": "bidding and Articles 13 and 17 of the PPA for compensation due to change in law 'during the construction perio"
         },
         {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Information Technology Act, 2000",
-          "section": "Section 43",
-          "similarity": 0.4827,
-          "text_head": "Information Technology Act, 2000 - Section 43: Penalty and compensation for damage to computer, computer syste"
-        },
-        {
           "collection": "CASE_LAW",
           "source_title": "Amd Industries Limited (earlier Known As M/s. Ashoka Metal Decor Pvt. Ltd.) v. Commissioner of Trade Tax, Lucknow & anr",
           "section": "judgment_extract",
@@ -424,7 +424,7 @@
       "id": "Q5",
       "question": "Which tests cover the hybrid retrieval fusion logic?",
       "kind": "test_mapping",
-      "top_similarity": 0.5409,
+      "top_similarity": 0.5443,
       "collections_returned": [
         "CASE_LAW",
         "LEGAL_ACTS",
@@ -432,6 +432,13 @@
       ],
       "any_code_returned": false,
       "chunks": [
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 22",
+          "similarity": 0.5443,
+          "text_head": "Consumer Protection Act, 2019 - Section 22: Search and seizure\n\n(4) Where any article seized under sub-section"
+        },
         {
           "collection": "CASE_LAW",
           "source_title": "M/s Glock Asia-pacific Ltd. v. Union of India",
@@ -483,38 +490,31 @@
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
-          "section": "Section 60",
-          "similarity": 0.5148,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 60: Cases in which secondary evidence relating to documents maybe "
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 22",
+          "similarity": 0.527,
+          "text_head": "Consumer Protection Act, 2019 - Section 22: Search and seizure\n\n(1) For the purpose of conducting an investiga"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 38",
+          "similarity": 0.5246,
+          "text_head": "Consumer Protection Act, 2019 - Section 38: Procedure on admission of complaint\n\n(c) if the complaint alleges "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Consumer Protection Act, 2019",
           "section": "Section 39",
-          "similarity": 0.5103,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 39: Opinions of experts\n\n(c) The question is, whether a certain do"
+          "similarity": 0.5216,
+          "text_head": "Consumer Protection Act, 2019 - Section 39: Findings of District Commission\n\n(1) Where the District Commission"
         },
         {
           "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
-          "section": "Section 59",
-          "similarity": 0.5099,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 59: Proof of documents by primary evidence\n\nDocuments shall be pro"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
-          "section": "Section 62",
-          "similarity": 0.5081,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 62: Special provisions as to evidence relating to electronic recor"
-        },
-        {
-          "collection": "LEGAL_ACTS",
-          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
-          "section": "Section 57",
-          "similarity": 0.5066,
-          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 57: Primary evidence\n\nPrimary evidence means the document itself p"
+          "source_title": "Consumer Protection Act, 2019",
+          "section": "Section 93",
+          "similarity": 0.5179,
+          "text_head": "Consumer Protection Act, 2019 - Section 93: Vexatious search\n\nThe Director General or any other officer, exerc"
         },
         {
           "collection": "USER_DOCUMENTS",
@@ -547,9 +547,14 @@
       "backend/src/legalaid/services/retrieval/app.py",
       "backend/src/legalaid/services/retrieval/service.py",
       "backend/tests/test_hybrid_retrieval.py",
+      "eval/ablation.py",
       "eval/codebase_probe.py",
+      "eval/rag_ablation.py",
+      "eval/rewrite_experiment.py",
       "eval/runner.py",
+      "eval/weight_sweep.py",
       "scripts/probe_bm25.py",
+      "scripts/purge_empty_provisions.py",
       "scripts/smoke_agent_single.py",
       "scripts/smoke_case_retrieval.py",
       "scripts/smoke_hybrid.py",
@@ -583,6 +588,7 @@
       "backend/tests/test_chunk_packing.py",
       "backend/tests/test_chunking.py",
       "eval/codebase_probe.py",
+      "eval/report.py",
       "scripts/chunk_stats.py",
       "scripts/explain_pipeline.py",
       "scripts/inspect_case_chunks.py",
@@ -593,8 +599,8 @@
       "backend/tests/test_hybrid_retrieval.py"
     ]
   },
-  "import_graph_modules": 41,
-  "import_graph_edges": 197,
+  "import_graph_modules": 45,
+  "import_graph_edges": 216,
   "coverage": [
     {
       "id": "Q1",
@@ -604,7 +610,7 @@
     },
     {
       "id": "Q2",
-      "ground_truth_files": 14,
+      "ground_truth_files": 19,
       "files_found_in_context": 0,
       "coverage": 0.0
     },
@@ -616,7 +622,7 @@
     },
     {
       "id": "Q4",
-      "ground_truth_files": 22,
+      "ground_truth_files": 23,
       "files_found_in_context": 0,
       "coverage": 0.0
     },

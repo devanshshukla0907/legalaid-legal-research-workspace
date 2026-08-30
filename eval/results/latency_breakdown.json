@@ -1,0 +1,243 @@
+{
+  "traces_analysed": 40,
+  "mean_total_ms": 70886.0,
+  "median_total_ms": 70100.6,
+  "grand_total_ms": 496201.7,
+  "generation_ms": 427917.5,
+  "generation_share": 0.8624,
+  "mean_tokens_per_second": 39.83,
+  "stages": [
+    {
+      "key": "SIMILAR_CASE_AGENT",
+      "label": "Similar Case Agent",
+      "count": 12,
+      "share_of_total": 0.3973,
+      "total_ms": 197159.1,
+      "mean_ms": 16429.9,
+      "median_ms": 17227.6,
+      "p95_ms": 28360.7
+    },
+    {
+      "key": "DOCUMENT_UNDERSTANDING",
+      "label": "Document understanding",
+      "count": 7,
+      "share_of_total": 0.1762,
+      "total_ms": 87429.5,
+      "mean_ms": 12489.9,
+      "median_ms": 12372.2,
+      "p95_ms": 13135.5
+    },
+    {
+      "key": "LEGAL_RESEARCH_AGENT",
+      "label": "Legal Research Agent",
+      "count": 7,
+      "share_of_total": 0.1744,
+      "total_ms": 86517.9,
+      "mean_ms": 12359.7,
+      "median_ms": 11896.5,
+      "p95_ms": 17998.1
+    },
+    {
+      "key": "SYNTHESIS_AGENT",
+      "label": "Synthesis Agent \u2014 writing the answer",
+      "count": 7,
+      "share_of_total": 0.171,
+      "total_ms": 84869.8,
+      "mean_ms": 12124.3,
+      "median_ms": 12280.5,
+      "p95_ms": 14680.3
+    },
+    {
+      "key": "INTAKE_CLASSIFICATION",
+      "label": "Intake classification",
+      "count": 7,
+      "share_of_total": 0.0679,
+      "total_ms": 33712.5,
+      "mean_ms": 4816.1,
+      "median_ms": 4872.8,
+      "p95_ms": 5211.0
+    },
+    {
+      "key": "VERIFICATION_AGENT",
+      "label": "Verification Agent",
+      "count": 8,
+      "share_of_total": 0.0664,
+      "total_ms": 32941.3,
+      "mean_ms": 4117.7,
+      "median_ms": 3961.5,
+      "p95_ms": 7046.4
+    },
+    {
+      "key": "DRAFTING_AGENT",
+      "label": "Drafting Agent",
+      "count": 8,
+      "share_of_total": 0.0527,
+      "total_ms": 26161.3,
+      "mean_ms": 3270.2,
+      "median_ms": 2.3,
+      "p95_ms": 15860.6
+    },
+    {
+      "key": "CONTEXT_CONSTRUCTION",
+      "label": "Context construction",
+      "count": 7,
+      "share_of_total": 0.0317,
+      "total_ms": 15718.4,
+      "mean_ms": 2245.5,
+      "median_ms": 2214.3,
+      "p95_ms": 2733.2
+    },
+    {
+      "key": "INPUT_GUARDRAIL",
+      "label": "Input guardrails",
+      "count": 8,
+      "share_of_total": 0.015,
+      "total_ms": 7448.3,
+      "mean_ms": 931.0,
+      "median_ms": 912.7,
+      "p95_ms": 1090.0
+    },
+    {
+      "key": "CITATION_VALIDATION",
+      "label": "Citation validation",
+      "count": 34,
+      "share_of_total": 0.0002,
+      "total_ms": 82.8,
+      "mean_ms": 2.4,
+      "median_ms": 2.4,
+      "p95_ms": 3.2
+    },
+    {
+      "key": "USER_INPUT",
+      "label": "User input",
+      "count": 8,
+      "share_of_total": 0.0,
+      "total_ms": 23.0,
+      "mean_ms": 2.9,
+      "median_ms": 2.5,
+      "p95_ms": 5.7
+    },
+    {
+      "key": "FINAL_RESPONSE",
+      "label": "Final response",
+      "count": 7,
+      "share_of_total": 0.0,
+      "total_ms": 20.7,
+      "mean_ms": 3.0,
+      "median_ms": 2.4,
+      "p95_ms": 6.8
+    },
+    {
+      "key": "REFINEMENT_LOOP",
+      "label": "Refinement loop",
+      "count": 8,
+      "share_of_total": 0.0,
+      "total_ms": 19.1,
+      "mean_ms": 2.4,
+      "median_ms": 2.4,
+      "p95_ms": 2.8
+    },
+    {
+      "key": "OUTPUT_GUARDRAIL",
+      "label": "Output guardrails",
+      "count": 7,
+      "share_of_total": 0.0,
+      "total_ms": 18.1,
+      "mean_ms": 2.6,
+      "median_ms": 2.7,
+      "p95_ms": 2.9
+    },
+    {
+      "key": "ORCHESTRATION_PLAN",
+      "label": "Orchestration plan",
+      "count": 7,
+      "share_of_total": 0.0,
+      "total_ms": 16.7,
+      "mean_ms": 2.4,
+      "median_ms": 2.3,
+      "p95_ms": 3.5
+    },
+    {
+      "key": "QUERY_REWRITE",
+      "label": "Query rewrite for retrieval",
+      "count": 7,
+      "share_of_total": 0.0,
+      "total_ms": 16.4,
+      "mean_ms": 2.3,
+      "median_ms": 2.2,
+      "p95_ms": 3.4
+    }
+  ],
+  "agents": [
+    {
+      "key": "Legal Research Agent",
+      "label": "Legal Research Agent",
+      "count": 39,
+      "share_of_total": 0.9421,
+      "total_ms": 467487.1,
+      "mean_ms": 11986.8,
+      "median_ms": 11976.5,
+      "p95_ms": 18865.2
+    },
+    {
+      "key": "Similar Case Agent",
+      "label": "Similar Case Agent",
+      "count": 11,
+      "share_of_total": 0.3972,
+      "total_ms": 197067.7,
+      "mean_ms": 17915.2,
+      "median_ms": 21060.6,
+      "p95_ms": 28351.2
+    },
+    {
+      "key": "Document Understanding Agent",
+      "label": "Document Understanding Agent",
+      "count": 7,
+      "share_of_total": 0.1761,
+      "total_ms": 87382.0,
+      "mean_ms": 12483.1,
+      "median_ms": 12365.5,
+      "p95_ms": 13128.5
+    },
+    {
+      "key": "Synthesis Agent",
+      "label": "Synthesis Agent",
+      "count": 7,
+      "share_of_total": 0.1709,
+      "total_ms": 84822.9,
+      "mean_ms": 12117.6,
+      "median_ms": 12274.7,
+      "p95_ms": 14673.5
+    },
+    {
+      "key": "Intake Router Agent",
+      "label": "Intake Router Agent",
+      "count": 7,
+      "share_of_total": 0.0678,
+      "total_ms": 33622.3,
+      "mean_ms": 4803.2,
+      "median_ms": 4864.8,
+      "p95_ms": 5190.7
+    },
+    {
+      "key": "Verification Agent",
+      "label": "Verification Agent",
+      "count": 8,
+      "share_of_total": 0.0662,
+      "total_ms": 32868.9,
+      "mean_ms": 4108.6,
+      "median_ms": 3955.1,
+      "p95_ms": 7039.6
+    },
+    {
+      "key": "Legal Drafting Agent",
+      "label": "Legal Drafting Agent",
+      "count": 2,
+      "share_of_total": 0.0527,
+      "total_ms": 26134.0,
+      "mean_ms": 13067.0,
+      "median_ms": 13067.0,
+      "p95_ms": 15854.1
+    }
+  ]
+}

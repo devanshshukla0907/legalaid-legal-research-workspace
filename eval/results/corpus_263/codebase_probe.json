@@ -1,0 +1,630 @@
+{
+  "probes": [
+    {
+      "id": "Q1",
+      "question": "Which files are involved in agent context isolation?",
+      "kind": "multi_file_location",
+      "top_similarity": 0.5269,
+      "collections_returned": [
+        "CASE_LAW",
+        "LEGAL_ACTS",
+        "USER_DOCUMENTS"
+      ],
+      "any_code_returned": false,
+      "chunks": [
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 65",
+          "similarity": 0.5269,
+          "text_head": "Information Technology Act, 2000 - Section 65: Tampering with computer source documents\n\nWhoever knowingly or "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 79",
+          "similarity": 0.5187,
+          "text_head": "Information Technology Act, 2000 - Section 79: Exemption from liability of intermediary in certain cases\n\n(b) "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 191",
+          "similarity": 0.5159,
+          "text_head": "Indian Contract Act, 1872 - Section 191: \"Sub-agent\" defined\n\nA \"sub-agent\" is a person employed by, and actin"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 43A",
+          "similarity": 0.5147,
+          "text_head": "Information Technology Act, 2000 - Section 43A: Compensation for failure to protect data\n\n(iii) \"sensitive per"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+          "section": "judgment_extract",
+          "similarity": 0.506,
+          "text_head": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director - Judgment Extract\n\n[2023] 3 S.C.R. 89"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 231",
+          "similarity": 0.5038,
+          "text_head": "Indian Contract Act, 1872 - Section 231: Rights of parties to a contract made by agent not disclosed\n\nIf an ag"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s Glock Asia-pacific Ltd. v. Union of India",
+          "section": "metadata",
+          "similarity": 0.5015,
+          "text_head": "M/s Glock Asia-pacific Ltd. v. Union of India - Metadata\n\nCase: M/s Glock Asia-pacific Ltd. v. Union of India\n"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 230",
+          "similarity": 0.5015,
+          "text_head": "Indian Contract Act, 1872 - Section 230: Agent cannot personally enforce, nor be bound by, contracts on behalf"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s B and T Ag v. Ministry of Defence",
+          "section": "metadata",
+          "similarity": 0.497,
+          "text_head": "M/s B and T Ag v. Ministry of Defence - Metadata\n\nCase: M/s B and T Ag v. Ministry of Defence\nCourt: Supreme C"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Official Liquidator v. Ujjain Nagar Palika Nigam & ors",
+          "section": "metadata",
+          "similarity": 0.4944,
+          "text_head": "Official Liquidator v. Ujjain Nagar Palika Nigam & ors - Metadata\n\nCase: Official Liquidator v. Ujjain Nagar P"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+          "section": "metadata",
+          "similarity": 0.4943,
+          "text_head": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director - Metadata\n\nCase: Rana Ayyub v. Direct"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd.",
+          "section": "metadata",
+          "similarity": 0.4934,
+          "text_head": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd. - Metadata\n\nCase: Rohit Chaudhary & Anr. v. M/s Vipul Ltd.\nCourt: Sup"
+        },
+        {
+          "collection": "USER_DOCUMENTS",
+          "source_title": "FIR-0412-2024.txt",
+          "section": null,
+          "similarity": 0.3698,
+          "text_head": "FIR-0412-2024.txt - Page 1 - FIRST INFORMATION REPORT\n\nFIRST INFORMATION REPORT\nPolice Station: Sector 20, Gur"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Which modules import the retrieval service?",
+      "kind": "dependency_graph",
+      "top_similarity": 0.5156,
+      "collections_returned": [
+        "CASE_LAW",
+        "LEGAL_ACTS",
+        "USER_DOCUMENTS"
+      ],
+      "any_code_returned": false,
+      "chunks": [
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s B and T Ag v. Ministry of Defence",
+          "section": "metadata",
+          "similarity": 0.5156,
+          "text_head": "M/s B and T Ag v. Ministry of Defence - Metadata\n\nCase: M/s B and T Ag v. Ministry of Defence\nCourt: Supreme C"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+          "section": "metadata",
+          "similarity": 0.5149,
+          "text_head": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr. - Metadata\n\nCase: Arun Dev Upadhyaya v. Integrated "
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Arti Dixit & anr v. Sushil Kumar Mishra & ors",
+          "section": "metadata",
+          "similarity": 0.5129,
+          "text_head": "Arti Dixit & anr v. Sushil Kumar Mishra & ors - Metadata\n\nCase: Arti Dixit & anr v. Sushil Kumar Mishra & ors\n"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s Glock Asia-pacific Ltd. v. Union of India",
+          "section": "metadata",
+          "similarity": 0.5098,
+          "text_head": "M/s Glock Asia-pacific Ltd. v. Union of India - Metadata\n\nCase: M/s Glock Asia-pacific Ltd. v. Union of India\n"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Pratibha Manchanda & anr v. State of Haryana & anr",
+          "section": "metadata",
+          "similarity": 0.5093,
+          "text_head": "Pratibha Manchanda & anr v. State of Haryana & anr - Metadata\n\nCase: Pratibha Manchanda & anr v. State of Hary"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+          "section": "metadata",
+          "similarity": 0.4987,
+          "text_head": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr - Metadata\n\nCase: Indian Oil "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 13",
+          "similarity": 0.4948,
+          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(1"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 3",
+          "similarity": 0.4875,
+          "text_head": "Information Technology Act, 2000 - Section 3: Authentication of electronic records\n\n1 [3. Authentication of el"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 65",
+          "similarity": 0.4854,
+          "text_head": "Information Technology Act, 2000 - Section 65: Tampering with computer source documents\n\nWhoever knowingly or "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 13",
+          "similarity": 0.4832,
+          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(4"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 11",
+          "similarity": 0.4811,
+          "text_head": "Information Technology Act, 2000 - Section 11: Attribution of electronic records\n\nAn electronic record shall b"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 2",
+          "similarity": 0.4452,
+          "text_head": "Information Technology Act, 2000 - Section 2: Definitions\n\n(k) \"computer resource\" means computer, computer sy"
+        },
+        {
+          "collection": "USER_DOCUMENTS",
+          "source_title": "FIR-0412-2024.txt",
+          "section": null,
+          "similarity": 0.3958,
+          "text_head": "FIR-0412-2024.txt - Page 1 - FIRST INFORMATION REPORT\n\nFIRST INFORMATION REPORT\nPolice Station: Sector 20, Gur"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "What happens after a user submits a research request?",
+      "kind": "control_flow",
+      "top_similarity": 0.5677,
+      "collections_returned": [
+        "CASE_LAW",
+        "LEGAL_ACTS",
+        "USER_DOCUMENTS"
+      ],
+      "any_code_returned": false,
+      "chunks": [
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 12",
+          "similarity": 0.5677,
+          "text_head": "Information Technology Act, 2000 - Section 12: Acknowledgment of receipt\n\n(1) Where the originator has not 1 ["
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 13",
+          "similarity": 0.5634,
+          "text_head": "Information Technology Act, 2000 - Section 13: Time and place of despatch and receipt of electronic record\n\n(1"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 66D",
+          "similarity": 0.5444,
+          "text_head": "Information Technology Act, 2000 - Section 66D: Punishment for cheating by personation by using computer resou"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 72",
+          "similarity": 0.5433,
+          "text_head": "Information Technology Act, 2000 - Section 72: Penalty for Breach of confidentiality and privacy\n\nSave as othe"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 63",
+          "similarity": 0.5429,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 63: Admissibility of electronic records\n\n(b) during the said perio"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 11",
+          "similarity": 0.5393,
+          "text_head": "Information Technology Act, 2000 - Section 11: Attribution of electronic records\n\nAn electronic record shall b"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd.",
+          "section": "metadata",
+          "similarity": 0.5119,
+          "text_head": "The Commercial Tax Officer & ors v. Neeraja Pipes Pvt. Ltd. - Metadata\n\nCase: The Commercial Tax Officer & ors"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Rana Ayyub v. Directorate of Enforcement Through Its Assistant Director",
+          "section": "judgment_extract",
+          "similarity": 0.5117,
+          "text_head": "(Under Article 32 of The Constitution Of India) Ms. Vrinda Grover, Soutik Banerjee, Aakarsh Kamra, Ms. Devika "
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd.",
+          "section": "metadata",
+          "similarity": 0.5115,
+          "text_head": "Rohit Chaudhary & Anr. v. M/s Vipul Ltd. - Metadata\n\nCase: Rohit Chaudhary & Anr. v. M/s Vipul Ltd.\nCourt: Sup"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Pratibha Manchanda & anr v. State of Haryana & anr",
+          "section": "metadata",
+          "similarity": 0.5102,
+          "text_head": "Pratibha Manchanda & anr v. State of Haryana & anr - Metadata\n\nCase: Pratibha Manchanda & anr v. State of Hary"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr",
+          "section": "judgment_extract",
+          "similarity": 0.5098,
+          "text_head": "or approval; first respondent cannot draw strength from the same.\nIOC has a case that it was for taking the ma"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Shyam Kumar Gupta & Ors. v. Shubham Jain",
+          "section": "metadata",
+          "similarity": 0.5056,
+          "text_head": "Shyam Kumar Gupta & Ors. v. Shubham Jain - Metadata\n\nCase: Shyam Kumar Gupta & Ors. v. Shubham Jain\nCourt: Sup"
+        },
+        {
+          "collection": "USER_DOCUMENTS",
+          "source_title": "FIR-0412-2024.txt",
+          "section": null,
+          "similarity": 0.427,
+          "text_head": "FIR-0412-2024.txt - Page 1 - FIRST INFORMATION REPORT\n\nFIRST INFORMATION REPORT\nPolice Station: Sector 20, Gur"
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "Which components would be affected if the chunking strategy changed?",
+      "kind": "impact_analysis",
+      "top_similarity": 0.5197,
+      "collections_returned": [
+        "CASE_LAW",
+        "LEGAL_ACTS",
+        "USER_DOCUMENTS"
+      ],
+      "any_code_returned": false,
+      "chunks": [
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 156",
+          "similarity": 0.5197,
+          "text_head": "Indian Contract Act, 1872 - Section 156: Effect of mixture, without bailor's consent, when the good can be sep"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 155",
+          "similarity": 0.5146,
+          "text_head": "Indian Contract Act, 1872 - Section 155: Effect of mixture, with bailor's consent, of his goods with bailee's\n"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 157",
+          "similarity": 0.5132,
+          "text_head": "Indian Contract Act, 1872 - Section 157: Effect of mixture, without bailor's consent, when the goods cannot be"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+          "section": "headnote",
+          "similarity": 0.5119,
+          "text_head": "776 demand notice applied the lower rate - Neither of them competent to override or deviate from the decision "
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s. K.b. Tea Product Pvt. Ltd. & Anr. v. Commercial Tax Officer, Siliguri & Ors.",
+          "section": "judgment_extract",
+          "similarity": 0.5069,
+          "text_head": "829 demonstrate the reasons for such a shift - However, no such appropriate justification was provided - A mer"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Indian Contract Act, 1872",
+          "section": "Section 21",
+          "similarity": 0.5036,
+          "text_head": "Indian Contract Act, 1872 - Section 21: Effect of mistakes as to law\n\nA contract is not voidable because it wa"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 43",
+          "similarity": 0.4984,
+          "text_head": "Information Technology Act, 2000 - Section 43: Penalty and compensation for damage to computer, computer syste"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+          "section": "headnote",
+          "similarity": 0.4971,
+          "text_head": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd. -"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+          "section": "issues",
+          "similarity": 0.4872,
+          "text_head": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd. -"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Haryana Power Purchase Centre v. Sasan Power Ltd. & ors",
+          "section": "judgment_extract",
+          "similarity": 0.4853,
+          "text_head": "bidding and Articles 13 and 17 of the PPA for compensation due to change in law 'during the construction perio"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 43",
+          "similarity": 0.4827,
+          "text_head": "Information Technology Act, 2000 - Section 43: Penalty and compensation for damage to computer, computer syste"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Amd Industries Limited (earlier Known As M/s. Ashoka Metal Decor Pvt. Ltd.) v. Commissioner of Trade Tax, Lucknow & anr",
+          "section": "judgment_extract",
+          "similarity": 0.4826,
+          "text_head": "ow being manufactured are of a nature different from those manufactured earlier by the appellant being a diffe"
+        },
+        {
+          "collection": "USER_DOCUMENTS",
+          "source_title": "FIR-0412-2024.txt",
+          "section": null,
+          "similarity": 0.3638,
+          "text_head": "FIR-0412-2024.txt - Page 1 - FIRST INFORMATION REPORT\n\nFIRST INFORMATION REPORT\nPolice Station: Sector 20, Gur"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Which tests cover the hybrid retrieval fusion logic?",
+      "kind": "test_mapping",
+      "top_similarity": 0.5409,
+      "collections_returned": [
+        "CASE_LAW",
+        "LEGAL_ACTS",
+        "USER_DOCUMENTS"
+      ],
+      "any_code_returned": false,
+      "chunks": [
+        {
+          "collection": "CASE_LAW",
+          "source_title": "M/s Glock Asia-pacific Ltd. v. Union of India",
+          "section": "metadata",
+          "similarity": 0.5409,
+          "text_head": "M/s Glock Asia-pacific Ltd. v. Union of India - Metadata\n\nCase: M/s Glock Asia-pacific Ltd. v. Union of India\n"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd.",
+          "section": "metadata",
+          "similarity": 0.5367,
+          "text_head": "Karnataka State Electronics Development Corporation Ltd. v. Kumaon Entertainment and Hospitalities Pvt. Ltd. -"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr",
+          "section": "metadata",
+          "similarity": 0.5358,
+          "text_head": "Mamta Devi & Ors. v. The Reliance General Insurance Company Limited & anr - Metadata\n\nCase: Mamta Devi & Ors. "
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr.",
+          "section": "metadata",
+          "similarity": 0.535,
+          "text_head": "Arun Dev Upadhyaya v. Integrated Sales Service Ltd. & Anr. - Metadata\n\nCase: Arun Dev Upadhyaya v. Integrated "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Information Technology Act, 2000",
+          "section": "Section 3",
+          "similarity": 0.5346,
+          "text_head": "Information Technology Act, 2000 - Section 3: Authentication of electronic records\n\n1 [3. Authentication of el"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "National Insurance Company Ltd. v. Vedic Resorts and Hotels Pvt. Ltd.",
+          "section": "metadata",
+          "similarity": 0.531,
+          "text_head": "National Insurance Company Ltd. v. Vedic Resorts and Hotels Pvt. Ltd. - Metadata\n\nCase: National Insurance Com"
+        },
+        {
+          "collection": "CASE_LAW",
+          "source_title": "Tata Motors Limited v. The Brihan Mumbai Electric Supply & Transport Undertaking (best) and Others",
+          "section": "metadata",
+          "similarity": 0.5307,
+          "text_head": "Tata Motors Limited v. The Brihan Mumbai Electric Supply & Transport Undertaking (best) and Others - Metadata\n"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 60",
+          "similarity": 0.5148,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 60: Cases in which secondary evidence relating to documents maybe "
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 39",
+          "similarity": 0.5103,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 39: Opinions of experts\n\n(c) The question is, whether a certain do"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 59",
+          "similarity": 0.5099,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 59: Proof of documents by primary evidence\n\nDocuments shall be pro"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 62",
+          "similarity": 0.5081,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 62: Special provisions as to evidence relating to electronic recor"
+        },
+        {
+          "collection": "LEGAL_ACTS",
+          "source_title": "Bharatiya Sakshya Adhiniyam, 2023",
+          "section": "Section 57",
+          "similarity": 0.5066,
+          "text_head": "Bharatiya Sakshya Adhiniyam, 2023 - Section 57: Primary evidence\n\nPrimary evidence means the document itself p"
+        },
+        {
+          "collection": "USER_DOCUMENTS",
+          "source_title": "FIR-0412-2024.txt",
+          "section": null,
+          "similarity": 0.3971,
+          "text_head": "FIR-0412-2024.txt - Page 1 - FIRST INFORMATION REPORT\n\nFIRST INFORMATION REPORT\nPolice Station: Sector 20, Gur"
+        }
+      ]
+    }
+  ],
+  "ground_truth": {
+    "Q1": [
+      "backend/src/legalaid/agents/base.py",
+      "backend/src/legalaid/agents/document_understanding.py",
+      "backend/src/legalaid/agents/drafting.py",
+      "backend/src/legalaid/agents/intake_router.py",
+      "backend/src/legalaid/agents/legal_research.py",
+      "backend/src/legalaid/agents/orchestrator.py",
+      "backend/src/legalaid/agents/similar_cases.py",
+      "backend/src/legalaid/agents/synthesis.py",
+      "backend/src/legalaid/agents/verification.py",
+      "backend/src/legalaid/domain/contracts.py"
+    ],
+    "Q2": [
+      "backend/src/legalaid/agents/orchestrator.py",
+      "backend/src/legalaid/services/gateway/app.py",
+      "backend/src/legalaid/services/gateway/inspect.py",
+      "backend/src/legalaid/services/gateway/uploads.py",
+      "backend/src/legalaid/services/retrieval/app.py",
+      "backend/src/legalaid/services/retrieval/service.py",
+      "backend/tests/test_hybrid_retrieval.py",
+      "eval/codebase_probe.py",
+      "eval/runner.py",
+      "scripts/probe_bm25.py",
+      "scripts/smoke_agent_single.py",
+      "scripts/smoke_case_retrieval.py",
+      "scripts/smoke_hybrid.py",
+      "scripts/smoke_retrieval.py"
+    ],
+    "Q3": [
+      "backend/src/legalaid/services/gateway/app.py",
+      "backend/src/legalaid/agents/orchestrator.py",
+      "backend/src/legalaid/agents/intake_router.py",
+      "backend/src/legalaid/services/retrieval/service.py",
+      "backend/src/legalaid/agents/legal_research.py",
+      "backend/src/legalaid/agents/similar_cases.py",
+      "backend/src/legalaid/agents/synthesis.py",
+      "backend/src/legalaid/core/tracing.py"
+    ],
+    "Q4": [
+      "backend/src/legalaid/capabilities.py",
+      "backend/src/legalaid/config.py",
+      "backend/src/legalaid/db/models.py",
+      "backend/src/legalaid/domain/contracts.py",
+      "backend/src/legalaid/domain/enums.py",
+      "backend/src/legalaid/ingestion/__init__.py",
+      "backend/src/legalaid/ingestion/case_law.py",
+      "backend/src/legalaid/ingestion/chunking.py",
+      "backend/src/legalaid/ingestion/extraction.py",
+      "backend/src/legalaid/ingestion/india_code.py",
+      "backend/src/legalaid/services/gateway/inspect.py",
+      "backend/src/legalaid/services/gateway/uploads.py",
+      "backend/src/legalaid/services/knowledge/ingest.py",
+      "backend/src/legalaid/services/knowledge/ingest_cases.py",
+      "backend/tests/test_chunk_packing.py",
+      "backend/tests/test_chunking.py",
+      "eval/codebase_probe.py",
+      "scripts/chunk_stats.py",
+      "scripts/explain_pipeline.py",
+      "scripts/inspect_case_chunks.py",
+      "scripts/inspect_chunks.py",
+      "scripts/reset_knowledge.py"
+    ],
+    "Q5": [
+      "backend/tests/test_hybrid_retrieval.py"
+    ]
+  },
+  "import_graph_modules": 41,
+  "import_graph_edges": 197,
+  "coverage": [
+    {
+      "id": "Q1",
+      "ground_truth_files": 10,
+      "files_found_in_context": 0,
+      "coverage": 0.0
+    },
+    {
+      "id": "Q2",
+      "ground_truth_files": 14,
+      "files_found_in_context": 0,
+      "coverage": 0.0
+    },
+    {
+      "id": "Q3",
+      "ground_truth_files": 8,
+      "files_found_in_context": 0,
+      "coverage": 0.0
+    },
+    {
+      "id": "Q4",
+      "ground_truth_files": 22,
+      "files_found_in_context": 0,
+      "coverage": 0.0
+    },
+    {
+      "id": "Q5",
+      "ground_truth_files": 1,
+      "files_found_in_context": 0,
+      "coverage": 0.0
+    }
+  ]
+}

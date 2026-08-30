@@ -12,11 +12,11 @@
         "recall": 0.0,
         "mrr": 0.0,
         "top_sections": [
-          "Section 73 (Indian Contract Act, 1872)",
-          "Section 74 (Indian Contract Act, 1872)",
-          "Section 220 (Indian Contract Act, 1872)",
-          "Section 50 (Indian Contract Act, 1872)",
-          "Section 63 (Indian Contract Act, 1872)"
+          "Section 72 (Indian Contract Act, 1872)",
+          "judgment_extract (National Insurance Company Ltd. v.",
+          "Section 13 (Bharatiya Sakshya Adhiniyam, 2023)",
+          "Section 222 (Indian Contract Act, 1872)",
+          "Section 73 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.7846
       },
@@ -43,16 +43,16 @@
         "indiancontract:74"
       ],
       "raw": {
-        "recall": 0.0,
-        "mrr": 0.0,
+        "recall": 1.0,
+        "mrr": 1.0,
         "top_sections": [
+          "Section 73 (Indian Contract Act, 1872)",
           "Section 222 (Indian Contract Act, 1872)",
-          "reasoning (M/s. Gail (india) Limited v. M/s. Indian ",
-          "judgment_extract (Trust Estate Khimji Keshawji & anr",
-          "judgment_extract (Indian Oil Corporation Ltd. and or",
-          "judgment_extract (Haryana Power Purchase Centre v. S"
+          "Section 38 (Sale of Goods Act, 1930)",
+          "Section 60 (Sale of Goods Act, 1930)",
+          "Section 20 (Specific Relief Act, 1963)"
         ],
-        "top_similarity": 0.6927
+        "top_similarity": 0.7043
       },
       "rewritten": {
         "recall": 1.0,
@@ -60,13 +60,13 @@
         "top_sections": [
           "Section 73 (Indian Contract Act, 1872)",
           "Section 74 (Indian Contract Act, 1872)",
+          "Section 21 (Specific Relief Act, 1963)",
           "Section 74 (Indian Contract Act, 1872)",
-          "Section 73 (Indian Contract Act, 1872)",
-          "Section 74 (Indian Contract Act, 1872)"
+          "Section 73 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.8023
       },
-      "verdict": "REWRITE FIXES IT"
+      "verdict": "no change"
     },
     {
       "task_id": "D03",
@@ -76,14 +76,14 @@
         "indiancontract:182"
       ],
       "raw": {
-        "recall": 0.0,
-        "mrr": 0.0,
+        "recall": 1.0,
+        "mrr": 0.1667,
         "top_sections": [
           "Section 228 (Indian Contract Act, 1872)",
           "Section 231 (Indian Contract Act, 1872)",
-          "Section 232 (Indian Contract Act, 1872)",
           "Section 227 (Indian Contract Act, 1872)",
-          "Section 230 (Indian Contract Act, 1872)"
+          "Section 230 (Indian Contract Act, 1872)",
+          "Section 237 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.7424
       },
@@ -95,11 +95,11 @@
           "Section 192 (Indian Contract Act, 1872)",
           "Section 194 (Indian Contract Act, 1872)",
           "Section 211 (Indian Contract Act, 1872)",
-          "Section 226 (Indian Contract Act, 1872)"
+          "Section 214 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.8759
       },
-      "verdict": "REWRITE FIXES IT"
+      "verdict": "better ranking"
     },
     {
       "task_id": "R05",
@@ -110,15 +110,15 @@
       ],
       "raw": {
         "recall": 1.0,
-        "mrr": 0.25,
+        "mrr": 0.0909,
         "top_sections": [
-          "judgment_extract (Indian Oil Corporation Ltd. and or",
-          "judgment_extract (Indian Oil Corporation Ltd. and or",
-          "reasoning (M/s. Gail (india) Limited v. M/s. Indian ",
-          "Section 55 (Indian Contract Act, 1872)",
-          "judgment_extract (M/s Glock Asia-pacific Ltd. v. Uni"
+          "Section 46 (Indian Contract Act, 1872)",
+          "Section 51 (Sale of Goods Act, 1930)",
+          "Section 47 (Indian Contract Act, 1872)",
+          "Section 48 (Indian Contract Act, 1872)",
+          "Section 11 (Sale of Goods Act, 1930)"
         ],
-        "top_similarity": 0.5763
+        "top_similarity": 0.6114
       },
       "rewritten": {
         "recall": 1.0,
@@ -147,10 +147,10 @@
         "mrr": 0.0,
         "top_sections": [
           "Section 222 (Indian Contract Act, 1872)",
-          "Section 17 (Code of Civil Procedure, 1908)",
-          "Section 10 (Code of Civil Procedure, 1908)",
-          "Section 73 (Indian Contract Act, 1872)",
-          "Section 73 (Indian Contract Act, 1872)"
+          "Section 19 (Code of Civil Procedure, 1908)",
+          "Section 58 (Sale of Goods Act, 1930)",
+          "Section 60 (Sale of Goods Act, 1930)",
+          "Section 17 (Code of Civil Procedure, 1908)"
         ],
         "top_similarity": 0.677
       },
@@ -161,8 +161,8 @@
           "Section 20 (Code of Civil Procedure, 1908)",
           "Section 18 (Code of Civil Procedure, 1908)",
           "Section 15 (Code of Civil Procedure, 1908)",
-          "Section 17 (Code of Civil Procedure, 1908)",
-          "Section 10 (Code of Civil Procedure, 1908)"
+          "Section 37 (Code of Civil Procedure, 1908)",
+          "Section 17 (Code of Civil Procedure, 1908)"
         ],
         "top_similarity": 0.7617
       },
@@ -183,8 +183,8 @@
           "Section 73 (Indian Contract Act, 1872)",
           "Section 150 (Indian Contract Act, 1872)",
           "Section 225 (Indian Contract Act, 1872)",
-          "Section 73 (Indian Contract Act, 1872)",
-          "Section 73 (Indian Contract Act, 1872)"
+          "Section 161 (Indian Contract Act, 1872)",
+          "Section 70 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.6595
       },
@@ -196,7 +196,7 @@
           "Section 152 (Indian Contract Act, 1872)",
           "Section 164 (Indian Contract Act, 1872)",
           "Section 151 (Indian Contract Act, 1872)",
-          "Section 180 (Indian Contract Act, 1872)"
+          "Section 161 (Indian Contract Act, 1872)"
         ],
         "top_similarity": 0.8244
       },
@@ -205,9 +205,9 @@
   ],
   "summary": {
     "n": 6,
-    "improved": 5,
-    "mean_recall_raw": 0.1667,
+    "improved": 3,
+    "mean_recall_raw": 0.5,
     "mean_recall_rewritten": 1.0,
-    "absolute_gain": 0.8333
+    "absolute_gain": 0.5
   }
 }

@@ -1,0 +1,1150 @@
+{
+  "model": "llama3.2:3b",
+  "no_rag": {
+    "condition": "no_rag",
+    "tasks": 27,
+    "sections_named": 69,
+    "corpus_verified": 55,
+    "fabricated": 3,
+    "fabrication_rate": 0.0435,
+    "verified_rate": 0.7971,
+    "tasks_with_a_fabrication": 3,
+    "accuracy_answerable": 0.1667,
+    "declined_on_unanswerable": 0,
+    "unanswerable_total": 3,
+    "fabricated_on_unanswerable": 0,
+    "mean_latency_ms": 7236.9,
+    "mean_output_tokens": 269.2
+  },
+  "with_rag": {
+    "condition": "with_rag",
+    "tasks": 27,
+    "sections_named": 67,
+    "corpus_verified": 53,
+    "fabricated": 4,
+    "fabrication_rate": 0.0597,
+    "verified_rate": 0.791,
+    "tasks_with_a_fabrication": 2,
+    "accuracy_answerable": 0.5417,
+    "declined_on_unanswerable": 0,
+    "unanswerable_total": 3,
+    "fabricated_on_unanswerable": 2,
+    "mean_latency_ms": 6197.8,
+    "mean_output_tokens": 192.4
+  },
+  "results": [
+    {
+      "task_id": "L01",
+      "condition": "no_rag",
+      "answer": "Section 73 of the Indian Contract Act, 1872, deals with the \"Parties to a Contract\". It states that a contract is voidable at the option of either party, if either party was under 21 years of age at the time of the contract, or if either party was under legal incapacity to contract, or if either party was under coercion, or if either party was under undue influence, or if either party was under fraud or misrepresentation, or if either party was under mistake as to a fact of such nature as may admit of being a material one in the contract.",
+      "latency_ms": 4320.6,
+      "input_tokens": 67,
+      "output_tokens": 122,
+      "sections_named": [
+        "indian contract act s.73"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L01",
+      "condition": "with_rag",
+      "answer": "Section 73 of the Indian Contract Act, 1872, provides for compensation for loss or damage caused by breach of contract.",
+      "latency_ms": 2419.8,
+      "input_tokens": 1014,
+      "output_tokens": 27,
+      "sections_named": [
+        "indian contract act s.73"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L02",
+      "condition": "no_rag",
+      "answer": "Under the Indian Contract Act, 1872, an agreement without consideration is still valid if it is made for a valuable consideration, but the consideration is not in money. \n\nSection 21 of the Act states that \"Where there is a legal right or title in the parties to a contract, the contract is voidable at the option of either party, if the right or title is acquired by the party in a way which would render the contract, if made, void or voidable.\"\n\nHowever, Section 24 of the Act states that \"Where a contract is made without consideration, the court may, in certain cases, decree a specific performance of the contract, or may order the party who has not given the consideration to pay a sum of money to the party who has given the consideration.\"\n\nSection 24(1) further states that \"Where a contract is made without consideration, the court may, in certain cases, decree a specific performance of the contract, if the court thinks that it is just and equitable that the contract should be performed.\"\n\nTherefore, an agreement without consideration is still valid if it is made for a valuable consideration, but the consideration is not in money, and the court may decree specific performance of the contract.",
+      "latency_ms": 6771.7,
+      "input_tokens": 69,
+      "output_tokens": 248,
+      "sections_named": [
+        "indian contract act s.21",
+        "unattributed s.24",
+        "unattributed s.24"
+      ],
+      "corpus_verified": [
+        "indian contract act s.21"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L02",
+      "condition": "with_rag",
+      "answer": "According to Section 25 of the Indian Contract Act, 1872, an agreement without consideration is void, unless it is expressed in writing and registered under the law for the time being in force for the registration of documents, and is made on account of natural love and affection between parties standing in a near relation to each other.\n\nIn other words, an agreement without consideration is still valid if it meets the following conditions:\n\n1. It is expressed in writing.\n2. It is registered under the relevant law.\n3. It is made on account of natural love and affection between parties standing in a near relation to each other.\n\nThis exception applies to agreements made without consideration, but only in specific circumstances involving natural love and affection between near relatives.",
+      "latency_ms": 4935.8,
+      "input_tokens": 833,
+      "output_tokens": 149,
+      "sections_named": [
+        "indian contract act s.25"
+      ],
+      "corpus_verified": [
+        "indian contract act s.25"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L03",
+      "condition": "no_rag",
+      "answer": "In India, for an agreement to be considered a contract, it must satisfy the following essential requirements as per the Indian Contract Act, 1872:\n\n1. **Offer and Acceptance**: There must be an offer made by one party (the proposer) and an acceptance by the other party (the respondent).\n2. **Intention to Create Legal Relations**: The parties must intend to create a legally binding relationship.\n3. **Free Consent**: The parties must give their free and informed consent to the terms of the agreement.\n4. **Capacity**: Both parties must have the capacity to enter into a contract, meaning they must be of sound mind and not under any legal incapacity.\n5. **Consideration**: There must be consideration, which is a bargained-for exchange of something of value, such as money, goods, or services.\n6. **Mutual Assent**: The parties must agree on the terms of the contract.\n7. **Not Contrary to Law**: The agreement must not be contrary to any law.\n\nAdditionally, the agreement must also be in writing and registered under the Registration Act, 1908, if the value of the contract exceeds a certain amount (usually \u20b9 200,000).\n\nThese requirements are essential to establish that an agreement is a valid contract under Indian law.",
+      "latency_ms": 6896.0,
+      "input_tokens": 67,
+      "output_tokens": 264,
+      "sections_named": [],
+      "corpus_verified": [],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L03",
+      "condition": "with_rag",
+      "answer": "According to Section 10 of the Indian Contract Act, 1872, the essential requirements for an agreement to be a contract are:\n\n1. The agreement must be made by the free consent of parties competent to contract.\n2. The agreement must be for a lawful consideration.\n3. The agreement must be for a lawful object.\n\nThese requirements are explicitly stated in Section 10 of the Act.",
+      "latency_ms": 3639.7,
+      "input_tokens": 906,
+      "output_tokens": 80,
+      "sections_named": [
+        "indian contract act s.10",
+        "unattributed s.10"
+      ],
+      "corpus_verified": [
+        "indian contract act s.10"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L04",
+      "condition": "no_rag",
+      "answer": "In India, electronic records are legally recognized under Section 3 of the Information Technology Act, 2000 (IT Act). This section states that any document or record generated, stored, or transmitted electronically shall be deemed to be a record and shall be admissible as evidence in any court or other authority in India.\n\nAdditionally, Section 29 of the IT Act also provides that any electronic record shall be deemed to be a record and shall be admissible as evidence in any court or other authority in India, if it is:\n\n* Made by a person having the capacity to make a record;\n* Made by means of a device or machine;\n* Made from any document or record;\n* Made from any document or record, or from any electronic record;\n* Made from any document or record, or from any electronic record, or from any document or record, or from any electronic record.\n\nThe IT Act also provides for the electronic filing of court cases and documents, which is governed by the Electronic Courts Rules, 2019.",
+      "latency_ms": 5844.4,
+      "input_tokens": 67,
+      "output_tokens": 206,
+      "sections_named": [
+        "indian contract act s.3",
+        "indian contract act s.29"
+      ],
+      "corpus_verified": [
+        "indian contract act s.3",
+        "indian contract act s.29"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L04",
+      "condition": "with_rag",
+      "answer": "According to Section 4 of the Information Technology Act, 2000, electronic records are legally recognized in India, provided that the information or matter is rendered or made available in an electronic form and is accessible so as to be usable for a subsequent reference.",
+      "latency_ms": 2886.8,
+      "input_tokens": 836,
+      "output_tokens": 52,
+      "sections_named": [
+        "information technology act s.4"
+      ],
+      "corpus_verified": [
+        "information technology act s.4"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L05",
+      "condition": "no_rag",
+      "answer": "In India, the law regarding the admissibility of electronic records as evidence is governed by the following sections and Acts:\n\n1. **Section 3 of the Electronic Evidence (Amendment) Act, 2008**: This section states that any electronic record or electronic document or electronic data or electronic communication or electronic information shall be deemed to be electronic evidence.\n2. **Section 45 of the Indian Evidence Act, 1872**: This section provides that electronic records can be used as evidence in court, but only if they are relevant to the case and are admissible under the provisions of the Act.\n3. **Section 65 of the Indian Evidence Act, 1872**: This section provides that electronic records can be used as evidence in court, but only if they are relevant to the case and are admissible under the provisions of the Act.\n4. **Section 69 of the Indian Evidence Act, 1872**: This section provides that electronic records can be used as evidence in court, but only if they are relevant to the case and are admissible under the provisions of the Act.\n\nAdditionally, the **Electronic Evidence (Amendment) Act, 2008** and the **Information Technology Act, 2000** also provide provisions for the admissibility of electronic records as evidence.\n\nIt's worth noting that the Supreme Court of India has also issued guidelines for the admissibility of electronic records as evidence, which are as follows:\n\n* The electronic record must be relevant to the case.\n* The electronic record must be admissible under the provisions of the Act.\n* The electronic record must be properly authenticated.\n* The electronic record must be properly produced in court.\n\nThese guidelines are as follows:\n\n* **Rajesh Kumar vs. State of Haryana** (2012) 4 SCC 489: The Supreme Court held that electronic records can be used as evidence in court, but only if they are relevant to the case and are admissible under the provisions of the Act.\n* **State of Gujarat vs. Rajesh Kumar** (2012) 4 SCC",
+      "latency_ms": 10355.9,
+      "input_tokens": 69,
+      "output_tokens": 420,
+      "sections_named": [
+        "unattributed s.3",
+        "indian contract act s.45",
+        "bharatiya sakshya adhiniyam s.65",
+        "bharatiya sakshya adhiniyam s.69"
+      ],
+      "corpus_verified": [
+        "indian contract act s.45",
+        "bharatiya sakshya adhiniyam s.65",
+        "bharatiya sakshya adhiniyam s.69"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L05",
+      "condition": "with_rag",
+      "answer": "The law regarding the admissibility of electronic records as evidence is outlined in Section 61 and Section 63 of the Bharatiya Sakshya Adhiniyam, 2023.\n\nAccording to Section 61, an electronic or digital record shall have the same legal effect, validity, and enforceability as other documents, and shall not be denied admissibility as evidence solely because it is an electronic or digital record.\n\nSection 63 provides further guidelines on the admissibility of electronic records. It states that an electronic record shall be deemed to be a document if the conditions mentioned in the section are satisfied. Specifically, it mentions that:\n\n* The information contained in the electronic record shall be printed on paper, stored, recorded, or copied in optical or magnetic media or semiconductor memory.\n* The electronic record shall purport to be signed by a person in charge of the computer or communication device or the management of the relevant activities.\n* An expert shall be evidence of any matter stated in the certificate.\n\nAdditionally, Section 63 also mentions that the contents of electronic records may be proved in accordance with the provisions of section 63.\n\nIt is also worth noting that Section 4 of the Information Technology Act, 2000 provides that any law requiring information or matter to be in writing or in a specific form shall be deemed to have been satisfied if the information or matter is rendered or made available in an electronic form and is accessible for subsequent reference.\n\nOverall, the law provides a framework for the admissibility of electronic records as evidence, emphasizing the importance of authenticity, validity, and accessibility.",
+      "latency_ms": 9162.0,
+      "input_tokens": 816,
+      "output_tokens": 322,
+      "sections_named": [
+        "bharatiya sakshya adhiniyam s.61",
+        "bharatiya sakshya adhiniyam s.63",
+        "bharatiya sakshya adhiniyam s.61",
+        "unattributed s.63",
+        "indian contract act s.63",
+        "indian contract act s.63",
+        "information technology act s.4"
+      ],
+      "corpus_verified": [
+        "bharatiya sakshya adhiniyam s.61",
+        "bharatiya sakshya adhiniyam s.63",
+        "bharatiya sakshya adhiniyam s.61",
+        "indian contract act s.63",
+        "indian contract act s.63",
+        "information technology act s.4"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L06",
+      "condition": "no_rag",
+      "answer": "Res judicata refers to the principle of finality and conclusiveness of a judgment in a lawsuit. It means that a matter is considered settled and cannot be revisited or re-litigated in a subsequent lawsuit.\n\nThe provision that governs res judicata is Section 11 of the Code of Civil Procedure, 1908 (CPC), and Section 6 of the Limitation Act, 1963. However, the key provision is Section 11 of the CPC, which states that:\n\n\"A suit is said to be barred by res judicata when the subject-matter of the suit is the same as that of a judgment previously obtained by a party, or when the matter is identical with that of a judgment previously obtained by another party.\"\n\nAdditionally, Section 13 of the CPC also deals with res judicata, which states that:\n\n\"A judgment or decree of a competent court shall be conclusive and binding on all persons, and shall not be subject to re-examination in any court.\"\n\nThese provisions govern the concept of res judicata in India and provide a framework for determining when a matter is considered settled and cannot be revisited in a subsequent lawsuit.",
+      "latency_ms": 6532.8,
+      "input_tokens": 67,
+      "output_tokens": 238,
+      "sections_named": [
+        "indian contract act s.11",
+        "indian contract act s.6",
+        "indian contract act s.11",
+        "indian contract act s.13"
+      ],
+      "corpus_verified": [
+        "indian contract act s.11",
+        "indian contract act s.6",
+        "indian contract act s.11",
+        "indian contract act s.13"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "L06",
+      "condition": "with_rag",
+      "answer": "Res judicata refers to the principle that a court cannot review or decide a matter that has already been decided in a previous lawsuit between the same parties or their successors in interest.\n\nThe provision that governs res judicata is Section 11 of the Code of Civil Procedure, 1908.",
+      "latency_ms": 3128.4,
+      "input_tokens": 921,
+      "output_tokens": 61,
+      "sections_named": [
+        "indian contract act s.11"
+      ],
+      "corpus_verified": [
+        "indian contract act s.11"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R01",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance based on Indian law, but please note that specific circumstances may affect the outcome.\n\nThe provisions that may support a claim for compensation in this scenario are:\n\n1. **Section 53 of the Indian Contract Act, 1872**: This section deals with the breach of contract by the buyer and provides for compensation to the seller.\n2. **Section 56 of the Indian Contract Act, 1872**: This section deals with the non-payment of the price by the buyer and provides for compensation to the seller.\n3. **The Sale of Goods Act, 1930**: Under Section 31 of this Act, a seller is entitled to claim damages for non-payment of the price or for any other breach of contract.\n4. **The Limitation Act, 1963**: This Act sets out the time limits for filing a suit for compensation, which is typically 2 years from the date of delivery of goods.\n\nAdditionally, the **Consumer Protection Act, 1986** may also apply if the goods were sold to a consumer, and the buyer is refusing to pay for the goods.\n\nPlease note that this is a general overview, and the specific circumstances of the case may affect the application of these provisions. It is recommended to consult with a lawyer to determine the best course of action.",
+      "latency_ms": 7017.6,
+      "input_tokens": 78,
+      "output_tokens": 265,
+      "sections_named": [
+        "indian contract act s.53",
+        "indian contract act s.56",
+        "limitation act s.31"
+      ],
+      "corpus_verified": [
+        "indian contract act s.53",
+        "indian contract act s.56",
+        "limitation act s.31"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R01",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the relevant provisions that support a claim for compensation are:\n\n* Section 44 Sale of Goods Act, 1930: Liability of buyer for neglecting or refusing delivery of goods. This section would support a claim by the seller for damages due to the buyer's refusal to pay for the goods after delivery.\n* Section 55 Sale of Goods Act, 1930: Suit for price. This section would support a claim by the seller for the price of the goods, as the buyer has wrongfully neglected or refused to pay for the goods according to the terms of the contract.\n\nAdditionally, the judgment of Haryana Power Purchase Centre v. Sasan Power Ltd. & ors may provide some guidance on the issue of compensation for change in law, but it is not directly relevant to the dispute between the seller and the buyer under the Sale of Goods Act.",
+      "latency_ms": 5757.1,
+      "input_tokens": 809,
+      "output_tokens": 179,
+      "sections_named": [
+        "sale of goods act s.44",
+        "sale of goods act s.55"
+      ],
+      "corpus_verified": [
+        "sale of goods act s.44",
+        "sale of goods act s.55"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R02",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please note that the specifics may depend on the jurisdiction and the particular contract.\n\nIn India, a clause fixing a sum payable on default is generally enforceable under contract law. The Indian Contract Act, 1872 (Section 29) allows for the recovery of a sum due under a contract, including a penalty clause.\n\nHowever, the enforceability and amount of the penalty clause may be subject to certain conditions and limitations. \n\nThe Supreme Court of India has held that a penalty clause is not enforceable if it is not intended to be a genuine pre-estimate of the loss that the other party would suffer in the event of a breach (B.D. Dattu v. Murlidhar, 2011).\n\nAdditionally, the amount of the penalty clause may be subject to the provisions of the Consumer Protection Act, 1986 (Section 28) and the Contract Act, 1872 (Section 29), which regulate the amount of damages that can be claimed.\n\nIn general, the amount recoverable under a penalty clause may be limited to the actual loss suffered by the non-defaulting party, or a reasonable estimate of that loss, as determined by the court.\n\nIt is recommended to consult with a lawyer to determine the specific enforceability and amount of the penalty clause under the relevant laws and regulations.",
+      "latency_ms": 7127.1,
+      "input_tokens": 76,
+      "output_tokens": 272,
+      "sections_named": [
+        "indian contract act s.29",
+        "indian contract act s.28",
+        "indian contract act s.29"
+      ],
+      "corpus_verified": [
+        "indian contract act s.29",
+        "indian contract act s.28",
+        "indian contract act s.29"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R02",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the answer to your question is that the clause fixing a sum payable on default is enforceable, but the actual amount that can be recovered is limited.\n\nAccording to Section 74 of the Indian Contract Act, 1872, when a contract has been broken, if a sum is named in the contract as the amount to be paid in case of such breach, the party complaining of the breach is entitled to receive reasonable compensation not exceeding the amount so named.\n\nIn this case, the clause fixing a sum payable on default is considered a penalty stipulation. Therefore, the party complaining of the breach is entitled to receive reasonable compensation not exceeding the amount so named.\n\nThe explanation to Section 74 states that \"A\" means that the amount of compensation is limited to the amount named in the contract, or the penalty stipulated for, whichever is less.",
+      "latency_ms": 5502.3,
+      "input_tokens": 906,
+      "output_tokens": 176,
+      "sections_named": [
+        "indian contract act s.74",
+        "unattributed s.74"
+      ],
+      "corpus_verified": [
+        "indian contract act s.74"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R03",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please consult a lawyer for specific advice tailored to your case.\n\nIf the other party has made performance impossible after you signed the agreement, your position may be governed by the following sections and Acts:\n\n1. **Indian Contract Act, 1872**: Section 73 states that \"where the performance of the contract becomes impossible, either by the act of either party, or by the act of God, or by the act of either party to the contract, or by the inevitability of circumstances beyond the control of either party, then the contract shall be void and may be avoided by either party at any time before performance is due.\"\n2. **Section 65 of the Indian Contract Act, 1872**: This section deals with the \"non-performance of the contract\" and states that \"if the performance of the contract becomes impossible, either by the act of either party, or by the act of God, or by the act of either party to the contract, or by the inevitability of circumstances beyond the control of either party, the contract may be avoided by either party at any time before performance is due.\"\n3. **Section 56 of the Indian Contract Act, 1872**: This section deals with \"cancellation of contract\" and states that \"where the performance of the contract becomes impossible, either by the act of either party, or by the act of God, or by the act of either party to the contract, or by the inevitability of circumstances beyond the control of either party, the contract may be avoided by either party at any time before performance is due.\"\n\nIn this situation, you may be able to avoid or cancel the contract, depending on the specific circumstances and the laws applicable to your case. It is essential to consult with a lawyer to determine the best course of action and to understand your rights and obligations under the contract.",
+      "latency_ms": 9826.5,
+      "input_tokens": 69,
+      "output_tokens": 382,
+      "sections_named": [
+        "indian contract act s.73",
+        "indian contract act s.65",
+        "indian contract act s.56"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73",
+        "indian contract act s.65",
+        "indian contract act s.56"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R03",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, Section 56 of the Indian Contract Act, 1872, specifically section (e), applies to your situation. According to this section, a contract to act at a theatre for six months in consideration of a sum paid in advance by B, becomes void if the contract to act on several occasions becomes impossible due to A being too ill.\n\nIn this case, since the other side (B) made performance impossible after you signed the contract, your position is that the contract becomes void. You are not bound to perform your obligations under the contract.",
+      "latency_ms": 4139.1,
+      "input_tokens": 711,
+      "output_tokens": 116,
+      "sections_named": [
+        "indian contract act s.56"
+      ],
+      "corpus_verified": [
+        "indian contract act s.56"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R04",
+      "condition": "no_rag",
+      "answer": "I can't provide legal advice. However, I can offer some general information about Indian law. Would that help?",
+      "latency_ms": 1709.5,
+      "input_tokens": 72,
+      "output_tokens": 24,
+      "sections_named": [],
+      "corpus_verified": [],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R04",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the answer is yes, you can still claim compensation.\n\nSection 73 of the Indian Contract Act, 1872, states that when a contract has been broken, the party who suffers by such breach is entitled to receive compensation for any loss or damage caused to him thereby, which naturally arose in the usual course of things from such breach, or which the parties knew, when they made the contract, to be likely to result from the breach of it.\n\nSince you rescinded the contract because the other party breached first, you are entitled to claim compensation under Section 73.",
+      "latency_ms": 4649.7,
+      "input_tokens": 856,
+      "output_tokens": 122,
+      "sections_named": [
+        "indian contract act s.73",
+        "unattributed s.73"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R05",
+      "condition": "no_rag",
+      "answer": "In India, the doctrine of \"time of the essence\" is not explicitly recognized as a separate concept under the Indian Contract Act, 1872. However, the concept of \"time is of the essence\" is often implied in contracts where the delay is significant and has a material impact on the contract.\n\nIf the contract specified that time was of the essence, and the supplier delivered three months late, the following would apply:\n\n* Section 3(2) of the Indian Contract Act, 1872 states that \"Where the time for the performance of (any part of) the contract expressed in numbers of days is one day or more, such expression shall be construed to include ordinary days, Sundays, public holidays, and legal holidays.\"\n* Section 3(3) of the Indian Contract Act, 1872 states that \"Where the time for the performance of (any part of) the contract is not expressed in numbers of days, such time shall be computed to include ordinary days, Sundays, public holidays, and legal holidays.\"\n* Section 6 of the Indian Contract Act, 1872 states that \"Where the performance of (any part of) the contract is subject to the condition that it shall be performed within a specified time, and such time is expressed in numbers of days, the party who is to perform the contract shall not be bound to perform it unless he gives notice to the other party that he intends to perform it within the time specified, and that notice is given within the time specified, or within such time as is specified in the contract, or within a reasonable time after the specified time has expired.\"\n\nIf the contract specified that time was of the essence, the supplier's delay would likely entitle the buyer to terminate the contract or claim damages, depending on the specific terms of the contract.\n\nIt's worth noting that the Indian courts have not explicitly recognized the doctrine of \"time of the essence\" as a separate concept, and the application of the doctrine would depend on the specific facts and circumstances of the case.",
+      "latency_ms": 10936.0,
+      "input_tokens": 71,
+      "output_tokens": 410,
+      "sections_named": [
+        "indian contract act s.3",
+        "indian contract act s.3",
+        "indian contract act s.6"
+      ],
+      "corpus_verified": [
+        "indian contract act s.3",
+        "indian contract act s.3",
+        "indian contract act s.6"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R05",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the relevant sections are:\n\n* Section 46 Indian Contract Act, 1872: Time for performance of promise, when no application is to be made and no time is specified\n* Section 51 Sale of Goods Act, 1930: Duration of transit\n* Section 11 Sale of Goods Act, 1930: Stipulations as to time\n\nFrom Section 46, it is stated that when a promise is to be performed without application by the promisee, and no time is specified, the engagement must be performed within a reasonable time. However, this section does not provide a clear definition of what constitutes a \"reasonable time\".\n\nFrom Section 51, it is stated that goods are deemed to be in course of transit from the time they are delivered to a carrier or other bailee for the purpose of transmission to the buyer, until the buyer or his agent in that behalf takes delivery of them from such carrier or other bailee. This section may be relevant in determining the duration of the delay, but it does not directly address the issue of whether time is of the essence.\n\nFrom Section 11, it is stated that stipulations as to time of payment are not deemed to be of the essence of a contract of sale, unless a different intention appears from the terms of the contract. This section may be relevant in determining whether the delay is a material breach of contract, but it does not provide a clear answer to the question of whether time is of the essence.\n\nIn the case of Indian Oil Corporation Ltd. and ors v. M/s. Sathyanarayana Service Station & anr, the court held that giving a three months' notice during the first 15 years of the dealership is a stipulation as to time that is of the essence of the contract. However, this case is not directly relevant to the question at hand, as it deals with a specific interpretation of a contract stipulation, rather than the general issue of whether time is of the essence.\n\nIn summary, the context does not provide a clear answer to",
+      "latency_ms": 11462.2,
+      "input_tokens": 851,
+      "output_tokens": 420,
+      "sections_named": [
+        "indian contract act s.46",
+        "indian contract act s.51",
+        "indian contract act s.11",
+        "indian contract act s.46",
+        "unattributed s.51",
+        "unattributed s.11"
+      ],
+      "corpus_verified": [
+        "indian contract act s.46",
+        "indian contract act s.51",
+        "indian contract act s.11",
+        "indian contract act s.46"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": true,
+      "error": null
+    },
+    {
+      "task_id": "R06",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please note that specific circumstances and laws may vary. As a legal assistant for Indian law, I'll provide options based on general principles.\n\nIf the buyer has informed you in advance that they will not perform, you may have the following options:\n\n1. **Section 35 of the Indian Contract Act, 1872**: This section deals with the act of a party who has become incapable of performing his promise. You can consider taking legal action against the buyer for breach of contract.\n2. **Section 48 of the Indian Contract Act, 1872**: This section allows the other party (in this case, the seller) to either:\n\t* Rescind the contract\n\t* Reduce the contract\n\t* Add to the contract\n\t* Exempt themselves from any further performance under the contract\n3. **The Indian Partnership Act, 1932**: If you are a partner in a business, you may need to consider the partnership deed and the partnership laws to determine the course of action.\n4. **The Sale of Goods Act, 1930**: This Act governs the sale of goods in India. You may be able to claim damages or seek other remedies under this Act.\n\nIt is essential to consult with a lawyer who specializes in Indian law to determine the best course of action specific to your situation. They can help you evaluate your options and guide you through the legal process.",
+      "latency_ms": 7586.4,
+      "input_tokens": 70,
+      "output_tokens": 290,
+      "sections_named": [
+        "indian contract act s.35",
+        "indian contract act s.48"
+      ],
+      "corpus_verified": [
+        "indian contract act s.35",
+        "indian contract act s.48"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "R06",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, specifically Section 43 of the Sale of Goods Act, 1930, it appears that the buyer has the right to refuse the goods, but it is not binding on them to return the goods to the seller.\n\nHowever, the buyer's statement that they would not perform suggests that they are not accepting the goods, but rather, they are not willing to purchase or accept the goods.\n\nIn this scenario, the seller's options are limited to the provisions of Section 43, which states that the buyer is not bound to return the rejected goods, but it is sufficient if they intimate to the seller that they refuse to accept them.\n\nTherefore, the seller's options are:\n\n1. Accept that the buyer has the right to refuse the goods and move forward with the sale.\n2. Attempt to negotiate with the buyer to change their mind or come to a different agreement.\n3. Consider other buyers who may be interested in purchasing the goods.\n\nIt is not explicitly stated in the provided context what the seller's options are beyond the buyer's refusal, as the focus is on the buyer's refusal to accept the goods.",
+      "latency_ms": 7155.7,
+      "input_tokens": 708,
+      "output_tokens": 229,
+      "sections_named": [
+        "indian contract act s.43",
+        "unattributed s.43"
+      ],
+      "corpus_verified": [
+        "indian contract act s.43"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X01",
+      "condition": "no_rag",
+      "answer": "I can't provide legal advice, but I can offer some general information about Indian law. If you need legal advice, consult a licensed attorney.\r\n\r\nThat being said, under Indian law, electronic records are recognized as valid documents under various statutes and sections. Here are some relevant provisions:\r\n\r\n1. **Section 3 of the Indian Electronic Contracts (Amendment) Act, 2006**: This section states that an electronic record is considered a record and not a document, and it is not necessary to have a physical copy of the record.\r\n2. **Section 29 of the Indian Electronic Transactions Act, 2003**: This section provides that an electronic record is admissible as evidence in a court of law, and it is not necessary to have a physical copy of the record.\r\n3. **Section 69 of the Indian Evidence Act, 1872**: This section states that electronic records can be used as evidence in a court of law, and they are considered equivalent to physical records.\r\n\r\nTo prove these records in court, you can use the following methods:\r\n\r\n1. **Email headers and metadata**: You can use the email headers and metadata to prove the authenticity and date of the email.\r\n2. **PDF metadata**: You can use the PDF metadata to prove the authenticity and date of the PDF document.\r\n3. **Digital signatures**: If either party used digital signatures to sign the agreement or correspondence, you can use these signatures as evidence.\r\n4. **Witness statements**: You can get witness statements from any parties involved in the correspondence or agreement to corroborate the electronic records.\r\n5. **Electronic record storage**: You can store the electronic records in a secure location, such as a cloud storage service or a digital archive, and produce them in court as evidence.\r\n\r\nIt is essential to note that the validity of electronic records in court depends on various factors, including the type of agreement, the parties involved, and the jurisdiction. It is always best to consult with a licensed attorney to determine the validity of your electronic records in court.",
+      "latency_ms": 10454.5,
+      "input_tokens": 82,
+      "output_tokens": 406,
+      "sections_named": [
+        "unattributed s.3",
+        "indian contract act s.29",
+        "indian contract act s.69"
+      ],
+      "corpus_verified": [
+        "indian contract act s.29",
+        "indian contract act s.69"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X01",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the contract formed through electronic means (Section 10A of the Information Technology Act, 2000) is valid.\n\nTo prove these electronic records in court, we can rely on Section 85 of the Bharatiya Sakshya Adhiniyam, 2023, which presumes that every electronic record purporting to be an agreement containing the electronic or digital signature of the parties was concluded by affixing the electronic or digital signature of the parties.\n\nTherefore, the contract formed through email and PDF records can be proven in court using the provisions of Section 85 of the Bharatiya Sakshya Adhiniyam, 2023.",
+      "latency_ms": 5139.1,
+      "input_tokens": 947,
+      "output_tokens": 142,
+      "sections_named": [
+        "information technology act s.10A",
+        "information technology act s.85",
+        "bharatiya sakshya adhiniyam s.85"
+      ],
+      "corpus_verified": [
+        "information technology act s.10A",
+        "information technology act s.85",
+        "bharatiya sakshya adhiniyam s.85"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X02",
+      "condition": "no_rag",
+      "answer": "In India, the buyer's intention to never pay is considered a breach of contract under the Indian Contract Act, 1872 (Section 60). However, if the buyer's intention to never pay is accompanied by an act that is intended to cause loss or injury to the seller, it can also be considered a criminal offence under various sections of the Indian Penal Code (IPC).\n\nSpecifically, Section 380 of the IPC deals with \"False representation as good as gold\" and can be applied in cases where the buyer makes a false representation about the goods or their quality, with the intention of causing loss or injury to the seller.\n\nAdditionally, Section 420 of the IPC deals with \"Cheating and dishonestly inducing delivery of property\" and can be applied in cases where the buyer intentionally induces the seller to deliver the goods, with the intention of never paying.\n\nIt is essential to note that the specific sections and Acts that apply will depend on the facts and circumstances of the case. A thorough analysis of the contract and the buyer's actions is necessary to determine whether a breach of contract or a criminal offence has occurred.",
+      "latency_ms": 6401.9,
+      "input_tokens": 77,
+      "output_tokens": 225,
+      "sections_named": [
+        "indian contract act s.60",
+        "indian contract act s.380",
+        "unattributed s.420"
+      ],
+      "corpus_verified": [
+        "indian contract act s.60"
+      ],
+      "fabricated": [
+        "indian contract act s.380"
+      ],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X02",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the answer is that it is only a contract breach. Section 44 of the Sale of Goods Act, 1930, states that when the seller is ready and willing to deliver the goods and requests the buyer to take delivery, and the buyer does not within a reasonable time after such request take delivery of the goods, the buyer is liable to the seller for any loss occasioned by his neglect or refusal to take delivery.\n\nThere is no provision in the Sale of Goods Act, 1930, that specifically makes the buyer's intention to not pay a criminal offence. Therefore, the buyer's actions would be considered a breach of contract, but not a criminal offence.",
+      "latency_ms": 4976.5,
+      "input_tokens": 915,
+      "output_tokens": 141,
+      "sections_named": [
+        "sale of goods act s.44"
+      ],
+      "corpus_verified": [
+        "sale of goods act s.44"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X03",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please note that this is not a substitute for professional legal advice.\n\nBased on Indian law, the duty owed by the person who received the machinery (the recipient) would be governed by the Indian Contract Act, 1872, particularly Section 123, which states that a person who receives goods or property on the express condition that they shall be used for a particular purpose, and that they shall be returned to the person from whom they were received, shall be liable to restore them to that person if they are not used for that purpose or are not returned as required.\n\nHowever, if the recipient had received the machinery with the understanding that they would repair it, the liability would shift to the person who had handed over the machinery (the donor). In this case, the liability would be governed by the Indian Sale of Goods Act, 1930, particularly Section 6, which states that where the goods are lost or damaged before the risk passes to the buyer, the seller is liable for the loss or damage.\n\nAdditionally, the Consumer Protection Act, 1986, may also apply if the recipient is a consumer and the damage was caused due to a defect in the machinery.\n\nIn this scenario, the donor (the person who handed over the machinery) would be liable for the damage caused to the machinery, as they had handed it over for repair. The donor would be responsible for proving that they had handed over the machinery with the intention of repairing it and that the recipient had agreed to take on the responsibility of repairing it.\n\nPlease note that this is a general answer and the specific circumstances of the case would need to be considered to determine the liability. It is always recommended to consult with a lawyer for specific advice.",
+      "latency_ms": 9321.1,
+      "input_tokens": 78,
+      "output_tokens": 351,
+      "sections_named": [
+        "indian contract act s.123",
+        "sale of goods act s.6"
+      ],
+      "corpus_verified": [
+        "sale of goods act s.6"
+      ],
+      "fabricated": [
+        "indian contract act s.123"
+      ],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X03",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the relevant sections of the Indian Contract Act, 1872, that apply to this scenario are:\n\n* Section 73: Compensation for loss or damage caused by breach of contract\n* Section 161: Bailee's responsibility when goods are not duly returned\n\nIn this scenario, the machinery was handed over for repair, which implies a bailor-bailee relationship. The workshop is the bailor, and the machinery is the goods bailed.\n\nAccording to Section 161, if the bailee (workshop) fails to return the goods (machinery) at the proper time, the bailor (workshop) is responsible for any loss, destruction, or deterioration of the goods from that time. Since the machinery was damaged in the workshop, the workshop is liable for the damage.\n\nHowever, it is not explicitly stated in the provided context whether the workshop was aware of the faults in the machinery that caused the damage. If the workshop was aware of the faults, they would be responsible for the damage under Section 161. If they were not aware, they may not be liable under this section.\n\nIt is also worth noting that Section 73 does not provide a clear answer to this scenario, as it only addresses compensation for loss or damage caused by breach of contract, and does not specifically address the bailor-bailee relationship.",
+      "latency_ms": 8352.7,
+      "input_tokens": 892,
+      "output_tokens": 276,
+      "sections_named": [
+        "indian contract act s.73",
+        "indian contract act s.161",
+        "unattributed s.161",
+        "unattributed s.161",
+        "indian contract act s.73"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73",
+        "indian contract act s.161",
+        "indian contract act s.73"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X04",
+      "condition": "no_rag",
+      "answer": "As a legal assistant for Indian law, I can provide the following information.\n\nWhen someone signs as a surety for a debtor, they are undertaking an obligation to pay the debt or liability if the debtor fails to do so. This is known as a \"suretyship\" obligation.\n\nThe nature of this obligation is that the surety is personally liable to pay the debt, whereas the debtor is only liable to pay the debt up to the amount of their own assets. This means that the surety is at risk of losing their own assets to satisfy the debt, whereas the debtor's assets are generally protected.\n\nThis obligation differs from indemnity in that:\n\n* Indemnity is a contractual arrangement where one party agrees to compensate another party for losses incurred, whereas suretyship is a guarantee of payment.\n* Indemnity does not involve personal liability, whereas suretyship does.\n* Indemnity is typically limited to a specific amount or event, whereas suretyship is often unlimited and ongoing.\n\nIn India, the suretyship obligation is governed by the Indian Contract Act, 1872, particularly Section 125, which states that a surety is liable to pay the debt if the principal debtor fails to pay.\n\nAdditionally, the Indian Companies Act, 2013, and the Sick Industrial Companies (Special Powers) Act, 1985, also provide provisions related to suretyship obligations.\n\nIt is essential to note that the specific terms and conditions of the suretyship agreement should be reviewed to understand the obligations and liabilities of the surety.",
+      "latency_ms": 8667.8,
+      "input_tokens": 80,
+      "output_tokens": 317,
+      "sections_named": [
+        "indian contract act s.125"
+      ],
+      "corpus_verified": [
+        "indian contract act s.125"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "X04",
+      "condition": "with_rag",
+      "answer": "According to Section 126 of the Indian Contract Act, 1872, a \"contract of guarantee\" is a contract to perform the promise, or discharge the liability, of a third person in case of his default. The person who gives the guarantee is called the \"surety\", the person in respect of whose default the guarantee is given is called the \"principal debtor\", and the person to whom the guarantee is given is called the \"creditor\".\n\nIn this context, the surety's obligation is to take over the rights of the creditor against the principal debtor, as stated in Section 140 of the Indian Contract Act, 1872. This means that the surety is liable for the same amount as the creditor, and also for any interest and charges that may have become due.\n\nThe surety's obligation differs from indemnity in that the surety is not only liable for the principal debtor's debt, but also for any additional losses or expenses that may arise as a result of the principal debtor's default. In contrast, indemnity typically only covers the amount of the debt itself, without any additional losses or expenses.\n\nTherefore, the nature of the surety's obligation is to take over the entire liability of the principal debtor, including any additional losses or expenses, whereas indemnity is limited to covering the amount of the debt itself.",
+      "latency_ms": 8094.7,
+      "input_tokens": 777,
+      "output_tokens": 271,
+      "sections_named": [
+        "indian contract act s.126",
+        "indian contract act s.140"
+      ],
+      "corpus_verified": [
+        "indian contract act s.126",
+        "indian contract act s.140"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "condition": "no_rag",
+      "answer": "In India, the court that has original jurisdiction to entertain a suit for breach of a supply contract is the Civil Court having jurisdiction over the place where the party who is supposed to perform the contract is situated.\n\nSpecifically, under Section 20 of the Code of Civil Procedure, 1908, the court having jurisdiction over the place where the party who is supposed to perform the contract is situated is the court that has original jurisdiction to entertain a suit.\n\nAdditionally, under Section 17 of the Indian Contract Act, 1872, a contract for the supply of goods or services can be enforced through a suit in a Civil Court.\n\nIt is also worth noting that under Section 8 of the Arbitration and Conciliation Act, 1996, if the parties to the contract agree to resolve disputes through arbitration, the arbitration tribunal will have jurisdiction to hear the dispute. However, if the parties do not agree to arbitration, the court will have jurisdiction to entertain the suit.",
+      "latency_ms": 5650.7,
+      "input_tokens": 69,
+      "output_tokens": 195,
+      "sections_named": [
+        "indian contract act s.20",
+        "indian contract act s.17",
+        "indian contract act s.8"
+      ],
+      "corpus_verified": [
+        "indian contract act s.20",
+        "indian contract act s.17",
+        "indian contract act s.8"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P01",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, we can determine that the suit should be instituted in the court with jurisdiction over the defendant's residence or business location, as per Section 19 of the Code of Civil Procedure, 1908.\n\nSince the question does not specify the location of the defendant or the contract, we cannot determine the exact court with jurisdiction. However, in general, if the defendant resides or carries on business in a particular city, the court with jurisdiction would be the court of that city.\n\nIt is also worth noting that the Sale of Goods Act, 1930, specifically mentions the court with jurisdiction in Section 58, but this section is related to specific performance of a contract, not breach of contract.",
+      "latency_ms": 5199.1,
+      "input_tokens": 928,
+      "output_tokens": 144,
+      "sections_named": [
+        "code of civil procedure s.19",
+        "indian contract act s.58"
+      ],
+      "corpus_verified": [
+        "code of civil procedure s.19",
+        "indian contract act s.58"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "condition": "no_rag",
+      "answer": "In India, the law regarding interest on unpaid contract amount in a civil suit is governed by the following sections and Acts:\n\n* Section 31 of the Indian Contract Act, 1872: This section provides that interest shall be paid on a debt or demand, unless the contrary is provided for by any law.\n* Section 35 of the Indian Contract Act, 1872: This section states that interest shall be paid on a sum due on a contract, from the date of the contract, unless the contrary is provided for by any law.\n* Section 5 of the Limitation Act, 1963: This section provides that interest shall be calculated from the date of the contract, unless the contrary is provided for by any law.\n\nAdditionally, the following provisions also apply:\n\n* Section 28 of the Indian Contract Act, 1872: This section provides that interest shall be paid on a sum due on a contract, from the date of the contract, unless the contrary is provided for by any law.\n* Order XXI, Rule 1 of the Code of Civil Procedure, 1908: This rule provides that interest shall be paid on a sum due on a contract, from the date of the contract, unless the contrary is provided for by any law.\n\nIt is also worth noting that the Supreme Court of India has held that interest on a contract can be claimed in a civil suit, and the interest rate is usually calculated at the rate specified in the contract or at the rate specified by law, whichever is higher.",
+      "latency_ms": 7892.8,
+      "input_tokens": 68,
+      "output_tokens": 308,
+      "sections_named": [
+        "indian contract act s.31",
+        "indian contract act s.35",
+        "limitation act s.5",
+        "indian contract act s.28"
+      ],
+      "corpus_verified": [
+        "indian contract act s.31",
+        "indian contract act s.35",
+        "limitation act s.5",
+        "indian contract act s.28"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P02",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the answer is not explicitly stated. The relevant sections mentioned are:\n\n* Section 80 of the Negotiable Instruments Act, 1881, which deals with interest when no rate is specified.\n* Section 34 of the Code of Civil Procedure, 1908, which deals with interest in general.\n* Section 61 of the Sale of Goods Act, 1930, which deals with interest by way of damages and special damages.\n\nHowever, none of these sections explicitly address the question of claiming interest on an unpaid contract amount in a civil suit.",
+      "latency_ms": 4431.0,
+      "input_tokens": 879,
+      "output_tokens": 117,
+      "sections_named": [
+        "code of civil procedure s.80",
+        "code of civil procedure s.34",
+        "code of civil procedure s.61"
+      ],
+      "corpus_verified": [
+        "code of civil procedure s.80",
+        "code of civil procedure s.34",
+        "code of civil procedure s.61"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "condition": "no_rag",
+      "answer": "In India, a notice is required before suing a government department. \n\nAccording to Section 6 of the Administrative Tribunal Act, 2019, a party desirous of filing a petition before an administrative tribunal must give a notice to the respondent, which includes a government department.\n\nAdditionally, Section 24 of the Right to Information Act, 2005, requires that a citizen must give a notice to the public authority before filing an application under the Act.\n\nIt is also mentioned in Section 33 of the Consumer Protection Act, 1986, that a consumer must give a notice to the supplier before filing a complaint.\n\nHowever, the specific requirement of a notice may vary depending on the nature of the dispute and the relevant Act or Section that applies.\n\nIn general, a notice is required to give the government department an opportunity to respond and address the grievances before initiating legal proceedings.",
+      "latency_ms": 5139.5,
+      "input_tokens": 64,
+      "output_tokens": 177,
+      "sections_named": [
+        "unattributed s.6",
+        "indian contract act s.24",
+        "indian contract act s.33"
+      ],
+      "corpus_verified": [
+        "indian contract act s.24",
+        "indian contract act s.33"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "P03",
+      "condition": "with_rag",
+      "answer": "According to Section 80 of the Code of Civil Procedure, 1908, no suit can be instituted against the Government or a public officer in respect of any act purporting to be done by such public officer in his official capacity, until the expiration of two months next after notice in writing has been delivered to or left at the office of the public officer.\n\nTherefore, the answer is yes, a notice is required before suing a government department.",
+      "latency_ms": 3961.8,
+      "input_tokens": 936,
+      "output_tokens": 91,
+      "sections_named": [
+        "code of civil procedure s.80"
+      ],
+      "corpus_verified": [
+        "code of civil procedure s.80"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D01",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please note that this is not a substitute for professional legal advice.\n\nThe provisions that may be in play in this scenario are:\n\n1. **Section 420 of the Indian Penal Code (IPC)**: This section deals with cheating and dishonestly inducing delivery of property. If the FIR alleges that the client induced the delivery of goods, this section may be applicable.\n2. **Section 138 of the Negotiable Instruments Act, 1881**: This section deals with bouncing of cheques. If the FIR alleges that the client issued a cheque that bounced, this section may be applicable.\n\nUnder Section 138, the exposure for the accused (in this case, the client) can be:\n\n* **Criminal liability**: Up to 7 years of imprisonment and/or a fine of up to Rs 2,00,000 (or the value of the cheque).\n* **Civil liability**: The accused may also be liable to pay the amount of the cheque (Rs 18,40,000) along with interest and costs.\n\nIt's essential to note that the specific provisions and exposure may vary depending on the facts of the case and the jurisdiction in which it is being tried. A thorough investigation and legal analysis are necessary to determine the exact provisions and exposure.",
+      "latency_ms": 7005.9,
+      "input_tokens": 90,
+      "output_tokens": 260,
+      "sections_named": [
+        "unattributed s.420",
+        "indian contract act s.138",
+        "indian contract act s.138"
+      ],
+      "corpus_verified": [
+        "indian contract act s.138",
+        "indian contract act s.138"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D01",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the following provisions are in play:\n\n1. Section 72 Indian Contract Act, 1872: This section deals with the liability of a person to whom money is paid or a thing is delivered by mistake or under coercion. In this case, the accused (Sunrise Distributors Pvt. Ltd.) allegedly induced the delivery of goods worth Rs 18,40,000, which could be considered as an act of coercion. However, the FIR alleges that the accused issued a cheque that bounced, which is a separate issue.\n2. Section 73 Indian Contract Act, 1872: This section deals with compensation for loss or damage caused by breach of contract. If the accused is found liable for inducing the delivery of goods, the complainant (Ravi Traders) may be entitled to compensation for the loss incurred due to the breach of contract.\n\nHowever, the key issue here is the bounced cheque, which is a separate matter. The relevant provision would be:\n\n* Section 138 of the Negotiable Instruments Act, 1881: This section deals with the bouncing of cheques. If the accused issued a cheque that bounced, the complainant may be able to file a case under this section, which can lead to criminal proceedings.\n\nThe exposure for the accused (Sunrise Distributors Pvt. Ltd.) would depend on the specific circumstances of the case and the applicable laws. However, based on the provided context, it appears that the accused may be liable for inducing the delivery of goods and potentially for bouncing a cheque, which could lead to criminal proceedings.\n\nIt's worth noting that the FIR alleges that the accused induced the delivery of goods, which could be considered as an act of coercion. However, the FIR does not explicitly state that the accused issued a cheque that bounced. Therefore, the exposure for the accused would depend on the specific allegations made in the FIR and the evidence presented in court.",
+      "latency_ms": 10973.4,
+      "input_tokens": 1071,
+      "output_tokens": 388,
+      "sections_named": [
+        "indian contract act s.72",
+        "indian contract act s.73",
+        "negotiable instruments act s.138"
+      ],
+      "corpus_verified": [
+        "indian contract act s.72",
+        "indian contract act s.73",
+        "negotiable instruments act s.138"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D02",
+      "condition": "no_rag",
+      "answer": "I can provide general guidance, but please note that specific circumstances and laws may vary.\n\nIn India, the quantum of damages claimed in a supply agreement dispute can be governed by the following provisions:\n\n1. **Section 31 of the Indian Contract Act, 1872**: This section deals with damages for breach of contract. It states that where one party has committed a breach of contract, the other party is entitled to claim damages.\n2. **Section 35 of the Indian Contract Act, 1872**: This section provides that the damages claimed must be reasonable and not excessive. The court will consider the following factors to determine the quantum of damages:\n\t* The extent of the loss suffered by the innocent party\n\t* The profit that the breaching party would have made if the contract had been performed\n\t* The amount of damages that the breaching party would have paid if the contract had been performed\n3. **Section 45 of the Indian Contract Act, 1872**: This section deals with the payment of damages. It states that the damages claimed must be paid within a reasonable time, usually within a specified period (e.g., 30 days).\n4. **The Indian Penal Code, 1860 (IPC)**: In cases where the breach of contract is also considered a criminal offense (e.g., cheating or fraud), the court may award damages under the IPC.\n\nAdditionally, the following laws may also be relevant:\n\n1. **The Supply and Services Act, 2008**: This Act regulates the supply of goods and services and provides provisions for damages in case of breach of contract.\n2. **The Consumer Protection Act, 1986**: This Act provides provisions for damages in case of breach of contract by suppliers to consumers.\n\nPlease note that the specific laws and provisions that apply will depend on the circumstances of the case and the laws of the state or region where the dispute is being heard. It is always best to consult with a qualified lawyer to determine the applicable laws and provisions.",
+      "latency_ms": 10161.8,
+      "input_tokens": 76,
+      "output_tokens": 405,
+      "sections_named": [
+        "indian contract act s.31",
+        "indian contract act s.35",
+        "indian contract act s.45"
+      ],
+      "corpus_verified": [
+        "indian contract act s.31",
+        "indian contract act s.35",
+        "indian contract act s.45"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D02",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the relevant provisions that govern the quantum of damages that can be claimed in this scenario are:\n\n1. Section 73 of the Indian Contract Act, 1872, which deals with compensation for loss or damage caused by breach of contract. However, this section specifically states that compensation is not to be given for remote and indirect loss or damage.\n2. Section 38 of the Sale of Goods Act, 1930, which deals with instalment deliveries. While this section is not directly relevant to the claim of damages, it may be relevant in determining the scope of the supply agreement.\n3. Section 60 of the Sale of Goods Act, 1930, which deals with repudiation of contract before due date. This section may be relevant in determining the validity of the legal notice and the potential for damages.\n\nHowever, the most relevant provision in this scenario is likely Section 73 of the Indian Contract Act, 1872, which deals with compensation for loss or damage caused by breach of contract. To determine the quantum of damages, the court would likely consider the following factors:\n\n* The nature and extent of the breach\n* The loss or damage suffered by the claimant\n* The circumstances surrounding the breach\n* The terms of the supply agreement\n\nIt is also worth noting that the judgment extract National Insurance Company Ltd. v. Vedic Resorts and Hotels Pvt. Ltd. provides guidance on how the court assesses damages in a specific context. However, this judgment is not directly relevant to the claim of damages in this scenario, but rather provides a general framework for assessing damages in contract disputes.",
+      "latency_ms": 9374.9,
+      "input_tokens": 903,
+      "output_tokens": 329,
+      "sections_named": [
+        "indian contract act s.73",
+        "indian contract act s.38",
+        "sale of goods act s.60",
+        "indian contract act s.73"
+      ],
+      "corpus_verified": [
+        "indian contract act s.73",
+        "indian contract act s.38",
+        "sale of goods act s.60",
+        "indian contract act s.73"
+      ],
+      "fabricated": [],
+      "hit_expected": true,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D03",
+      "condition": "no_rag",
+      "answer": "To test whether the principal is bound by the agreement, you can apply the following principles:\n\n1. **Agent's Authority**: The court will examine the authority given to the agent by the principal to determine whether the agent had the power to enter into the agreement.\n2. **Actual Authority**: The agent must have actual authority to act on behalf of the principal. This means the principal must have explicitly authorized the agent to perform specific acts or make decisions.\n3. **Apparent Authority**: Even if the principal did not explicitly authorize the agent, if the agent has apparent authority, the principal may be bound. Apparent authority arises when the principal has given the agent the power to act in a general sense, and the agent has acted in a manner that suggests they have the authority to perform specific acts.\n4. **Implied Authority**: The principal may be bound if the agent has implied authority, which is inferred from the circumstances. This can include situations where the principal has given the agent the power to act in a particular way, even if it was not explicitly stated.\n\nIn India, the relevant sections and Acts that apply to this scenario are:\n\n* **Indian Contract Act, 1872**: Sections 124-127 deal with the authority of an agent and the liability of the principal.\n* **Specific Relief Act, 1963**: This Act provides for the remedies available to a principal who is bound by an agreement entered into by their agent.\n\nIt's essential to note that the specific circumstances of each case will determine whether the principal is bound by the agreement. A thorough analysis of the authority given to the agent, the nature of the agreement, and the applicable laws will be necessary to determine the outcome.",
+      "latency_ms": 8617.9,
+      "input_tokens": 75,
+      "output_tokens": 343,
+      "sections_named": [],
+      "corpus_verified": [],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "D03",
+      "condition": "with_rag",
+      "answer": "To determine whether the principal is bound by the agreement, we need to consider the following factors:\n\n1. **Whether the person signing the agreement is an agent**: This is a crucial point. If the person signing the agreement is indeed an agent, then we need to examine the scope of their authority.\n2. **The scope of the agent's authority**: According to Section 227 of the Indian Contract Act, 1872, when an agent does more than they are authorized to do, and the part within their authority can be separated from the part beyond their authority, only the part within their authority is binding as between the agent and their principal.\n3. **Disclosure of the agent's authority**: If the agent discloses their authority before the contract is completed, the other contracting party may refuse to fulfill the contract, if they can show that they had reason to suspect that the agent was acting on behalf of someone else.\n\nTo test whether the principal is bound, we would need to know the following:\n\n* Is the person signing the agreement an agent?\n* What is the scope of their authority?\n* Was the agent's authority disclosed before the contract was completed?\n\nWithout this information, it is not possible to provide a definitive answer.",
+      "latency_ms": 7412.5,
+      "input_tokens": 840,
+      "output_tokens": 248,
+      "sections_named": [
+        "indian contract act s.227"
+      ],
+      "corpus_verified": [
+        "indian contract act s.227"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "C01",
+      "condition": "no_rag",
+      "answer": "Yes, there are several Supreme Court judgments on arbitration agreements in unstamped contracts. \n\nOne notable case is the Supreme Court judgment in the case of Shreya Dalmia v. Union of India (2015) 7 SCC 1, where the court held that an arbitration agreement in an unstamped contract is valid under Section 29 of the Arbitration and Conciliation Act, 1996 (ACA), and that the stamp duty is not a condition precedent for the validity of the arbitration agreement.\n\nAnother significant case is the Supreme Court judgment in the case of Union of India v. Vedanta Limited (2018) 1 SCC 1, where the court held that an arbitration agreement in an unstamped contract is valid under Section 8 of the Arbitration and Conciliation Act, 1996 (ACA), and that the stamp duty is not a condition precedent for the validity of the arbitration agreement.\n\nThese judgments have established that an arbitration agreement in an unstamped contract is valid under the ACA, and that the stamp duty is not a condition precedent for the validity of the arbitration agreement.",
+      "latency_ms": 6301.8,
+      "input_tokens": 67,
+      "output_tokens": 222,
+      "sections_named": [
+        "arbitration and conciliation act s.29",
+        "arbitration and conciliation act s.8"
+      ],
+      "corpus_verified": [
+        "arbitration and conciliation act s.29",
+        "arbitration and conciliation act s.8"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "C01",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, it appears that there is a Supreme Court judgment on this issue. Specifically, the judgment states that agreements which are not stamped or are inadequately stamped are inadmissible in evidence under Section 35 of the Stamp Act, but are not rendered void or void ab initio or unenforceable.\n\nHowever, the judgment does not explicitly state that arbitration agreements in unstamped contracts are non-existent, unenforceable, or invalid. Instead, it suggests that non-stamping or inadequate stamping is a curable defect, and that the Stamp Act provides a procedure for curing such defects.\n\nTherefore, the answer to the question is that there is a Supreme Court judgment on this issue, but it does not provide a clear answer to the question of whether arbitration agreements in unstamped contracts are non-existent, unenforceable, or invalid.",
+      "latency_ms": 5892.5,
+      "input_tokens": 1097,
+      "output_tokens": 176,
+      "sections_named": [
+        "indian contract act s.35"
+      ],
+      "corpus_verified": [
+        "indian contract act s.35"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "C02",
+      "condition": "no_rag",
+      "answer": "The Supreme Court of India has established the following principles regarding delay and damages in construction contracts:\n\n1. **Section 111 of the Indian Contract Act, 1872**: The Supreme Court has held that delay in completion of a construction project can be considered as a breach of contract, entitling the contractor to claim damages (Rajeshwar Singh v. State of Jharkhand, 2011).\n2. **Section 43 of the Indian Contract Act, 1872**: The Court has also held that a contractor is entitled to claim damages for delay in payment from the employer (Rajeshwar Singh v. State of Jharkhand, 2011).\n3. **Section 7 of the Consumer Protection Act, 1986**: The Supreme Court has applied the principles of Section 7 of the Consumer Protection Act to construction contracts, holding that a contractor can claim damages for delay in completion of a project (S. S. S. v. M/s. S. S. Construction Co., 2013).\n4. **Section 14 of the Indian Contract Act, 1872**: The Court has also held that a contractor can claim damages for delay in completion of a project under Section 14 of the Indian Contract Act (S. S. S. v. M/s. S. S. Construction Co., 2013).\n\nSpecific judgments:\n\n* **S. S. S. v. M/s. S. S. Construction Co.** (2013) 20 SCC 1: The Supreme Court held that a contractor can claim damages for delay in completion of a project under Section 7 of the Consumer Protection Act.\n* **Rajeshwar Singh v. State of Jharkhand** (2011) 1 SCC 1: The Supreme Court held that delay in completion of a construction project can be considered as a breach of contract, entitling the contractor to claim damages.\n\nPlease note that these principles and judgments are subject to change and may not be exhaustive. It is always recommended to consult with a lawyer",
+      "latency_ms": 10429.8,
+      "input_tokens": 66,
+      "output_tokens": 420,
+      "sections_named": [
+        "indian contract act s.111",
+        "indian contract act s.43",
+        "consumer protection act s.7",
+        "consumer protection act s.7",
+        "indian contract act s.14",
+        "indian contract act s.14",
+        "consumer protection act s.7"
+      ],
+      "corpus_verified": [
+        "indian contract act s.43",
+        "consumer protection act s.7",
+        "consumer protection act s.7",
+        "indian contract act s.14",
+        "indian contract act s.14",
+        "consumer protection act s.7"
+      ],
+      "fabricated": [
+        "indian contract act s.111"
+      ],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "C02",
+      "condition": "with_rag",
+      "answer": "Based on the provided context, the relevant Supreme Court authority on delay and damages in construction contracts can be found in the following:\n\n1. Section 35B of the Code of Civil Procedure, 1908, which deals with costs for causing delay. This section provides that if a party fails to take a step required by the Code on a specified date or obtains an adjournment, the Court may order the party to pay costs to the other party.\n\n2. The issue in M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India, which deals with the interpretation of a contract condition requiring the measurement of quantities used for payment for embankment construction with soil or with pond, and the relevance of the dissenting opinion of the arbitrators.\n\nHowever, for specific guidance on delay and damages in construction contracts, the following Supreme Court judgments are relevant:\n\n* M/s Hindustan Construction Company Limited v. M/s National Highways Authority of India (2018) 7 SCC 1: This judgment deals with the interpretation of a contract condition and the relevance of the dissenting opinion of the arbitrators. While not specifically dealing with delay and damages, it provides guidance on the scope of interference with an arbitral award under Section 34 of the Arbitration and Conciliation Act, 1996.\n* Konkan Railway Corporation Limited v. Chenab Bridge Project Undertaking (2011) 1 SCC 1: This judgment deals with the award of the arbitral tribunal and the decision of the Single Judge of the High Court. While not specifically dealing with delay and damages, it provides guidance on the scope of interference with an arbitral award under Section 34 of the Arbitration and Conciliation Act, 1996.\n\nFor specific guidance on delay and damages in construction contracts, it is recommended to consult the following:\n\n* The Arbitration and Conciliation Act, 1996, particularly Sections 34 and 37, which deal with the scope of interference with an arbitral award.\n* The Code of Civil Procedure, 1908, particularly Section",
+      "latency_ms": 11566.5,
+      "input_tokens": 989,
+      "output_tokens": 420,
+      "sections_named": [
+        "code of civil procedure s.35B",
+        "indian contract act s.34",
+        "indian contract act s.34"
+      ],
+      "corpus_verified": [
+        "code of civil procedure s.35B",
+        "indian contract act s.34",
+        "indian contract act s.34"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N01",
+      "condition": "no_rag",
+      "answer": "Section 498A of the Indian Penal Code (IPC) provides protection to women from cruelty by her husband or his relatives. \n\nSection 498A IPC states that whoever, being the husband or relative of her husband, or any other person having authority over the wife in a domestic capacity, intentionally inflicts grievous hurt, or endangers the life or health of a child of such husband or relative, shall be punished with imprisonment of either description for a term which may extend to five years, and shall also be liable to fine.\n\nThis section is often referred to as the \"Domestic Violence Act\" and is a crucial law that protects women from domestic violence, harassment, and abuse by their husbands or their relatives.",
+      "latency_ms": 4343.7,
+      "input_tokens": 72,
+      "output_tokens": 145,
+      "sections_named": [
+        "unattributed s.498A",
+        "unattributed s.498A"
+      ],
+      "corpus_verified": [],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N01",
+      "condition": "with_rag",
+      "answer": "There is no Section 498A in the provided context. The Indian Penal Code (IPC) is mentioned in Section 15 of the Indian Contract Act, 1872, but Section 498A is not present in the provided context.\n\nHowever, Section 498A of the Indian Penal Code (IPC) is a separate provision that deals with cruelty by a husband. It is not present in the provided context, but I can provide you with the relevant information.\n\nSection 498A of the Indian Penal Code (IPC) states:\n\n\"498A. Husband or relative of husband of a woman subjecting her to cruelty.\u2014Whoever, being the husband or relative of the husband of a woman, subjects her to cruelty shall be punished with imprisonment of either description for a term which may extend to five years and shall also be liable to fine.\"",
+      "latency_ms": 5637.6,
+      "input_tokens": 955,
+      "output_tokens": 170,
+      "sections_named": [
+        "indian contract act s.498A",
+        "indian contract act s.15",
+        "indian contract act s.498A",
+        "indian contract act s.498A",
+        "unattributed s.498A"
+      ],
+      "corpus_verified": [
+        "indian contract act s.15"
+      ],
+      "fabricated": [
+        "indian contract act s.498A",
+        "indian contract act s.498A",
+        "indian contract act s.498A"
+      ],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N02",
+      "condition": "no_rag",
+      "answer": "For e-commerce operators in India, the GST registration thresholds are as follows:\n\n* If the e-commerce operator is required to collect GST, the threshold is \u20b940 lakhs (\u20b9500,000) in a calendar month.\n* If the e-commerce operator is not required to collect GST, the threshold is \u20b92.5 crores (\u20b925,000,000) in a calendar quarter.\n\nThese thresholds are mentioned in Section 2(6) of the Goods and Services Tax (GST) Act, 2017.\n\nAdditionally, e-commerce operators are required to obtain GST registration if they are required to collect GST on behalf of suppliers, as per Section 22 of the GST Act.\n\nIt's worth noting that the GST Council has also notified the e-commerce operators who are required to collect GST, and these are typically operators who have a turnover of \u20b940 lakhs or more in a calendar month.",
+      "latency_ms": 5183.4,
+      "input_tokens": 66,
+      "output_tokens": 185,
+      "sections_named": [
+        "unattributed s.2",
+        "indian contract act s.22"
+      ],
+      "corpus_verified": [
+        "indian contract act s.22"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N02",
+      "condition": "with_rag",
+      "answer": "The question does not provide any context from the given Acts and Sections that directly relate to GST registration thresholds for an e-commerce operator. The provided Acts and Sections are related to:\n\n* Information Technology Act, 2000 (Sections 6A, 35)\n* Consumer Protection Act, 2019 (Section 94)\n* Indian Partnership Act, 1932 (Section 58)\n\nThese Acts and Sections do not mention GST registration thresholds or e-commerce operators. Therefore, I cannot provide an answer to the question based on the provided context.",
+      "latency_ms": 4435.4,
+      "input_tokens": 893,
+      "output_tokens": 110,
+      "sections_named": [
+        "information technology act s.94",
+        "information technology act s.58"
+      ],
+      "corpus_verified": [
+        "information technology act s.58"
+      ],
+      "fabricated": [
+        "information technology act s.94"
+      ],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N03",
+      "condition": "no_rag",
+      "answer": "Under the Motor Vehicles Act, 1988, in a hit-and-run case, the compensation is governed by Section 140 of the Act.\n\nSection 140 of the Motor Vehicles Act, 1988, provides for compensation to the victim of a hit-and-run case. The compensation includes:\n\n* Medical expenses incurred by the victim\n* Loss of income due to the injury\n* Loss of earning capacity\n* Pain and suffering\n* Funeral expenses (in case of death)\n\nThe compensation is payable to the victim or the heirs of the victim, as the case may be. The amount of compensation is determined by the State Government, and the decision of the State Government is final.\n\nAdditionally, Section 140 also provides for the establishment of a Motor Vehicles Fund, which is used to provide compensation to the victims of hit-and-run cases.",
+      "latency_ms": 4898.9,
+      "input_tokens": 70,
+      "output_tokens": 169,
+      "sections_named": [
+        "indian contract act s.140",
+        "indian contract act s.140",
+        "unattributed s.140"
+      ],
+      "corpus_verified": [
+        "indian contract act s.140",
+        "indian contract act s.140"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    },
+    {
+      "task_id": "N03",
+      "condition": "with_rag",
+      "answer": "The Motor Vehicles Act, 1988, does not explicitly mention a specific section on compensation for hit-and-run cases. However, the question seems to be related to the concept of compensation in general.\n\nIn the context of the provided sections, the relevant sections are:\n\n* Section 21 of the Specific Relief Act, 1963, which deals with the power to award compensation in certain cases, including breach of contract.\n* Section 23 of the Limitation Act, 1963, which deals with the computation of the period of limitation for suits for compensation for acts that do not give rise to a cause of action unless some specific injury results therefrom.\n* Section 24 of the Specific Relief Act, 1963, which deals with the bar of suit for compensation for breach after dismissal of a suit for specific performance.\n\nHowever, none of these sections directly apply to hit-and-run cases under the Motor Vehicles Act, 1988.\n\nTo answer the question accurately, I would need to know the specific section of the Motor Vehicles Act, 1988, that deals with compensation for hit-and-run cases. If you provide the relevant section, I can try to answer the question accordingly.",
+      "latency_ms": 7054.4,
+      "input_tokens": 811,
+      "output_tokens": 240,
+      "sections_named": [
+        "specific relief act s.21",
+        "specific relief act s.23",
+        "specific relief act s.24"
+      ],
+      "corpus_verified": [
+        "specific relief act s.21",
+        "specific relief act s.23",
+        "specific relief act s.24"
+      ],
+      "fabricated": [],
+      "hit_expected": false,
+      "declined": false,
+      "error": null
+    }
+  ]
+}
