@@ -75,7 +75,21 @@ class Settings(BaseSettings):
     # Semantic match is the primary signal for natural-language questions; BM25 acts as a
     # precision correction, so it is weighted lower in rank fusion.
     retrieval_dense_weight: float = 1.0
-    retrieval_keyword_weight: float = 0.6
+    # 0.15, measured by eval/weight_sweep.py over 22 tasks with known expected sections:
+    #
+    #   weight  0.00   0.05   0.10   0.15   0.20   0.30   0.45   0.60+
+    #   recall  0.614  0.659  0.636  0.682  0.659  0.614  0.568  0.568
+    #
+    # This was 0.6, chosen by reasoning that semantic match should dominate. The reasoning was
+    # right and the number was wrong: at 0.6 BM25 made retrieval *worse than disabling it*
+    # (0.568 vs 0.614). Reciprocal Rank Fusion adds both retrievers' contributions, so a
+    # document dense-ranked 20th but keyword-ranked 1st outscores one dense-ranked 5th
+    # (0.02234 vs 0.01538). That is correct behaviour when both retrievers are strong; on this
+    # corpus BM25 without an explicit section number in the query matches generic legal
+    # vocabulary, and those spurious agreements promoted noise over good semantic hits.
+    # At 0.15 the agreement bonus is small enough to break ties without reordering, and BM25 is
+    # worth +0.068 recall over dense alone.
+    retrieval_keyword_weight: float = 0.15
     retrieval_graph_hops: int = 2
     retrieval_graph_limit: int = 20
 

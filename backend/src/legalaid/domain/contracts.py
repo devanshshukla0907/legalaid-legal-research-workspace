@@ -303,6 +303,10 @@ class RetrievalRequest(Contract):
     enable_graph: bool | None = None
     enable_dense: bool | None = None
     min_similarity: float | None = None
+    # Fusion weights, overridable so the weight can be tuned by measurement rather than
+    # intuition. None means "use the configured default".
+    keyword_weight: float | None = None
+    dense_weight: float | None = None
 
 
 class RetrievedChunk(Contract):

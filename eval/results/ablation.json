@@ -1,0 +1,3731 @@
+{
+  "configs": [
+    {
+      "summary": {
+        "name": "dense",
+        "dense": true,
+        "keyword": false,
+        "graph": false,
+        "mean_recall": 0.6136,
+        "mean_mrr": 0.5671,
+        "mean_precision": 0.0767,
+        "mean_returned": 17.0,
+        "mean_unique_acts": 9.4091,
+        "mean_latency_ms": 1222.1227,
+        "perfect_recall": 12,
+        "zero_recall": 7,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.25,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1635.3,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 183 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 181 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 1088.2,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 185 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1124.2,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [
+            "indiancontract:10"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 4 (Sale of Goods Act, 1930)",
+            "Section 7 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1212.6,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [
+            "informationtec:4"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 81 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "Section 2 (Information Technology Act)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.3125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 1146.6,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1179.9,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 54 (Arbitration and Conciliati)",
+            "Section 45 (Arbitration and Conciliati)",
+            "Section 35 (Bharatiya Sakshya Adhiniya)",
+            "Section 44A (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1088.8,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 1142.3,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 177 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 74 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1414.5,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 236 (Indian Contract Act, 1872)",
+            "Section 39 (Indian Contract Act, 1872)",
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 22 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1250.5,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 27 (Specific Relief Act, 1963)",
+            "Section 53 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1125.1,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:55"
+          ],
+          "top_sections": [
+            "Section 46 (Indian Contract Act, 1872)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 48 (Indian Contract Act, 1872)",
+            "Section 11 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1292.4,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 8 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.5,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1058.2,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [
+            "informationtec:10a"
+          ],
+          "missed": [
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 10A (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "headnote (In Re: Interplay Between A)",
+            "Section 94 (Bharatiya Sakshya Adhiniya)",
+            "Section 10 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1200.9,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 1182.2,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 150 (Indian Contract Act, 1872)",
+            "Section 225 (Indian Contract Act, 1872)",
+            "Section 161 (Indian Contract Act, 1872)",
+            "Section 70 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1207.4,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 128 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 135 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.5,
+          "mrr": 0.1429,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1316.3,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [
+            "codeofcivilpro:20"
+          ],
+          "missed": [
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 19 (Code of Civil Procedure, 1)",
+            "Section 58 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 17 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1106.9,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [
+            "codeofcivilpro:34"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Negotiable Instruments Act)",
+            "Section 34 (Code of Civil Procedure, 1)",
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 128 (Code of Civil Procedure, 1)",
+            "Section 79 (Negotiable Instruments Act)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 13,
+          "latency_ms": 1200.5,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 102 (Negotiable Instruments Act)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 64 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1178.8,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 72 (Indian Contract Act, 1872)",
+            "judgment_extract (National Insurance Company)",
+            "Section 13 (Bharatiya Sakshya Adhiniya)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1327.9,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 20 (Specific Relief Act, 1963)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1407.2,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:182"
+          ],
+          "top_sections": [
+            "Section 228 (Indian Contract Act, 1872)",
+            "Section 231 (Indian Contract Act, 1872)",
+            "Section 232 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)",
+            "Section 230 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "keyword",
+        "dense": false,
+        "keyword": true,
+        "graph": false,
+        "mean_recall": 0.3864,
+        "mean_mrr": 0.1871,
+        "mean_precision": 0.0426,
+        "mean_returned": 16.0,
+        "mean_unique_acts": 9.5909,
+        "mean_latency_ms": 2149.2773,
+        "perfect_recall": 8,
+        "zero_recall": 13,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "precision": 0.1875,
+          "returned": 16,
+          "unique_acts": 13,
+          "latency_ms": 3112.5,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Information Technology Act)",
+            "Section 73 (Negotiable Instruments Act)",
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 0.2,
+          "precision": 0.125,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2084.0,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 54 (Indian Partnership Act, 19)",
+            "Section 58 (Indian Contract Act, 1872)",
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 1969.3,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:10"
+          ],
+          "top_sections": [
+            "Section 20 (Indian Contract Act, 1872)",
+            "Section 16 (Specific Relief Act, 1963)",
+            "Section 12 (Sale of Goods Act, 1930)",
+            "Section 55 (Indian Contract Act, 1872)",
+            "Section 7 (Arbitration and Conciliati)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2050.8,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:4"
+          ],
+          "top_sections": [
+            "Section 7A (Information Technology Act)",
+            "Section 7 (Information Technology Act)",
+            "Section 6 (Negotiable Instruments Act)",
+            "Section 6 (Information Technology Act)",
+            "Section 3 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.25,
+          "returned": 16,
+          "unique_acts": 5,
+          "latency_ms": 1999.7,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 7 (Information Technology Act)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 12,
+          "latency_ms": 2082.0,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 135 (Negotiable Instruments Act)",
+            "Section 2 (Information Technology Act)",
+            "Section 7A (Information Technology Act)",
+            "Section 3 (Bharatiya Nyaya Sanhita, 2)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 6,
+          "latency_ms": 2034.9,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 32 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 37 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2107.3,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:74"
+          ],
+          "top_sections": [
+            "Section 12 (Specific Relief Act, 1963)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 76 (Transfer of Property Act, )",
+            "Section 60 (Code of Civil Procedure, 1)",
+            "Section 128 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 2028.0,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 33 (Transfer of Property Act, )",
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 34 (Transfer of Property Act, )",
+            "Section 18 (Limitation Act, 1963)",
+            "Section 17 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2059.4,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 1.0,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2193.5,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [
+            "indiancontract:55"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Sale of Goods Act, 1930)",
+            "Section 11 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 55 (Indian Contract Act, 1872)",
+            "Section 34 (Arbitration and Conciliati)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2407.3,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 41 (Sale of Goods Act, 1930)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 36 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 19 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 2013.7,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 104 (Bharatiya Sakshya Adhiniya)",
+            "Section 179 (Indian Contract Act, 1872)",
+            "Section 32 (Transfer of Property Act, )",
+            "Section 95 (Bharatiya Sakshya Adhiniya)",
+            "Section 141 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 7,
+          "latency_ms": 2032.0,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 37 (Sale of Goods Act, 1930)",
+            "Section 13 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2127.2,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 160 (Indian Contract Act, 1872)",
+            "Section 17 (Bharatiya Sakshya Adhiniya)",
+            "Section 45 (Transfer of Property Act, )",
+            "Section 37 (Transfer of Property Act, )",
+            "Section 60 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.25,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2031.5,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 135 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 39 (Consumer Protection Act, 2)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2351.1,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 67 (Transfer of Property Act, )",
+            "Section 24 (Specific Relief Act, 1963)",
+            "Section 16 (Limitation Act, 1963)",
+            "Section 357 (Bharatiya Nyaya Sanhita, 2)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2025.6,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:34"
+          ],
+          "top_sections": [
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 54 (Sale of Goods Act, 1930)",
+            "Section 244 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 88 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 12,
+          "latency_ms": 1961.2,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 15 (Limitation Act, 1963)",
+            "Section 79A (Information Technology Act)",
+            "Section 211 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 9 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 1982.6,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 46 (Transfer of Property Act, )",
+            "Section 157 (Indian Contract Act, 1872)",
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 37 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 13,
+          "latency_ms": 2466.3,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "top_sections": [
+            "Section 200 (Indian Contract Act, 1872)",
+            "Section 130 (Transfer of Property Act, )",
+            "Section 54 (Sale of Goods Act, 1930)",
+            "Section 130 (Transfer of Property Act, )",
+            "Section 35 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2164.2,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:182"
+          ],
+          "top_sections": [
+            "Section 230 (Indian Contract Act, 1872)",
+            "Section 192 (Indian Contract Act, 1872)",
+            "Section 218 (Indian Contract Act, 1872)",
+            "Section 213 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "graph",
+        "dense": false,
+        "keyword": false,
+        "graph": true,
+        "mean_recall": 0.0455,
+        "mean_mrr": 0.0227,
+        "mean_precision": 0.0057,
+        "mean_returned": 0.7273,
+        "mean_unique_acts": 0.2727,
+        "mean_latency_ms": 1356.5091,
+        "perfect_recall": 1,
+        "zero_recall": 21,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.125,
+          "returned": 8,
+          "unique_acts": 5,
+          "latency_ms": 1666.5,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 2 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Consumer Protection Act, 2)",
+            "Section 9 (Indian Contract Act, 1872)",
+            "Section 73 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 8,
+          "unique_acts": 1,
+          "latency_ms": 1329.7,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:25"
+          ],
+          "top_sections": [
+            "Section 2 (Indian Contract Act, 1872)",
+            "Section 9 (Indian Contract Act, 1872)",
+            "Section 18 (Indian Contract Act, 1872)",
+            "Section 19 (Indian Contract Act, 1872)",
+            "Section 19 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1266.1,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:10"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "L04",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1179.8,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:4"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "L05",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1427.4,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "L06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1284.9,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:11"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1327.5,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1312.6,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:74"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1268.0,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:56"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R04",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1326.0,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:75"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R05",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1309.5,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:55"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1301.7,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1415.5,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1242.3,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1299.0,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1557.2,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1544.0,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "P02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1313.8,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:34"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "P03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1253.0,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:80"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1294.9,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "D02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1384.0,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "top_sections": []
+        },
+        {
+          "task_id": "D03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 0,
+          "unique_acts": 0,
+          "latency_ms": 1539.8,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:182"
+          ],
+          "top_sections": []
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "dense+keyword",
+        "dense": true,
+        "keyword": true,
+        "graph": false,
+        "mean_recall": 0.6818,
+        "mean_mrr": 0.5723,
+        "mean_precision": 0.0881,
+        "mean_returned": 17.0,
+        "mean_unique_acts": 9.2727,
+        "mean_latency_ms": 2279.95,
+        "perfect_recall": 14,
+        "zero_recall": 6,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.375,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2082.3,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 1 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2307.5,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 185 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2311.5,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [
+            "indiancontract:10"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 4 (Sale of Goods Act, 1930)",
+            "Section 7 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2156.5,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [
+            "informationtec:4"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 81 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "Section 93 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.3125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 2094.1,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 12,
+          "latency_ms": 2227.4,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 54 (Arbitration and Conciliati)",
+            "Section 45 (Arbitration and Conciliati)",
+            "Section 35 (Bharatiya Sakshya Adhiniya)",
+            "Section 44A (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2272.8,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2126.3,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 177 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 74 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2226.7,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 236 (Indian Contract Act, 1872)",
+            "Section 39 (Indian Contract Act, 1872)",
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 22 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2505.8,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 27 (Specific Relief Act, 1963)",
+            "Section 53 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 1.0,
+          "mrr": 0.0909,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2154.2,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [
+            "indiancontract:55"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 46 (Indian Contract Act, 1872)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 48 (Indian Contract Act, 1872)",
+            "Section 11 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 2661.5,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 8 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.5,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2367.5,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [
+            "informationtec:10a"
+          ],
+          "missed": [
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 10A (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "headnote (In Re: Interplay Between A)",
+            "Section 94 (Bharatiya Sakshya Adhiniya)",
+            "Section 10 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2110.3,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2210.6,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 150 (Indian Contract Act, 1872)",
+            "Section 225 (Indian Contract Act, 1872)",
+            "Section 161 (Indian Contract Act, 1872)",
+            "Section 70 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2209.4,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 128 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 135 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2307.0,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 19 (Code of Civil Procedure, 1)",
+            "Section 58 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 17 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2081.3,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [
+            "codeofcivilpro:34"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Negotiable Instruments Act)",
+            "Section 34 (Code of Civil Procedure, 1)",
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 128 (Code of Civil Procedure, 1)",
+            "Section 79 (Negotiable Instruments Act)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2308.3,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 102 (Negotiable Instruments Act)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 64 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2331.9,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 72 (Indian Contract Act, 1872)",
+            "judgment_extract (National Insurance Company)",
+            "Section 13 (Bharatiya Sakshya Adhiniya)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2724.1,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 20 (Specific Relief Act, 1963)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 1.0,
+          "mrr": 0.1667,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2381.9,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [
+            "indiancontract:182"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 228 (Indian Contract Act, 1872)",
+            "Section 231 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)",
+            "Section 230 (Indian Contract Act, 1872)",
+            "Section 237 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "dense+graph",
+        "dense": true,
+        "keyword": false,
+        "graph": true,
+        "mean_recall": 0.6136,
+        "mean_mrr": 0.5671,
+        "mean_precision": 0.0767,
+        "mean_returned": 17.0,
+        "mean_unique_acts": 9.4091,
+        "mean_latency_ms": 1411.3955,
+        "perfect_recall": 12,
+        "zero_recall": 7,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.25,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1391.0,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 183 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 181 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 1447.8,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 185 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1503.3,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [
+            "indiancontract:10"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 4 (Sale of Goods Act, 1930)",
+            "Section 7 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1322.5,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [
+            "informationtec:4"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 81 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "Section 2 (Information Technology Act)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.3125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 1353.5,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1341.5,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 54 (Arbitration and Conciliati)",
+            "Section 45 (Arbitration and Conciliati)",
+            "Section 35 (Bharatiya Sakshya Adhiniya)",
+            "Section 44A (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1408.1,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 1639.2,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 177 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 74 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1398.3,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 236 (Indian Contract Act, 1872)",
+            "Section 39 (Indian Contract Act, 1872)",
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 22 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1406.6,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 27 (Specific Relief Act, 1963)",
+            "Section 53 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1319.4,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:55"
+          ],
+          "top_sections": [
+            "Section 46 (Indian Contract Act, 1872)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 48 (Indian Contract Act, 1872)",
+            "Section 11 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1608.4,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 8 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.5,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1338.2,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [
+            "informationtec:10a"
+          ],
+          "missed": [
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 10A (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "headnote (In Re: Interplay Between A)",
+            "Section 94 (Bharatiya Sakshya Adhiniya)",
+            "Section 10 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1406.0,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 1415.6,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 150 (Indian Contract Act, 1872)",
+            "Section 225 (Indian Contract Act, 1872)",
+            "Section 161 (Indian Contract Act, 1872)",
+            "Section 70 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1347.3,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 128 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 135 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.5,
+          "mrr": 0.1429,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1326.9,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [
+            "codeofcivilpro:20"
+          ],
+          "missed": [
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 19 (Code of Civil Procedure, 1)",
+            "Section 58 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 17 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 1368.2,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [
+            "codeofcivilpro:34"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Negotiable Instruments Act)",
+            "Section 34 (Code of Civil Procedure, 1)",
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 128 (Code of Civil Procedure, 1)",
+            "Section 79 (Negotiable Instruments Act)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 13,
+          "latency_ms": 1445.0,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 102 (Negotiable Instruments Act)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 64 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 1424.6,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 72 (Indian Contract Act, 1872)",
+            "judgment_extract (National Insurance Company)",
+            "Section 13 (Bharatiya Sakshya Adhiniya)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1387.1,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 20 (Specific Relief Act, 1963)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 1452.2,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:182"
+          ],
+          "top_sections": [
+            "Section 228 (Indian Contract Act, 1872)",
+            "Section 231 (Indian Contract Act, 1872)",
+            "Section 232 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)",
+            "Section 230 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "keyword+graph",
+        "dense": false,
+        "keyword": true,
+        "graph": true,
+        "mean_recall": 0.3864,
+        "mean_mrr": 0.1871,
+        "mean_precision": 0.0426,
+        "mean_returned": 16.0,
+        "mean_unique_acts": 9.5909,
+        "mean_latency_ms": 2554.9773,
+        "perfect_recall": 8,
+        "zero_recall": 13,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "precision": 0.1875,
+          "returned": 16,
+          "unique_acts": 13,
+          "latency_ms": 2338.7,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Information Technology Act)",
+            "Section 73 (Negotiable Instruments Act)",
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 0.2,
+          "precision": 0.125,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2722.5,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 54 (Indian Partnership Act, 19)",
+            "Section 58 (Indian Contract Act, 1872)",
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2523.7,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:10"
+          ],
+          "top_sections": [
+            "Section 20 (Indian Contract Act, 1872)",
+            "Section 16 (Specific Relief Act, 1963)",
+            "Section 12 (Sale of Goods Act, 1930)",
+            "Section 55 (Indian Contract Act, 1872)",
+            "Section 7 (Arbitration and Conciliati)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2456.4,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:4"
+          ],
+          "top_sections": [
+            "Section 7A (Information Technology Act)",
+            "Section 7 (Information Technology Act)",
+            "Section 6 (Negotiable Instruments Act)",
+            "Section 6 (Information Technology Act)",
+            "Section 3 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.25,
+          "returned": 16,
+          "unique_acts": 5,
+          "latency_ms": 2503.3,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 7 (Information Technology Act)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 12,
+          "latency_ms": 2307.4,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 135 (Negotiable Instruments Act)",
+            "Section 2 (Information Technology Act)",
+            "Section 7A (Information Technology Act)",
+            "Section 3 (Bharatiya Nyaya Sanhita, 2)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 6,
+          "latency_ms": 2533.4,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 32 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 37 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2762.2,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:74"
+          ],
+          "top_sections": [
+            "Section 12 (Specific Relief Act, 1963)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 76 (Transfer of Property Act, )",
+            "Section 60 (Code of Civil Procedure, 1)",
+            "Section 128 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 3084.5,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 33 (Transfer of Property Act, )",
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 34 (Transfer of Property Act, )",
+            "Section 18 (Limitation Act, 1963)",
+            "Section 17 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2770.1,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 1.0,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2831.0,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [
+            "indiancontract:55"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Sale of Goods Act, 1930)",
+            "Section 11 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 55 (Indian Contract Act, 1872)",
+            "Section 34 (Arbitration and Conciliati)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2851.4,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 41 (Sale of Goods Act, 1930)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 36 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 19 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 2347.2,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [],
+          "missed": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 104 (Bharatiya Sakshya Adhiniya)",
+            "Section 179 (Indian Contract Act, 1872)",
+            "Section 32 (Transfer of Property Act, )",
+            "Section 95 (Bharatiya Sakshya Adhiniya)",
+            "Section 141 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 7,
+          "latency_ms": 2600.2,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 37 (Sale of Goods Act, 1930)",
+            "Section 13 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2277.9,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 160 (Indian Contract Act, 1872)",
+            "Section 17 (Bharatiya Sakshya Adhiniya)",
+            "Section 45 (Transfer of Property Act, )",
+            "Section 37 (Transfer of Property Act, )",
+            "Section 60 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.25,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2451.3,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 135 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 39 (Consumer Protection Act, 2)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 10,
+          "latency_ms": 2367.9,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 67 (Transfer of Property Act, )",
+            "Section 24 (Specific Relief Act, 1963)",
+            "Section 16 (Limitation Act, 1963)",
+            "Section 357 (Bharatiya Nyaya Sanhita, 2)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 11,
+          "latency_ms": 2315.3,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:34"
+          ],
+          "top_sections": [
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 54 (Sale of Goods Act, 1930)",
+            "Section 244 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 21 (Specific Relief Act, 1963)",
+            "Section 88 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "precision": 0.0625,
+          "returned": 16,
+          "unique_acts": 12,
+          "latency_ms": 2567.2,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 15 (Limitation Act, 1963)",
+            "Section 79A (Information Technology Act)",
+            "Section 211 (Bharatiya Nyaya Sanhita, 2)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 9 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 9,
+          "latency_ms": 2450.2,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 46 (Transfer of Property Act, )",
+            "Section 157 (Indian Contract Act, 1872)",
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 37 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 13,
+          "latency_ms": 2502.8,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "top_sections": [
+            "Section 200 (Indian Contract Act, 1872)",
+            "Section 130 (Transfer of Property Act, )",
+            "Section 54 (Sale of Goods Act, 1930)",
+            "Section 130 (Transfer of Property Act, )",
+            "Section 35 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 16,
+          "unique_acts": 8,
+          "latency_ms": 2644.9,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:182"
+          ],
+          "top_sections": [
+            "Section 230 (Indian Contract Act, 1872)",
+            "Section 192 (Indian Contract Act, 1872)",
+            "Section 218 (Indian Contract Act, 1872)",
+            "Section 213 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    },
+    {
+      "summary": {
+        "name": "all three",
+        "dense": true,
+        "keyword": true,
+        "graph": true,
+        "mean_recall": 0.6818,
+        "mean_mrr": 0.5723,
+        "mean_precision": 0.0881,
+        "mean_returned": 17.0,
+        "mean_unique_acts": 9.2727,
+        "mean_latency_ms": 2485.1545,
+        "perfect_recall": 14,
+        "zero_recall": 6,
+        "tasks_scored": 22
+      },
+      "tasks": [
+        {
+          "task_id": "L01",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.375,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2434.6,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [
+            "indiancontract:73"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 1 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2870.3,
+          "expected": [
+            "indiancontract:25"
+          ],
+          "found": [
+            "indiancontract:25"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 185 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 24 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2435.2,
+          "expected": [
+            "indiancontract:10"
+          ],
+          "found": [
+            "indiancontract:10"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 10 (Indian Contract Act, 1872)",
+            "Section 4 (Sale of Goods Act, 1930)",
+            "Section 7 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)",
+            "Section 25 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "L04",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2884.7,
+          "expected": [
+            "informationtec:4"
+          ],
+          "found": [
+            "informationtec:4"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 81 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "Section 93 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "L05",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.3125,
+          "returned": 17,
+          "unique_acts": 6,
+          "latency_ms": 2465.3,
+          "expected": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "found": [
+            "bharatiyasaksh:63",
+            "bharatiyasaksh:61"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 61 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 63 (Bharatiya Sakshya Adhiniya)",
+            "Section 62 (Bharatiya Sakshya Adhiniya)",
+            "Section 4 (Information Technology Act)"
+          ]
+        },
+        {
+          "task_id": "L06",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 12,
+          "latency_ms": 2468.6,
+          "expected": [
+            "codeofcivilpro:11"
+          ],
+          "found": [
+            "codeofcivilpro:11"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 11 (Code of Civil Procedure, 1)",
+            "Section 54 (Arbitration and Conciliati)",
+            "Section 45 (Arbitration and Conciliati)",
+            "Section 35 (Bharatiya Sakshya Adhiniya)",
+            "Section 44A (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "R01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2579.5,
+          "expected": [
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2721.5,
+          "expected": [
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 74 (Indian Contract Act, 1872)",
+            "Section 177 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 23 (Specific Relief Act, 1963)",
+            "Section 74 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2532.9,
+          "expected": [
+            "indiancontract:56"
+          ],
+          "found": [
+            "indiancontract:56"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 56 (Indian Contract Act, 1872)",
+            "Section 236 (Indian Contract Act, 1872)",
+            "Section 39 (Indian Contract Act, 1872)",
+            "Section 54 (Indian Contract Act, 1872)",
+            "Section 22 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R04",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2441.4,
+          "expected": [
+            "indiancontract:75"
+          ],
+          "found": [
+            "indiancontract:75"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 75 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 20 (Specific Relief Act, 1963)",
+            "Section 27 (Specific Relief Act, 1963)",
+            "Section 53 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "R05",
+          "recall": 1.0,
+          "mrr": 0.0909,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2502.1,
+          "expected": [
+            "indiancontract:55"
+          ],
+          "found": [
+            "indiancontract:55"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 46 (Indian Contract Act, 1872)",
+            "Section 51 (Sale of Goods Act, 1930)",
+            "Section 47 (Indian Contract Act, 1872)",
+            "Section 48 (Indian Contract Act, 1872)",
+            "Section 11 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "R06",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 10,
+          "latency_ms": 2183.3,
+          "expected": [
+            "indiancontract:39"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:39"
+          ],
+          "top_sections": [
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 43 (Sale of Goods Act, 1930)",
+            "Section 57 (Sale of Goods Act, 1930)",
+            "Section 8 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X01",
+          "recall": 0.5,
+          "mrr": 1.0,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2387.7,
+          "expected": [
+            "informationtec:10a",
+            "bharatiyasaksh:63"
+          ],
+          "found": [
+            "informationtec:10a"
+          ],
+          "missed": [
+            "bharatiyasaksh:63"
+          ],
+          "top_sections": [
+            "Section 10A (Information Technology Act)",
+            "Section 85 (Bharatiya Sakshya Adhiniya)",
+            "headnote (In Re: Interplay Between A)",
+            "Section 94 (Bharatiya Sakshya Adhiniya)",
+            "Section 10 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X02",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2295.0,
+          "expected": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "indiancontract:73"
+          ],
+          "top_sections": [
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 56 (Sale of Goods Act, 1930)",
+            "Section 44 (Sale of Goods Act, 1930)",
+            "Section 55 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)"
+          ]
+        },
+        {
+          "task_id": "X03",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 8,
+          "latency_ms": 2469.3,
+          "expected": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "found": [],
+          "missed": [
+            "indiancontract:151",
+            "indiancontract:148"
+          ],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 150 (Indian Contract Act, 1872)",
+            "Section 225 (Indian Contract Act, 1872)",
+            "Section 161 (Indian Contract Act, 1872)",
+            "Section 70 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "X04",
+          "recall": 0.5,
+          "mrr": 0.3333,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2423.4,
+          "expected": [
+            "indiancontract:126",
+            "indiancontract:124"
+          ],
+          "found": [
+            "indiancontract:126"
+          ],
+          "missed": [
+            "indiancontract:124"
+          ],
+          "top_sections": [
+            "Section 140 (Indian Contract Act, 1872)",
+            "Section 128 (Indian Contract Act, 1872)",
+            "Section 126 (Indian Contract Act, 1872)",
+            "Section 136 (Indian Contract Act, 1872)",
+            "Section 135 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "P01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2827.3,
+          "expected": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "found": [],
+          "missed": [
+            "codeofcivilpro:20",
+            "codeofcivilpro:15"
+          ],
+          "top_sections": [
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 19 (Code of Civil Procedure, 1)",
+            "Section 58 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 17 (Code of Civil Procedure, 1)"
+          ]
+        },
+        {
+          "task_id": "P02",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2384.3,
+          "expected": [
+            "codeofcivilpro:34"
+          ],
+          "found": [
+            "codeofcivilpro:34"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Negotiable Instruments Act)",
+            "Section 34 (Code of Civil Procedure, 1)",
+            "Section 61 (Sale of Goods Act, 1930)",
+            "Section 128 (Code of Civil Procedure, 1)",
+            "Section 79 (Negotiable Instruments Act)"
+          ]
+        },
+        {
+          "task_id": "P03",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.1875,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2337.9,
+          "expected": [
+            "codeofcivilpro:80"
+          ],
+          "found": [
+            "codeofcivilpro:80"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 102 (Negotiable Instruments Act)",
+            "Section 80 (Code of Civil Procedure, 1)",
+            "Section 64 (Bharatiya Sakshya Adhiniya)"
+          ]
+        },
+        {
+          "task_id": "D01",
+          "recall": 0.0,
+          "mrr": 0.0,
+          "precision": 0.0,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2426.4,
+          "expected": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "found": [],
+          "missed": [
+            "bharatiyanyaya:318",
+            "bharatiyanyaya:316"
+          ],
+          "top_sections": [
+            "Section 72 (Indian Contract Act, 1872)",
+            "judgment_extract (National Insurance Company)",
+            "Section 13 (Bharatiya Sakshya Adhiniya)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 73 (Indian Contract Act, 1872)"
+          ]
+        },
+        {
+          "task_id": "D02",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "precision": 0.125,
+          "returned": 17,
+          "unique_acts": 11,
+          "latency_ms": 2286.4,
+          "expected": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "found": [
+            "indiancontract:73",
+            "indiancontract:74"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 73 (Indian Contract Act, 1872)",
+            "Section 222 (Indian Contract Act, 1872)",
+            "Section 38 (Sale of Goods Act, 1930)",
+            "Section 60 (Sale of Goods Act, 1930)",
+            "Section 20 (Specific Relief Act, 1963)"
+          ]
+        },
+        {
+          "task_id": "D03",
+          "recall": 1.0,
+          "mrr": 0.1667,
+          "precision": 0.0625,
+          "returned": 17,
+          "unique_acts": 9,
+          "latency_ms": 2316.3,
+          "expected": [
+            "indiancontract:182"
+          ],
+          "found": [
+            "indiancontract:182"
+          ],
+          "missed": [],
+          "top_sections": [
+            "Section 228 (Indian Contract Act, 1872)",
+            "Section 231 (Indian Contract Act, 1872)",
+            "Section 227 (Indian Contract Act, 1872)",
+            "Section 230 (Indian Contract Act, 1872)",
+            "Section 237 (Indian Contract Act, 1872)"
+          ]
+        }
+      ]
+    }
+  ],
+  "contributions": [
+    {
+      "config": "keyword",
+      "delta_recall": -0.2272,
+      "delta_mrr": -0.38
+    },
+    {
+      "config": "graph",
+      "delta_recall": -0.5681,
+      "delta_mrr": -0.5444
+    },
+    {
+      "config": "dense+keyword",
+      "delta_recall": 0.0682,
+      "delta_mrr": 0.0052
+    },
+    {
+      "config": "dense+graph",
+      "delta_recall": 0.0,
+      "delta_mrr": 0.0
+    },
+    {
+      "config": "keyword+graph",
+      "delta_recall": -0.2272,
+      "delta_mrr": -0.38
+    },
+    {
+      "config": "all three",
+      "delta_recall": 0.0682,
+      "delta_mrr": 0.0052
+    }
+  ],
+  "unique_rescues": {
+    "keyword": [
+      "R05"
+    ],
+    "graph": [],
+    "dense": [
+      "D02",
+      "L03",
+      "L04",
+      "P01",
+      "P02",
+      "R02",
+      "X01"
+    ]
+  },
+  "best_single": "dense"
+}

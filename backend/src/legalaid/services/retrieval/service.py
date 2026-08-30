@@ -142,6 +142,14 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
         if request.min_similarity is None
         else request.min_similarity
     )
+    keyword_weight = (
+        settings.retrieval_keyword_weight
+        if request.keyword_weight is None
+        else request.keyword_weight
+    )
+    dense_weight = (
+        settings.retrieval_dense_weight if request.dense_weight is None else request.dense_weight
+    )
 
     collections = tuple(request.collections) if request.collections else MODE_COLLECTIONS[request.mode]
 
@@ -168,11 +176,30 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
 
     # Graph seeds are resolved once: the question names the same provisions regardless of
     # which collection is being searched.
+    #
+    # Two seeding routes, because the first alone measured a contribution of exactly zero:
+    #   1. Explicit - the question names a section or an act. Precise, but conversational
+    #      questions ("the buyer refused payment") name neither, so it almost never fires.
+    #   2. Dense-anchored - take the provisions dense search already surfaced and traverse out
+    #      from those. This is the graph's actual useful role: expansion from a known-good
+    #      anchor, reaching provisions that cross-reference the ones semantic search found.
     graph_chunk_ids: set[str] = set()
     graph_paths: dict[str, str] = {}
     if use_graph:
         graph = get_graph()
         seeds = graph.find_seeds(request.question)
+
+        if not seeds and use_dense:
+            # No explicit anchor. Probe the largest law collection for the best semantic hits
+            # and seed from those instead of contributing nothing.
+            anchor_index = store.index(Collection.LEGAL_ACTS)
+            if anchor_index.count:
+                anchor_hits, _c, _f = anchor_index.search(
+                    query_vector, top_k=3, min_similarity=min_similarity
+                )
+                if anchor_hits:
+                    seeds = graph.seed_from_chunks([h.chunk_id for h in anchor_hits])
+
         if seeds:
             expanded = graph.expand(
                 seeds, max_hops=settings.retrieval_graph_hops, limit=settings.retrieval_graph_limit
@@ -229,8 +256,8 @@ async def search(request: RetrievalRequest) -> RetrievalResponse:
         fused = reciprocal_rank_fusion(
             [(h.chunk_id, h.similarity) for h in hits],
             keyword_hits,
-            dense_weight=settings.retrieval_dense_weight,
-            keyword_weight=settings.retrieval_keyword_weight,
+            dense_weight=dense_weight,
+            keyword_weight=keyword_weight,
         )
 
         # Graph hits join the candidate pool for this collection, so a provision named in the

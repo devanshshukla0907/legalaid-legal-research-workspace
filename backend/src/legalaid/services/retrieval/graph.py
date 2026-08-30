@@ -175,7 +175,29 @@ class LegalGraph:
                             seeds.append(key)
         lowered = question.lower()
         for key, node in self.nodes.items():
-            if node.kind == "act" and node.label.lower() in lowered and key not in seeds:
+            if node.kind != "act" or key in seeds:
+                continue
+            label = node.label.lower()
+            # Match the short title as well as the full one. Act labels carry the year
+            # ("Indian Contract Act, 1872") but nobody writing a question includes it, so an
+            # exact-substring test on the full label almost never fired.
+            short = label.split(",")[0].strip()
+            if label in lowered or (len(short) > 8 and short in lowered):
+                seeds.append(key)
+        return seeds
+
+    def seed_from_chunks(self, chunk_ids: list[str]) -> list[str]:
+        """Graph entry points for chunks another retriever already found.
+
+        The graph's own `find_seeds` can only fire when a question names a section or an act,
+        which conversational questions do not - measured contribution to recall was exactly
+        zero. Its real role is expansion from a known-good anchor rather than standalone
+        retrieval: given the provisions dense search surfaced, traverse to what they reference.
+        """
+        wanted = set(chunk_ids)
+        seeds: list[str] = []
+        for key, node in self.nodes.items():
+            if node.kind == "provision" and wanted.intersection(node.chunk_ids):
                 seeds.append(key)
         return seeds
 
