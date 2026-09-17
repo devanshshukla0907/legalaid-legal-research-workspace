@@ -304,6 +304,11 @@ def assert_document_access(document_id: str, principal: Principal) -> Document:
 _PUBLIC_PATHS: frozenset[str] = frozenset(
     {
         "/api/system/health",
+        # The split-service Docker deployment (llm, embedding, retrieval) exposes its own plain
+        # `/health` route per service for the container healthcheck, distinct from the gateway's
+        # `/api/system/health`. A container orchestrator polling that route has no credentials
+        # either, so it must be public for exactly the same reason the gateway's health route is.
+        "/health",
         "/docs",
         "/redoc",
         "/openapi.json",

@@ -181,6 +181,17 @@ routes it validated as part of the payload and **the rate limiter never ran at a
 that looks present and is not is worse than none. The aliases are gone and `core/security.py`
 documents why.
 
+### A second bug worth recording — found while re-verifying the Docker deployment
+
+The public-path allowlist only exempted the gateway's `/api/system/health`. The split-service
+Docker containers (`llm`, `embedding`, `retrieval`) each expose their own plain `/health` route
+for their container `HEALTHCHECK`, and that route was not on the allowlist — so every healthcheck
+call got a `401` and the containers sat at `unhealthy` indefinitely, even though the application
+itself was working correctly behind that false negative. Same root cause as the bug above: a
+guardrail applied somewhere it should not be is functionally identical to a bug, because it blocks
+legitimate, credential-less callers (a container orchestrator, in this case) exactly as hard as it
+blocks an attacker. Fixed by adding `/health` to `_PUBLIC_PATHS` alongside `/api/system/health`.
+
 ---
 
 ## Rate limiting and capacity

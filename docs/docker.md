@@ -179,3 +179,46 @@ docker compose logs gateway
 **Port already in use**
 Something is on 3000/8000/11434 — often a local dev server or a host Ollama. Stop it, or remap:
 `"3001:80"`.
+
+**Split-service healthchecks stuck at `unhealthy` / `health: starting` after enabling auth**
+Found by re-verifying this exact deployment: the `llm`, `embedding` and `retrieval` containers
+each run a Docker `HEALTHCHECK` that `curl`s their own plain `/health` route
+(`services/llm/service.py`, `services/embedding/service.py`, `services/retrieval/service.py`).
+When auth middleware was added in Phase 2 the public-path allowlist only exempted the gateway's
+`/api/system/health`, not the sub-services' `/health` — so every healthcheck failed with `curl:
+(22) The requested URL returned error: 401` and the containers never went healthy, even though
+the application itself was working correctly. Fixed in `core/security.py::_PUBLIC_PATHS` by
+adding `/health` to the allowlist, on the same reasoning as the gateway route: a container
+orchestrator polling a healthcheck has no credentials to present, so that one route must be
+public. Verified: rebuild → all six containers report `healthy` within ~50s of a cold recreate.
+
+---
+
+## Verified live (this deployment)
+
+Re-verified end-to-end after rebuilding both images from current source (the running containers
+had drifted ~4 weeks stale and were missing guardrails, auth and the expanded corpus entirely):
+
+```
+docker compose ps
+NAME                 STATUS
+legalaid-embedding   Up (healthy)
+legalaid-frontend    Up (healthy)
+legalaid-gateway     Up (healthy)
+legalaid-llm         Up (healthy)
+legalaid-ollama      Up (healthy)
+legalaid-retrieval   Up (healthy)
+```
+
+- `GET /api/system/health` → `guardrails.enabled: true`, `guardrails.auth_enabled: true`,
+  `active_phase: 5` — confirming the rebuilt image carries the current Phase 1/2 work, not the
+  stale snapshot.
+- `GET /api/knowledge` without an API key → `401` (auth enforced inside the container).
+- `POST /api/retrieval/search {"question": "Section 73 compensation for breach of contract"}`
+  with the container's own generated dev key (`docker exec legalaid-gateway cat
+  /data/.dev-api-key`) → real hybrid retrieval result: **Section 73, Indian Contract Act, 1872**
+  ranked #1 at similarity `0.80`, found by both the dense and keyword retrievers, correct source
+  URL, in `749 ms` total. This is the full Exercise 5 chain proven live inside containers:
+  gateway → auth → retrieval service → FAISS + BM25 → SQLite chunk hydration → response.
+- Backend test suite (`pytest`, run against the same code the images were built from): **247
+  passed**.

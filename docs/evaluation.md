@@ -147,6 +147,46 @@ Measured one model at a time. GPU is an RTX 3050 (6 GB); `num_ctx` 3072 througho
 | `gemma2:2b` | 6/6 | 3/6 | 2/4 | 2/3 | 1/3 | 0/2 | 0/3 |
 | `qwen2.5:3b` | 4/6 | 2/6 | 2/4 | 2/3 | 1/3 | 0/2 | 3/3 |
 
+### Category-wise comparison — the point of splitting the dataset into categories
+
+Reporting a single overall accuracy number (e.g. "`llama3.2:3b` scores 55.6%") hides which
+model is actually better *at what*. That is the entire reason the 27 tasks were split into
+seven categories rather than left as one undifferentiated pool: a category-level comparison
+answers "which model for which kind of legal task", which the aggregate cannot.
+
+| Category | Winner | Evidence | What the category is actually testing |
+|---|---|---|---|
+| `statutory_lookup` | `llama3.2:3b` / `gemma2:2b` (tied, 6/6) | Both perfect; `qwen2.5:3b` 4/6 | Direct provision retrieval and accurately stating its effect. This is the easiest category — the question names the concept the section covers almost verbatim — so it is the category where the weakest model still loses ground, not where the strongest gains it. |
+| `remedy_analysis` | `gemma2:2b` (3/6) | vs 2/6 for the other two | Mapping a client scenario (no section number mentioned) to the governing provision. `gemma2:2b` is *more accurate here* than overall, despite being the weakest model on every other axis — its overall score is dragged down by hallucinating on `negative` (0/3), not by scenario reasoning. This is the clearest evidence in the whole dataset that a single aggregate score conceals a real strength. |
+| `cross_act` | tie, 2/4 all models | identical across all three | Combining provisions across two statutes (e.g. IT Act validity + BSA admissibility). No model differentiates here — the bottleneck is retrieval recall on multi-statute questions, not generation quality, since all three models were fed the same retrieved context. |
+| `procedural` | tie, 2/3 all models | identical across all three | Civil-procedure questions (jurisdiction, interest, notice). Same pattern as `cross_act`: retrieval is the limiting factor, not the model. |
+| `document_analysis` | tie, 1/3 all models | identical across all three | Reasoning from facts in an FIR or legal notice rather than a direct question. All three models score identically and worse than on `statutory_lookup`, which shows document-grounded reasoning is harder for every model in this class, not a model-specific weakness. |
+| `precedent` | none, 0/2 all models | identical across all three | Finding relevant Supreme Court authority. Zero for every model — the corpus only holds 47 judgments, all from 2023, so this category is corpus-starved rather than model-differentiating. A bigger case-law corpus would be needed before this category can distinguish models at all. |
+| `negative` (refusal) | `qwen2.5:3b` (3/3) | vs 2/3 (`llama3.2:3b`), 0/3 (`gemma2:2b`) | Declining to answer when the corpus has no support. This is the category with the widest spread of any in the dataset (0/3 to 3/3) and it is *not* correlated with overall accuracy — `qwen2.5:3b` is tied-last on aggregate accuracy but wins refusal discipline outright, while `gemma2:2b` is mid-table on accuracy and fails refusal completely. |
+
+**What this shows that the aggregate score cannot:**
+
+- **No single model wins every category.** `llama3.2:3b` leads overall accuracy but does not
+  uniquely win any individual category (`statutory_lookup` is a tie, everything else is a tie
+  or a loss to `qwen2.5:3b`/`gemma2:2b`).
+- **`gemma2:2b` is undervalued by the aggregate score.** It wins `remedy_analysis` outright but
+  its 0/3 on `negative` (fabricating answers to unanswerable questions) drags its overall
+  accuracy down to last place. A deployment that never asks out-of-corpus questions would want
+  `gemma2:2b`'s scenario-reasoning strength; a deployment that must handle unpredictable user
+  input would not, because of its refusal failure.
+- **Three categories (`cross_act`, `procedural`, `document_analysis`) are retrieval-bound, not
+  model-bound.** All three models score identically because they were fed identical retrieved
+  context (Exercise 1's controlled variable) — the ceiling here is retrieval quality, and no
+  amount of model comparison will move these numbers until retrieval improves.
+- **`precedent` cannot currently be used to differentiate models at all**, because the corpus is
+  too thin (47 judgments, one year) for any model to succeed. This is a corpus limitation
+  correctly isolated from a model limitation — reporting a "winner" here would be meaningless.
+- **Refusal discipline (`negative`) is the one category where model choice matters most and
+  correlates least with accuracy.** For a legal-advice tool, getting this category right/wrong
+  is arguably more consequential than a few points of statutory-lookup accuracy, because a
+  fabricated answer to an out-of-scope legal question is the single most dangerous failure mode
+  the system can produce.
+
 ## Exercise 4 — Analysis
 
 | Question | Answer | Evidence |
