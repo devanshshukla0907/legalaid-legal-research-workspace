@@ -196,6 +196,7 @@ export interface Routing {
   needs_drafting: boolean;
   needs_document_facts: boolean;
   is_legal_matter: boolean;
+  complexity: "simple" | "complex";
   original_input: string;
   search_query: string;
   legal_concepts: string[];
@@ -537,6 +538,56 @@ export interface GuardrailProbeResult {
   cases: GuardrailProbeCase[];
 }
 
+// --------------------------------------------------------------------------- evaluation matrix
+
+export interface EvalCategory {
+  key: string;
+  label: string;
+  count: number;
+}
+
+export interface EvalTask {
+  id: string;
+  category: string;
+  category_label: string;
+  question: string;
+  expected_sections: string[];
+  expected_concepts: string[];
+  answerable: boolean;
+  notes: string;
+}
+
+export interface EvalDataset {
+  total: number;
+  categories: EvalCategory[];
+  tasks: EvalTask[];
+}
+
+export interface EvalTaskResult {
+  task_id: string;
+  category: string;
+  question: string;
+  answerable: boolean;
+  answer_text: string;
+  cited_sections: string[];
+  expected_sections: string[];
+  correct: boolean;
+  hallucinated: boolean;
+  ungrounded_chunk_count: number;
+  evidence_sufficient: boolean | null;
+  latency_ms: number | null;
+  output_tokens: number | null;
+  parse_ok: boolean | null;
+  retrieval_recall: number | null;
+  retrieval_mrr: number | null;
+}
+
+export interface EvalResults {
+  available_models: string[];
+  results: Record<string, EvalTaskResult[]>;
+  note?: string;
+}
+
 // --------------------------------------------------------------------------- endpoints
 
 export const api = {
@@ -570,6 +621,14 @@ export const api = {
     enable_dense?: boolean | null;
     min_similarity?: number | null;
   }) => post<RetrievalResponse>("/api/retrieval/search", body),
+
+  suggest: (prefix: string, limit = 6) =>
+    get<{ prefix: string; suggestions: { text: string; kind: string; detail: string }[] }>(
+      `/api/suggest?prefix=${encodeURIComponent(prefix)}&limit=${limit}`,
+    ),
+
+  evalDataset: () => get<EvalDataset>("/api/eval/dataset"),
+  evalResults: () => get<EvalResults>("/api/eval/results"),
 
   guardrailConfig: () => get<GuardrailConfig>("/api/guardrails/config"),
   guardrailProbe: (checkCorpus = true) =>

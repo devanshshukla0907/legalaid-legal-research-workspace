@@ -39,6 +39,17 @@ class Settings(BaseSettings):
     ollama_base_url: str = "http://localhost:11434"
     llm_provider: str = "ollama"
     llm_model: str = "codellama:7b-instruct"
+    # T5.1: multi-model orchestration routed by measured strength (the Muskan/InsureMate
+    # pattern), evidence-led rather than guessed. Per docs/evaluation.md Exercise 1,
+    # llama3.2:3b measured highest on both accuracy (55.6%) and speed (11.6s mean) among the
+    # three models compared, so it is also the "simple" default rather than picking an
+    # unmeasured smaller model just because it is smaller. "complex" defaults to the
+    # configured llm_model (codellama:7b-instruct, 7B vs 3B) on the reasoning that multi-step
+    # legal synthesis benefits from the larger model's greater capacity, even though it was
+    # not itself part of the three-model comparison. Both are overridden by an explicit
+    # request-level model choice from the UI, which always wins.
+    llm_model_simple: str = "llama3.2:3b"
+    llm_model_complex: str = ""  # empty means "use llm_model"
     llm_temperature: float = 0.1
     llm_max_tokens: int = 2048
     llm_request_timeout: float = 300.0
@@ -61,6 +72,7 @@ class Settings(BaseSettings):
     retrieval_top_k_laws: int = 8
     retrieval_top_k_cases: int = 5
     retrieval_top_k_user_docs: int = 6
+    retrieval_top_k_code: int = 6
     retrieval_min_similarity: float = 0.25
     retrieval_candidate_multiplier: int = 4
 

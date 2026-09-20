@@ -15,6 +15,7 @@ import {
   type ResearchResult,
   type RetrievedChunk,
 } from "../api";
+import { PromptSuggestions } from "../PromptSuggestions";
 import { AnswerView } from "../AnswerView";
 import {
   Card,
@@ -187,12 +188,19 @@ export default function Research({ model }: { model: string | null }) {
           <span className="badge neutral">{model ?? "default model"}</span>
         }
       >
-        <textarea
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-          placeholder="e.g. My client supplied goods under a written agreement and the buyer refused payment. What provisions apply, and are there similar cases?"
-          style={{ minHeight: 120 }}
-        />
+        <div style={{ position: "relative" }}>
+          <textarea
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            placeholder="e.g. My client supplied goods under a written agreement and the buyer refused payment. What provisions apply, and are there similar cases?"
+            style={{ minHeight: 120 }}
+          />
+          <PromptSuggestions
+            value={input}
+            onPick={(text) => setInput(text)}
+            disabled={busy}
+          />
+        </div>
         <div className="row between" style={{ marginTop: 10 }}>
           <div className="row">
             <button className="primary" onClick={run} disabled={busy || !input.trim()}>
@@ -394,6 +402,12 @@ function TechnicalView({
                 <strong>1 · Intake router</strong>
                 <span className="badge law">{routing.task}</span>
                 <span className="badge neutral">{routing.input_kind}</span>
+                <span
+                  className={`badge ${routing.complexity === "simple" ? "ok" : "warn"}`}
+                  title="T5.1: routes generation to a lighter model for simple lookups, a heavier one for everything else"
+                >
+                  {routing.complexity === "simple" ? "simple → light model" : "complex → full model"}
+                </span>
                 {routing.document_type !== "none" && (
                   <span className="badge doc">{routing.document_type}</span>
                 )}

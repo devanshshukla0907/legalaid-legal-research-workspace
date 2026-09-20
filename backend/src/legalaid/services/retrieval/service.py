@@ -54,6 +54,7 @@ MODE_COLLECTIONS: dict[RetrievalMode, tuple[Collection, ...]] = {
         Collection.CASE_LAW,
         Collection.USER_DOCUMENTS,
     ),
+    RetrievalMode.CODE_SEARCH: (Collection.CODE,),
 }
 
 
@@ -65,6 +66,8 @@ def _top_k_for(collection: Collection, override: int | None) -> int:
         return settings.retrieval_top_k_cases
     if collection is Collection.USER_DOCUMENTS:
         return settings.retrieval_top_k_user_docs
+    if collection is Collection.CODE:
+        return settings.retrieval_top_k_code
     return settings.retrieval_top_k_laws
 
 

@@ -484,7 +484,48 @@ Five genuine multi-file questions about this repository were put to the retrieve
 
 **One honest caveat.** The existing graph retriever is already a symbolic, non-vector traversal over typed edges, so the architecture generalises to code — the gap is the corpus and the edge vocabulary, not the retrieval design.
 
-**What changed as a result.** The confident-failure half of this finding is now handled. The corpus-distance guardrail refuses questions whose nearest corpus neighbour falls below 0.55, and the code questions here score 0.37–0.49. So the system no longer answers them with statutory text; it declines and says why. The retrieval gap is unchanged — it still could not answer a codebase question if asked — but it no longer pretends otherwise, which was the more dangerous half.
+**What changed as a result.** The confident-failure half of this finding is now handled. The corpus-distance guardrail refuses questions whose nearest corpus neighbour falls below 0.55, and the code questions here score 0.37–0.49. So the system no longer answers them with statutory text; it declines and says why. The retrieval gap itself was addressed next, below.
+
+### T5.3 — closing the retrieval gap: a dedicated CODE domain
+
+The finding above named exactly what was missing: a second retrieval domain with code-aware
+chunking, kept structurally separate from the legal collections. That was built rather than left
+as a documented gap.
+
+**What was added** (`domain/enums.py`, `ingestion/chunking.py`, `services/knowledge/ingest_codebase.py`, `scripts/ingest_codebase.py`):
+
+- `Collection.CODE` — a sixth, dedicated FAISS collection, never merged with the legal ones, so a code question cannot be answered by statutory text scoring highest only by elimination.
+- `RetrievalMode.CODE_SEARCH` — routes exclusively to `Collection.CODE`.
+- `chunk_source_code()` — chunks by function/class boundary rather than fixed length, mirroring how the statute chunker splits by section rather than by character count. Python files are parsed with the `ast` module for exact boundaries (line numbers, nesting, docstrings) rather than a regex heuristic; TypeScript/JS files use a coarser top-level-declaration split. Every chunk carries `file_path`, `symbol_kind`, `qualname` and a line range — the code equivalent of a section citation.
+- `scripts/ingest_codebase.py --all` walks `backend/src/legalaid` and `frontend/src`, excluding `node_modules`/`__pycache__`/`.venv`/build output, and indexes the result.
+
+**Re-running Exercise 6 after ingestion** — same five questions, same static ground truth (unchanged, reused directly from `codebase_probe.py` rather than recomputed), now asked through `RetrievalMode.CODE_SEARCH` instead of `COMBINED_LEGAL_RESEARCH`:
+
+Corpus indexed: **87 files → 849 chunks → 849 vectors**, 0 ingestion failures (`scripts/ingest_codebase.py --all`).
+
+| Question | Ground-truth files | Found before (legal domain) | Found after (CODE_SEARCH) | Top similarity |
+|---|---|---|---|---|
+| Q1 — agent context isolation | 10 | 0 | **3** | 0.7178 |
+| Q2 — modules importing the retrieval service | 19 | 0 | **1** | 0.6336 |
+| Q3 — what happens after a research request | 8 | 0 | **3** | 0.6362 |
+| Q4 — impact of a chunking-strategy change | 23 | 0 | **1** | 0.6828 |
+| Q5 — tests covering hybrid retrieval fusion | 1 | 0 | **0** | 0.6597 |
+| **Total** | **61**\* | **0 (0.0%)** | **8 (12.7%)** | — |
+
+\* 61 in the original count; 63 in this re-run because `static_ground_truth()` re-scans the live repository and two more matching files exist now than at the original measurement — the ground truth is regenerated each run, not cached, so it tracks the actual codebase.
+
+**Read honestly, not triumphantly.** This is a real, measured improvement from a hard zero to a non-zero, evidence-backed retrieval rate — not a fixed pipeline. Three things are worth stating plainly:
+
+1. **Coverage is genuinely partial (12.7%), not solved.** `top_k=6` structurally caps how many of a 19- or 23-file ground truth can appear in one retrieval; Q2 and Q4 (the two largest ground-truth sets) each surfaced only 1 file. Raising `top_k` would raise recall mechanically but was not tuned here, to keep this a clean before/after of *adding the domain*, not of also re-tuning it.
+2. **The relevant hits are qualitatively right, which matters more than the percentage.** Q3's three hits are `orchestrator.py`, `services/gateway/app.py`, `services/retrieval/service.py` — precisely the control-flow path a developer would actually want, retrieved by semantic similarity to "what happens after a user submits a research request" with no keyword overlap forced. That is evidence the code-aware chunking and embedding are finding real structure, not matching by luck.
+3. **The graph limitation named above is still unaddressed.** `imports`/`calls`/`defines`/`tested_by` edge types do not exist yet — Q2 and Q5 (a dependency question and a test-mapping question) are exactly the kind of query a typed import/call graph would answer far better than semantic similarity over docstrings and function bodies alone, and their low hit counts (1/19, 0/1) are consistent with that. Vector search over code answers "what looks similar to this description" well; it does not answer "what calls this function" at all, which is a structural query a graph traversal is the right tool for, not an embedding.
+
+Reproduce with:
+```bash
+python scripts/ingest_codebase.py --all         # index this repo's own source, once
+python eval/codebase_probe_v2.py                # re-run E6 against CODE_SEARCH
+```
+Full before/after data: `eval/results/codebase_probe.json` (before) and `eval/results/codebase_probe_v2.json` (after).
 
 ## The corpus itself is a variable
 

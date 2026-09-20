@@ -158,6 +158,16 @@ class Orchestrator:
         self.synthesis_agent = SynthesisAgent(model=model)
         self.critic = VerificationAgent(model=model)
 
+    @staticmethod
+    def _model_for_complexity(complexity: str) -> str | None:
+        """T5.1 routing table. Returns None for 'use whatever llm_model/self.model already is'."""
+        settings = get_settings()
+        if complexity == "simple" and settings.llm_model_simple:
+            return settings.llm_model_simple
+        if complexity == "complex" and settings.llm_model_complex:
+            return settings.llm_model_complex
+        return None
+
     # ------------------------------------------------------------------ public
     async def run(
         self,
@@ -238,6 +248,14 @@ class Orchestrator:
             full_input, document_summaries, trace_id, recorder, result
         )
         result.routing = decision
+
+        # T5.1: resolve the model to use for every downstream agent, now that complexity is
+        # known. self.model (an explicit UI choice) always wins; otherwise a "simple" question
+        # gets the measured-fastest/most-accurate light model and everything else gets the
+        # heavier configured default. None of the agents are reconstructed - Agent.run() takes
+        # this as a per-call override (see agents/base.py), which is what makes routing after
+        # construction possible at all.
+        routed_model = self.model or self._model_for_complexity(decision.complexity)
 
         # Layer 6: the router's scope verdict, recorded alongside the deterministic layers so
         # the trace shows which layer actually made the call.
@@ -322,6 +340,7 @@ class Orchestrator:
             facts_result = await self._run_with_loop(
                 self.doc_agent, context, trace_id, recorder,
                 StageKey.DOCUMENT_UNDERSTANDING, result, enable_verification,
+                model_override=routed_model,
             )
             result.agent_results["document_understanding"] = facts_result
             result.facts = facts_result.output
@@ -352,6 +371,7 @@ class Orchestrator:
                 self._run_with_loop(
                     self.legal_agent, legal_context, trace_id, recorder,
                     StageKey.LEGAL_RESEARCH_AGENT, result, enable_verification,
+                    model_override=routed_model,
                 )
             )
             keys.append("legal_research")
@@ -375,6 +395,7 @@ class Orchestrator:
                 self._run_with_loop(
                     self.case_agent, case_context, trace_id, recorder,
                     StageKey.SIMILAR_CASE_AGENT, result, enable_verification,
+                    model_override=routed_model,
                 )
             )
             keys.append("similar_cases")
@@ -412,6 +433,7 @@ class Orchestrator:
             draft_result = await self._run_with_loop(
                 self.draft_agent, draft_context, trace_id, recorder,
                 StageKey.DRAFTING_AGENT, result, enable_verification,
+                model_override=routed_model,
             )
             result.agent_results["drafting"] = draft_result
             result.draft = draft_result.output
@@ -433,6 +455,7 @@ class Orchestrator:
         synthesis_result = await self._run_with_loop(
             self.synthesis_agent, synthesis_context, trace_id, recorder,
             StageKey.SYNTHESIS_AGENT, result, enable_verification,
+            model_override=routed_model,
         )
         result.agent_results["synthesis"] = synthesis_result
         if synthesis_result.parse_ok and synthesis_result.output.get("answer_markdown"):
@@ -686,6 +709,7 @@ class Orchestrator:
         stage: StageKey,
         result: OrchestrationResult,
         enable_verification: bool,
+        model_override: str | None = None,
     ) -> AgentResult:
         """Run an agent, audit it, and retry with guidance while it fails. Loop engineering."""
         agent_name = AGENT_LABELS.get(agent.agent_key, agent.agent_key.value)
@@ -706,7 +730,10 @@ class Orchestrator:
                 },
             ) as handle:
                 agent_result = await agent.run(
-                    trace_id=trace_id, context=context, retry_note=guidance
+                    trace_id=trace_id,
+                    context=context,
+                    retry_note=guidance,
+                    model_override=model_override,
                 )
                 handle.set_output(
                     status=agent_result.status,

@@ -62,9 +62,11 @@ from legalaid.core.security import (
     require_principal,
 )
 from legalaid.services.common import create_service_app
+from legalaid.services.gateway.eval_view import dataset_payload, eval_files_present, results_payload
 from legalaid.services.llm.ollama_client import OllamaClient
 from legalaid.services.retrieval.graph import get_graph, graph_stats
 from legalaid.services.retrieval.keyword import get_index
+from legalaid.services.retrieval.suggest import suggest as suggest_prompts
 from legalaid.services.retrieval.service import search as retrieval_search
 from legalaid.services.vector.store import get_store
 
@@ -442,6 +444,51 @@ async def retrieval_only(
         )
     )
     return response.model_dump(mode="json")
+
+
+@app.get("/api/suggest", tags=["research"])
+async def suggest(
+    prefix: str = Query("", min_length=0, max_length=200),
+    limit: int = Query(6, ge=1, le=10),
+    principal: Principal = Depends(require_principal),
+) -> dict[str, Any]:
+    """Corpus-grounded prompt suggestions as the user types.
+
+    Deliberately not an LLM call: matches the typed prefix against section headings and case
+    titles already in the knowledge base, so every suggestion corresponds to something the
+    corpus can actually answer, and responds in milliseconds rather than seconds.
+    """
+    results = suggest_prompts(prefix, limit=limit)
+    return {
+        "prefix": prefix,
+        "suggestions": [
+            {"text": s.text, "kind": s.kind, "detail": s.detail} for s in results
+        ],
+    }
+
+
+@app.get("/api/eval/dataset", tags=["eval"])
+async def eval_dataset(
+    principal: Principal = Depends(require_principal),
+) -> dict[str, Any]:
+    """The 27-task Week 4 evaluation dataset: every question, its category, and what a correct
+    answer must cite. This is the dataset itself, not results - see /api/eval/results for what
+    each model actually answered.
+    """
+    return dataset_payload()
+
+
+@app.get("/api/eval/results", tags=["eval"])
+async def eval_results(
+    principal: Principal = Depends(require_principal),
+) -> dict[str, Any]:
+    """Every model's recorded answer for every evaluation task, with correctness and
+    hallucination already computed against the retrieved context - so the Evaluation Matrix
+    page can show question -> category -> per-model answer without re-running anything.
+    """
+    if not eval_files_present():
+        return {"available_models": [], "results": {}, "note": "No recorded eval runs found."}
+    return results_payload()
 
 
 @app.get("/api/guardrails/config", tags=["guardrails"])

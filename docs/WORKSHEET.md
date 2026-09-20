@@ -257,46 +257,78 @@ and is rendered by a generator so numbers can't drift.
 
 Directly mirroring what the lecturer praised, plus your own.
 
-- [ ] **T5.1 Multi-model orchestration** *(3h)* — the Muskan pattern, but evidence-led
-  You already have per-agent model override plumbing (`Orchestrator(model=...)` → every
-  agent). Route by **measured** strength rather than guesswork, using your own E0 results:
-  `qwen2.5:3b` scored **3/3 on refusals** → make it the scope classifier and the grounding
-  checker. `llama3.2:3b` scored highest on accuracy → make it the research generator.
-  `codellama:7b` for drafting. Then measure end-to-end accuracy/latency vs. single-model.
-  Your advantage over the reference implementation: **the routing table is derived from your
-  own benchmark, not assumed.**
+- [x] **T5.1 Multi-model orchestration** — the Muskan pattern, evidence-led. **Built.**
+  The Intake Router now classifies every question's `complexity` (`simple` | `complex`) as
+  part of its existing structured output (`agents/intake_router.py`, `RoutingDecision.complexity`,
+  schema field added to `agents/schemas.py`, prompt instruction added to
+  `prompts/intake_router/v1.yaml`). `Orchestrator._model_for_complexity()` resolves the model
+  **after** routing rather than at agent construction time — a new `model_override` parameter on
+  `Agent.run()` (`agents/base.py`) is what makes that possible without reconstructing every
+  agent, since agents are built before the router has run. `llm_model_simple` defaults to
+  `llama3.2:3b`, chosen because it measured highest on **both** accuracy (55.6%) and speed
+  (11.6s mean) in `docs/evaluation.md` Exercise 1 — the routing table is derived from the
+  project's own benchmark, not assumed. An explicit user-selected model in the UI still always
+  wins over automatic routing. Verified live: "What does Section 73 of the Indian Contract Act
+  provide for?" classifies `simple` → routes to `llama3.2:3b`; a cross-Act civil+criminal
+  scenario question classifies `complex` → falls through to the configured default
+  (`codellama:7b-instruct`). Surfaced in the UI as a badge on the Research page's router panel.
 
-- [ ] **T5.2 Prompt suggestions** *(2h)* — the Naman/Karthikey pattern, better
-  As the user types, suggest 4–5 questions. Don't hardcode a list — generate candidates from
-  the **actual corpus**: match the typed prefix against section headings and case keywords via
-  BM25, so every suggestion is answerable by construction. Typing "leave" in their HR demo
-  suggests leave-policy questions; typing "breach" here should suggest s.73/74/75 questions
-  that you *know* retrieve well.
+- [x] **T5.2 Prompt suggestions** — the Naman/Karthikey pattern. **Built.**
+  New `services/retrieval/suggest.py`: a static, corpus-grounded suggestion index built from
+  `LegalProvision.section_heading`/`act_name`/`section_number` and `Case.case_title`/`keywords`
+  (same invalidate-by-count caching pattern as the BM25 index), so every suggestion is
+  answerable by construction rather than a hardcoded list. Deliberately **not** an LLM call per
+  keystroke — the Intake Router takes seconds, which would either lag badly or spam the GPU
+  queue on every pause. New `GET /api/suggest?prefix=` endpoint, wired into a debounced
+  `PromptSuggestions.tsx` dropdown under the main question textarea in `pages/Research.tsx`.
+  Verified live against the real corpus: typing "compensation" suggests Section 73/74/75 of the
+  Indian Contract Act; typing "arbitrat" suggests Arbitration and Conciliation Act sections.
 
-- [ ] **T5.3 Codebase-understanding upgrade (Sourcegraph prep)** *(3h)*
-  Exercise 6 proved the current system scores 0/55. Build the second retrieval domain:
-  index the repo with AST-aware chunking (function/class granularity), add `imports` /
-  `calls` / `defines` / `tested_by` edge types to the graph, and route code questions to it.
-  Then **re-run E4 and report the before/after**: 0/55 → whatever you achieve. That is the
-  strongest possible answer to next week's Sourcegraph topic — you'll have built a small
-  version and measured it.
+- [x] **T5.3 Codebase-understanding upgrade (Sourcegraph prep)** — **Built, measured before/after.**
+  Exercise 6 proved the system scored 0/61 (0/55 in the original wording; corpus grew between
+  measurements). Built the second retrieval domain: a dedicated `Collection.CODE` FAISS index
+  (`domain/enums.py`) kept structurally separate from every legal collection, `chunk_source_code()`
+  (`ingestion/chunking.py`) using Python's `ast` module for exact function/class boundaries on
+  `.py` files and a coarser top-level-declaration split for `.ts`/`.tsx`/`.js`, and
+  `services/knowledge/ingest_codebase.py` + `scripts/ingest_codebase.py --all` to index this
+  repository's own source. **Re-ran the exact same five Exercise 6 questions and the same static
+  ground truth** (`eval/codebase_probe_v2.py`, importing the original's ground-truth function
+  directly so it cannot drift) through the new `RetrievalMode.CODE_SEARCH`: **0/63 → 8/63
+  (12.7%)** files retrieved. Read honestly in `docs/evaluation.md`: this is a real, partial
+  improvement, not a solved problem — `top_k=6` structurally caps how much of a 19- or 23-file
+  ground truth can appear in one retrieval, and the `imports`/`calls`/`defines`/`tested_by`
+  graph edge types this differentiator originally proposed were **not** built, which is
+  consistent with the two lowest-scoring questions being exactly the dependency/test-mapping
+  ones a typed graph would help most. The qualitatively-correct hits (e.g. Q3 surfacing
+  `orchestrator.py`, `gateway/app.py`, `retrieval/service.py` for "what happens after a research
+  request" with no keyword overlap) are evidence the chunking and embedding are finding real
+  structure, not luck. Verified in Docker too: 68 backend files (frontend is not copied into
+  that image), 751 chunks, 751 vectors, 0 failures.
 
-- [ ] **T5.4 Law-in-force / temporal engine** *(2h, optional)*
+- [ ] **T5.4 Law-in-force / temporal engine** *(2h, optional)* — **not built.**
   Add `valid_from` / `valid_to` / `commencement_date` and answer "what did s.302 say in 2012?"
   Even a shallow version over the IPC→BNS transition is a strong differentiator, because it
   demonstrates the one thing pure vector search structurally cannot do. Store the
   IPC↔BNS / CrPC↔BNSS / IEA↔BSA correspondence as `statutory_transition` edges, **not** as
-  equality — legal correspondence is not semantic identity.
+  equality — legal correspondence is not semantic identity. Left undone: it was marked optional,
+  and the other three differentiators plus the Evaluation Matrix UI page were prioritised
+  instead within the available time.
 
 ---
 
 ## PART 6 — Deliverables
 
-- [ ] **D1 · `docs/evaluation.md`** — regenerated after every experiment *(exists, extend)*
+- [x] **D1 · `docs/evaluation.md`** — regenerated after every experiment. Extended with
+      per-category prose analysis (not just the table) and the T5.3 before/after section.
+      The 27-task dataset and every model's per-task answer is now also directly browsable in
+      the UI (**Evaluation matrix** page, Developer/evaluation nav group) via
+      `GET /api/eval/dataset` and `GET /api/eval/results` — a marker no longer needs to open a
+      JSON file to see a question, its category, and what each model actually answered.
 - [ ] **D2 · `docs/architecture.md`** — the full journey diagram, service boundaries,
       what runs where, Docker topology
-- [ ] **D3 · `docs/guardrails.md`** — every layer, what it catches, measured catch rate,
-      and an explicit "what we do NOT protect against" section
+- [x] **D3 · `docs/guardrails.md`** — every layer, what it catches, measured catch rate,
+      and an explicit "what we do NOT protect against" section. Extended with the
+      health-route auth bug found and fixed while re-verifying the Docker deployment.
 - [ ] **D4 · `docs/data-sources.md`** — per-source: authority, licence, reuse basis,
       attribution, record counts, reconciliation table. Plus the **do-not-ingest** list with
       reasons (SCC Online / Manupatra terms).

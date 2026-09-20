@@ -564,3 +564,220 @@ def chunk_uploaded_document(
             )
             ordinal += 1
     return candidates
+
+
+# --------------------------------------------------------------------------- #
+# Source code chunking (Exercise 6 differentiator: repository-level understanding)
+# --------------------------------------------------------------------------- #
+#
+# Exercise 6 measured 0/61 relevant files retrieved for codebase questions, for a structural
+# reason: the corpus held law and cases, no code. A generic paragraph splitter would be the
+# wrong tool here too, for the same reason it is wrong for statutes - it cuts across function
+# and class boundaries and destroys the "which function does X" provenance a code question
+# depends on. Python's own `ast` module gives exact function/class boundaries (line numbers,
+# nesting, docstrings) without a regex heuristic, so it is used for `.py` files; other
+# languages fall back to a heading-aware paragraph split similar to the upload chunker, because
+# a full parser per language is out of scope for what this differentiator needs to prove.
+
+import ast
+
+
+@dataclass(slots=True)
+class CodeSymbol:
+    kind: str  # "function" | "class" | "method" | "module"
+    name: str
+    qualname: str
+    start_line: int
+    end_line: int
+    docstring: str | None
+    text: str
+
+
+def _extract_python_symbols(source: str) -> list[CodeSymbol]:
+    """Function- and class-level symbols from a Python file, via `ast` rather than regex.
+
+    Regex-based function detection breaks on multi-line signatures, decorators and nested
+    definitions - all common in this codebase's own agents and schemas. `ast` parses the real
+    grammar, so a symbol's boundaries are exact line numbers rather than a guess.
+    """
+    try:
+        tree = ast.parse(source)
+    except SyntaxError:
+        return []
+
+    lines = source.splitlines()
+    symbols: list[CodeSymbol] = []
+
+    def _text_for(node: ast.AST) -> str:
+        start = node.lineno - 1
+        end = getattr(node, "end_lineno", node.lineno)
+        return "\n".join(lines[start:end])
+
+    def _walk(node: ast.AST, prefix: str) -> None:
+        for child in ast.iter_child_nodes(node):
+            if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                qualname = f"{prefix}.{child.name}" if prefix else child.name
+                symbols.append(
+                    CodeSymbol(
+                        kind="method" if prefix else "function",
+                        name=child.name,
+                        qualname=qualname,
+                        start_line=child.lineno,
+                        end_line=getattr(child, "end_lineno", child.lineno),
+                        docstring=ast.get_docstring(child),
+                        text=_text_for(child),
+                    )
+                )
+                # Do not descend into a function's own body for further symbols - nested
+                # closures are implementation detail, not something a "which function does X"
+                # question is asking about.
+            elif isinstance(child, ast.ClassDef):
+                qualname = f"{prefix}.{child.name}" if prefix else child.name
+                symbols.append(
+                    CodeSymbol(
+                        kind="class",
+                        name=child.name,
+                        qualname=qualname,
+                        start_line=child.lineno,
+                        end_line=getattr(child, "end_lineno", child.lineno),
+                        docstring=ast.get_docstring(child),
+                        text=_text_for(child),
+                    )
+                )
+                _walk(child, qualname)
+
+    _walk(tree, "")
+    return symbols
+
+
+_TS_SYMBOL_RE = re.compile(
+    r"^\s*(?:export\s+)?(?:default\s+)?(?:async\s+)?"
+    r"(function\s+(\w+)|class\s+(\w+)|const\s+(\w+)\s*=\s*(?:async\s*)?\()",
+)
+
+
+def _extract_ts_symbols(source: str, max_lines: int = 120) -> list[CodeSymbol]:
+    """Coarse function/class/component boundaries for TS/TSX/JS, by top-level declaration line.
+
+    Not a real parser - tree-sitter would be the correct tool, but pulling in a new parsing
+    dependency is out of scope for demonstrating that a *code-aware* domain closes Exercise 6's
+    gap. This still beats a blind paragraph split: it anchors each chunk to a named symbol
+    (component, function, class) rather than an arbitrary line window, so a retrieved chunk is
+    always attributable to "this function" or "this component", which is what the citation
+    provenance needs.
+    """
+    lines = source.splitlines()
+    symbols: list[CodeSymbol] = []
+    starts: list[tuple[int, str]] = []
+    for index, line in enumerate(lines):
+        match = _TS_SYMBOL_RE.match(line)
+        if match:
+            name = match.group(2) or match.group(3) or match.group(4)
+            if name:
+                starts.append((index, name))
+
+    for position, (start, name) in enumerate(starts):
+        end = starts[position + 1][0] if position + 1 < len(starts) else min(
+            len(lines), start + max_lines
+        )
+        symbols.append(
+            CodeSymbol(
+                kind="function",
+                name=name,
+                qualname=name,
+                start_line=start + 1,
+                end_line=end,
+                docstring=None,
+                text="\n".join(lines[start:end]),
+            )
+        )
+    return symbols
+
+
+def chunk_source_code(
+    *,
+    text: str,
+    file_path: str,
+    language: str,
+    extra_metadata: dict[str, Any] | None = None,
+) -> list[ChunkCandidate]:
+    """Chunk a source file by function/class boundary rather than by fixed length.
+
+    Mirrors the statute/judgment chunkers' shape: one `ChunkCandidate` per structural unit,
+    tagged with enough metadata (file_path, symbol name, line range) that a retrieved chunk can
+    be traced back to an exact function in an exact file, the code equivalent of a section
+    citation.
+    """
+    settings = get_settings()
+    candidates: list[ChunkCandidate] = []
+    ordinal = 0
+
+    if language == "python":
+        symbols = _extract_python_symbols(text)
+    elif language in {"typescript", "tsx", "javascript"}:
+        symbols = _extract_ts_symbols(text)
+    else:
+        symbols = []
+
+    if not symbols:
+        # No recognised symbols (empty file, unsupported language, or parse failure): keep the
+        # whole file as one fallback chunk rather than silently indexing nothing, capped like
+        # any oversized unit.
+        cleaned = text.strip()
+        if not cleaned:
+            return []
+        header = f"{file_path}"
+        for piece in split_oversized(
+            f"{header}\n\n{cleaned}",
+            max_chars=settings.chunk_max_chars,
+            overlap=settings.chunk_overlap_chars,
+        ):
+            candidates.append(
+                ChunkCandidate(
+                    text=piece,
+                    collection=Collection.CODE,
+                    source_type="source_code",
+                    source_title=file_path,
+                    ordinal=ordinal,
+                    chunk_strategy=ChunkStrategy.FALLBACK_FIXED,
+                    heading=None,
+                    metadata={"file_path": file_path, "language": language, **(extra_metadata or {})},
+                )
+            )
+            ordinal += 1
+        return candidates
+
+    for symbol in symbols:
+        header = f"{file_path} - {symbol.kind} {symbol.qualname} (lines {symbol.start_line}-{symbol.end_line})"
+        body = symbol.text.strip()
+        if not body:
+            continue
+        doc_line = f"\n\n{symbol.docstring.strip()}" if symbol.docstring else ""
+        full = f"{header}{doc_line}\n\n{body}"
+        for piece in split_oversized(
+            full, max_chars=settings.chunk_max_chars, overlap=settings.chunk_overlap_chars
+        ):
+            candidates.append(
+                ChunkCandidate(
+                    text=piece,
+                    collection=Collection.CODE,
+                    source_type="source_code",
+                    source_title=file_path,
+                    ordinal=ordinal,
+                    chunk_strategy=ChunkStrategy.CODE_SYMBOL,
+                    heading=symbol.qualname,
+                    metadata={
+                        "file_path": file_path,
+                        "language": language,
+                        "symbol_kind": symbol.kind,
+                        "symbol_name": symbol.name,
+                        "qualname": symbol.qualname,
+                        "start_line": symbol.start_line,
+                        "end_line": symbol.end_line,
+                        **(extra_metadata or {}),
+                    },
+                )
+            )
+            ordinal += 1
+
+    return candidates

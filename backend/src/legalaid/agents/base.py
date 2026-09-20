@@ -289,11 +289,21 @@ class Agent(ABC):
         context: AgentContext,
         max_attempts: int = 2,
         retry_note: str | None = None,
+        model_override: str | None = None,
     ) -> AgentResult:
+        """`model_override` takes precedence over `self.model` for this call only.
+
+        Exists for complexity-based routing (T5.1): agents are constructed once, before the
+        Intake Router has classified the question, so a per-call override is what lets the
+        orchestrator pick a model *after* routing without reconstructing every agent.
+        `self.model` (an explicit user choice from the UI) still wins over both when set,
+        since a deliberate user override should not be silently replaced by automatic routing.
+        """
         settings = get_settings()
         prompt = self.prompt
         variables = self.render(context)
         system_prompt, user_prompt = prompt.render(**variables)
+        effective_model = self.model or model_override
 
         if retry_note:
             # Corrective guidance from a previous failed attempt or the verification agent.
@@ -326,7 +336,7 @@ class Agent(ABC):
                         agent_key=self.agent_key,
                         system_prompt=system_prompt,
                         user_prompt=attempt_prompt,
-                        model=self.model,
+                        model=effective_model,
                         temperature=prompt.temperature if prompt.temperature is not None else settings.llm_temperature,
                         max_tokens=self._token_budget(prompt),
                         json_mode=True,

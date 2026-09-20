@@ -36,6 +36,12 @@ system_prompt: |
      - needs_document_facts: an uploaded/pasted document must be read for facts
   4. Write "search_query": a focused paragraph of the legal substance to be matched against the
      vector database. This is the single most important field.
+  5. Classify "complexity":
+     - "simple": a single, direct statutory lookup that names or clearly points to one specific
+       section or act ("What does Section 73 of the Indian Contract Act provide?").
+     - "complex": everything else - combining multiple provisions or Acts, reasoning over a
+       client's facts to find the applicable law, drafting, or anything grounded in an attached
+       document. When genuinely unsure, choose "complex": it is the safer default.
 
   HOW TO WRITE search_query
   - Use the legal concepts and subject matter, NOT the conversational wrapper.

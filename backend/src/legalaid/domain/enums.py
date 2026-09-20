@@ -14,6 +14,10 @@ class Collection(StrEnum):
     LEGAL_NOTIFICATIONS = "LEGAL_NOTIFICATIONS"
     CASE_LAW = "CASE_LAW"
     USER_DOCUMENTS = "USER_DOCUMENTS"
+    # Source code of this repository itself, indexed the same way as any other collection so
+    # repository-level questions ("which files handle X") can be answered from a domain that
+    # actually contains code, instead of confidently misusing statutory text. See Exercise 6.
+    CODE = "CODE"
 
 
 LAW_COLLECTIONS: tuple[Collection, ...] = (
@@ -29,6 +33,10 @@ class RetrievalMode(StrEnum):
     CASE_SEARCH = "CASE_SEARCH"
     USER_DOCUMENT_SEARCH = "USER_DOCUMENT_SEARCH"
     COMBINED_LEGAL_RESEARCH = "COMBINED_LEGAL_RESEARCH"
+    # Deliberately separate from every legal mode: a codebase question must never be answered
+    # by statutory text scoring highest only because nothing else is closer. Kept as its own
+    # domain rather than folded into COMBINED_LEGAL_RESEARCH.
+    CODE_SEARCH = "CODE_SEARCH"
 
 
 class ResearchMode(StrEnum):
@@ -181,6 +189,7 @@ class ChunkStrategy(StrEnum):
     STATUTE_SECTION = "statute_section"
     JUDGMENT_SECTION = "judgment_section"
     DOCUMENT_PAGE_PARAGRAPH = "document_page_paragraph"
+    CODE_SYMBOL = "code_symbol"
     FALLBACK_FIXED = "fallback_fixed"
 
 

@@ -286,6 +286,13 @@ INTAKE_ROUTER_SCHEMA: dict[str, Any] = {
         "needs_drafting": {"type": "boolean"},
         "needs_document_facts": {"type": "boolean"},
         "is_legal_matter": {"type": "boolean"},
+        # T5.1: routes generation to a lighter or heavier model. "simple" is a single direct
+        # statutory lookup naming a specific section or act; "complex" is everything requiring
+        # multi-provision synthesis, drafting, or reasoning over facts (cross-act questions,
+        # scenario analysis, document-grounded drafting). Not required, so older prompt
+        # renders that predate this field still validate; absence is treated as "complex" by
+        # the orchestrator, the safer default when the classification itself is missing.
+        "complexity": {"type": "string", "enum": ["simple", "complex"]},
         # 25-60 words of dense legal language, per the prompt.
         "search_query": {"type": "string", "maxLength": 600},
         "legal_concepts": {

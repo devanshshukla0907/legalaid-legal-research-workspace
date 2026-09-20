@@ -1,0 +1,337 @@
+{
+  "mode": "CODE_SEARCH",
+  "probes": [
+    {
+      "id": "Q1",
+      "question": "Which files are involved in agent context isolation?",
+      "kind": "multi_file_location",
+      "top_similarity": 0.7178,
+      "files_returned": [
+        "backend/src/legalaid/agents/base.py",
+        "backend/src/legalaid/agents/legal_research.py",
+        "backend/src/legalaid/db/models.py",
+        "backend/src/legalaid/domain/contracts.py"
+      ],
+      "chunks": [
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/base.py",
+          "symbol": "Agent.build_context",
+          "similarity": 0.7178,
+          "text_head": "backend/src/legalaid/agents/base.py - method Agent.build_context (lines 274-275)\n\nSelect exactly the context t"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/legal_research.py",
+          "symbol": "_chunks",
+          "similarity": 0.6982,
+          "text_head": "backend/src/legalaid/agents/legal_research.py - function _chunks (lines 101-102)\n\ndef _chunks(context: AgentCo"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/db/models.py",
+          "symbol": "AgentRun",
+          "similarity": 0.6774,
+          "text_head": "backend/src/legalaid/db/models.py - class AgentRun (lines 460-486)\n\nOne agent execution.\n\n`excluded_chunk_ids`"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/domain/contracts.py",
+          "symbol": "AgentContextItem",
+          "similarity": 0.6712,
+          "text_head": "backend/src/legalaid/domain/contracts.py - class AgentContextItem (lines 374-383)\n\nOne item of context handed "
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/base.py",
+          "symbol": "Agent",
+          "similarity": 0.6429,
+          "text_head": "backend/src/legalaid/agents/base.py - class Agent (lines 239-447)\n\nBase class: builds context, calls the model"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/legal_research.py",
+          "symbol": "LegalResearchAgent",
+          "similarity": 0.6381,
+          "text_head": "backend/src/legalaid/agents/legal_research.py - class LegalResearchAgent (lines 17-98)\n\nclass LegalResearchAge"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Which modules import the retrieval service?",
+      "kind": "dependency_graph",
+      "top_similarity": 0.6336,
+      "files_returned": [
+        "backend/src/legalaid/db/__init__.py",
+        "backend/src/legalaid/domain/enums.py",
+        "backend/src/legalaid/ingestion/case_law.py",
+        "backend/src/legalaid/services/retrieval/__init__.py",
+        "backend/src/legalaid/services/retrieval/app.py",
+        "backend/src/legalaid/services/vector/store.py"
+      ],
+      "chunks": [
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/db/__init__.py",
+          "symbol": null,
+          "similarity": 0.6336,
+          "text_head": "backend/src/legalaid/db/__init__.py\n\n\"\"\"Database layer: engine, session management, ORM models and seeding.\"\"\""
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/domain/enums.py",
+          "symbol": "RetrievalMode",
+          "similarity": 0.6333,
+          "text_head": "backend/src/legalaid/domain/enums.py - class RetrievalMode (lines 31-39)\n\nclass RetrievalMode(StrEnum):\n    LA"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/__init__.py",
+          "symbol": null,
+          "similarity": 0.626,
+          "text_head": "backend/src/legalaid/services/retrieval/__init__.py\n\n\"\"\"Retrieval service: query embedding, vector similarity,"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/vector/store.py",
+          "symbol": "CollectionIndex._faiss",
+          "similarity": 0.613,
+          "text_head": "backend/src/legalaid/services/vector/store.py - method CollectionIndex._faiss (lines 82-89)\n\ndef _faiss(self) "
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/app.py",
+          "symbol": "build_app",
+          "similarity": 0.5959,
+          "text_head": "backend/src/legalaid/services/retrieval/app.py - function build_app (lines 11-22)\n\ndef build_app() -> FastAPI:"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/case_law.py",
+          "symbol": "load_year_metadata",
+          "similarity": 0.5879,
+          "text_head": "backend/src/legalaid/ingestion/case_law.py - function load_year_metadata (lines 224-235)\n\nDownload and parse o"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "What happens after a user submits a research request?",
+      "kind": "control_flow",
+      "top_similarity": 0.6362,
+      "files_returned": [
+        "backend/src/legalaid/agents/orchestrator.py",
+        "backend/src/legalaid/domain/contracts.py",
+        "backend/src/legalaid/services/gateway/app.py",
+        "backend/src/legalaid/services/gateway/inspect.py",
+        "backend/src/legalaid/services/retrieval/service.py"
+      ],
+      "chunks": [
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/gateway/app.py",
+          "symbol": "research_query",
+          "similarity": 0.6362,
+          "text_head": "backend/src/legalaid/services/gateway/app.py - function research_query (lines 339-390)\n\nRun the full multi-age"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/gateway/app.py",
+          "symbol": "ResearchRequest",
+          "similarity": 0.6273,
+          "text_head": "backend/src/legalaid/services/gateway/app.py - class ResearchRequest (lines 90-102)\n\nclass ResearchRequest(Bas"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/gateway/inspect.py",
+          "symbol": "get_trace",
+          "similarity": 0.6115,
+          "text_head": "_prompt,\n                    \"user_prompt\": m.user_prompt,\n                    \"raw_response\": m.raw_response,"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/domain/contracts.py",
+          "symbol": "ResearchQueryRequest",
+          "similarity": 0.6114,
+          "text_head": "backend/src/legalaid/domain/contracts.py - class ResearchQueryRequest (lines 644-653)\n\nclass ResearchQueryRequ"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/orchestrator.py",
+          "symbol": "Orchestrator",
+          "similarity": 0.5896,
+          "text_head": "# The rewrite is its own stage so the UI can show original vs embedded text.\n        with recorder.stage(\n    "
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/service.py",
+          "symbol": "search",
+          "similarity": 0.5869,
+          "text_head": "backend/src/legalaid/services/retrieval/service.py - function search (lines 124-410)\n\nEmbed the question, sear"
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "Which components would be affected if the chunking strategy changed?",
+      "kind": "impact_analysis",
+      "top_similarity": 0.6828,
+      "files_returned": [
+        "backend/src/legalaid/agents/base.py",
+        "backend/src/legalaid/ingestion/chunking.py"
+      ],
+      "chunks": [
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/chunking.py",
+          "symbol": "ChunkCandidate",
+          "similarity": 0.6828,
+          "text_head": "backend/src/legalaid/ingestion/chunking.py - class ChunkCandidate (lines 28-51)\n\nA chunk before it is persiste"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/chunking.py",
+          "symbol": "chunk_judgment",
+          "similarity": 0.6512,
+          "text_head": "backend/src/legalaid/ingestion/chunking.py - function chunk_judgment (lines 370-417)\n\nChunk a judgment by its "
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/chunking.py",
+          "symbol": "chunk_statute",
+          "similarity": 0.6482,
+          "text_head": "backend/src/legalaid/ingestion/chunking.py - function chunk_statute (lines 227-284)\n\ndef chunk_statute(\n    *,"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/chunking.py",
+          "symbol": "chunk_source_code",
+          "similarity": 0.6469,
+          "text_head": "backend/src/legalaid/ingestion/chunking.py - function chunk_source_code (lines 697-783)\n\nChunk a source file b"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/ingestion/chunking.py",
+          "symbol": "chunk_uploaded_document",
+          "similarity": 0.637,
+          "text_head": "backend/src/legalaid/ingestion/chunking.py - function chunk_uploaded_document (lines 474-566)\n\nChunk an upload"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/agents/base.py",
+          "symbol": "format_chunks",
+          "similarity": 0.6346,
+          "text_head": "backend/src/legalaid/agents/base.py - function format_chunks (lines 500-525)\n\nRender chunks for a prompt with "
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Which tests cover the hybrid retrieval fusion logic?",
+      "kind": "test_mapping",
+      "top_similarity": 0.6597,
+      "files_returned": [
+        "backend/src/legalaid/config.py",
+        "backend/src/legalaid/services/retrieval/fusion.py"
+      ],
+      "chunks": [
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/fusion.py",
+          "symbol": "FusedHit",
+          "similarity": 0.6597,
+          "text_head": "backend/src/legalaid/services/retrieval/fusion.py - class FusedHit (lines 26-47)\n\nclass FusedHit:\n    chunk_id"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/fusion.py",
+          "symbol": "FusedHit.agreed",
+          "similarity": 0.6436,
+          "text_head": "backend/src/legalaid/services/retrieval/fusion.py - method FusedHit.agreed (lines 45-47)\n\nBoth retrievers foun"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/fusion.py",
+          "symbol": "reciprocal_rank_fusion",
+          "similarity": 0.6431,
+          "text_head": "backend/src/legalaid/services/retrieval/fusion.py - function reciprocal_rank_fusion (lines 50-85)\n\nFuse dense "
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/fusion.py",
+          "symbol": "describe_fusion",
+          "similarity": 0.6399,
+          "text_head": "backend/src/legalaid/services/retrieval/fusion.py - function describe_fusion (lines 88-104)\n\nHuman-readable ex"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/services/retrieval/fusion.py",
+          "symbol": "FusedHit.retrievers",
+          "similarity": 0.6322,
+          "text_head": "backend/src/legalaid/services/retrieval/fusion.py - method FusedHit.retrievers (lines 36-42)\n\ndef retrievers(s"
+        },
+        {
+          "collection": "CODE",
+          "file_path": "backend/src/legalaid/config.py",
+          "symbol": "Settings",
+          "similarity": 0.6268,
+          "text_head": "# ---------------------------------------------------- hybrid + graph rag\n    # Three complementary retrievers"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "id": "Q1",
+      "ground_truth_files": 10,
+      "files_found_in_context": 3,
+      "coverage": 0.3,
+      "hits": [
+        "backend/src/legalaid/agents/base.py",
+        "backend/src/legalaid/agents/legal_research.py",
+        "backend/src/legalaid/domain/contracts.py"
+      ]
+    },
+    {
+      "id": "Q2",
+      "ground_truth_files": 20,
+      "files_found_in_context": 1,
+      "coverage": 0.05,
+      "hits": [
+        "backend/src/legalaid/services/retrieval/app.py"
+      ]
+    },
+    {
+      "id": "Q3",
+      "ground_truth_files": 8,
+      "files_found_in_context": 3,
+      "coverage": 0.375,
+      "hits": [
+        "backend/src/legalaid/services/gateway/app.py",
+        "backend/src/legalaid/agents/orchestrator.py",
+        "backend/src/legalaid/services/retrieval/service.py"
+      ]
+    },
+    {
+      "id": "Q4",
+      "ground_truth_files": 24,
+      "files_found_in_context": 1,
+      "coverage": 0.0417,
+      "hits": [
+        "backend/src/legalaid/ingestion/chunking.py"
+      ]
+    },
+    {
+      "id": "Q5",
+      "ground_truth_files": 1,
+      "files_found_in_context": 0,
+      "coverage": 0.0,
+      "hits": []
+    }
+  ],
+  "total_ground_truth_files": 63,
+  "total_hits": 8,
+  "total_coverage": 0.127,
+  "baseline_reference": "eval/results/codebase_probe.json (0/61 before CODE_SEARCH existed)"
+}

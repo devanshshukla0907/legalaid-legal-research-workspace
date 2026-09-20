@@ -47,6 +47,12 @@ class RoutingDecision:
     # scope gate, which is the wrong direction for a system that must decline out-of-domain
     # questions. Callers that know the input is legal set it explicitly.
     is_legal_matter: bool = False
+    # T5.1: "simple" is a direct single-section lookup; "complex" is everything requiring
+    # multi-provision synthesis, cross-Act reasoning, drafting, or document-grounded facts.
+    # Defaults "complex" - the safer direction when classification is missing or the router
+    # fell back, since routing a genuinely complex question to a lighter model is the more
+    # damaging mistake of the two.
+    complexity: str = "complex"
     search_query: str = ""
     legal_concepts: list[str] = field(default_factory=list)
     suggested_draft_type: str = "none"
@@ -88,6 +94,7 @@ class RoutingDecision:
             "needs_drafting": self.needs_drafting,
             "needs_document_facts": self.needs_document_facts,
             "is_legal_matter": self.is_legal_matter,
+            "complexity": self.complexity,
             "original_input": self.original_input,
             "search_query": self.search_query,
             "legal_concepts": self.legal_concepts,
@@ -167,6 +174,9 @@ def decision_from(output: dict[str, Any], *, user_input: str) -> RoutingDecision
         needs_document_facts=bool(output.get("needs_document_facts", False)),
         # Absent means "the model did not assert this", which is not the same as "yes".
         is_legal_matter=bool(output.get("is_legal_matter", False)),
+        complexity=(
+            str(output.get("complexity")) if output.get("complexity") in ("simple", "complex") else "complex"
+        ),
         search_query=query,
         legal_concepts=[str(c) for c in (output.get("legal_concepts") or [])][:8],
         suggested_draft_type=str(output.get("suggested_draft_type") or "none"),
